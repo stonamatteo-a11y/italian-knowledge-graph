@@ -1,8 +1,14 @@
 # Italian Knowledge Graph
 
-![Status](https://img.shields.io/badge/status-early%20development-orange)
-![Python](https://img.shields.io/badge/python-3.10%2B-blue)
-![License](https://img.shields.io/badge/license-Apache--2.0-green)
+<p align="center">
+  <img src="assets/logo.svg" alt="Italian Knowledge Graph logo" width="620">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/status-early%20development-orange" alt="Status: early development">
+  <img src="https://img.shields.io/badge/python-3.10%2B-blue" alt="Python 3.10+">
+  <img src="https://img.shields.io/badge/license-Apache--2.0-green" alt="Apache 2.0 license">
+</p>
 
 An open-source project for building a structured, reusable knowledge graph in Italian.
 
@@ -91,6 +97,8 @@ italian-knowledge-graph/
 │   ├── ISSUE_TEMPLATE/
 │   ├── workflows/
 │   └── pull_request_template.md
+├── assets/
+│   └── logo.svg
 ├── docs/
 ├── ontology/
 ├── exporters/
