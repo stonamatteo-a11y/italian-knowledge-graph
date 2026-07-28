@@ -1,6 +1,6 @@
 ---
 name: Ontology change
-description: Propose a new node, rename, move or structural correction
+about: Propose a new node, rename, move or structural correction
 title: "[Ontology] "
 labels: []
 assignees: []
