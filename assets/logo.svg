@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+  <title id="title">Italian Knowledge Graph logo</title>
+  <desc id="desc">A network of connected nodes above the initials IKG and the words Italian Knowledge Graph.</desc>
+  <rect width="1200" height="600" rx="36" fill="#ffffff"/>
+
+  <g stroke="#0b2d52" stroke-width="12" stroke-linecap="round" fill="none">
+    <path d="M600 170 L430 115"/>
+    <path d="M600 170 L770 115"/>
+    <path d="M600 170 L390 245"/>
+    <path d="M600 170 L810 245"/>
+    <path d="M600 170 L600 310"/>
+    <path d="M430 115 L390 245"/>
+    <path d="M770 115 L810 245"/>
+    <path d="M390 245 L490 310"/>
+    <path d="M810 245 L710 310"/>
+    <path d="M490 310 L600 350"/>
+    <path d="M710 310 L600 350"/>
+  </g>
+
+  <g>
+    <circle cx="600" cy="170" r="62" fill="#0b2d52"/>
+    <circle cx="430" cy="115" r="38" fill="#45a557"/>
+    <circle cx="770" cy="115" r="38" fill="#3478df"/>
+    <circle cx="390" cy="245" r="34" fill="#f6a019"/>
+    <circle cx="810" cy="245" r="34" fill="#7450b8"/>
+    <circle cx="490" cy="310" r="22" fill="#9aa9b8"/>
+    <circle cx="710" cy="310" r="22" fill="#9aa9b8"/>
+    <circle cx="600" cy="350" r="34" fill="#ef4a3e"/>
+  </g>
+
+  <text x="600" y="470" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="112" font-weight="700" letter-spacing="6" fill="#0b2d52">IKG</text>
+  <line x1="390" y1="505" x2="810" y2="505" stroke="#9aa9b8" stroke-width="4"/>
+  <circle cx="600" cy="505" r="10" fill="#0b2d52"/>
+  <text x="600" y="555" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="600" letter-spacing="7" fill="#0b2d52">ITALIAN KNOWLEDGE GRAPH</text>
+</svg>
