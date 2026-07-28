@@ -1,13 +1,11 @@
-"""Build the in-memory ontology graph from the seed modules."""
+"""Build the in-memory ontology graph from the preserved seed."""
 
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass
 from typing import Any
 
-from .areas import AREAS
-from .macroareas import MACROAREAS
-from .subareas import SUBAREAS
+from .seed_compressed import AREAS, MACROAREAS, SUBAREAS
 
 
 @dataclass(frozen=True)
@@ -21,7 +19,7 @@ class Node:
 
 
 def build_graph() -> tuple[dict[str, dict[str, Any]], list[dict[str, str]]]:
-    """Return validated node and edge collections from the seed data."""
+    """Return node and edge collections from the seed data."""
     nodes: dict[str, dict[str, Any]] = {}
     edges: list[dict[str, str]] = []
 
