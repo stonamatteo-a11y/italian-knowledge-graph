@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+title: Italian Knowledge Graph
+message: If you use this project, please cite it using this metadata.
+type: software
+authors:
+  - family-names: Stona
+    given-names: Matteo
+repository-code: https://github.com/stonamatteo-a11y/italian-knowledge-graph
+license: Apache-2.0
+version: 0.1.0
+date-released: 2026-07-28
+keywords:
+  - knowledge graph
+  - ontology
+  - Italian
+  - NLP
+  - RAG
+  - LLM
