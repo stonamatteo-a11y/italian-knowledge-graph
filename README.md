@@ -11,28 +11,54 @@ Macroarea
           └── Concetto
 ```
 
-The knowledge graph is intended to serve as a stable source from which multiple downstream artifacts can be generated, including:
+The knowledge graph is intended to serve as a stable source from which multiple downstream artifacts can be generated, including JSONL datasets, RAG knowledge bases, fine-tuning datasets, CSV, SQLite, GraphML, RDF/OWL and Neo4j imports.
 
-- JSONL datasets
-- RAG knowledge bases
-- fine-tuning datasets
-- CSV exports
-- SQLite databases
-- GraphML graphs
-- RDF/OWL resources
-- Neo4j imports
+## Current seed
+
+The first imported seed contains:
+
+- 48 macroareas
+- 471 areas
+- 710 subareas
+- 1,229 total nodes
+- 1,181 hierarchical `CONTAINS` edges
+
+The original generated material is preserved losslessly in `ontology/seed_compressed.py`. It is a temporary compatibility layer while the data is progressively reorganized into human-readable modules by domain.
+
+## Quick start
+
+Requires Python 3.10 or later.
+
+Validate the ontology:
+
+```bash
+python -m validators.validate_ontology
+```
+
+Export nodes and edges to JSONL:
+
+```bash
+python -m exporters.export_jsonl --output-dir datasets
+```
+
+Run tests:
+
+```bash
+python -m pytest
+```
 
 ## Current status
 
 - [x] Repository foundation
-- [x] Initial ontology source available
+- [x] Complete initial ontology seed imported
 - [x] Macroareas defined
 - [x] Areas defined
-- [x] Subareas partially defined
+- [x] Subareas defined
 - [ ] Concepts
 - [ ] Semantic cross-relations
-- [ ] Validators
-- [ ] Exporters
+- [x] Initial structural validator
+- [x] Initial JSONL exporter
+- [ ] Additional exporters
 - [ ] Dataset generator
 - [ ] Public release
 
@@ -44,15 +70,23 @@ The knowledge graph is intended to serve as a stable source from which multiple 
 - Every node should be machine-readable and human-reviewable.
 - Contributions should preserve structural consistency and traceability.
 
-## Planned repository structure
+## Repository structure
 
 ```text
 italian-knowledge-graph/
 ├── docs/
 ├── ontology/
+│   ├── build.py
+│   ├── macroareas.py
+│   ├── areas.py
+│   ├── subareas.py
+│   └── seed_compressed.py
 ├── exporters/
+│   └── export_jsonl.py
 ├── validators/
+│   └── validate_ontology.py
 ├── tests/
+│   └── test_ontology.py
 ├── README.md
 ├── ROADMAP.md
 ├── CONTRIBUTING.md
