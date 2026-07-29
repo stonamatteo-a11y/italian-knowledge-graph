@@ -180,13 +180,15 @@ Those decisions belong to dedicated RFCs.
 
 ## Future RFCs
 
-Expected follow-up documents include:
+The planned sequence is:
 
-- RFC-0002 — IKG Validator;
-- RFC-0003 — Semantic Relations;
-- RFC-0004 — Concept Layer;
-- RFC-0005 — Export and Dataset Generation;
-- RFC-0006 — AI Reviewer.
+- RFC-0002 — IKG Validator Architecture;
+- RFC-0003 — Validation Rule Registry;
+- RFC-0004 — Knowledge Graph Data Model;
+- RFC-0005 — Relation Model;
+- RFC-0006 — Import and Export;
+- RFC-0007 — Dataset Generator;
+- RFC-0008 — AI Reviewer.
 
 ## Decision state
 
