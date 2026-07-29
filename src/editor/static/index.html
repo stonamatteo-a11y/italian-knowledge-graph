@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IKG Ontology Editor</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Ontology Editor</h1>
+      <div class="header-actions">
+        <button id="new-node" type="button">New node</button>
+        <button id="delete-node" class="danger" type="button" disabled>Delete</button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="tree-panel" aria-label="Ontology tree">
+        <label for="search">Search</label>
+        <input id="search" type="search" autocomplete="off">
+        <div id="tree" class="tree" role="tree"></div>
+      </section>
+
+      <section class="editor-panel" aria-label="Node editor">
+        <form id="node-form">
+          <div class="field-row">
+            <label for="node-id">ID</label>
+            <input id="node-id" name="id" required>
+          </div>
+          <div class="field-row">
+            <label for="node-label">Label</label>
+            <input id="node-label" name="label" required>
+          </div>
+          <div class="field-row">
+            <label for="node-description">Description</label>
+            <textarea id="node-description" name="description" rows="7" required></textarea>
+          </div>
+          <div class="field-row">
+            <label for="node-parent">Parent</label>
+            <select id="node-parent" name="parent_id"></select>
+          </div>
+          <div class="field-row">
+            <label for="node-language">Language</label>
+            <input id="node-language" name="language" value="it" required>
+          </div>
+          <div class="field-row">
+            <label for="node-type">Type</label>
+            <select id="node-type" name="type">
+              <option value="macroarea">macroarea</option>
+              <option value="area">area</option>
+              <option value="sottoarea">sottoarea</option>
+            </select>
+          </div>
+
+          <dl class="node-info">
+            <div>
+              <dt>Children</dt>
+              <dd id="children-count">0</dd>
+            </div>
+            <div>
+              <dt>Path</dt>
+              <dd id="node-path">-</dd>
+            </div>
+          </dl>
+
+          <div class="form-actions">
+            <button id="save-node" class="primary" type="submit">Save</button>
+            <button id="validate-node" type="button">Validate</button>
+            <button id="discard-node" type="button">Discard</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <section id="validation" class="validation-panel neutral" aria-live="polite">
+      <h2>Validation</h2>
+      <p id="validation-summary">Not run</p>
+      <ul id="validation-errors"></ul>
+    </section>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

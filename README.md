@@ -47,6 +47,25 @@ python scripts/generate_seed.py
 The recovered original source is retained in
 `ontology/legacy_ontology_source.py` for migration provenance.
 
+## Ontology Editor
+
+The offline Ontology Editor is the official interface for changing canonical
+ontology records. Start it from the repository root:
+
+```bash
+python run_editor.py
+```
+
+Then open `http://localhost:8000`.
+
+The editor works directly with the canonical JSON files, stages changes in
+memory, and validates the complete ontology before saving. Invalid changes are
+never written. A successful save also regenerates `ontology/seed_compressed.py`.
+
+Use the editor instead of modifying ontology JSON manually. The UI is an editing
+interface; the deterministic Validator remains the authoritative source of
+truth.
+
 ## Community review
 
 This is an early, non-authoritative ontology seed. Feedback is especially useful on:
