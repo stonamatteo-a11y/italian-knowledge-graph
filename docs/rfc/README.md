@@ -37,6 +37,7 @@ A Draft or Review RFC may be edited. Once Accepted, its decision text is frozen.
 | [RFC-0004](RFC-0004-entity-model.md) | Entity Model | Draft |
 | [RFC-0005](RFC-0005-relationship-model.md) | Relationship Model | Draft |
 | [RFC-0006](RFC-0006-serialization-model.md) | Serialization Model | Draft |
+| [RFC-0007](RFC-0007-validator-implementation.md) | Validator Implementation | Draft |
 
 ## Architecture sequence
 
@@ -52,13 +53,14 @@ RFC-0004  Entity Model
 RFC-0005  Relationship Model
     ↓
 RFC-0006  Serialization Model
+    ↓
+RFC-0007  Validator Implementation
 ```
 
-Together, RFC-0004, RFC-0005, and RFC-0006 define the initial logical and physical metamodel of IKG.
+Together, RFC-0004, RFC-0005, and RFC-0006 define the initial logical and physical metamodel of IKG. RFC-0007 translates the validation contracts into a shared reference implementation boundary.
 
 ## Planned sequence
 
-- RFC-0007 — Validator Implementation
 - RFC-0008 — Dataset Generator
 - RFC-0009 — AI Reviewer
 
