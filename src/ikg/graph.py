@@ -7,13 +7,16 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+CANONICAL_ENTITY_PROPERTIES = frozenset({"id", "type", "label", "parent"})
+
 
 @dataclass(frozen=True, slots=True)
 class Entity:
-    identifier: str
-    entity_type: str
-    label: str
-    parent: str | None = None
+    identifier: Any
+    entity_type: Any
+    label: Any
+    parent: Any = None
+    unknown_properties: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True, slots=True)
@@ -27,6 +30,9 @@ def load_graph(path: str | Path) -> KnowledgeGraph:
     Expected shape::
 
         {"entities": [{"id": "...", "type": "...", "label": "...", "parent": null}]}
+
+    Values are preserved without coercion so schema rules can report invalid
+    property types rather than turning them into loader failures.
     """
     source = Path(path)
     with source.open("r", encoding="utf-8") as handle:
@@ -39,12 +45,14 @@ def load_graph(path: str | Path) -> KnowledgeGraph:
     for index, raw in enumerate(payload["entities"]):
         if not isinstance(raw, dict):
             raise ValueError(f"entities[{index}] must be an object")
+        unknown = tuple(sorted(str(key) for key in raw if key not in CANONICAL_ENTITY_PROPERTIES))
         entities.append(
             Entity(
                 identifier=raw.get("id"),
                 entity_type=raw.get("type"),
                 label=raw.get("label"),
                 parent=raw.get("parent"),
+                unknown_properties=unknown,
             )
         )
 
