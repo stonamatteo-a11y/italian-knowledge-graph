@@ -34,14 +34,33 @@ A Draft or Review RFC may be edited. Once Accepted, its decision text is frozen.
 | [RFC-0001](RFC-0001-core-architecture.md) | IKG Core Architecture | Draft Frozen |
 | [RFC-0002](RFC-0002-validator-architecture.md) | IKG Validator Architecture | Draft |
 | [RFC-0003](RFC-0003-validation-rule-registry.md) | Validation Rule Registry | Draft |
+| [RFC-0004](RFC-0004-entity-model.md) | Entity Model | Draft |
+| [RFC-0005](RFC-0005-relationship-model.md) | Relationship Model | Draft |
+| [RFC-0006](RFC-0006-serialization-model.md) | Serialization Model | Draft |
+
+## Architecture sequence
+
+```text
+RFC-0001  Core Architecture
+    ↓
+RFC-0002  Validator Architecture
+    ↓
+RFC-0003  Validation Rule Registry
+    ↓
+RFC-0004  Entity Model
+    ↓
+RFC-0005  Relationship Model
+    ↓
+RFC-0006  Serialization Model
+```
+
+Together, RFC-0004, RFC-0005, and RFC-0006 define the initial logical and physical metamodel of IKG.
 
 ## Planned sequence
 
-- RFC-0004 — Knowledge Graph Data Model
-- RFC-0005 — Relation Model
-- RFC-0006 — Import and Export
-- RFC-0007 — Dataset Generator
-- RFC-0008 — AI Reviewer
+- RFC-0007 — Validator Implementation
+- RFC-0008 — Dataset Generator
+- RFC-0009 — AI Reviewer
 
 ## Guiding principle
 
