@@ -20,8 +20,18 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
 ]
 
+[project.scripts]
+ikg = "ikg.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
 [tool.pytest.ini_options]
 addopts = "-q"
+pythonpath = ["src"]
 testpaths = ["tests"]
 
 [tool.ruff]
