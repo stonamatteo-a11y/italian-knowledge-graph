@@ -8,9 +8,16 @@ from pathlib import Path
 from fastapi.testclient import TestClient
 
 from editor import create_app
+from editor.__main__ import DEFAULT_PORT, parse_args
 from scripts.generate_seed import ONTOLOGY_DIR
 
 CANONICAL_FILES = ("macroareas.json", "areas.json", "subareas.json")
+
+
+def test_editor_port_defaults_and_override() -> None:
+    assert DEFAULT_PORT == 7777
+    assert parse_args([]).port == 7777
+    assert parse_args(["--port", "8888"]).port == 8888
 
 
 def _editor_client(tmp_path: Path) -> tuple[TestClient, Path]:

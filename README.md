@@ -56,7 +56,13 @@ ontology records. Start it from the repository root:
 python run_editor.py
 ```
 
-Then open `http://localhost:8000`.
+Then open `http://127.0.0.1:7777`.
+
+To use a different port:
+
+```bash
+python run_editor.py --port 8888
+```
 
 The editor works directly with the canonical JSON files, stages changes in
 memory, and validates the complete ontology before saving. Invalid changes are
