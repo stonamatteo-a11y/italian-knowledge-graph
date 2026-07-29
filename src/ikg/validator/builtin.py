@@ -19,6 +19,16 @@ EXPECTED_PARENT_TYPE = {
 EXPECTED_DEPTH = {"Macroarea": 0, "Area": 1, "Sottoarea": 2, "Concetto": 3}
 IDENTIFIER_PATTERN = re.compile(r"^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$")
 RESERVED_IDENTIFIER_PREFIXES = ("__", "runtime:", "sys:")
+RELATIONSHIP_TYPES = frozenset({"CONTAINS"})
+RELATIONSHIP_DIRECTIONS = {
+    "CONTAINS": frozenset(
+        {
+            ("Macroarea", "Area"),
+            ("Area", "Sottoarea"),
+            ("Sottoarea", "Concetto"),
+        }
+    )
+}
 
 
 def _location(index: int, identifier: Any) -> str:
@@ -27,6 +37,10 @@ def _location(index: int, identifier: Any) -> str:
 
 def _non_empty_string(value: Any) -> bool:
     return isinstance(value, str) and bool(value.strip())
+
+
+def _relationship_location(index: int, identifier: Any) -> str:
+    return identifier if isinstance(identifier, str) and identifier else f"relationships[{index}]"
 
 
 @dataclass(frozen=True, slots=True)
@@ -373,8 +387,131 @@ class InvalidHierarchyLevelRule:
         return tuple(findings)
 
 
+@dataclass(frozen=True, slots=True)
+class UnknownRelationshipTypeRule:
+    rule_id: str = "IKG300"
+
+    def validate(self, graph: KnowledgeGraph) -> tuple[Finding, ...]:
+        return tuple(
+            Finding(
+                self.rule_id,
+                Severity.ERROR,
+                f"Unknown Relationship type: {relationship.type!r}",
+                _relationship_location(index, relationship.id),
+            )
+            for index, relationship in enumerate(graph.relationships)
+            if relationship.type not in RELATIONSHIP_TYPES
+        )
+
+
+@dataclass(frozen=True, slots=True)
+class MissingTargetEntityRule:
+    rule_id: str = "IKG301"
+
+    def validate(self, graph: KnowledgeGraph) -> tuple[Finding, ...]:
+        identifiers = {entity.identifier for entity in graph.entities}
+        return tuple(
+            Finding(
+                self.rule_id,
+                Severity.ERROR,
+                f"Missing target Entity: {relationship.target!r}",
+                _relationship_location(index, relationship.id),
+            )
+            for index, relationship in enumerate(graph.relationships)
+            if relationship.target not in identifiers
+        )
+
+
+@dataclass(frozen=True, slots=True)
+class MissingSourceEntityRule:
+    rule_id: str = "IKG302"
+
+    def validate(self, graph: KnowledgeGraph) -> tuple[Finding, ...]:
+        identifiers = {entity.identifier for entity in graph.entities}
+        return tuple(
+            Finding(
+                self.rule_id,
+                Severity.ERROR,
+                f"Missing source Entity: {relationship.source!r}",
+                _relationship_location(index, relationship.id),
+            )
+            for index, relationship in enumerate(graph.relationships)
+            if relationship.source not in identifiers
+        )
+
+
+@dataclass(frozen=True, slots=True)
+class DuplicateRelationshipRule:
+    rule_id: str = "IKG303"
+
+    def validate(self, graph: KnowledgeGraph) -> tuple[Finding, ...]:
+        counts: dict[tuple[Any, Any, Any], int] = {}
+        locations: dict[tuple[Any, Any, Any], str] = {}
+        for index, relationship in enumerate(graph.relationships):
+            identity = (relationship.source, relationship.type, relationship.target)
+            counts[identity] = counts.get(identity, 0) + 1
+            location = _relationship_location(index, relationship.id)
+            locations[identity] = min(locations.get(identity, location), location)
+        return tuple(
+            Finding(
+                self.rule_id,
+                Severity.WARNING,
+                f"Duplicate Relationship: {source!r} {relationship_type!r} {target!r}",
+                locations[(source, relationship_type, target)],
+            )
+            for source, relationship_type, target in sorted(
+                (identity for identity, count in counts.items() if count > 1),
+                key=lambda identity: tuple(repr(value) for value in identity),
+            )
+        )
+
+
+@dataclass(frozen=True, slots=True)
+class SelfRelationshipNotAllowedRule:
+    rule_id: str = "IKG304"
+
+    def validate(self, graph: KnowledgeGraph) -> tuple[Finding, ...]:
+        return tuple(
+            Finding(
+                self.rule_id,
+                Severity.ERROR,
+                "Self Relationship is not allowed",
+                _relationship_location(index, relationship.id),
+            )
+            for index, relationship in enumerate(graph.relationships)
+            if relationship.type in RELATIONSHIP_TYPES
+            and relationship.source == relationship.target
+        )
+
+
+@dataclass(frozen=True, slots=True)
+class InvalidRelationshipDirectionRule:
+    rule_id: str = "IKG305"
+
+    def validate(self, graph: KnowledgeGraph) -> tuple[Finding, ...]:
+        entities = {entity.identifier: entity for entity in graph.entities}
+        findings: list[Finding] = []
+        for index, relationship in enumerate(graph.relationships):
+            allowed_directions = RELATIONSHIP_DIRECTIONS.get(relationship.type)
+            source = entities.get(relationship.source)
+            target = entities.get(relationship.target)
+            if allowed_directions is None or source is None or target is None:
+                continue
+            direction = (source.entity_type, target.entity_type)
+            if direction not in allowed_directions:
+                findings.append(
+                    Finding(
+                        self.rule_id,
+                        Severity.ERROR,
+                        f"Invalid Relationship direction: {direction[0]!r} -> {direction[1]!r}",
+                        _relationship_location(index, relationship.id),
+                    )
+                )
+        return tuple(findings)
+
+
 def core_rules() -> tuple[object, ...]:
-    """Return the accepted schema, identity, and hierarchy rules in stable order."""
+    """Return the accepted core validation rules in stable order."""
     return (
         MissingRequiredPropertyRule(),
         InvalidPropertyTypeRule(),
@@ -390,4 +527,10 @@ def core_rules() -> tuple[object, ...]:
         HierarchyCycleRule(),
         OrphanEntityRule(),
         InvalidHierarchyLevelRule(),
+        UnknownRelationshipTypeRule(),
+        MissingTargetEntityRule(),
+        MissingSourceEntityRule(),
+        DuplicateRelationshipRule(),
+        SelfRelationshipNotAllowedRule(),
+        InvalidRelationshipDirectionRule(),
     )

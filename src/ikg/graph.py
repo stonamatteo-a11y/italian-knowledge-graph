@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any
 
 CANONICAL_ENTITY_PROPERTIES = frozenset({"id", "type", "label", "parent"})
+CANONICAL_RELATIONSHIP_PROPERTIES = frozenset({"id", "type", "source", "target"})
 
 
 @dataclass(frozen=True, slots=True)
@@ -20,8 +21,17 @@ class Entity:
 
 
 @dataclass(frozen=True, slots=True)
+class Relationship:
+    id: Any
+    type: Any
+    source: Any
+    target: Any
+
+
+@dataclass(frozen=True, slots=True)
 class KnowledgeGraph:
     entities: tuple[Entity, ...]
+    relationships: tuple[Relationship, ...] = ()
 
 
 def load_graph(path: str | Path) -> KnowledgeGraph:
@@ -29,10 +39,17 @@ def load_graph(path: str | Path) -> KnowledgeGraph:
 
     Expected shape::
 
-        {"entities": [{"id": "...", "type": "...", "label": "...", "parent": null}]}
+        {
+            "entities": [{"id": "...", "type": "...", "label": "...", "parent": null}],
+            "relationships": [
+                {"id": "...", "type": "CONTAINS", "source": "...", "target": "..."}
+            ],
+        }
 
     Values are preserved without coercion so schema rules can report invalid
-    property types rather than turning them into loader failures.
+    property types rather than turning them into loader failures. The
+    ``relationships`` collection is optional for compatibility with entity-only
+    graph documents.
     """
     source = Path(path)
     with source.open("r", encoding="utf-8") as handle:
@@ -56,4 +73,21 @@ def load_graph(path: str | Path) -> KnowledgeGraph:
             )
         )
 
-    return KnowledgeGraph(entities=tuple(entities))
+    raw_relationships = payload.get("relationships", [])
+    if not isinstance(raw_relationships, list):
+        raise ValueError("'relationships' must be a list")
+
+    relationships: list[Relationship] = []
+    for index, raw in enumerate(raw_relationships):
+        if not isinstance(raw, dict):
+            raise ValueError(f"relationships[{index}] must be an object")
+        relationships.append(
+            Relationship(
+                id=raw.get("id"),
+                type=raw.get("type"),
+                source=raw.get("source"),
+                target=raw.get("target"),
+            )
+        )
+
+    return KnowledgeGraph(entities=tuple(entities), relationships=tuple(relationships))
