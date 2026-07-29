@@ -26,6 +26,7 @@ class Relationship:
     type: Any
     source: Any
     target: Any
+    unknown_properties: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True, slots=True)
@@ -81,12 +82,16 @@ def load_graph(path: str | Path) -> KnowledgeGraph:
     for index, raw in enumerate(raw_relationships):
         if not isinstance(raw, dict):
             raise ValueError(f"relationships[{index}] must be an object")
+        unknown = tuple(
+            sorted(str(key) for key in raw if key not in CANONICAL_RELATIONSHIP_PROPERTIES)
+        )
         relationships.append(
             Relationship(
                 id=raw.get("id"),
                 type=raw.get("type"),
                 source=raw.get("source"),
                 target=raw.get("target"),
+                unknown_properties=unknown,
             )
         )
 

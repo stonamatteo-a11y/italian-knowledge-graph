@@ -64,6 +64,22 @@ class MissingRequiredPropertyRule:
                             f"entities[{index}]",
                         )
                     )
+        for index, relationship in enumerate(graph.relationships):
+            for name, value in (
+                ("id", relationship.id),
+                ("type", relationship.type),
+                ("source", relationship.source),
+                ("target", relationship.target),
+            ):
+                if not _non_empty_string(value):
+                    findings.append(
+                        Finding(
+                            self.rule_id,
+                            Severity.ERROR,
+                            f"Missing required property: {name}",
+                            f"relationships[{index}]",
+                        )
+                    )
         return tuple(findings)
 
 
@@ -98,6 +114,23 @@ class InvalidPropertyTypeRule:
                         location,
                     )
                 )
+        for index, relationship in enumerate(graph.relationships):
+            location = _relationship_location(index, relationship.id)
+            for name, value in (
+                ("id", relationship.id),
+                ("type", relationship.type),
+                ("source", relationship.source),
+                ("target", relationship.target),
+            ):
+                if value is not None and not isinstance(value, str):
+                    findings.append(
+                        Finding(
+                            self.rule_id,
+                            Severity.ERROR,
+                            f"Property {name!r} must be a string",
+                            location,
+                        )
+                    )
         return tuple(findings)
 
 
@@ -106,7 +139,7 @@ class UnknownPropertyRule:
     rule_id: str = "IKG003"
 
     def validate(self, graph: KnowledgeGraph) -> tuple[Finding, ...]:
-        return tuple(
+        entity_findings = tuple(
             Finding(
                 self.rule_id,
                 Severity.WARNING,
@@ -116,6 +149,17 @@ class UnknownPropertyRule:
             for index, entity in enumerate(graph.entities)
             for name in entity.unknown_properties
         )
+        relationship_findings = tuple(
+            Finding(
+                self.rule_id,
+                Severity.WARNING,
+                f"Unknown property: {name}",
+                _relationship_location(index, relationship.id),
+            )
+            for index, relationship in enumerate(graph.relationships)
+            for name in relationship.unknown_properties
+        )
+        return entity_findings + relationship_findings
 
 
 @dataclass(frozen=True, slots=True)
@@ -219,8 +263,7 @@ class MissingParentRule:
                 _location(index, entity.identifier),
             )
             for index, entity in enumerate(graph.entities)
-            if entity.entity_type != "Macroarea"
-            and (entity.parent is None or entity.parent == "")
+            if entity.entity_type != "Macroarea" and (entity.parent is None or entity.parent == "")
         )
 
 
@@ -400,7 +443,7 @@ class UnknownRelationshipTypeRule:
                 _relationship_location(index, relationship.id),
             )
             for index, relationship in enumerate(graph.relationships)
-            if relationship.type not in RELATIONSHIP_TYPES
+            if _non_empty_string(relationship.type) and relationship.type not in RELATIONSHIP_TYPES
         )
 
 
@@ -409,7 +452,9 @@ class MissingTargetEntityRule:
     rule_id: str = "IKG301"
 
     def validate(self, graph: KnowledgeGraph) -> tuple[Finding, ...]:
-        identifiers = {entity.identifier for entity in graph.entities}
+        identifiers = {
+            entity.identifier for entity in graph.entities if _non_empty_string(entity.identifier)
+        }
         return tuple(
             Finding(
                 self.rule_id,
@@ -418,7 +463,7 @@ class MissingTargetEntityRule:
                 _relationship_location(index, relationship.id),
             )
             for index, relationship in enumerate(graph.relationships)
-            if relationship.target not in identifiers
+            if _non_empty_string(relationship.target) and relationship.target not in identifiers
         )
 
 
@@ -427,7 +472,9 @@ class MissingSourceEntityRule:
     rule_id: str = "IKG302"
 
     def validate(self, graph: KnowledgeGraph) -> tuple[Finding, ...]:
-        identifiers = {entity.identifier for entity in graph.entities}
+        identifiers = {
+            entity.identifier for entity in graph.entities if _non_empty_string(entity.identifier)
+        }
         return tuple(
             Finding(
                 self.rule_id,
@@ -436,7 +483,7 @@ class MissingSourceEntityRule:
                 _relationship_location(index, relationship.id),
             )
             for index, relationship in enumerate(graph.relationships)
-            if relationship.source not in identifiers
+            if _non_empty_string(relationship.source) and relationship.source not in identifiers
         )
 
 
@@ -448,6 +495,11 @@ class DuplicateRelationshipRule:
         counts: dict[tuple[Any, Any, Any], int] = {}
         locations: dict[tuple[Any, Any, Any], str] = {}
         for index, relationship in enumerate(graph.relationships):
+            if not all(
+                _non_empty_string(value)
+                for value in (relationship.source, relationship.type, relationship.target)
+            ):
+                continue
             identity = (relationship.source, relationship.type, relationship.target)
             counts[identity] = counts.get(identity, 0) + 1
             location = _relationship_location(index, relationship.id)
@@ -479,7 +531,10 @@ class SelfRelationshipNotAllowedRule:
                 _relationship_location(index, relationship.id),
             )
             for index, relationship in enumerate(graph.relationships)
-            if relationship.type in RELATIONSHIP_TYPES
+            if _non_empty_string(relationship.type)
+            and _non_empty_string(relationship.source)
+            and _non_empty_string(relationship.target)
+            and relationship.type in RELATIONSHIP_TYPES
             and relationship.source == relationship.target
         )
 
@@ -489,9 +544,18 @@ class InvalidRelationshipDirectionRule:
     rule_id: str = "IKG305"
 
     def validate(self, graph: KnowledgeGraph) -> tuple[Finding, ...]:
-        entities = {entity.identifier: entity for entity in graph.entities}
+        entities = {
+            entity.identifier: entity
+            for entity in graph.entities
+            if _non_empty_string(entity.identifier)
+        }
         findings: list[Finding] = []
         for index, relationship in enumerate(graph.relationships):
+            if not all(
+                _non_empty_string(value)
+                for value in (relationship.type, relationship.source, relationship.target)
+            ):
+                continue
             allowed_directions = RELATIONSHIP_DIRECTIONS.get(relationship.type)
             source = entities.get(relationship.source)
             target = entities.get(relationship.target)

@@ -4,7 +4,7 @@ from dataclasses import FrozenInstanceError
 import pytest
 
 from ikg.graph import Entity, KnowledgeGraph, Relationship, load_graph
-from ikg.validator import ValidationEngine
+from ikg.validator import ValidationEngine, ValidationReport
 from ikg.validator.builtin import core_rules
 
 
@@ -49,6 +49,33 @@ def test_json_loader_supports_relationships_and_entity_only_documents(tmp_path) 
         encoding="utf-8",
     )
     assert load_graph(graph_path).relationships == ()
+
+
+def test_json_loader_preserves_unknown_relationship_properties(tmp_path) -> None:
+    graph_path = tmp_path / "graph.json"
+    graph_path.write_text(
+        json.dumps(
+            {
+                "entities": [{"id": "m1", "type": "Macroarea", "label": "Scienze"}],
+                "relationships": [
+                    {
+                        "id": "r1",
+                        "type": "CONTAINS",
+                        "source": "m1",
+                        "target": "a1",
+                        "extra": "value",
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    graph = load_graph(graph_path)
+    report = ValidationEngine(core_rules()).validate(graph)
+
+    assert graph.relationships[0].unknown_properties == ("extra",)
+    assert "IKG003" in {finding.rule_id for finding in report.findings}
 
 
 def test_valid_graph_passes_relationship_rules() -> None:
@@ -97,4 +124,37 @@ def test_relationship_findings_are_deterministic() -> None:
     first = _report(*relationships).findings
     second = _report(*reversed(relationships)).findings
 
+    assert first == second
+
+
+@pytest.mark.parametrize("field", ("id", "type", "source", "target"))
+@pytest.mark.parametrize("value", (None, [], {}, 42, True, ""))
+def test_malformed_relationship_fields_are_schema_findings(field: str, value: object) -> None:
+    values = {"id": "r1", "type": "CONTAINS", "source": "m1", "target": "a1"}
+    values[field] = value
+    relationship = Relationship(**values)
+
+    first = _report(relationship)
+    second = _report(relationship)
+    rule_ids = {finding.rule_id for finding in first.findings}
+
+    assert isinstance(first, ValidationReport)
+    assert first == second
+    assert "IKG001" in rule_ids
+    assert rule_ids.isdisjoint({"IKG300", "IKG301", "IKG302", "IKG303", "IKG304", "IKG305"})
+    if value is not None and not isinstance(value, str):
+        assert "IKG002" in rule_ids
+
+
+def test_multiple_malformed_relationships_remain_deterministic() -> None:
+    relationships = (
+        Relationship([], "CONTAINS", {}, "a1"),
+        Relationship("r2", [], "m1", None),
+        Relationship("r3", "CONTAINS", True, 42),
+    )
+
+    first = _report(*relationships)
+    second = _report(*relationships)
+
+    assert isinstance(first, ValidationReport)
     assert first == second
