@@ -32,6 +32,16 @@ A Draft or Review RFC may be edited. Once Accepted, its decision text is frozen.
 | RFC | Title | Status |
 |---|---|---|
 | [RFC-0001](RFC-0001-core-architecture.md) | IKG Core Architecture | Draft Frozen |
+| [RFC-0002](RFC-0002-validator-architecture.md) | IKG Validator Architecture | Draft |
+| [RFC-0003](RFC-0003-validation-rule-registry.md) | Validation Rule Registry | Draft |
+
+## Planned sequence
+
+- RFC-0004 — Knowledge Graph Data Model
+- RFC-0005 — Relation Model
+- RFC-0006 — Import and Export
+- RFC-0007 — Dataset Generator
+- RFC-0008 — AI Reviewer
 
 ## Guiding principle
 
