@@ -85,6 +85,52 @@ Use the editor instead of modifying ontology JSON manually. The UI is an editing
 interface; the deterministic Validator remains the authoritative source of
 truth.
 
+### Importazione ontologie
+
+Il pulsante **Importa Ontologia** accetta Python, JSON, YAML, Markdown e DOCX.
+I file Python nel formato Kimi `add_node`/`ONTO` vengono analizzati staticamente
+e non sono mai eseguiti. YAML e DOCX sono letti da parser interni basati
+esclusivamente sulla libreria standard. Il formato viene riconosciuto
+automaticamente da un registro di parser estendibile.
+
+L'import manager separa parsing, conversione nel modello canonico, validazione,
+anteprima e applicazione. I file selezionati sono trasferiti come byte originali,
+senza Base64. L'anteprima elenca nodi, relazioni, normalizzazioni automatiche,
+collisioni, duplicati, informazioni, warning ed errori bloccanti. I warning che
+comportano perdita di proprietà devono essere accettati esplicitamente.
+
+La modalità assistita richiede la conferma delle trasformazioni. La modalità
+automatica applica le trasformazioni deterministiche sicure previste dagli RFC,
+ma non elimina dati senza un consenso esplicito. Al termine viene mostrato un
+Import Report con file, formato, parser, conversioni, warning gestiti, file
+modificati e conteggi finali.
+
+La conferma aggiorna i JSON canonici e rigenera il seed compresso. Tipi, livelli
+o proprietà che non possono essere rappresentati dagli RFC correnti non
+modificano il repository: vengono segnalati prima dell'importazione.
+
+I tipi esterni vengono risolti dal Mapping Engine del Canonical Converter. Le
+regole note sono conservate in `ontology/import_mappings.json` e vengono
+applicate automaticamente. Un tipo sconosciuto appare nella Preview come
+mapping richiesto, senza essere classificato immediatamente come errore.
+L'utente può associarlo a un tipo canonico, salvare la regola e ricalcolare
+l'anteprima sullo stesso file. Soltanto la struttura risultante che non può
+rispettare la gerarchia canonica viene riportata come errore bloccante.
+
+### Knowledge Quality Center
+
+La finestra **Knowledge Quality** è indipendente dal modulo di editing e contiene
+Dashboard, Errori, Warning, Copertura, Statistiche, Attività e Checklist. Ogni
+finding associato a un nodo consente di aprirlo direttamente nell'editor.
+
+Il Knowledge Quality Score aggrega in modo deterministico completezza,
+integrità, coerenza, documentazione e copertura. I controlli implementano il
+protocollo `QualityCheck` e sono registrati nel `QualityRegistry`: nuovi
+controlli possono quindi essere aggiunti senza modificare l'aggregatore.
+
+Lo score è uno strumento diagnostico. Il Validator deterministico rimane la
+fonte autorevole per stabilire se l'ontologia può essere salvata.
+
 ## Community review
 
 This is an early, non-authoritative ontology seed. Feedback is especially useful on:

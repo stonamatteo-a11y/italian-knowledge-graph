@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from typing import Literal
+
 from pydantic import BaseModel, ConfigDict, Field
 
 
@@ -14,3 +16,11 @@ class NodeInput(BaseModel):
     description: str = Field(min_length=1)
     parent_id: str | None = None
     language: str = Field(default="it", min_length=1)
+
+
+class ImportConfirmInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    token: str = Field(min_length=1)
+    accepted_warnings: tuple[str, ...] = ()
+    mode: Literal["assisted", "automatic"] = "assisted"

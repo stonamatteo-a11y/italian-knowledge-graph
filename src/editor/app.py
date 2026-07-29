@@ -2,16 +2,19 @@
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
 from typing import Any
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
 from scripts.generate_seed import ONTOLOGY_DIR
 
-from .models import NodeInput
+from .importer import ImportManager
+from .models import ImportConfirmInput, NodeInput
+from .quality import KnowledgeQualityCenter
 from .store import EditorError, OntologyStore
 
 STATIC_DIR = Path(__file__).with_name("static")
@@ -25,7 +28,11 @@ def create_app(ontology_dir: Path = ONTOLOGY_DIR) -> FastAPI:
     """Create an editor application for a canonical ontology directory."""
     app = FastAPI(title="Italian Knowledge Graph Ontology Editor")
     store = OntologyStore(ontology_dir)
+    import_manager = ImportManager(ontology_dir / "import_mappings.json")
+    quality_center = KnowledgeQualityCenter()
     app.state.store = store
+    app.state.import_manager = import_manager
+    app.state.quality_center = quality_center
 
     app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
@@ -92,5 +99,58 @@ def create_app(ontology_dir: Path = ONTOLOGY_DIR) -> FastAPI:
     def discard() -> dict[str, bool]:
         store.reload()
         return {"discarded": True}
+
+    @app.post("/api/import/preview")
+    async def import_preview(
+        request: Request,
+        filename: str = Query(min_length=1),
+        mode: str = Query(default="assisted"),
+        mappings: str = Query(default="{}"),
+        persist_mappings: bool = Query(default=False),
+    ) -> dict[str, object]:
+        content = bytearray()
+        async for chunk in request.stream():
+            content.extend(chunk)
+        if not content:
+            raise HTTPException(status_code=422, detail="Import file is empty")
+        try:
+            mapping_payload = json.loads(mappings)
+        except json.JSONDecodeError as exc:
+            raise HTTPException(status_code=422, detail="Mappings must be valid JSON") from exc
+        if not isinstance(mapping_payload, dict) or not all(
+            isinstance(key, str) and isinstance(value, str)
+            for key, value in mapping_payload.items()
+        ):
+            raise HTTPException(status_code=422, detail="Mappings must be a string map")
+        return import_manager.preview(
+            store,
+            filename,
+            bytes(content),
+            mode,
+            mapping_payload,
+            persist_mappings,
+        ).as_dict()
+
+    @app.post("/api/import/confirm")
+    def import_confirm(payload: ImportConfirmInput) -> dict[str, object]:
+        try:
+            report = import_manager.confirm(
+                store,
+                payload.token,
+                payload.accepted_warnings,
+            )
+        except KeyError as exc:
+            raise HTTPException(
+                status_code=404, detail="Unknown or expired import preview"
+            ) from exc
+        except EditorError as exc:
+            raise HTTPException(status_code=422, detail=str(exc)) from exc
+        except ValueError as exc:
+            raise HTTPException(status_code=409, detail=str(exc)) from exc
+        return {"imported": True, "report": report.as_dict()}
+
+    @app.get("/api/quality/report")
+    def quality_report() -> dict[str, object]:
+        return quality_center.evaluate(store.snapshot(), store.activity()).as_dict()
 
     return app

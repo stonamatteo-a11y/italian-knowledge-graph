@@ -60,10 +60,30 @@ class OntologyStore:
         )
         self._lock = RLock()
         self._records = load_canonical(ontology_dir)
+        self._activity: list[dict[str, Any]] = []
+        self._activity_sequence = 0
+
+    def _record_activity(
+        self,
+        action: str,
+        node_id: str | None = None,
+        detail: str = "",
+    ) -> None:
+        self._activity_sequence += 1
+        self._activity.append(
+            {
+                "sequence": self._activity_sequence,
+                "action": action,
+                "node_id": node_id,
+                "detail": detail,
+            }
+        )
+        self._activity = self._activity[-100:]
 
     def reload(self) -> None:
         with self._lock:
             self._records = load_canonical(self.ontology_dir)
+            self._record_activity("discard", detail="Working copy reloaded")
 
     def _all_nodes(self) -> list[dict[str, Any]]:
         nodes: list[dict[str, Any]] = []
@@ -224,6 +244,7 @@ class OntologyStore:
                 raise EditorError(f"Duplicate ontology ID: {node['id']}")
             section = TYPE_TO_SECTION[node["type"]]
             self._records[section].append(self._canonical_record(node))
+            self._record_activity("create", node["id"], node["label"])
             return self.node(node["id"])
 
     def update(self, node_id: str, node: dict[str, Any]) -> dict[str, Any]:
@@ -246,6 +267,7 @@ class OntologyStore:
             else:
                 self._records[section].pop(index)
                 self._records[target_section].append(record)
+            self._record_activity("update", node["id"], node["label"])
             return self.node(node["id"])
 
     def delete(self, node_id: str) -> None:
@@ -255,6 +277,7 @@ class OntologyStore:
                 raise EditorError("Cannot delete a node that has children")
             section, index, _ = self._find_record(node_id)
             self._records[section].pop(index)
+            self._record_activity("delete", node_id)
 
     def _runtime_graph(self) -> tuple[dict[str, dict[str, Any]], list[dict[str, str]]]:
         validate_canonical_schema(self._records)
@@ -324,8 +347,24 @@ class OntologyStore:
             finally:
                 for source in temporary.values():
                     source.unlink(missing_ok=True)
+            self._record_activity("save", detail="Canonical ontology saved")
             return result
 
     def snapshot(self) -> dict[str, list[dict[str, Any]]]:
         with self._lock:
             return copy.deepcopy(self._records)
+
+    def activity(self) -> tuple[dict[str, Any], ...]:
+        with self._lock:
+            return tuple(copy.deepcopy(self._activity))
+
+    def replace_and_save(self, records: dict[str, list[dict[str, Any]]]) -> None:
+        """Replace the working copy and persist it only when fully valid."""
+        with self._lock:
+            previous = self._records
+            self._records = copy.deepcopy(records)
+            result = self.save()
+            if not result.valid:
+                self._records = previous
+                raise EditorError("\n".join(result.errors))
+            self._record_activity("import", detail="Validated ontology import")

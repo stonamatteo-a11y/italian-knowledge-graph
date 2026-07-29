@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Knowledge Quality Center</title>
+    <link rel="stylesheet" href="/static/quality.css">
+  </head>
+  <body>
+    <header class="quality-header">
+      <div>
+        <h1>Knowledge Quality Center</h1>
+        <span id="refresh-status" aria-live="polite">Caricamento</span>
+      </div>
+      <button id="refresh-quality" type="button">Aggiorna</button>
+    </header>
+
+    <nav id="quality-tabs" aria-label="Sezioni qualità">
+      <button class="active" type="button" data-view="dashboard">Dashboard</button>
+      <button type="button" data-view="errors">Errori</button>
+      <button type="button" data-view="warnings">Warning</button>
+      <button type="button" data-view="coverage">Copertura</button>
+      <button type="button" data-view="statistics">Statistiche</button>
+      <button type="button" data-view="activity">Attività</button>
+      <button type="button" data-view="checklist">Checklist</button>
+    </nav>
+
+    <main id="quality-content" tabindex="-1"></main>
+    <script src="/static/quality.js"></script>
+  </body>
+</html>

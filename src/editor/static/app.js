@@ -10,6 +10,9 @@ const state = {
   expandedIds: new Set(),
   searchRequest: 0,
   populating: false,
+  importToken: null,
+  importFile: null,
+  importPreviewImportable: false,
 };
 
 const elements = {
@@ -35,6 +38,18 @@ const elements = {
   validation: document.querySelector("#validation"),
   validationSummary: document.querySelector("#validation-summary"),
   validationErrors: document.querySelector("#validation-errors"),
+  importOntology: document.querySelector("#import-ontology"),
+  importFile: document.querySelector("#import-file"),
+  importDialog: document.querySelector("#import-dialog"),
+  closeImport: document.querySelector("#close-import"),
+  cancelImport: document.querySelector("#cancel-import"),
+  confirmImport: document.querySelector("#confirm-import"),
+  importFormat: document.querySelector("#import-format"),
+  importFound: document.querySelector("#import-found"),
+  importRelationships: document.querySelector("#import-relationships"),
+  importMode: document.querySelector("#import-mode"),
+  importSections: document.querySelector("#import-sections"),
+  openQuality: document.querySelector("#open-quality"),
 };
 
 const parentTypes = {
@@ -356,6 +371,155 @@ function showError(error) {
   showValidation({ valid: false, errors: [error.message] });
 }
 
+function openQualityCenter() {
+  const qualityWindow = window.open(
+    "/static/quality.html",
+    "ikg-knowledge-quality-center",
+    "popup=yes,resizable=yes,scrollbars=yes,width=1180,height=820",
+  );
+  qualityWindow?.focus();
+}
+
+function renderImportList(title, values, className = "") {
+  if (!values.length) {
+    return;
+  }
+  const section = document.createElement("section");
+  section.className = className;
+  const heading = document.createElement("h3");
+  heading.textContent = `${title} (${values.length})`;
+  const list = document.createElement("ul");
+  for (const value of values) {
+    const item = document.createElement("li");
+    item.textContent = value;
+    list.append(item);
+  }
+  section.append(heading, list);
+  elements.importSections.append(section);
+}
+
+function showImportPreview(preview) {
+  state.importToken = preview.token;
+  state.importPreviewImportable = preview.importable;
+  elements.importFormat.textContent = preview.format;
+  elements.importFound.textContent = String(preview.nodes_found);
+  elements.importRelationships.textContent = String(preview.relationships_found);
+  elements.importSections.replaceChildren();
+  renderImportList("Informazioni", [
+    ...preview.information,
+    `Nodes to add: ${preview.nodes_to_add}`,
+  ]);
+  renderImportList("Modifiche automatiche", preview.modifications);
+  renderImportList("Collisioni", preview.collisions, "import-error");
+  renderImportList("Duplicati", preview.duplicates);
+  renderMappingOptions(preview.unmapped_types);
+  renderWarningOptions(preview.warning_options);
+  renderImportList("Errori bloccanti", preview.errors, "import-error");
+  updateImportConfirmation();
+  if (!elements.importDialog.open) {
+    elements.importDialog.showModal();
+  }
+}
+
+function updateImportConfirmation() {
+  const warnings = [...elements.importSections.querySelectorAll(".warning-choice input")];
+  const warningsAccepted = warnings.every((checkbox) => checkbox.checked);
+  elements.confirmImport.disabled =
+    !state.importPreviewImportable || !warningsAccepted;
+}
+
+function renderMappingOptions(types) {
+  if (!types.length) {
+    return;
+  }
+  const section = document.createElement("section");
+  section.className = "mapping-options";
+  const heading = document.createElement("h3");
+  heading.textContent = `Mapping richiesti (${types.length})`;
+  section.append(heading);
+  for (const externalType of types) {
+    const row = document.createElement("label");
+    row.textContent = externalType;
+    const select = document.createElement("select");
+    select.dataset.externalType = externalType;
+    for (const canonicalType of ["macroarea", "area", "sottoarea"]) {
+      const option = document.createElement("option");
+      option.value = canonicalType;
+      option.textContent = canonicalType;
+      select.append(option);
+    }
+    row.append(select);
+    section.append(row);
+  }
+  const apply = document.createElement("button");
+  apply.type = "button";
+  apply.textContent = "Salva mapping e ricalcola";
+  apply.addEventListener("click", async () => {
+    if (!state.importFile) {
+      return;
+    }
+    const mappings = Object.fromEntries(
+      [...section.querySelectorAll("select")].map((select) => [
+        select.dataset.externalType,
+        select.value,
+      ]),
+    );
+    try {
+      await previewImport(state.importFile, mappings, true);
+    } catch (error) {
+      showError(error);
+    }
+  });
+  section.append(apply);
+  elements.importSections.append(section);
+}
+
+function renderWarningOptions(warnings) {
+  if (!warnings.length) {
+    return;
+  }
+  const section = document.createElement("section");
+  section.className = "import-warning";
+  const heading = document.createElement("h3");
+  heading.textContent = `Warning (${warnings.length})`;
+  section.append(heading);
+  for (const warning of warnings) {
+    const label = document.createElement("label");
+    label.className = "warning-choice";
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.value = warning.id;
+    checkbox.checked = false;
+    checkbox.addEventListener("change", updateImportConfirmation);
+    label.append(checkbox, document.createTextNode(`Applica correzione: ${warning.message}`));
+    section.append(label);
+  }
+  elements.importSections.append(section);
+}
+
+async function previewImport(file, mappings = {}, persistMappings = false) {
+  const parameters = new URLSearchParams({
+    filename: file.name,
+    mode: elements.importMode.value,
+    mappings: JSON.stringify(mappings),
+    persist_mappings: String(persistMappings),
+  });
+  const preview = await request(`/api/import/preview?${parameters}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/octet-stream" },
+    body: file,
+  });
+  showImportPreview(preview);
+}
+
+function closeImportDialog() {
+  state.importToken = null;
+  state.importFile = null;
+  state.importPreviewImportable = false;
+  elements.importDialog.close();
+  elements.importFile.value = "";
+}
+
 async function suggestId() {
   if (!state.isNew || state.idManuallyEdited || !elements.label.value.trim()) {
     return;
@@ -476,6 +640,64 @@ elements.deleteNode.addEventListener("click", async () => {
 elements.search.addEventListener("input", () => {
   loadTree().catch(showError);
 });
+elements.importOntology.addEventListener("click", async () => {
+  if (await confirmDiscard()) {
+    elements.importFile.click();
+  }
+});
+elements.openQuality.addEventListener("click", () => {
+  openQualityCenter();
+});
+elements.importFile.addEventListener("change", () => {
+  const file = elements.importFile.files[0];
+  if (file) {
+    state.importFile = file;
+    previewImport(file).catch(showError);
+  }
+});
+elements.closeImport.addEventListener("click", closeImportDialog);
+elements.cancelImport.addEventListener("click", closeImportDialog);
+elements.confirmImport.addEventListener("click", async () => {
+  if (!state.importToken) {
+    return;
+  }
+  try {
+    const result = await request("/api/import/confirm", {
+      method: "POST",
+      body: JSON.stringify({
+        token: state.importToken,
+        mode: elements.importMode.value,
+        accepted_warnings: [
+          ...elements.importSections.querySelectorAll(".warning-choice input:checked"),
+        ].map((checkbox) => checkbox.value),
+      }),
+    });
+    closeImportDialog();
+    state.selectedId = null;
+    state.selectedNode = null;
+    await loadTree("");
+    if (state.tree[0]) {
+      await selectNode(state.tree[0].id, true);
+    }
+    showValidation({ valid: true, errors: [] }, true);
+    const report = result.report;
+    elements.validationSummary.textContent =
+      `✔ Import completed · ${report.summary.nodes_added} nodes added`;
+    elements.validationErrors.replaceChildren();
+    for (const [label, value] of [
+      ["File", report.file],
+      ["Format", report.format],
+      ["Parser", report.parser],
+      ["Files modified", report.files_modified.join(", ")],
+    ]) {
+      const item = document.createElement("li");
+      item.textContent = `${label}: ${value}`;
+      elements.validationErrors.append(item);
+    }
+  } catch (error) {
+    showError(error);
+  }
+});
 elements.type.addEventListener("change", renderParentOptions);
 elements.label.addEventListener("input", () => {
   suggestId().catch(showError);
@@ -499,6 +721,15 @@ window.addEventListener("beforeunload", (event) => {
   if (state.dirty) {
     event.preventDefault();
     event.returnValue = "";
+  }
+});
+window.addEventListener("message", (event) => {
+  if (
+    event.origin === window.location.origin &&
+    event.data?.type === "ikg:navigate-node" &&
+    typeof event.data.nodeId === "string"
+  ) {
+    revealNode(event.data.nodeId).catch(showError);
   }
 });
 

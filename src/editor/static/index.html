@@ -12,6 +12,9 @@
       <div class="header-actions">
         <span id="save-status" class="save-status saved">Saved</span>
         <span id="validation-status" class="status-neutral">NOT VALIDATED</span>
+        <button id="open-quality" type="button">Knowledge Quality Center</button>
+        <button id="import-ontology" type="button">Importa Ontologia</button>
+        <input id="import-file" type="file" accept=".py,.json,.yaml,.yml,.md,.docx" hidden>
         <button id="add-child" type="button">Add macroarea</button>
         <button id="delete-node" class="danger" type="button" disabled>Delete</button>
       </div>
@@ -84,6 +87,30 @@
       </summary>
       <ul id="validation-errors"></ul>
     </details>
+
+    <dialog id="import-dialog" class="import-dialog">
+      <header>
+        <h2>Anteprima importazione</h2>
+        <button id="close-import" type="button" aria-label="Chiudi">×</button>
+      </header>
+      <dl class="import-summary">
+        <div><dt>Formato</dt><dd id="import-format">-</dd></div>
+        <div><dt>Nodi trovati</dt><dd id="import-found">0</dd></div>
+        <div><dt>Relazioni</dt><dd id="import-relationships">0</dd></div>
+      </dl>
+      <label class="import-mode" for="import-mode">
+        Modalità
+        <select id="import-mode">
+          <option value="assisted">Assistita</option>
+          <option value="automatic">Automatica</option>
+        </select>
+      </label>
+      <div id="import-sections"></div>
+      <footer>
+        <button id="cancel-import" type="button">Annulla</button>
+        <button id="confirm-import" class="primary" type="button" disabled>Conferma importazione</button>
+      </footer>
+    </dialog>
 
     <script src="/static/app.js"></script>
   </body>
