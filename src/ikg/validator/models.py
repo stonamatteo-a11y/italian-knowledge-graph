@@ -3,10 +3,12 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from enum import StrEnum
+from enum import Enum
 
 
-class Severity(StrEnum):
+class Severity(str, Enum):
+    """Public validation severity values, compatible with Python 3.10+."""
+
     ERROR = "ERROR"
     WARNING = "WARNING"
     INFO = "INFO"
