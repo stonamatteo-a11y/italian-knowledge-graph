@@ -42,6 +42,28 @@ Rules:
 6. Cross-domain links must be represented as semantic relations, not by duplicating nodes.
 7. Generated files must not be edited manually when a source file exists.
 
+## Canonical ontology data
+
+Ontology records are maintained in `ontology/macroareas.json`,
+`ontology/areas.json`, and `ontology/subareas.json`. Preserve record ordering,
+labels, descriptions, parent relationships, and stable identifiers unless the
+change is explicitly proposed and reviewed.
+
+After changing canonical ontology data, regenerate the runtime compatibility
+seed:
+
+```bash
+python scripts/generate_seed.py
+```
+
+Do not edit `ontology/seed_compressed.py` directly. It is deterministic generated
+output, and CI verifies that it matches the canonical JSON. The recovered
+`ontology/legacy_ontology_source.py` remains in the repository solely as
+migration provenance.
+
+Generation does not validate the meaning or quality of ontology changes. The
+deterministic Validator remains authoritative.
+
 ## Proposed workflow
 
 1. Open an issue describing the change.

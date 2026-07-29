@@ -33,7 +33,19 @@ The first imported seed contains:
 - 1,229 total nodes
 - 1,181 hierarchical `CONTAINS` edges
 
-The original generated material is preserved losslessly in `ontology/seed_compressed.py`. It is a temporary compatibility layer while the data is progressively reorganized into human-readable domain modules.
+The canonical ontology is maintained in the human-readable
+`ontology/macroareas.json`, `ontology/areas.json`, and
+`ontology/subareas.json` files. `ontology/seed_compressed.py` is a deterministic
+generated compatibility artifact and must not be edited directly.
+
+Regenerate it with:
+
+```bash
+python scripts/generate_seed.py
+```
+
+The recovered original source is retained in
+`ontology/legacy_ontology_source.py` for migration provenance.
 
 ## Community review
 
