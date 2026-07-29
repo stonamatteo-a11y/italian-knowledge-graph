@@ -1,0 +1,290 @@
+[
+  {
+    "id": "lingua_italiana",
+    "label": "Lingua italiana",
+    "description": "Storia, normativa, uso e varietà della lingua italiana",
+    "language": "it"
+  },
+  {
+    "id": "grammatica_linguistica",
+    "label": "Grammatica e linguistica",
+    "description": "Studio scientifico del linguaggio e delle sue strutture",
+    "language": "it"
+  },
+  {
+    "id": "letteratura",
+    "label": "Letteratura",
+    "description": "Produzione letteraria italiana e mondiale",
+    "language": "it"
+  },
+  {
+    "id": "storia",
+    "label": "Storia",
+    "description": "Studio del passato umano attraverso fonti e interpretazioni",
+    "language": "it"
+  },
+  {
+    "id": "geografia",
+    "label": "Geografia",
+    "description": "Studio della Terra, dei suoi abitanti e dei fenomeni spaziali",
+    "language": "it"
+  },
+  {
+    "id": "matematica",
+    "label": "Matematica",
+    "description": "Studio dei numeri, delle strutture, degli spazi e dei cambiamenti",
+    "language": "it"
+  },
+  {
+    "id": "logica",
+    "label": "Logica",
+    "description": "Studio del ragionamento valido e delle inferenze",
+    "language": "it"
+  },
+  {
+    "id": "statistica_probabilita",
+    "label": "Statistica e probabilità",
+    "description": "Raccolta, analisi dei dati e studio degli eventi casuali",
+    "language": "it"
+  },
+  {
+    "id": "fisica",
+    "label": "Fisica",
+    "description": "Studio della materia, dell'energia e delle loro interazioni",
+    "language": "it"
+  },
+  {
+    "id": "chimica",
+    "label": "Chimica",
+    "description": "Studio della composizione, struttura e trasformazione della materia",
+    "language": "it"
+  },
+  {
+    "id": "biologia",
+    "label": "Biologia",
+    "description": "Studio degli organismi viventi e dei processi vitali",
+    "language": "it"
+  },
+  {
+    "id": "medicina_salute",
+    "label": "Medicina e salute",
+    "description": "Scienza della cura, prevenzione e benessere dell'organismo umano",
+    "language": "it"
+  },
+  {
+    "id": "astronomia",
+    "label": "Astronomia",
+    "description": "Studio degli oggetti celesti e dell'universo",
+    "language": "it"
+  },
+  {
+    "id": "scienze_terra",
+    "label": "Scienze della Terra",
+    "description": "Studio della litosfera, idrosfera, atmosfera e loro dinamiche",
+    "language": "it"
+  },
+  {
+    "id": "ambiente_ecologia",
+    "label": "Ambiente ed ecologia",
+    "description": "Rapporti tra organismi e ambiente, sostenibilità e conservazione",
+    "language": "it"
+  },
+  {
+    "id": "informatica",
+    "label": "Informatica",
+    "description": "Studio teorico e pratico dell'elaborazione automatica dell'informazione",
+    "language": "it"
+  },
+  {
+    "id": "intelligenza_artificiale",
+    "label": "Intelligenza artificiale",
+    "description": "Sistemi computazionali in grado di simulare l'intelligenza umana",
+    "language": "it"
+  },
+  {
+    "id": "ingegneria",
+    "label": "Ingegneria",
+    "description": "Applicazione delle scienze esatte alla progettazione e costruzione",
+    "language": "it"
+  },
+  {
+    "id": "tecnologia",
+    "label": "Tecnologia",
+    "description": "Strumenti, tecniche e processi per risolvere problemi pratici",
+    "language": "it"
+  },
+  {
+    "id": "economia",
+    "label": "Economia",
+    "description": "Studio della produzione, distribuzione e consumo di beni e servizi",
+    "language": "it"
+  },
+  {
+    "id": "finanza",
+    "label": "Finanza",
+    "description": "Gestione del capitale, degli investimenti e dei mercati monetari",
+    "language": "it"
+  },
+  {
+    "id": "diritto",
+    "label": "Diritto",
+    "description": "Sistema di norme che regolano la convivenza umana",
+    "language": "it"
+  },
+  {
+    "id": "politica_istituzioni",
+    "label": "Politica e istituzioni",
+    "description": "Organizzazione del potere, governo e amministrazione pubblica",
+    "language": "it"
+  },
+  {
+    "id": "filosofia",
+    "label": "Filosofia",
+    "description": "Indagine critica sui fondamenti del sapere, dell'essere e dell'agire",
+    "language": "it"
+  },
+  {
+    "id": "etica",
+    "label": "Etica",
+    "description": "Studio dei principi morali e della condotta umana",
+    "language": "it"
+  },
+  {
+    "id": "psicologia",
+    "label": "Psicologia",
+    "description": "Studio scientifico del comportamento e dei processi mentali",
+    "language": "it"
+  },
+  {
+    "id": "sociologia",
+    "label": "Sociologia",
+    "description": "Studio delle strutture sociali e delle dinamiche collettive",
+    "language": "it"
+  },
+  {
+    "id": "antropologia",
+    "label": "Antropologia",
+    "description": "Studio dell'uomo in tutte le sue dimensioni biologiche e culturali",
+    "language": "it"
+  },
+  {
+    "id": "religioni",
+    "label": "Religioni",
+    "description": "Sistemi di credenze, pratiche rituali e fenomeni religiosi",
+    "language": "it"
+  },
+  {
+    "id": "arte",
+    "label": "Arte",
+    "description": "Espressione creativa attraverso forme visive e concettuali",
+    "language": "it"
+  },
+  {
+    "id": "musica",
+    "label": "Musica",
+    "description": "Arte dell'organizzazione dei suoni nel tempo",
+    "language": "it"
+  },
+  {
+    "id": "cinema_spettacolo",
+    "label": "Cinema e spettacolo",
+    "description": "Arti sceniche, cinematografiche e dello spettacolo dal vivo",
+    "language": "it"
+  },
+  {
+    "id": "architettura",
+    "label": "Architettura",
+    "description": "Arte e tecnica di progettare e costruire spazi abitati",
+    "language": "it"
+  },
+  {
+    "id": "comunicazione",
+    "label": "Comunicazione",
+    "description": "Processi di trasmissione e scambio di informazioni",
+    "language": "it"
+  },
+  {
+    "id": "educazione",
+    "label": "Educazione",
+    "description": "Processi di formazione, istruzione e sviluppo delle persone",
+    "language": "it"
+  },
+  {
+    "id": "lavoro_professioni",
+    "label": "Lavoro e professioni",
+    "description": "Attività lavorative, mercato del lavoro e figure professionali",
+    "language": "it"
+  },
+  {
+    "id": "industria_manifattura",
+    "label": "Industria e manifattura",
+    "description": "Trasformazione industriale delle materie prime in prodotti",
+    "language": "it"
+  },
+  {
+    "id": "agricoltura",
+    "label": "Agricoltura",
+    "description": "Coltivazione del suolo, allevamento e produzione agroalimentare",
+    "language": "it"
+  },
+  {
+    "id": "energia",
+    "label": "Energia",
+    "description": "Fonti, produzione, distribuzione e consumo di energia",
+    "language": "it"
+  },
+  {
+    "id": "trasporti",
+    "label": "Trasporti",
+    "description": "Sistemi e infrastrutture per il movimento di persone e merci",
+    "language": "it"
+  },
+  {
+    "id": "cucina_alimentazione",
+    "label": "Cucina e alimentazione",
+    "description": "Preparazione dei cibi, dietetica e cultura gastronomica",
+    "language": "it"
+  },
+  {
+    "id": "sport",
+    "label": "Sport",
+    "description": "Attività fisiche agonistiche e ricreative regolate",
+    "language": "it"
+  },
+  {
+    "id": "vita_quotidiana",
+    "label": "Vita quotidiana",
+    "description": "Routine, pratiche e aspetti ordinari dell'esistenza",
+    "language": "it"
+  },
+  {
+    "id": "competenze_pratiche",
+    "label": "Competenze pratiche",
+    "description": "Abilità manuali e know-how per la gestione autonoma della vita",
+    "language": "it"
+  },
+  {
+    "id": "cultura_digitale",
+    "label": "Cultura digitale",
+    "description": "Competenze, pratiche e fenomeni della società digitale",
+    "language": "it"
+  },
+  {
+    "id": "sicurezza",
+    "label": "Sicurezza",
+    "description": "Protezione da rischi, minacce e pericoli per persone e beni",
+    "language": "it"
+  },
+  {
+    "id": "cittadinanza",
+    "label": "Cittadinanza",
+    "description": "Diritti, doveri e partecipazione alla vita collettiva",
+    "language": "it"
+  },
+  {
+    "id": "attualita_societa",
+    "label": "Attualità e società",
+    "description": "Fenomeni, dibattiti e dinamiche del contemporaneo",
+    "language": "it"
+  }
+]

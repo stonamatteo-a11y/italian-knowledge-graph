@@ -18,6 +18,10 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install development dependencies
         run: python -m pip install -r requirements-dev.txt
+      - name: Verify generated ontology seed
+        run: |
+          python scripts/generate_seed.py
+          git diff --exit-code -- ontology/seed_compressed.py
       - name: Validate ontology
         run: python -m validators.validate_ontology
       - name: Run tests

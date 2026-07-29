@@ -1,0 +1,3299 @@
+[
+  {
+    "id": "li_storia",
+    "label": "Storia della lingua",
+    "parent_id": "lingua_italiana",
+    "description": "Evoluzione storica dell'italiano dal latino ai giorni nostri",
+    "language": "it"
+  },
+  {
+    "id": "li_normativa",
+    "label": "Normativa linguistica",
+    "parent_id": "lingua_italiana",
+    "description": "Regole, accademie e istituzioni che normano la lingua",
+    "language": "it"
+  },
+  {
+    "id": "li_lessico",
+    "label": "Lessicologia e lessicografia",
+    "parent_id": "lingua_italiana",
+    "description": "Studio del vocabolario, dei neologismi e dei dizionari",
+    "language": "it"
+  },
+  {
+    "id": "li_varieta",
+    "label": "Varietà linguistiche",
+    "parent_id": "lingua_italiana",
+    "description": "Dialetti, registri, italiano regionale e socioletti",
+    "language": "it"
+  },
+  {
+    "id": "li_ortografia",
+    "label": "Ortografia e pronuncia",
+    "parent_id": "lingua_italiana",
+    "description": "Norme di scrittura, accento e fonetica italiana",
+    "language": "it"
+  },
+  {
+    "id": "li_uso",
+    "label": "Uso della lingua",
+    "parent_id": "lingua_italiana",
+    "description": "Pratiche comunicative, lingua dei media e dei giovani",
+    "language": "it"
+  },
+  {
+    "id": "li_italiano_l2",
+    "label": "Italiano come L2",
+    "parent_id": "lingua_italiana",
+    "description": "Insegnamento e apprendimento dell'italiano per stranieri",
+    "language": "it"
+  },
+  {
+    "id": "li_tecniche_scrittura",
+    "label": "Tecniche di scrittura",
+    "parent_id": "lingua_italiana",
+    "description": "Stili, generi testuali e strategie di composizione",
+    "language": "it"
+  },
+  {
+    "id": "gl_fonologia",
+    "label": "Fonologia e fonetica",
+    "parent_id": "grammatica_linguistica",
+    "description": "Studio dei suoni del linguaggio",
+    "language": "it"
+  },
+  {
+    "id": "gl_morfologia",
+    "label": "Morfologia",
+    "parent_id": "grammatica_linguistica",
+    "description": "Formazione delle parole, flessione e derivazione",
+    "language": "it"
+  },
+  {
+    "id": "gl_sintassi",
+    "label": "Sintassi",
+    "parent_id": "grammatica_linguistica",
+    "description": "Struttura delle frasi e relazioni tra costituenti",
+    "language": "it"
+  },
+  {
+    "id": "gl_semantica",
+    "label": "Semantica e pragmatica",
+    "parent_id": "grammatica_linguistica",
+    "description": "Significato delle espressioni e uso contestuale",
+    "language": "it"
+  },
+  {
+    "id": "gl_tipologia",
+    "label": "Tipologia linguistica",
+    "parent_id": "grammatica_linguistica",
+    "description": "Classificazione delle lingue del mondo",
+    "language": "it"
+  },
+  {
+    "id": "gl_sociolinguistica",
+    "label": "Sociolinguistica",
+    "parent_id": "grammatica_linguistica",
+    "description": "Rapporto tra lingua e società",
+    "language": "it"
+  },
+  {
+    "id": "gl_psicolinguistica",
+    "label": "Psicolinguistica",
+    "parent_id": "grammatica_linguistica",
+    "description": "Processi mentali sottostanti al linguaggio",
+    "language": "it"
+  },
+  {
+    "id": "gl_neurolinguistica",
+    "label": "Neurolinguistica",
+    "parent_id": "grammatica_linguistica",
+    "description": "Basi neurali del linguaggio e patologie",
+    "language": "it"
+  },
+  {
+    "id": "gl_linguistica_computazionale",
+    "label": "Linguistica computazionale",
+    "parent_id": "grammatica_linguistica",
+    "description": "Elaborazione del linguaggio naturale con metodi informatici",
+    "language": "it"
+  },
+  {
+    "id": "gl_stilistica",
+    "label": "Stilistica e retorica",
+    "parent_id": "grammatica_linguistica",
+    "description": "Analisi dello stile e delle figure retoriche",
+    "language": "it"
+  },
+  {
+    "id": "let_italiana",
+    "label": "Letteratura italiana",
+    "parent_id": "letteratura",
+    "description": "Opere, autori e movimenti della letteratura in Italia",
+    "language": "it"
+  },
+  {
+    "id": "let_europea",
+    "label": "Letteratura europea",
+    "parent_id": "letteratura",
+    "description": "Tradizioni letterarie dei principali paesi europei",
+    "language": "it"
+  },
+  {
+    "id": "let_mondiale",
+    "label": "Letteratura mondiale",
+    "parent_id": "letteratura",
+    "description": "Letterature extraeuropee e letteratura comparata",
+    "language": "it"
+  },
+  {
+    "id": "let_poesia",
+    "label": "Poesia",
+    "parent_id": "letteratura",
+    "description": "Generi poetici, metrica e movimenti lirici",
+    "language": "it"
+  },
+  {
+    "id": "let_narrativa",
+    "label": "Narrativa",
+    "parent_id": "letteratura",
+    "description": "Romanzo, racconto, novella e tecniche narrative",
+    "language": "it"
+  },
+  {
+    "id": "let_teatro",
+    "label": "Teatro letterario",
+    "parent_id": "letteratura",
+    "description": "Drammaturgia e storia del teatro come forma letteraria",
+    "language": "it"
+  },
+  {
+    "id": "let_saggistica",
+    "label": "Saggistica e critica",
+    "parent_id": "letteratura",
+    "description": "Opere di critica letteraria, teoria e saggistica",
+    "language": "it"
+  },
+  {
+    "id": "let_generi",
+    "label": "Generi letterari",
+    "parent_id": "letteratura",
+    "description": "Classificazione e caratteristiche dei generi",
+    "language": "it"
+  },
+  {
+    "id": "let_orale",
+    "label": "Tradizione orale",
+    "parent_id": "letteratura",
+    "description": "Fiabe, leggende e narrazione popolare",
+    "language": "it"
+  },
+  {
+    "id": "let_contemporanea",
+    "label": "Letteratura contemporanea",
+    "parent_id": "letteratura",
+    "description": "Produzione letteraria dagli anni Ottanta a oggi",
+    "language": "it"
+  },
+  {
+    "id": "st_antica",
+    "label": "Storia antica",
+    "parent_id": "storia",
+    "description": "Civiltà del Mediterraneo e del Vicino Oriente fino al V secolo",
+    "language": "it"
+  },
+  {
+    "id": "st_medioevo",
+    "label": "Storia medievale",
+    "parent_id": "storia",
+    "description": "Europa e Mediterraneo dal V al XV secolo",
+    "language": "it"
+  },
+  {
+    "id": "st_moderna",
+    "label": "Storia moderna",
+    "parent_id": "storia",
+    "description": "Età moderna dal XV al XVIII secolo",
+    "language": "it"
+  },
+  {
+    "id": "st_contemporanea",
+    "label": "Storia contemporanea",
+    "parent_id": "storia",
+    "description": "Dalla Rivoluzione francese al presente",
+    "language": "it"
+  },
+  {
+    "id": "st_italia",
+    "label": "Storia d'Italia",
+    "parent_id": "storia",
+    "description": "Eventi politici, sociali e culturali della penisola italiana",
+    "language": "it"
+  },
+  {
+    "id": "st_metodologia",
+    "label": "Storiografia e metodologia",
+    "parent_id": "storia",
+    "description": "Teoria della storia, fonti e metodi critici",
+    "language": "it"
+  },
+  {
+    "id": "st_economica",
+    "label": "Storia economica",
+    "parent_id": "storia",
+    "description": "Evoluzione dei sistemi economici e del lavoro",
+    "language": "it"
+  },
+  {
+    "id": "st_sociale",
+    "label": "Storia sociale",
+    "parent_id": "storia",
+    "description": "Vita quotidiana, classi e stratificazione nel tempo",
+    "language": "it"
+  },
+  {
+    "id": "st_culturale",
+    "label": "Storia culturale",
+    "parent_id": "storia",
+    "description": "Mentalità, rappresentazioni e pratiche simboliche",
+    "language": "it"
+  },
+  {
+    "id": "st_militare",
+    "label": "Storia militare",
+    "parent_id": "storia",
+    "description": "Guerre, strategie e tecnologie belliche",
+    "language": "it"
+  },
+  {
+    "id": "geo_fisica",
+    "label": "Geografia fisica",
+    "parent_id": "geografia",
+    "description": "Rilievi, climi, idrografia e ecosistemi terrestri",
+    "language": "it"
+  },
+  {
+    "id": "geo_umana",
+    "label": "Geografia umana",
+    "parent_id": "geografia",
+    "description": "Popolazione, insediamenti e attività antropiche",
+    "language": "it"
+  },
+  {
+    "id": "geo_politica",
+    "label": "Geografia politica",
+    "parent_id": "geografia",
+    "description": "Confini, Stati e organizzazione territoriale",
+    "language": "it"
+  },
+  {
+    "id": "geo_economica",
+    "label": "Geografia economica",
+    "parent_id": "geografia",
+    "description": "Distribuzione delle risorse e dei settori produttivi",
+    "language": "it"
+  },
+  {
+    "id": "geo_regionale",
+    "label": "Geografia regionale",
+    "parent_id": "geografia",
+    "description": "Studio delle aree geografiche del mondo",
+    "language": "it"
+  },
+  {
+    "id": "geo_italia",
+    "label": "Geografia dell'Italia",
+    "parent_id": "geografia",
+    "description": "Territorio, regioni e caratteristiche della penisola",
+    "language": "it"
+  },
+  {
+    "id": "geo_europa",
+    "label": "Geografia dell'Europa",
+    "parent_id": "geografia",
+    "description": "Caratteristiche fisiche e umane del continente europeo",
+    "language": "it"
+  },
+  {
+    "id": "geo_cartografia",
+    "label": "Cartografia e GIS",
+    "parent_id": "geografia",
+    "description": "Tecniche di rappresentazione e sistemi informativi geografici",
+    "language": "it"
+  },
+  {
+    "id": "geo_ambientale",
+    "label": "Geografia ambientale",
+    "parent_id": "geografia",
+    "description": "Rapporto tra ambiente e sviluppo sostenibile",
+    "language": "it"
+  },
+  {
+    "id": "geo_urbana",
+    "label": "Geografia urbana",
+    "parent_id": "geografia",
+    "description": "Città, metropolitanizzazione e pianificazione",
+    "language": "it"
+  },
+  {
+    "id": "mat_aritmetica",
+    "label": "Aritmetica",
+    "parent_id": "matematica",
+    "description": "Numeri, operazioni e proprietà fondamentali",
+    "language": "it"
+  },
+  {
+    "id": "mat_algebra",
+    "label": "Algebra",
+    "parent_id": "matematica",
+    "description": "Strutture algebriche, equazioni e polinomi",
+    "language": "it"
+  },
+  {
+    "id": "mat_geometria",
+    "label": "Geometria",
+    "parent_id": "matematica",
+    "description": "Studio delle forme, spazi e trasformazioni",
+    "language": "it"
+  },
+  {
+    "id": "mat_analisi",
+    "label": "Analisi matematica",
+    "parent_id": "matematica",
+    "description": "Calcolo differenziale, integrale e successioni",
+    "language": "it"
+  },
+  {
+    "id": "mat_probabilita",
+    "label": "Calcolo delle probabilità",
+    "parent_id": "matematica",
+    "description": "Teoria assiomatica e distribuzioni",
+    "language": "it"
+  },
+  {
+    "id": "mat_statistica_matematica",
+    "label": "Statistica matematica",
+    "parent_id": "matematica",
+    "description": "Inferenza, stima e test d'ipotesi",
+    "language": "it"
+  },
+  {
+    "id": "mat_logica_matematica",
+    "label": "Logica matematica",
+    "parent_id": "matematica",
+    "description": "Sistemi formali, dimostrazioni e teoria dei modelli",
+    "language": "it"
+  },
+  {
+    "id": "mat_storia",
+    "label": "Storia della matematica",
+    "parent_id": "matematica",
+    "description": "Evoluzione del pensiero matematico nelle civiltà",
+    "language": "it"
+  },
+  {
+    "id": "mat_matematica_applicata",
+    "label": "Matematica applicata",
+    "parent_id": "matematica",
+    "description": "Modelli matematici per scienze e ingegneria",
+    "language": "it"
+  },
+  {
+    "id": "mat_teoria_numeri",
+    "label": "Teoria dei numeri",
+    "parent_id": "matematica",
+    "description": "Proprietà degli interi e strutture aritmetiche",
+    "language": "it"
+  },
+  {
+    "id": "log_formale",
+    "label": "Logica formale",
+    "parent_id": "logica",
+    "description": "Sistemi deduttivi, sintassi e semantica",
+    "language": "it"
+  },
+  {
+    "id": "log_proposizionale",
+    "label": "Logica proposizionale",
+    "parent_id": "logica",
+    "description": "Calcolo dei connettivi e delle tautologie",
+    "language": "it"
+  },
+  {
+    "id": "log_predicativa",
+    "label": "Logica predicativa",
+    "parent_id": "logica",
+    "description": "Quantificatori, predicati e strutture del primo ordine",
+    "language": "it"
+  },
+  {
+    "id": "log_modale",
+    "label": "Logica modale",
+    "parent_id": "logica",
+    "description": "Necessità, possibilità e mondi possibili",
+    "language": "it"
+  },
+  {
+    "id": "log_filosofica",
+    "label": "Logica filosofica",
+    "parent_id": "logica",
+    "description": "Fondamenti, paradossi e teorie del ragionamento",
+    "language": "it"
+  },
+  {
+    "id": "log_informatica",
+    "label": "Logica per l'informatica",
+    "parent_id": "logica",
+    "description": "Programmazione logica, verifica e dimostrazione automatica",
+    "language": "it"
+  },
+  {
+    "id": "log_argomentazione",
+    "label": "Teoria dell'argomentazione",
+    "parent_id": "logica",
+    "description": "Schemi inferenziali e fallacie",
+    "language": "it"
+  },
+  {
+    "id": "log_decisione",
+    "label": "Teoria della decisione",
+    "parent_id": "logica",
+    "description": "Scelta razionale sotto incertezza",
+    "language": "it"
+  },
+  {
+    "id": "sp_descrittiva",
+    "label": "Statistica descrittiva",
+    "parent_id": "statistica_probabilita",
+    "description": "Rappresentazione e sintesi dei dati",
+    "language": "it"
+  },
+  {
+    "id": "sp_inferenziale",
+    "label": "Statistica inferenziale",
+    "parent_id": "statistica_probabilita",
+    "description": "Stima, intervalli di confidenza e test",
+    "language": "it"
+  },
+  {
+    "id": "sp_probabilita",
+    "label": "Teoria della probabilità",
+    "parent_id": "statistica_probabilita",
+    "description": "Assiomi, variabili casuali e teoremi limite",
+    "language": "it"
+  },
+  {
+    "id": "sp_modelli",
+    "label": "Modelli statistici",
+    "parent_id": "statistica_probabilita",
+    "description": "Regressione, ANOVA e modelli lineari",
+    "language": "it"
+  },
+  {
+    "id": "sp_campionamento",
+    "label": "Tecniche di campionamento",
+    "parent_id": "statistica_probabilita",
+    "description": "Metodi per selezionare sottoinsiemi rappresentativi",
+    "language": "it"
+  },
+  {
+    "id": "sp_dati",
+    "label": "Analisi dei dati",
+    "parent_id": "statistica_probabilita",
+    "description": "Esplorazione, pulizia e preparazione dei dataset",
+    "language": "it"
+  },
+  {
+    "id": "sp_bayesiana",
+    "label": "Statistica bayesiana",
+    "parent_id": "statistica_probabilita",
+    "description": "Approccio basato sul teorema di Bayes",
+    "language": "it"
+  },
+  {
+    "id": "sp_sperimentali",
+    "label": "Progetti sperimentali",
+    "parent_id": "statistica_probabilita",
+    "description": "Design degli esperimenti e controllo delle variabili",
+    "language": "it"
+  },
+  {
+    "id": "sp_applicazioni",
+    "label": "Applicazioni pratiche",
+    "parent_id": "statistica_probabilita",
+    "description": "Sondaggi, demografia e ricerca di mercato",
+    "language": "it"
+  },
+  {
+    "id": "fis_meccanica",
+    "label": "Meccanica classica",
+    "parent_id": "fisica",
+    "description": "Cinematica, dinamica, statica e fluidi",
+    "language": "it"
+  },
+  {
+    "id": "fis_termodinamica",
+    "label": "Termodinamica",
+    "parent_id": "fisica",
+    "description": "Calore, lavoro, entropia e macchine termiche",
+    "language": "it"
+  },
+  {
+    "id": "fis_elettromagnetismo",
+    "label": "Elettromagnetismo",
+    "parent_id": "fisica",
+    "description": "Elettricità, magnetismo e onde elettromagnetiche",
+    "language": "it"
+  },
+  {
+    "id": "fis_ottica",
+    "label": "Ottica",
+    "parent_id": "fisica",
+    "description": "Luce, lenti, interferenza e diffrazione",
+    "language": "it"
+  },
+  {
+    "id": "fis_relativita",
+    "label": "Relatività",
+    "parent_id": "fisica",
+    "description": "Teorie ristretta e generale di Einstein",
+    "language": "it"
+  },
+  {
+    "id": "fis_quantistica",
+    "label": "Meccanica quantistica",
+    "parent_id": "fisica",
+    "description": "Dualismo onda-particella, principio di indeterminazione",
+    "language": "it"
+  },
+  {
+    "id": "fis_nucleare",
+    "label": "Fisica nucleare",
+    "parent_id": "fisica",
+    "description": "Nucleo atomico, radioattività e reazioni nucleari",
+    "language": "it"
+  },
+  {
+    "id": "fis_particelle",
+    "label": "Fisica delle particelle",
+    "parent_id": "fisica",
+    "description": "Quark, leptoni, bosoni e interazioni fondamentali",
+    "language": "it"
+  },
+  {
+    "id": "fis_astrofisica",
+    "label": "Astrofisica",
+    "parent_id": "fisica",
+    "description": "Fisica applicata agli oggetti celesti",
+    "language": "it"
+  },
+  {
+    "id": "fis_storia",
+    "label": "Storia della fisica",
+    "parent_id": "fisica",
+    "description": "Evoluzione delle teorie fisiche e dei grandi esperimenti",
+    "language": "it"
+  },
+  {
+    "id": "chim_generale",
+    "label": "Chimica generale",
+    "parent_id": "chimica",
+    "description": "Struttura atomica, legami e stechiometria",
+    "language": "it"
+  },
+  {
+    "id": "chim_organica",
+    "label": "Chimica organica",
+    "parent_id": "chimica",
+    "description": "Composti del carbonio, reazioni e sintesi",
+    "language": "it"
+  },
+  {
+    "id": "chim_inorganica",
+    "label": "Chimica inorganica",
+    "parent_id": "chimica",
+    "description": "Composti minerali, metalli e non metalli",
+    "language": "it"
+  },
+  {
+    "id": "chim_analitica",
+    "label": "Chimica analitica",
+    "parent_id": "chimica",
+    "description": "Metodi di identificazione e quantificazione",
+    "language": "it"
+  },
+  {
+    "id": "chim_fisica",
+    "label": "Chimica fisica",
+    "parent_id": "chimica",
+    "description": "Termodinamica, cinetica e spettroscopia",
+    "language": "it"
+  },
+  {
+    "id": "chim_biochimica",
+    "label": "Biochimica",
+    "parent_id": "chimica",
+    "description": "Processi chimici nei sistemi viventi",
+    "language": "it"
+  },
+  {
+    "id": "chim_ambientale",
+    "label": "Chimica ambientale",
+    "parent_id": "chimica",
+    "description": "Inquinanti, cicli biogeochimici e sostenibilità",
+    "language": "it"
+  },
+  {
+    "id": "chim_materiali",
+    "label": "Scienza dei materiali",
+    "parent_id": "chimica",
+    "description": "Proprietà e applicazioni dei materiali",
+    "language": "it"
+  },
+  {
+    "id": "chim_industriale",
+    "label": "Chimica industriale",
+    "parent_id": "chimica",
+    "description": "Processi produttivi e ingegneria chimica",
+    "language": "it"
+  },
+  {
+    "id": "chim_storia",
+    "label": "Storia della chimica",
+    "parent_id": "chimica",
+    "description": "Dall'alchimia alla chimica moderna",
+    "language": "it"
+  },
+  {
+    "id": "bio_botanica",
+    "label": "Botanica",
+    "parent_id": "biologia",
+    "description": "Studio delle piante e dei loro processi vitali",
+    "language": "it"
+  },
+  {
+    "id": "bio_zoologia",
+    "label": "Zoologia",
+    "parent_id": "biologia",
+    "description": "Studio degli animali, tassonomia e comportamento",
+    "language": "it"
+  },
+  {
+    "id": "bio_genetica",
+    "label": "Genetica",
+    "parent_id": "biologia",
+    "description": "Ereditarietà, DNA, genomi e ingegneria genetica",
+    "language": "it"
+  },
+  {
+    "id": "bio_microbiologia",
+    "label": "Microbiologia",
+    "parent_id": "biologia",
+    "description": "Batteri, virus, funghi e microrganismi",
+    "language": "it"
+  },
+  {
+    "id": "bio_ecologia",
+    "label": "Ecologia biologica",
+    "parent_id": "biologia",
+    "description": "Interazioni tra organismi e ambiente",
+    "language": "it"
+  },
+  {
+    "id": "bio_evolution",
+    "label": "Evoluzione",
+    "parent_id": "biologia",
+    "description": "Teoria darwiniana, speciazione e filogenesi",
+    "language": "it"
+  },
+  {
+    "id": "bio_cellulare",
+    "label": "Biologia cellulare",
+    "parent_id": "biologia",
+    "description": "Struttura e funzione della cellula",
+    "language": "it"
+  },
+  {
+    "id": "bio_molecolare",
+    "label": "Biologia molecolare",
+    "parent_id": "biologia",
+    "description": "Processi molecolari della replicazione e espressione genica",
+    "language": "it"
+  },
+  {
+    "id": "bio_fisiologia",
+    "label": "Fisiologia",
+    "parent_id": "biologia",
+    "description": "Funzioni degli organismi e dei loro apparati",
+    "language": "it"
+  },
+  {
+    "id": "bio_antropologia",
+    "label": "Antropologia biologica",
+    "parent_id": "biologia",
+    "description": "Evoluzione umana e biodiversità",
+    "language": "it"
+  },
+  {
+    "id": "med_anatomia",
+    "label": "Anatomia",
+    "parent_id": "medicina_salute",
+    "description": "Struttura del corpo umano",
+    "language": "it"
+  },
+  {
+    "id": "med_fisiologia",
+    "label": "Fisiologia umana",
+    "parent_id": "medicina_salute",
+    "description": "Funzioni degli apparati e degli organi",
+    "language": "it"
+  },
+  {
+    "id": "med_patologia",
+    "label": "Patologia",
+    "parent_id": "medicina_salute",
+    "description": "Studio delle malattie e delle loro cause",
+    "language": "it"
+  },
+  {
+    "id": "med_farmacologia",
+    "label": "Farmacologia",
+    "parent_id": "medicina_salute",
+    "description": "Farmaci, meccanismi d'azione e terapie",
+    "language": "it"
+  },
+  {
+    "id": "med_chirurgia",
+    "label": "Chirurgia",
+    "parent_id": "medicina_salute",
+    "description": "Tecniche operatorie e specialità chirurgiche",
+    "language": "it"
+  },
+  {
+    "id": "med_psichiatria",
+    "label": "Psichiatria e salute mentale",
+    "parent_id": "medicina_salute",
+    "description": "Disturbi psichici e trattamenti",
+    "language": "it"
+  },
+  {
+    "id": "med_pediatria",
+    "label": "Pediatria",
+    "parent_id": "medicina_salute",
+    "description": "Medicina dell'infanzia e dell'adolescenza",
+    "language": "it"
+  },
+  {
+    "id": "med_prevenzione",
+    "label": "Medicina preventiva",
+    "parent_id": "medicina_salute",
+    "description": "Igiene, vaccini e promozione della salute",
+    "language": "it"
+  },
+  {
+    "id": "med_nutrizione",
+    "label": "Nutrizione clinica",
+    "parent_id": "medicina_salute",
+    "description": "Dieta, metabolismo e patologie nutrizionali",
+    "language": "it"
+  },
+  {
+    "id": "med_emergenza",
+    "label": "Medicina d'emergenza",
+    "parent_id": "medicina_salute",
+    "description": "Pronto soccorso, rianimazione e trauma",
+    "language": "it"
+  },
+  {
+    "id": "astro_sistema_solare",
+    "label": "Sistema solare",
+    "parent_id": "astronomia",
+    "description": "Pianeti, satelliti, asteroidi e comete",
+    "language": "it"
+  },
+  {
+    "id": "astro_stelle",
+    "label": "Stelle ed evoluzione stellare",
+    "parent_id": "astronomia",
+    "description": "Nascita, vita e morte delle stelle",
+    "language": "it"
+  },
+  {
+    "id": "astro_galassie",
+    "label": "Galassie e cosmologia",
+    "parent_id": "astronomia",
+    "description": "Struttura dell'universo e modelli cosmologici",
+    "language": "it"
+  },
+  {
+    "id": "astro_osservazione",
+    "label": "Osservazione astronomica",
+    "parent_id": "astronomia",
+    "description": "Strumenti, tecniche e cataloghi celesti",
+    "language": "it"
+  },
+  {
+    "id": "astro_esopianeti",
+    "label": "Esopianeti",
+    "parent_id": "astronomia",
+    "description": "Pianeti extrasolari e ricerca di vita",
+    "language": "it"
+  },
+  {
+    "id": "astro_radio",
+    "label": "Radioastronomia",
+    "parent_id": "astronomia",
+    "description": "Studio delle onde radio cosmiche",
+    "language": "it"
+  },
+  {
+    "id": "astro_storia",
+    "label": "Storia dell'astronomia",
+    "parent_id": "astronomia",
+    "description": "Dall'antichità all'astronomia moderna",
+    "language": "it"
+  },
+  {
+    "id": "astro_astronautica",
+    "label": "Astronautica",
+    "parent_id": "astronomia",
+    "description": "Tecnologie per l'esplorazione spaziale",
+    "language": "it"
+  },
+  {
+    "id": "st_geologia",
+    "label": "Geologia",
+    "parent_id": "scienze_terra",
+    "description": "Studio della litosfera, rocce e minerali",
+    "language": "it"
+  },
+  {
+    "id": "st_vulcanologia",
+    "label": "Vulcanologia",
+    "parent_id": "scienze_terra",
+    "description": "Vulcani, magma ed eruzioni",
+    "language": "it"
+  },
+  {
+    "id": "st_sismologia",
+    "label": "Sismologia",
+    "parent_id": "scienze_terra",
+    "description": "Terremoti, onde sismiche e rischio sismico",
+    "language": "it"
+  },
+  {
+    "id": "st_paleontologia",
+    "label": "Paleontologia",
+    "parent_id": "scienze_terra",
+    "description": "Fossili ed evoluzione della vita sulla Terra",
+    "language": "it"
+  },
+  {
+    "id": "st_idrogeologia",
+    "label": "Idrogeologia",
+    "parent_id": "scienze_terra",
+    "description": "Acque sotterranee e loro dinamica",
+    "language": "it"
+  },
+  {
+    "id": "st_oceanografia",
+    "label": "Oceanografia",
+    "parent_id": "scienze_terra",
+    "description": "Studio degli oceani e dei loro fenomeni",
+    "language": "it"
+  },
+  {
+    "id": "st_climatologia",
+    "label": "Climatologia",
+    "parent_id": "scienze_terra",
+    "description": "Climi del passato e del presente",
+    "language": "it"
+  },
+  {
+    "id": "st_geochimica",
+    "label": "Geochimica",
+    "parent_id": "scienze_terra",
+    "description": "Composizione chimica della Terra",
+    "language": "it"
+  },
+  {
+    "id": "st_geofisica",
+    "label": "Geofisica",
+    "parent_id": "scienze_terra",
+    "description": "Fisica della Terra e dei suoi campi",
+    "language": "it"
+  },
+  {
+    "id": "st_cartografia_geologica",
+    "label": "Cartografia geologica",
+    "parent_id": "scienze_terra",
+    "description": "Rappresentazione del sottosuolo",
+    "language": "it"
+  },
+  {
+    "id": "amb_ecosistemi",
+    "label": "Ecosistemi",
+    "parent_id": "ambiente_ecologia",
+    "description": "Comunità biotiche e abiotiche e loro dinamiche",
+    "language": "it"
+  },
+  {
+    "id": "amb_biodiversita",
+    "label": "Biodiversità",
+    "parent_id": "ambiente_ecologia",
+    "description": "Variabilità della vita a tutti i livelli",
+    "language": "it"
+  },
+  {
+    "id": "amb_cambiamento_climatico",
+    "label": "Cambiamento climatico",
+    "parent_id": "ambiente_ecologia",
+    "description": "Riscaldamento globale e sue conseguenze",
+    "language": "it"
+  },
+  {
+    "id": "amb_inquinamento",
+    "label": "Inquinamento",
+    "parent_id": "ambiente_ecologia",
+    "description": "Contaminazione dell'aria, acqua e suolo",
+    "language": "it"
+  },
+  {
+    "id": "amb_sostenibilita",
+    "label": "Sviluppo sostenibile",
+    "parent_id": "ambiente_ecologia",
+    "description": "Modelli di sviluppo a basso impatto ambientale",
+    "language": "it"
+  },
+  {
+    "id": "amb_energie_rinnovabili",
+    "label": "Energie rinnovabili",
+    "parent_id": "ambiente_ecologia",
+    "description": "Fonti energetiche alternative e pulite",
+    "language": "it"
+  },
+  {
+    "id": "amb_gestione_risorse",
+    "label": "Gestione delle risorse naturali",
+    "parent_id": "ambiente_ecologia",
+    "description": "Acqua, suolo, foreste e pesca",
+    "language": "it"
+  },
+  {
+    "id": "amb_urbanistica_verde",
+    "label": "Urbanistica verde",
+    "parent_id": "ambiente_ecologia",
+    "description": "Città sostenibili e infrastrutture verdi",
+    "language": "it"
+  },
+  {
+    "id": "amb_educazione_ambientale",
+    "label": "Educazione ambientale",
+    "parent_id": "ambiente_ecologia",
+    "description": "Sensibilizzazione e comportamenti eco-sostenibili",
+    "language": "it"
+  },
+  {
+    "id": "amb_politiche",
+    "label": "Politiche ambientali",
+    "parent_id": "ambiente_ecologia",
+    "description": "Normative, accordi internazionali e governance",
+    "language": "it"
+  },
+  {
+    "id": "info_algoritmi",
+    "label": "Algoritmi e strutture dati",
+    "parent_id": "informatica",
+    "description": "Progettazione e analisi di algoritmi",
+    "language": "it"
+  },
+  {
+    "id": "info_programmazione",
+    "label": "Programmazione",
+    "parent_id": "informatica",
+    "description": "Linguaggi, paradigmi e tecniche di codifica",
+    "language": "it"
+  },
+  {
+    "id": "info_software",
+    "label": "Ingegneria del software",
+    "parent_id": "informatica",
+    "description": "Progettazione, sviluppo e manutenzione di sistemi",
+    "language": "it"
+  },
+  {
+    "id": "info_architetture",
+    "label": "Architetture dei calcolatori",
+    "parent_id": "informatica",
+    "description": "Hardware, processori e memorie",
+    "language": "it"
+  },
+  {
+    "id": "info_sistemi_operativi",
+    "label": "Sistemi operativi",
+    "parent_id": "informatica",
+    "description": "Gestione delle risorse di un computer",
+    "language": "it"
+  },
+  {
+    "id": "info_reti",
+    "label": "Reti di calcolatori",
+    "parent_id": "informatica",
+    "description": "Protocolli, Internet e comunicazione dati",
+    "language": "it"
+  },
+  {
+    "id": "info_sicurezza_informatica",
+    "label": "Sicurezza informatica",
+    "parent_id": "informatica",
+    "description": "Crittografia, minacce e difesa dei sistemi",
+    "language": "it"
+  },
+  {
+    "id": "info_basi_dati",
+    "label": "Basi di dati",
+    "parent_id": "informatica",
+    "description": "Progettazione e gestione dei database",
+    "language": "it"
+  },
+  {
+    "id": "info_grafica",
+    "label": "Grafica computazionale",
+    "parent_id": "informatica",
+    "description": "Visualizzazione, rendering e realtà virtuale",
+    "language": "it"
+  },
+  {
+    "id": "info_storia",
+    "label": "Storia dell'informatica",
+    "parent_id": "informatica",
+    "description": "Evoluzione dei computer e del software",
+    "language": "it"
+  },
+  {
+    "id": "ia_apprendimento",
+    "label": "Apprendimento automatico",
+    "parent_id": "intelligenza_artificiale",
+    "description": "Algoritmi che apprendono dai dati",
+    "language": "it"
+  },
+  {
+    "id": "ia_deep_learning",
+    "label": "Deep learning",
+    "parent_id": "intelligenza_artificiale",
+    "description": "Reti neurali profonde e rappresentazioni gerarchiche",
+    "language": "it"
+  },
+  {
+    "id": "ia_nlp",
+    "label": "Elaborazione del linguaggio naturale",
+    "parent_id": "intelligenza_artificiale",
+    "description": "Comprensione e generazione del linguaggio",
+    "language": "it"
+  },
+  {
+    "id": "ia_visione",
+    "label": "Visione artificiale",
+    "parent_id": "intelligenza_artificiale",
+    "description": "Riconoscimento e interpretazione di immagini e video",
+    "language": "it"
+  },
+  {
+    "id": "ia_ragionamento",
+    "label": "Ragionamento automatico",
+    "parent_id": "intelligenza_artificiale",
+    "description": "Sistemi esperti, pianificazione e logica",
+    "language": "it"
+  },
+  {
+    "id": "ia_robotica",
+    "label": "Robotica intelligente",
+    "parent_id": "intelligenza_artificiale",
+    "description": "Agenti autonomi, sensori e attuatori",
+    "language": "it"
+  },
+  {
+    "id": "ia_etica_ia",
+    "label": "Etica dell'IA",
+    "parent_id": "intelligenza_artificiale",
+    "description": "Bias, responsabilità e impatto sociale",
+    "language": "it"
+  },
+  {
+    "id": "ia_generativa",
+    "label": "IA generativa",
+    "parent_id": "intelligenza_artificiale",
+    "description": "Modelli per la creazione di contenuti",
+    "language": "it"
+  },
+  {
+    "id": "ia_multimodale",
+    "label": "Intelligenza multimodale",
+    "parent_id": "intelligenza_artificiale",
+    "description": "Fusione di testo, immagine, audio e video",
+    "language": "it"
+  },
+  {
+    "id": "ia_storia",
+    "label": "Storia dell'IA",
+    "parent_id": "intelligenza_artificiale",
+    "description": "Dalle origini simboliche ai modelli fondazionali",
+    "language": "it"
+  },
+  {
+    "id": "ing_civile",
+    "label": "Ingegneria civile",
+    "parent_id": "ingegneria",
+    "description": "Progettazione di infrastrutture e costruzioni",
+    "language": "it"
+  },
+  {
+    "id": "ing_meccanica",
+    "label": "Ingegneria meccanica",
+    "parent_id": "ingegneria",
+    "description": "Macchine, meccanismi e sistemi energetici",
+    "language": "it"
+  },
+  {
+    "id": "ing_elettrica",
+    "label": "Ingegneria elettrica",
+    "parent_id": "ingegneria",
+    "description": "Produzione, trasmissione e utilizzo dell'energia elettrica",
+    "language": "it"
+  },
+  {
+    "id": "ing_elettronica",
+    "label": "Ingegneria elettronica",
+    "parent_id": "ingegneria",
+    "description": "Circuiti, semiconduttori e sistemi embedded",
+    "language": "it"
+  },
+  {
+    "id": "ing_informatica",
+    "label": "Ingegneria informatica",
+    "parent_id": "ingegneria",
+    "description": "Sistemi hardware-software integrati",
+    "language": "it"
+  },
+  {
+    "id": "ing_chimica",
+    "label": "Ingegneria chimica",
+    "parent_id": "ingegneria",
+    "description": "Processi industriali e reattori",
+    "language": "it"
+  },
+  {
+    "id": "ing_aerospaziale",
+    "label": "Ingegneria aerospaziale",
+    "parent_id": "ingegneria",
+    "description": "Aeromobili, veicoli spaziali e propulsione",
+    "language": "it"
+  },
+  {
+    "id": "ing_biomedica",
+    "label": "Ingegneria biomedica",
+    "parent_id": "ingegneria",
+    "description": "Dispositivi medici e sistemi per la salute",
+    "language": "it"
+  },
+  {
+    "id": "ing_ambientale",
+    "label": "Ingegneria ambientale",
+    "parent_id": "ingegneria",
+    "description": "Tecnologie per la protezione ambientale",
+    "language": "it"
+  },
+  {
+    "id": "ing_gestionale",
+    "label": "Ingegneria gestionale",
+    "parent_id": "ingegneria",
+    "description": "Organizzazione, logistica e ottimizzazione",
+    "language": "it"
+  },
+  {
+    "id": "tec_telecomunicazioni",
+    "label": "Telecomunicazioni",
+    "parent_id": "tecnologia",
+    "description": "Tecnologie per la trasmissione a distanza",
+    "language": "it"
+  },
+  {
+    "id": "tec_nanotecnologie",
+    "label": "Nanotecnologie",
+    "parent_id": "tecnologia",
+    "description": "Manipolazione della materia a scala nanometrica",
+    "language": "it"
+  },
+  {
+    "id": "tec_biotecnologie",
+    "label": "Biotecnologie",
+    "parent_id": "tecnologia",
+    "description": "Applicazione tecnologica ai sistemi biologici",
+    "language": "it"
+  },
+  {
+    "id": "tec_materiali_avanzati",
+    "label": "Materiali avanzati",
+    "parent_id": "tecnologia",
+    "description": "Grafene, metamateriali e leghe innovative",
+    "language": "it"
+  },
+  {
+    "id": "tec_stampa_3d",
+    "label": "Stampa 3D",
+    "parent_id": "tecnologia",
+    "description": "Tecniche di manifattura additiva",
+    "language": "it"
+  },
+  {
+    "id": "tec_quantistica",
+    "label": "Tecnologie quantistiche",
+    "parent_id": "tecnologia",
+    "description": "Computer, sensori e comunicazione quantistica",
+    "language": "it"
+  },
+  {
+    "id": "tec_industria_4",
+    "label": "Industria 4.0",
+    "parent_id": "tecnologia",
+    "description": "Automazione, IoT e fabbriche intelligenti",
+    "language": "it"
+  },
+  {
+    "id": "tec_wearable",
+    "label": "Dispositivi indossabili",
+    "parent_id": "tecnologia",
+    "description": "Smartwatch, sensori biometrici e realtà aumentata",
+    "language": "it"
+  },
+  {
+    "id": "tec_droni",
+    "label": "Droni e veicoli autonomi",
+    "parent_id": "tecnologia",
+    "description": "Robotica aerea e guida autonoma",
+    "language": "it"
+  },
+  {
+    "id": "tec_blocchi",
+    "label": "Tecnologia blockchain",
+    "parent_id": "tecnologia",
+    "description": "Registri distribuiti e smart contract",
+    "language": "it"
+  },
+  {
+    "id": "eco_micro",
+    "label": "Microeconomia",
+    "parent_id": "economia",
+    "description": "Comportamento di consumatori, imprese e mercati",
+    "language": "it"
+  },
+  {
+    "id": "eco_macro",
+    "label": "Macroeconomia",
+    "parent_id": "economia",
+    "description": "Aggregati economici, PIL, inflazione e disoccupazione",
+    "language": "it"
+  },
+  {
+    "id": "eco_storia",
+    "label": "Storia economica",
+    "parent_id": "economia",
+    "description": "Evoluzione dei sistemi economici nel tempo",
+    "language": "it"
+  },
+  {
+    "id": "eco_sviluppo",
+    "label": "Economia dello sviluppo",
+    "parent_id": "economia",
+    "description": "Crescita, povertà e disuguaglianze",
+    "language": "it"
+  },
+  {
+    "id": "eco_internazionale",
+    "label": "Economia internazionale",
+    "parent_id": "economia",
+    "description": "Commercio, cambi e integrazione globale",
+    "language": "it"
+  },
+  {
+    "id": "eco_lavoro",
+    "label": "Economia del lavoro",
+    "parent_id": "economia",
+    "description": "Mercato del lavoro, salari e politiche occupazionali",
+    "language": "it"
+  },
+  {
+    "id": "eco_pubblica",
+    "label": "Economia pubblica",
+    "parent_id": "economia",
+    "description": "Spesa, tassazione e beni pubblici",
+    "language": "it"
+  },
+  {
+    "id": "eco_ambientale",
+    "label": "Economia ambientale",
+    "parent_id": "economia",
+    "description": "Esternalità, valutazione e politiche verdi",
+    "language": "it"
+  },
+  {
+    "id": "eco_comportamentale",
+    "label": "Economia comportamentale",
+    "parent_id": "economia",
+    "description": "Psicologia applicata alle scelte economiche",
+    "language": "it"
+  },
+  {
+    "id": "eco_monetaria",
+    "label": "Economia monetaria",
+    "parent_id": "economia",
+    "description": "Banche centrali, politiche monetarie e liquidità",
+    "language": "it"
+  },
+  {
+    "id": "fin_mercati",
+    "label": "Mercati finanziari",
+    "parent_id": "finanza",
+    "description": "Azioni, obbligazioni e strumenti di investimento",
+    "language": "it"
+  },
+  {
+    "id": "fin_banche",
+    "label": "Sistema bancario",
+    "parent_id": "finanza",
+    "description": "Intermediazione creditizia e regolamentazione",
+    "language": "it"
+  },
+  {
+    "id": "fin_investimenti",
+    "label": "Gestione degli investimenti",
+    "parent_id": "finanza",
+    "description": "Portafogli, fondi e analisi dei titoli",
+    "language": "it"
+  },
+  {
+    "id": "fin_corporate",
+    "label": "Finanza aziendale",
+    "parent_id": "finanza",
+    "description": "Struttura del capitale, valutazione e M&A",
+    "language": "it"
+  },
+  {
+    "id": "fin_assicurazioni",
+    "label": "Assicurazioni",
+    "parent_id": "finanza",
+    "description": "Gestione del rischio e prodotti assicurativi",
+    "language": "it"
+  },
+  {
+    "id": "fin_fintech",
+    "label": "Fintech",
+    "parent_id": "finanza",
+    "description": "Tecnologia applicata ai servizi finanziari",
+    "language": "it"
+  },
+  {
+    "id": "fin_contabilita",
+    "label": "Contabilità e bilancio",
+    "parent_id": "finanza",
+    "description": "Principi contabili, revisione e reporting",
+    "language": "it"
+  },
+  {
+    "id": "fin_tassazione",
+    "label": "Tassazione",
+    "parent_id": "finanza",
+    "description": "Imposte dirette, indirette e pianificazione fiscale",
+    "language": "it"
+  },
+  {
+    "id": "fin_cripto",
+    "label": "Criptovalute",
+    "parent_id": "finanza",
+    "description": "Bitcoin, Ethereum e asset digitali",
+    "language": "it"
+  },
+  {
+    "id": "fin_macro",
+    "label": "Finanza macroeconomica",
+    "parent_id": "finanza",
+    "description": "Debito pubblico, spread e politiche di bilancio",
+    "language": "it"
+  },
+  {
+    "id": "dir_costituzionale",
+    "label": "Diritto costituzionale",
+    "parent_id": "diritto",
+    "description": "Struttura dello Stato e diritti fondamentali",
+    "language": "it"
+  },
+  {
+    "id": "dir_privato",
+    "label": "Diritto privato",
+    "parent_id": "diritto",
+    "description": "Persone, famiglia, proprietà e contratti",
+    "language": "it"
+  },
+  {
+    "id": "dir_penale",
+    "label": "Diritto penale",
+    "parent_id": "diritto",
+    "description": "Reati, sanzioni e procedura penale",
+    "language": "it"
+  },
+  {
+    "id": "dir_amministrativo",
+    "label": "Diritto amministrativo",
+    "parent_id": "diritto",
+    "description": "Attività della pubblica amministrazione",
+    "language": "it"
+  },
+  {
+    "id": "dir_lavoro",
+    "label": "Diritto del lavoro",
+    "parent_id": "diritto",
+    "description": "Rapporto di lavoro e tutela dei lavoratori",
+    "language": "it"
+  },
+  {
+    "id": "dir_commerciale",
+    "label": "Diritto commerciale",
+    "parent_id": "diritto",
+    "description": "Imprese, fallimenti e mercati",
+    "language": "it"
+  },
+  {
+    "id": "dir_internazionale",
+    "label": "Diritto internazionale",
+    "parent_id": "diritto",
+    "description": "Rapporti tra Stati e organizzazioni sovranazionali",
+    "language": "it"
+  },
+  {
+    "id": "dir_ue",
+    "label": "Diritto dell'Unione Europea",
+    "parent_id": "diritto",
+    "description": "Normativa, istituzioni e giurisprudenza UE",
+    "language": "it"
+  },
+  {
+    "id": "dir_ambientale",
+    "label": "Diritto ambientale",
+    "parent_id": "diritto",
+    "description": "Norme di tutela dell'ambiente e sostenibilità",
+    "language": "it"
+  },
+  {
+    "id": "dir_tributario",
+    "label": "Diritto tributario",
+    "parent_id": "diritto",
+    "description": "Obblighi fiscali e contenzioso",
+    "language": "it"
+  },
+  {
+    "id": "pol_teoria",
+    "label": "Teoria politica",
+    "parent_id": "politica_istituzioni",
+    "description": "Ideologie, modelli di governo e pensiero politico",
+    "language": "it"
+  },
+  {
+    "id": "pol_istituzioni_it",
+    "label": "Istituzioni italiane",
+    "parent_id": "politica_istituzioni",
+    "description": "Parlamento, governo, presidente e magistratura",
+    "language": "it"
+  },
+  {
+    "id": "pol_istituzioni_ue",
+    "label": "Istituzioni europee",
+    "parent_id": "politica_istituzioni",
+    "description": "Parlamento europeo, Commissione e Consiglio",
+    "language": "it"
+  },
+  {
+    "id": "pol_partiti",
+    "label": "Partiti e movimenti",
+    "parent_id": "politica_istituzioni",
+    "description": "Organizzazione politica e sistemi di partito",
+    "language": "it"
+  },
+  {
+    "id": "pol_elezioni",
+    "label": "Sistemi elettorali",
+    "parent_id": "politica_istituzioni",
+    "description": "Leggi elettorali, voto e rappresentanza",
+    "language": "it"
+  },
+  {
+    "id": "pol_amministrazione",
+    "label": "Amministrazione pubblica",
+    "parent_id": "politica_istituzioni",
+    "description": "Organizzazione e funzionamento della PA",
+    "language": "it"
+  },
+  {
+    "id": "pol_relazioni_internazionali",
+    "label": "Relazioni internazionali",
+    "parent_id": "politica_istituzioni",
+    "description": "Diplomazia, conflitti e cooperazione globale",
+    "language": "it"
+  },
+  {
+    "id": "pol_glocal",
+    "label": "Governance locale",
+    "parent_id": "politica_istituzioni",
+    "description": "Regioni, province, comuni e autonomie",
+    "language": "it"
+  },
+  {
+    "id": "pol_comunicazione_pol",
+    "label": "Comunicazione politica",
+    "parent_id": "politica_istituzioni",
+    "description": "Media, propaganda e opinion pubblica",
+    "language": "it"
+  },
+  {
+    "id": "pol_storia_politica",
+    "label": "Storia politica",
+    "parent_id": "politica_istituzioni",
+    "description": "Evoluzione dei sistemi politici nel tempo",
+    "language": "it"
+  },
+  {
+    "id": "fil_antica",
+    "label": "Filosofia antica",
+    "parent_id": "filosofia",
+    "description": "Pensiero greco, romano e orientale antico",
+    "language": "it"
+  },
+  {
+    "id": "fil_medievale",
+    "label": "Filosofia medievale",
+    "parent_id": "filosofia",
+    "description": "Scolastica, patristica e pensiero islamico",
+    "language": "it"
+  },
+  {
+    "id": "fil_moderna",
+    "label": "Filosofia moderna",
+    "parent_id": "filosofia",
+    "description": "Razionalismo, empirismo e illuminismo",
+    "language": "it"
+  },
+  {
+    "id": "fil_contemporanea",
+    "label": "Filosofia contemporanea",
+    "parent_id": "filosofia",
+    "description": "Idealismo, esistenzialismo e filosofia analitica",
+    "language": "it"
+  },
+  {
+    "id": "fil_epistemologia",
+    "label": "Epistemologia",
+    "parent_id": "filosofia",
+    "description": "Teoria della conoscenza e della scienza",
+    "language": "it"
+  },
+  {
+    "id": "fil_metafisica",
+    "label": "Metafisica",
+    "parent_id": "filosofia",
+    "description": "Studio dell'essere, della realtà e del tempo",
+    "language": "it"
+  },
+  {
+    "id": "fil_estetica",
+    "label": "Estetica",
+    "parent_id": "filosofia",
+    "description": "Natura dell'arte, della bellezza e del gusto",
+    "language": "it"
+  },
+  {
+    "id": "fil_politica",
+    "label": "Filosofia politica",
+    "parent_id": "filosofia",
+    "description": "Giustizia, Stato e libertà",
+    "language": "it"
+  },
+  {
+    "id": "fil_scienza",
+    "label": "Filosofia della scienza",
+    "parent_id": "filosofia",
+    "description": "Fondamenti, metodi e paradigmi scientifici",
+    "language": "it"
+  },
+  {
+    "id": "fil_mente",
+    "label": "Filosofia della mente",
+    "parent_id": "filosofia",
+    "description": "Coscienza, identità personale e intelligenza",
+    "language": "it"
+  },
+  {
+    "id": "et_normativa",
+    "label": "Etica normativa",
+    "parent_id": "etica",
+    "description": "Teorie del dovere, della virtù e della consequenzialità",
+    "language": "it"
+  },
+  {
+    "id": "et_applicata",
+    "label": "Etica applicata",
+    "parent_id": "etica",
+    "description": "Bioetica, etica ambientale ed etica professionale",
+    "language": "it"
+  },
+  {
+    "id": "et_bioetica",
+    "label": "Bioetica",
+    "parent_id": "etica",
+    "description": "Dilemmi morali in medicina e biotecnologie",
+    "language": "it"
+  },
+  {
+    "id": "et_digitale",
+    "label": "Etica digitale",
+    "parent_id": "etica",
+    "description": "Privacy, sorveglianza e diritti nell'era digitale",
+    "language": "it"
+  },
+  {
+    "id": "et_ia",
+    "label": "Etica dell'intelligenza artificiale",
+    "parent_id": "etica",
+    "description": "Autonomia, responsabilità e bias algoritmici",
+    "language": "it"
+  },
+  {
+    "id": "et_ambientale",
+    "label": "Etica ambientale",
+    "parent_id": "etica",
+    "description": "Doveri verso la natura e le generazioni future",
+    "language": "it"
+  },
+  {
+    "id": "et_professionale",
+    "label": "Deontologia professionale",
+    "parent_id": "etica",
+    "description": "Codici etici e responsabilità dei mestieri",
+    "language": "it"
+  },
+  {
+    "id": "et_interculturale",
+    "label": "Etica interculturale",
+    "parent_id": "etica",
+    "description": "Valori universali e relativismo morale",
+    "language": "it"
+  },
+  {
+    "id": "et_animale",
+    "label": "Etica animale",
+    "parent_id": "etica",
+    "description": "Diritti degli animali e specismo",
+    "language": "it"
+  },
+  {
+    "id": "psi_generale",
+    "label": "Psicologia generale",
+    "parent_id": "psicologia",
+    "description": "Percezione, attenzione, memoria e apprendimento",
+    "language": "it"
+  },
+  {
+    "id": "psi_sviluppo",
+    "label": "Psicologia dello sviluppo",
+    "parent_id": "psicologia",
+    "description": "Cambiamenti cognitivi ed emotivi nel ciclo di vita",
+    "language": "it"
+  },
+  {
+    "id": "psi_sociale",
+    "label": "Psicologia sociale",
+    "parent_id": "psicologia",
+    "description": "Relazioni, atteggiamenti e influenza sociale",
+    "language": "it"
+  },
+  {
+    "id": "psi_clinica",
+    "label": "Psicologia clinica",
+    "parent_id": "psicologia",
+    "description": "Diagnosi e trattamento dei disturbi psicologici",
+    "language": "it"
+  },
+  {
+    "id": "psi_personalita",
+    "label": "Psicologia della personalità",
+    "parent_id": "psicologia",
+    "description": "Tratti, temperamento e modelli della personalità",
+    "language": "it"
+  },
+  {
+    "id": "psi_lavoro",
+    "label": "Psicologia del lavoro",
+    "parent_id": "psicologia",
+    "description": "Selezione, benessere organizzativo e ergonomia",
+    "language": "it"
+  },
+  {
+    "id": "psi_educativa",
+    "label": "Psicologia educativa",
+    "parent_id": "psicologia",
+    "description": "Apprendimento scolastico e difficoltà",
+    "language": "it"
+  },
+  {
+    "id": "psi_neuro",
+    "label": "Neuropsicologia",
+    "parent_id": "psicologia",
+    "description": "Relazione tra cervello e comportamento",
+    "language": "it"
+  },
+  {
+    "id": "psi_sport",
+    "label": "Psicologia dello sport",
+    "parent_id": "psicologia",
+    "description": "Prestazione, motivazione e gestione dello stress",
+    "language": "it"
+  },
+  {
+    "id": "psi_forense",
+    "label": "Psicologia forense",
+    "parent_id": "psicologia",
+    "description": "Valutazione psicologica nel contesto giudiziario",
+    "language": "it"
+  },
+  {
+    "id": "soc_teoria",
+    "label": "Teoria sociologica",
+    "parent_id": "sociologia",
+    "description": "Classici e paradigmi della sociologia",
+    "language": "it"
+  },
+  {
+    "id": "soc_stratificazione",
+    "label": "Stratificazione sociale",
+    "parent_id": "sociologia",
+    "description": "Classi, ceti, mobilità e disuguaglianza",
+    "language": "it"
+  },
+  {
+    "id": "soc_famiglia",
+    "label": "Sociologia della famiglia",
+    "parent_id": "sociologia",
+    "description": "Forme familiari, genitorialità e relazioni",
+    "language": "it"
+  },
+  {
+    "id": "soc_educazione",
+    "label": "Sociologia dell'educazione",
+    "parent_id": "sociologia",
+    "description": "Scuola, istruzione e riproduzione sociale",
+    "language": "it"
+  },
+  {
+    "id": "soc_lavoro",
+    "label": "Sociologia del lavoro",
+    "parent_id": "sociologia",
+    "description": "Mercato, professioni e organizzazioni",
+    "language": "it"
+  },
+  {
+    "id": "soc_urbana",
+    "label": "Sociologia urbana",
+    "parent_id": "sociologia",
+    "description": "Città, spazi pubblici e metropoli",
+    "language": "it"
+  },
+  {
+    "id": "soc_digitale",
+    "label": "Sociologia digitale",
+    "parent_id": "sociologia",
+    "description": "Internet, social media e comunità virtuali",
+    "language": "it"
+  },
+  {
+    "id": "soc_devianza",
+    "label": "Devianza e controllo sociale",
+    "parent_id": "sociologia",
+    "description": "Crimine, norme e istituzioni di controllo",
+    "language": "it"
+  },
+  {
+    "id": "soc_generale",
+    "label": "Sociologia generale",
+    "parent_id": "sociologia",
+    "description": "Concetti fondamentali e metodi della disciplina",
+    "language": "it"
+  },
+  {
+    "id": "soc_cultura",
+    "label": "Sociologia della cultura",
+    "parent_id": "sociologia",
+    "description": "Valori, simboli e pratiche collettive",
+    "language": "it"
+  },
+  {
+    "id": "ant_culturale",
+    "label": "Antropologia culturale",
+    "parent_id": "antropologia",
+    "description": "Culture, simboli e pratiche sociali",
+    "language": "it"
+  },
+  {
+    "id": "ant_fisica",
+    "label": "Antropologia fisica",
+    "parent_id": "antropologia",
+    "description": "Evoluzione umana, genetica e biodiversità",
+    "language": "it"
+  },
+  {
+    "id": "ant_linguistica",
+    "label": "Antropologia linguistica",
+    "parent_id": "antropologia",
+    "description": "Linguaggio nelle diverse culture",
+    "language": "it"
+  },
+  {
+    "id": "ant_archeologica",
+    "label": "Archeologia",
+    "parent_id": "antropologia",
+    "description": "Studio dei resti materiali delle civiltà passate",
+    "language": "it"
+  },
+  {
+    "id": "ant_etnografia",
+    "label": "Etnografia",
+    "parent_id": "antropologia",
+    "description": "Metodi di ricerca sul campo e descrizione culturale",
+    "language": "it"
+  },
+  {
+    "id": "ant_religione",
+    "label": "Antropologia della religione",
+    "parent_id": "antropologia",
+    "description": "Credenze, rituali e sacro nelle società",
+    "language": "it"
+  },
+  {
+    "id": "ant_medicina",
+    "label": "Antropologia medica",
+    "parent_id": "antropologia",
+    "description": "Malattia, cura e sistemi sanitari culturali",
+    "language": "it"
+  },
+  {
+    "id": "ant_visuale",
+    "label": "Antropologia visuale",
+    "parent_id": "antropologia",
+    "description": "Immagini, media e rappresentazioni culturali",
+    "language": "it"
+  },
+  {
+    "id": "ant_storia",
+    "label": "Storia dell'antropologia",
+    "parent_id": "antropologia",
+    "description": "Evoluzione della disciplina e dei suoi paradigmi",
+    "language": "it"
+  },
+  {
+    "id": "rel_cristianesimo",
+    "label": "Cristianesimo",
+    "parent_id": "religioni",
+    "description": "Dottrine, storia e confessioni cristiane",
+    "language": "it"
+  },
+  {
+    "id": "rel_islam",
+    "label": "Islam",
+    "parent_id": "religioni",
+    "description": "Corano, sunna, scuole giuridiche e cultura islamica",
+    "language": "it"
+  },
+  {
+    "id": "rel_ebraismo",
+    "label": "Ebraismo",
+    "parent_id": "religioni",
+    "description": "Torah, Talmud, storia e tradizioni ebraiche",
+    "language": "it"
+  },
+  {
+    "id": "rel_induismo",
+    "label": "Induismo",
+    "parent_id": "religioni",
+    "description": "Vedanta, dharma, caste e pratiche devozionali",
+    "language": "it"
+  },
+  {
+    "id": "rel_buddismo",
+    "label": "Buddismo",
+    "parent_id": "religioni",
+    "description": "Quattro nobili verità, nirvana e scuole buddiste",
+    "language": "it"
+  },
+  {
+    "id": "rel_storia_religioni",
+    "label": "Storia delle religioni",
+    "parent_id": "religioni",
+    "description": "Evoluzione del fenomeno religioso",
+    "language": "it"
+  },
+  {
+    "id": "rel_fenomenologia",
+    "label": "Fenomenologia religiosa",
+    "parent_id": "religioni",
+    "description": "Studio comparato delle esperienze religiose",
+    "language": "it"
+  },
+  {
+    "id": "rel_secolarizzazione",
+    "label": "Secolarizzazione",
+    "parent_id": "religioni",
+    "description": "Declino del ruolo pubblico della religione",
+    "language": "it"
+  },
+  {
+    "id": "rel_interreligioso",
+    "label": "Dialogo interreligioso",
+    "parent_id": "religioni",
+    "description": "Incontro e confronto tra tradizioni",
+    "language": "it"
+  },
+  {
+    "id": "rel_nuovi_movimenti",
+    "label": "Nuovi movimenti religiosi",
+    "parent_id": "religioni",
+    "description": "Sette, culti e spiritualità contemporanee",
+    "language": "it"
+  },
+  {
+    "id": "art_pittura",
+    "label": "Pittura",
+    "parent_id": "arte",
+    "description": "Tecniche, generi e storia della pittura",
+    "language": "it"
+  },
+  {
+    "id": "art_sculptura",
+    "label": "Scultura",
+    "parent_id": "arte",
+    "description": "Materiali, tecniche e evoluzione tridimensionale",
+    "language": "it"
+  },
+  {
+    "id": "art_storia_arte",
+    "label": "Storia dell'arte",
+    "parent_id": "arte",
+    "description": "Periodi, movimenti e critica artistica",
+    "language": "it"
+  },
+  {
+    "id": "art_contemporanea",
+    "label": "Arte contemporanea",
+    "parent_id": "arte",
+    "description": "Pratiche artistiche dal dopoguerra a oggi",
+    "language": "it"
+  },
+  {
+    "id": "art_fotografia",
+    "label": "Fotografia",
+    "parent_id": "arte",
+    "description": "Tecniche fotografiche e storia del mezzo",
+    "language": "it"
+  },
+  {
+    "id": "art_grafica",
+    "label": "Arti grafiche",
+    "parent_id": "arte",
+    "description": "Stampa, incisione e design editoriale",
+    "language": "it"
+  },
+  {
+    "id": "art_performance",
+    "label": "Performance art",
+    "parent_id": "arte",
+    "description": "Azione, corpo e arte relazionale",
+    "language": "it"
+  },
+  {
+    "id": "art_restauro",
+    "label": "Restauro e conservazione",
+    "parent_id": "arte",
+    "description": "Tecniche di preservazione del patrimonio",
+    "language": "it"
+  },
+  {
+    "id": "art_mercato",
+    "label": "Mercato dell'arte",
+    "parent_id": "arte",
+    "description": "Collezionismo, gallerie e valorizzazione",
+    "language": "it"
+  },
+  {
+    "id": "art_digitale",
+    "label": "Arte digitale",
+    "parent_id": "arte",
+    "description": "Arte generativa, NFT e nuovi media",
+    "language": "it"
+  },
+  {
+    "id": "mus_teorica",
+    "label": "Teoria musicale",
+    "parent_id": "musica",
+    "description": "Armonia, contrappunto, analisi e forme",
+    "language": "it"
+  },
+  {
+    "id": "mus_storia",
+    "label": "Storia della musica",
+    "parent_id": "musica",
+    "description": "Periodi, scuole e compositori",
+    "language": "it"
+  },
+  {
+    "id": "mus_classica",
+    "label": "Musica classica",
+    "parent_id": "musica",
+    "description": "Repertorio colto, sinfonico e da camera",
+    "language": "it"
+  },
+  {
+    "id": "mus_jazz",
+    "label": "Jazz",
+    "parent_id": "musica",
+    "description": "Stili, improvvisazione e grandi interpreti",
+    "language": "it"
+  },
+  {
+    "id": "mus_pop_rock",
+    "label": "Musica pop e rock",
+    "parent_id": "musica",
+    "description": "Generi commerciali, storia e cultura giovanile",
+    "language": "it"
+  },
+  {
+    "id": "mus_folk",
+    "label": "Musica tradizionale e folk",
+    "parent_id": "musica",
+    "description": "Etnomusicologia e repertori locali",
+    "language": "it"
+  },
+  {
+    "id": "mus_tecnologia",
+    "label": "Tecnologia musicale",
+    "parent_id": "musica",
+    "description": "Registrazione, produzione e sintesi sonora",
+    "language": "it"
+  },
+  {
+    "id": "mus_educazione",
+    "label": "Educazione musicale",
+    "parent_id": "musica",
+    "description": "Didattica, solfeggio e pratica strumentale",
+    "language": "it"
+  },
+  {
+    "id": "mus_neuro",
+    "label": "Neuroscienze della musica",
+    "parent_id": "musica",
+    "description": "Percezione, emozione e cervello musicale",
+    "language": "it"
+  },
+  {
+    "id": "mus_mercato",
+    "label": "Industria musicale",
+    "parent_id": "musica",
+    "description": "Editoria, diritti e distribuzione",
+    "language": "it"
+  },
+  {
+    "id": "cin_storia",
+    "label": "Storia del cinema",
+    "parent_id": "cinema_spettacolo",
+    "description": "Dalle origini al cinema contemporaneo",
+    "language": "it"
+  },
+  {
+    "id": "cin_teorica",
+    "label": "Teoria e critica cinematografica",
+    "parent_id": "cinema_spettacolo",
+    "description": "Analisi filmica, generi e autori",
+    "language": "it"
+  },
+  {
+    "id": "cin_produzione",
+    "label": "Produzione cinematografica",
+    "parent_id": "cinema_spettacolo",
+    "description": "Sceneggiatura, regia, fotografia e montaggio",
+    "language": "it"
+  },
+  {
+    "id": "cin_teatro",
+    "label": "Teatro",
+    "parent_id": "cinema_spettacolo",
+    "description": "Drammaturgia, regia, recitazione e scenografia",
+    "language": "it"
+  },
+  {
+    "id": "cin_danza",
+    "label": "Danza",
+    "parent_id": "cinema_spettacolo",
+    "description": "Balletto, danza contemporanea e tradizioni corporee",
+    "language": "it"
+  },
+  {
+    "id": "cin_circo",
+    "label": "Circo e arti circensi",
+    "parent_id": "cinema_spettacolo",
+    "description": "Acrobazia, giocoleria e spettacolo circense",
+    "language": "it"
+  },
+  {
+    "id": "cin_televisione",
+    "label": "Televisione",
+    "parent_id": "cinema_spettacolo",
+    "description": "Generi, palinsesti e industria televisiva",
+    "language": "it"
+  },
+  {
+    "id": "cin_streaming",
+    "label": "Piattaforme digitali",
+    "parent_id": "cinema_spettacolo",
+    "description": "Streaming, web series e nuovi formati",
+    "language": "it"
+  },
+  {
+    "id": "cin_festival",
+    "label": "Festival e premi",
+    "parent_id": "cinema_spettacolo",
+    "description": "Mostre, rassegne e riconoscimenti",
+    "language": "it"
+  },
+  {
+    "id": "cin_musical",
+    "label": "Musical e teatro musicale",
+    "parent_id": "cinema_spettacolo",
+    "description": "Spettacolo che integra canto, danza e recitazione",
+    "language": "it"
+  },
+  {
+    "id": "arch_storia",
+    "label": "Storia dell'architettura",
+    "parent_id": "architettura",
+    "description": "Stili, periodi e monumenti",
+    "language": "it"
+  },
+  {
+    "id": "arch_tecnica",
+    "label": "Tecnica progettuale",
+    "parent_id": "architettura",
+    "description": "Disegno, modellazione e strutture",
+    "language": "it"
+  },
+  {
+    "id": "arch_sostenibile",
+    "label": "Architettura sostenibile",
+    "parent_id": "architettura",
+    "description": "Bioedilizia, efficienza energetica e materiali verdi",
+    "language": "it"
+  },
+  {
+    "id": "arch_urbana",
+    "label": "Urbanistica",
+    "parent_id": "architettura",
+    "description": "Pianificazione territoriale e progettazione urbana",
+    "language": "it"
+  },
+  {
+    "id": "arch_paesaggio",
+    "label": "Architettura del paesaggio",
+    "parent_id": "architettura",
+    "description": "Giardini, parchi e spazi verdi",
+    "language": "it"
+  },
+  {
+    "id": "arch_restauro",
+    "label": "Restauro architettonico",
+    "parent_id": "architettura",
+    "description": "Recupero e conservazione del patrimonio edilizio",
+    "language": "it"
+  },
+  {
+    "id": "arch_contemporanea",
+    "label": "Architettura contemporanea",
+    "parent_id": "architettura",
+    "description": "Tendenze, archistar e nuovi materiali",
+    "language": "it"
+  },
+  {
+    "id": "arch_interni",
+    "label": "Design degli interni",
+    "parent_id": "architettura",
+    "description": "Spazi abitativi, arredamento e lighting design",
+    "language": "it"
+  },
+  {
+    "id": "arch_infrastrutture",
+    "label": "Infrastrutture e ingegneria civile",
+    "parent_id": "architettura",
+    "description": "Ponti, viadotti e grandi opere",
+    "language": "it"
+  },
+  {
+    "id": "arch_normativa",
+    "label": "Normativa edilizia",
+    "parent_id": "architettura",
+    "description": "Leggi urbanistiche, sicurezza e abitabilità",
+    "language": "it"
+  },
+  {
+    "id": "com_teoria",
+    "label": "Teoria della comunicazione",
+    "parent_id": "comunicazione",
+    "description": "Modelli, processi e funzioni della comunicazione",
+    "language": "it"
+  },
+  {
+    "id": "com_giornalismo",
+    "label": "Giornalismo",
+    "parent_id": "comunicazione",
+    "description": "Informazione, inchiesta e generi giornalistici",
+    "language": "it"
+  },
+  {
+    "id": "com_pubblicita",
+    "label": "Pubblicità",
+    "parent_id": "comunicazione",
+    "description": "Strategie, creatività e media planning",
+    "language": "it"
+  },
+  {
+    "id": "com_relazioni",
+    "label": "Relazioni pubbliche",
+    "parent_id": "comunicazione",
+    "description": "Reputation management e comunicazione istituzionale",
+    "language": "it"
+  },
+  {
+    "id": "com_social",
+    "label": "Social media",
+    "parent_id": "comunicazione",
+    "description": "Piattaforme, community management e viralità",
+    "language": "it"
+  },
+  {
+    "id": "com_visiva",
+    "label": "Comunicazione visiva",
+    "parent_id": "comunicazione",
+    "description": "Grafica, semiotica e design della comunicazione",
+    "language": "it"
+  },
+  {
+    "id": "com_interculturale",
+    "label": "Comunicazione interculturale",
+    "parent_id": "comunicazione",
+    "description": "Scambi tra culture e mediazione linguistica",
+    "language": "it"
+  },
+  {
+    "id": "com_crisi",
+    "label": "Comunicazione di crisi",
+    "parent_id": "comunicazione",
+    "description": "Gestione dell'emergenza informativa",
+    "language": "it"
+  },
+  {
+    "id": "com_politica",
+    "label": "Comunicazione politica",
+    "parent_id": "comunicazione",
+    "description": "Campagne elettorali, spin e framing",
+    "language": "it"
+  },
+  {
+    "id": "com_digitale",
+    "label": "Comunicazione digitale",
+    "parent_id": "comunicazione",
+    "description": "SEO, content marketing e newsletter",
+    "language": "it"
+  },
+  {
+    "id": "edu_pedagogia",
+    "label": "Pedagogia generale",
+    "parent_id": "educazione",
+    "description": "Teorie dell'educazione e dello sviluppo",
+    "language": "it"
+  },
+  {
+    "id": "edu_didattica",
+    "label": "Didattica",
+    "parent_id": "educazione",
+    "description": "Metodi, strategie e progettazione delle lezioni",
+    "language": "it"
+  },
+  {
+    "id": "edu_inclusiva",
+    "label": "Educazione inclusiva",
+    "parent_id": "educazione",
+    "description": "BES, DSA e barriere all'apprendimento",
+    "language": "it"
+  },
+  {
+    "id": "edu_digitale",
+    "label": "Didattica digitale",
+    "parent_id": "educazione",
+    "description": "LIM, e-learning e ambienti virtuali",
+    "language": "it"
+  },
+  {
+    "id": "edu_valutazione",
+    "label": "Valutazione e certificazione",
+    "parent_id": "educazione",
+    "description": "Prove, griglie e competenze",
+    "language": "it"
+  },
+  {
+    "id": "edu_orientamento",
+    "label": "Orientamento scolastico e professionale",
+    "parent_id": "educazione",
+    "description": "Scelta del percorso e transizioni",
+    "language": "it"
+  },
+  {
+    "id": "edu_formazione",
+    "label": "Formazione professionale",
+    "parent_id": "educazione",
+    "description": "Aggiornamento, lifelong learning e competenze",
+    "language": "it"
+  },
+  {
+    "id": "edu_infanzia",
+    "label": "Educazione infantile",
+    "parent_id": "educazione",
+    "description": "Scuola dell'infanzia e sviluppo precoce",
+    "language": "it"
+  },
+  {
+    "id": "edu_superiore",
+    "label": "Università e ricerca",
+    "parent_id": "educazione",
+    "description": "Sistema universitario, dottorato e accademia",
+    "language": "it"
+  },
+  {
+    "id": "edu_storia",
+    "label": "Storia dell'educazione",
+    "parent_id": "educazione",
+    "description": "Evoluzione delle istituzioni scolastiche",
+    "language": "it"
+  },
+  {
+    "id": "lav_mercato",
+    "label": "Mercato del lavoro",
+    "parent_id": "lavoro_professioni",
+    "description": "Occupazione, disoccupazione e dinamiche",
+    "language": "it"
+  },
+  {
+    "id": "lav_contratti",
+    "label": "Contratti e normativa",
+    "parent_id": "lavoro_professioni",
+    "description": "Tipologie contrattuali e diritti",
+    "language": "it"
+  },
+  {
+    "id": "lav_professioni",
+    "label": "Professioni e mestieri",
+    "parent_id": "lavoro_professioni",
+    "description": "Figure lavorative e percorsi professionali",
+    "language": "it"
+  },
+  {
+    "id": "lav_imprenditorialita",
+    "label": "Imprenditorialità",
+    "parent_id": "lavoro_professioni",
+    "description": "Startup, innovazione e business model",
+    "language": "it"
+  },
+  {
+    "id": "lav_risorse_umane",
+    "label": "Risorse umane",
+    "parent_id": "lavoro_professioni",
+    "description": "Selezione, formazione e welfare aziendale",
+    "language": "it"
+  },
+  {
+    "id": "lav_sicurezza",
+    "label": "Sicurezza sul lavoro",
+    "parent_id": "lavoro_professioni",
+    "description": "Prevenzione, rischi e normativa",
+    "language": "it"
+  },
+  {
+    "id": "lav_remote",
+    "label": "Lavoro remoto e smart working",
+    "parent_id": "lavoro_professioni",
+    "description": "Organizzazione flessibile e digitalizzazione",
+    "language": "it"
+  },
+  {
+    "id": "lav_giovani",
+    "label": "Inserimento dei giovani",
+    "parent_id": "lavoro_professioni",
+    "description": "Tirocini, stage e primo impiego",
+    "language": "it"
+  },
+  {
+    "id": "lav_sindacati",
+    "label": "Sindacati e relazioni industriali",
+    "parent_id": "lavoro_professioni",
+    "description": "Contrattazione e rappresentanza",
+    "language": "it"
+  },
+  {
+    "id": "lav_futuro",
+    "label": "Futuro del lavoro",
+    "parent_id": "lavoro_professioni",
+    "description": "Automazione, competenze e nuovi mestieri",
+    "language": "it"
+  },
+  {
+    "id": "ind_processi",
+    "label": "Processi produttivi",
+    "parent_id": "industria_manifattura",
+    "description": "Metodi di fabbricazione e ottimizzazione",
+    "language": "it"
+  },
+  {
+    "id": "ind_automazione",
+    "label": "Automazione industriale",
+    "parent_id": "industria_manifattura",
+    "description": "Robot, PLC e linee automatiche",
+    "language": "it"
+  },
+  {
+    "id": "ind_qualita",
+    "label": "Controllo qualità",
+    "parent_id": "industria_manifattura",
+    "description": "Standard, certificazioni e ispezioni",
+    "language": "it"
+  },
+  {
+    "id": "ind_supply",
+    "label": "Supply chain",
+    "parent_id": "industria_manifattura",
+    "description": "Logistica, magazzino e gestione fornitori",
+    "language": "it"
+  },
+  {
+    "id": "ind_manutenzione",
+    "label": "Manutenzione industriale",
+    "parent_id": "industria_manifattura",
+    "description": "Predittiva, preventiva e correttiva",
+    "language": "it"
+  },
+  {
+    "id": "ind_sicurezza",
+    "label": "Sicurezza industriale",
+    "parent_id": "industria_manifattura",
+    "description": "Prevenzione incidenti e gestione rischi",
+    "language": "it"
+  },
+  {
+    "id": "ind_sostenibilita",
+    "label": "Industria sostenibile",
+    "parent_id": "industria_manifattura",
+    "description": "Economia circolare e impronta ambientale",
+    "language": "it"
+  },
+  {
+    "id": "ind_tessile",
+    "label": "Industria tessile e moda",
+    "parent_id": "industria_manifattura",
+    "description": "Filiera tessile, design e produzione",
+    "language": "it"
+  },
+  {
+    "id": "ind_alimentare",
+    "label": "Industria alimentare",
+    "parent_id": "industria_manifattura",
+    "description": "Trasformazione, conservazione e packaging",
+    "language": "it"
+  },
+  {
+    "id": "ind_meccanica",
+    "label": "Meccanica e meccatronica",
+    "parent_id": "industria_manifattura",
+    "description": "Componenti, assemblaggio e sistemi integrati",
+    "language": "it"
+  },
+  {
+    "id": "agr_colture",
+    "label": "Coltivazioni",
+    "parent_id": "agricoltura",
+    "description": "Cereali, ortaggi, frutta e colture industriali",
+    "language": "it"
+  },
+  {
+    "id": "agr_zootecnia",
+    "label": "Zootecnia",
+    "parent_id": "agricoltura",
+    "description": "Allevamento di bovini, suini, ovini e avicoli",
+    "language": "it"
+  },
+  {
+    "id": "agr_agronomia",
+    "label": "Agronomia",
+    "parent_id": "agricoltura",
+    "description": "Gestione del suolo, rotazioni e fertilità",
+    "language": "it"
+  },
+  {
+    "id": "agr_fitosanitari",
+    "label": "Fitosanitari e difesa",
+    "parent_id": "agricoltura",
+    "description": "Pesticidi, biologico e lotta integrata",
+    "language": "it"
+  },
+  {
+    "id": "agr_meccanizzazione",
+    "label": "Meccanizzazione agricola",
+    "parent_id": "agricoltura",
+    "description": "Trattori, macchine e precision farming",
+    "language": "it"
+  },
+  {
+    "id": "agr_sostenibile",
+    "label": "Agricoltura sostenibile",
+    "parent_id": "agricoltura",
+    "description": "Biologico, rigenerativa e permacultura",
+    "language": "it"
+  },
+  {
+    "id": "agr_idraulica",
+    "label": "Idraulica agraria",
+    "parent_id": "agricoltura",
+    "description": "Irrigazione, drenaggio e gestione idrica",
+    "language": "it"
+  },
+  {
+    "id": "agr_forestale",
+    "label": "Selvicoltura",
+    "parent_id": "agricoltura",
+    "description": "Gestione dei boschi e prodotti forestali",
+    "language": "it"
+  },
+  {
+    "id": "agr_pesca",
+    "label": "Pesca e acquacoltura",
+    "parent_id": "agricoltura",
+    "description": "Pesca marittima, fluviale e allevamenti ittici",
+    "language": "it"
+  },
+  {
+    "id": "agr_economia",
+    "label": "Economia agraria",
+    "parent_id": "agricoltura",
+    "description": "Mercati, PAC e politiche di settore",
+    "language": "it"
+  },
+  {
+    "id": "en_fossili",
+    "label": "Fonti fossili",
+    "parent_id": "energia",
+    "description": "Carbone, petrolio, gas naturale e impatto",
+    "language": "it"
+  },
+  {
+    "id": "en_nucleare",
+    "label": "Energia nucleare",
+    "parent_id": "energia",
+    "description": "Fissione, fusione e gestione scorie",
+    "language": "it"
+  },
+  {
+    "id": "en_rinnovabili",
+    "label": "Fonti rinnovabili",
+    "parent_id": "energia",
+    "description": "Solare, eolico, idroelettrico e geotermia",
+    "language": "it"
+  },
+  {
+    "id": "en_rete",
+    "label": "Reti elettriche",
+    "parent_id": "energia",
+    "description": "Trasmissione, distribuzione e smart grid",
+    "language": "it"
+  },
+  {
+    "id": "en_storage",
+    "label": "Accumulo energetico",
+    "parent_id": "energia",
+    "description": "Batterie, idrogeno e sistemi di stoccaggio",
+    "language": "it"
+  },
+  {
+    "id": "en_efficienza",
+    "label": "Efficienza energetica",
+    "parent_id": "energia",
+    "description": "Risparmio, isolamento e certificazione",
+    "language": "it"
+  },
+  {
+    "id": "en_mercato",
+    "label": "Mercato dell'energia",
+    "parent_id": "energia",
+    "description": "Liberalizzazione, prezzi e operatori",
+    "language": "it"
+  },
+  {
+    "id": "en_transizione",
+    "label": "Transizione energetica",
+    "parent_id": "energia",
+    "description": "Decarbonizzazione e politiche climatiche",
+    "language": "it"
+  },
+  {
+    "id": "en_idrogeno",
+    "label": "Idrogeno verde",
+    "parent_id": "energia",
+    "description": "Produzione, trasporto e applicazioni",
+    "language": "it"
+  },
+  {
+    "id": "en_storia",
+    "label": "Storia energetica",
+    "parent_id": "energia",
+    "description": "Dalla rivoluzione industriale alle rinnovabili",
+    "language": "it"
+  },
+  {
+    "id": "tr_stradale",
+    "label": "Trasporto stradale",
+    "parent_id": "trasporti",
+    "description": "Autoveicoli, infrastrutture viarie e sicurezza",
+    "language": "it"
+  },
+  {
+    "id": "tr_ferroviario",
+    "label": "Trasporto ferroviario",
+    "parent_id": "trasporti",
+    "description": "Treni, alta velocità e metropolitane",
+    "language": "it"
+  },
+  {
+    "id": "tr_aereo",
+    "label": "Trasporto aereo",
+    "parent_id": "trasporti",
+    "description": "Aviazione civile, aeroporti e compagnie",
+    "language": "it"
+  },
+  {
+    "id": "tr_marittimo",
+    "label": "Trasporto marittimo",
+    "parent_id": "trasporti",
+    "description": "Navi, porti e navigazione",
+    "language": "it"
+  },
+  {
+    "id": "tr_sostenibile",
+    "label": "Mobilità sostenibile",
+    "parent_id": "trasporti",
+    "description": "Bike sharing, e-mobility e pedonalità",
+    "language": "it"
+  },
+  {
+    "id": "tr_logistica",
+    "label": "Logistica e freight",
+    "parent_id": "trasporti",
+    "description": "Trasporto merci, intermodalità e hub",
+    "language": "it"
+  },
+  {
+    "id": "tr_normativa",
+    "label": "Normativa sui trasporti",
+    "parent_id": "trasporti",
+    "description": "Codice della strada, regolamenti internazionali",
+    "language": "it"
+  },
+  {
+    "id": "tr_infrastrutture",
+    "label": "Infrastrutture di trasporto",
+    "parent_id": "trasporti",
+    "description": "Ponti, gallerie, aeroporti e porti",
+    "language": "it"
+  },
+  {
+    "id": "tr_autonomo",
+    "label": "Veicoli autonomi",
+    "parent_id": "trasporti",
+    "description": "Guida automatica e nuove tecnologie",
+    "language": "it"
+  },
+  {
+    "id": "tr_storia",
+    "label": "Storia dei trasporti",
+    "parent_id": "trasporti",
+    "description": "Evoluzione delle modalità di spostamento",
+    "language": "it"
+  },
+  {
+    "id": "cuc_tecniche",
+    "label": "Tecniche di cucina",
+    "parent_id": "cucina_alimentazione",
+    "description": "Cotture, tagli, impiattamento e preparazioni di base",
+    "language": "it"
+  },
+  {
+    "id": "cuc_regionale",
+    "label": "Cucina regionale italiana",
+    "parent_id": "cucina_alimentazione",
+    "description": "Tradizioni gastronomiche delle regioni",
+    "language": "it"
+  },
+  {
+    "id": "cuc_internazionale",
+    "label": "Cucine del mondo",
+    "parent_id": "cucina_alimentazione",
+    "description": "Tradizioni gastronomiche extra-italiane",
+    "language": "it"
+  },
+  {
+    "id": "cuc_pasticceria",
+    "label": "Pasticceria",
+    "parent_id": "cucina_alimentazione",
+    "description": "Dolci, lievitati e tecniche di pasticceria",
+    "language": "it"
+  },
+  {
+    "id": "cuc_nutrizione",
+    "label": "Nutrizione e dietetica",
+    "parent_id": "cucina_alimentazione",
+    "description": "Principi nutritivi, diete e benessere alimentare",
+    "language": "it"
+  },
+  {
+    "id": "cuc_sicurezza",
+    "label": "Sicurezza alimentare",
+    "parent_id": "cucina_alimentazione",
+    "description": "HACCP, conservazione e igiene",
+    "language": "it"
+  },
+  {
+    "id": "cuc_enogastronomia",
+    "label": "Enogastronomia",
+    "parent_id": "cucina_alimentazione",
+    "description": "Vini, abbinamenti e cultura del bere",
+    "language": "it"
+  },
+  {
+    "id": "cuc_sostenibile",
+    "label": "Alimentazione sostenibile",
+    "parent_id": "cucina_alimentazione",
+    "description": "Km zero, stagionalità e riduzione dello spreco",
+    "language": "it"
+  },
+  {
+    "id": "cuc_storia",
+    "label": "Storia dell'alimentazione",
+    "parent_id": "cucina_alimentazione",
+    "description": "Evoluzione delle diete e dei costumi alimentari",
+    "language": "it"
+  },
+  {
+    "id": "cuc_industria",
+    "label": "Industria alimentare",
+    "parent_id": "cucina_alimentazione",
+    "description": "Trasformazione, packaging e distribuzione",
+    "language": "it"
+  },
+  {
+    "id": "sp_atletica",
+    "label": "Atletica leggera",
+    "parent_id": "sport",
+    "description": "Corse, salti, lanci e prove multiple",
+    "language": "it"
+  },
+  {
+    "id": "sp_calcio",
+    "label": "Calcio",
+    "parent_id": "sport",
+    "description": "Regole, tattiche, storia e competizioni",
+    "language": "it"
+  },
+  {
+    "id": "sp_pallacanestro",
+    "label": "Pallacanestro",
+    "parent_id": "sport",
+    "description": "Regole, tecniche e campionati",
+    "language": "it"
+  },
+  {
+    "id": "sp_pallavolo",
+    "label": "Pallavolo",
+    "parent_id": "sport",
+    "description": "Regole, ruoli e competizioni internazionali",
+    "language": "it"
+  },
+  {
+    "id": "sp_nuoto",
+    "label": "Nuoto",
+    "parent_id": "sport",
+    "description": "Stili, tecnica e competizioni acquatiche",
+    "language": "it"
+  },
+  {
+    "id": "sp_ciclismo",
+    "label": "Ciclismo",
+    "parent_id": "sport",
+    "description": "Strada, pista, mountain bike e ciclocross",
+    "language": "it"
+  },
+  {
+    "id": "sp_sci",
+    "label": "Sport invernali",
+    "parent_id": "sport",
+    "description": "Sci alpino, fondo, snowboard e pattinaggio",
+    "language": "it"
+  },
+  {
+    "id": "sp_arti_marziali",
+    "label": "Arti marziali",
+    "parent_id": "sport",
+    "description": "Judo, karate, boxe e discipline da combattimento",
+    "language": "it"
+  },
+  {
+    "id": "sp_olimpici",
+    "label": "Giochi olimpici",
+    "parent_id": "sport",
+    "description": "Storia, cerimonie e discipline olimpiche",
+    "language": "it"
+  },
+  {
+    "id": "sp_salute",
+    "label": "Sport e salute",
+    "parent_id": "sport",
+    "description": "Attività fisica, prevenzione e riabilitazione",
+    "language": "it"
+  },
+  {
+    "id": "vq_casa",
+    "label": "Gestione della casa",
+    "parent_id": "vita_quotidiana",
+    "description": "Pulizia, organizzazione e manutenzione domestica",
+    "language": "it"
+  },
+  {
+    "id": "vq_spese",
+    "label": "Spese e budget familiare",
+    "parent_id": "vita_quotidiana",
+    "description": "Gestione delle finanze personali e domestiche",
+    "language": "it"
+  },
+  {
+    "id": "vq_tempo",
+    "label": "Gestione del tempo",
+    "parent_id": "vita_quotidiana",
+    "description": "Pianificazione, routine e produttività personale",
+    "language": "it"
+  },
+  {
+    "id": "vq_relazioni",
+    "label": "Relazioni sociali",
+    "parent_id": "vita_quotidiana",
+    "description": "Amicizie, vicinato e dinamiche interpersonali",
+    "language": "it"
+  },
+  {
+    "id": "vq_benessere",
+    "label": "Benessere quotidiano",
+    "parent_id": "vita_quotidiana",
+    "description": "Sonno, relax e piccole abitudini salutari",
+    "language": "it"
+  },
+  {
+    "id": "vq_trasporti",
+    "label": "Spostamenti quotidiani",
+    "parent_id": "vita_quotidiana",
+    "description": "Mobilità urbana, pendolarismo e viaggi brevi",
+    "language": "it"
+  },
+  {
+    "id": "vq_shopping",
+    "label": "Acquisti e consumo",
+    "parent_id": "vita_quotidiana",
+    "description": "Spesa, e-commerce e scelte di consumo",
+    "language": "it"
+  },
+  {
+    "id": "vq_famiglia",
+    "label": "Dinamiche familiari",
+    "parent_id": "vita_quotidiana",
+    "description": "Convivenza, genitorialità e cura dei familiari",
+    "language": "it"
+  },
+  {
+    "id": "vq_tempo_libero",
+    "label": "Tempo libero",
+    "parent_id": "vita_quotidiana",
+    "description": "Hobby, svago e attività ricreative",
+    "language": "it"
+  },
+  {
+    "id": "vq_stagioni",
+    "label": "Ritmi stagionali",
+    "parent_id": "vita_quotidiana",
+    "description": "Adattamenti alla stagione, vacanze e festività",
+    "language": "it"
+  },
+  {
+    "id": "cp_fai_da_te",
+    "label": "Fai da te",
+    "parent_id": "competenze_pratiche",
+    "description": "Riparazioni, bricolage e progetti manuali",
+    "language": "it"
+  },
+  {
+    "id": "cp_cucito",
+    "label": "Cucito e sartoria",
+    "parent_id": "competenze_pratiche",
+    "description": "Tecniche di confezione, riparazione e modifica",
+    "language": "it"
+  },
+  {
+    "id": "cp_giardinaggio",
+    "label": "Giardinaggio",
+    "parent_id": "competenze_pratiche",
+    "description": "Coltivazione ornamentale, potatura e composizioni",
+    "language": "it"
+  },
+  {
+    "id": "cp_riparazioni",
+    "label": "Riparazioni domestiche",
+    "parent_id": "competenze_pratiche",
+    "description": "Idraulica, elettricità e manutenzione base",
+    "language": "it"
+  },
+  {
+    "id": "cp_sopravvivenza",
+    "label": "Sopravvivenza",
+    "parent_id": "competenze_pratiche",
+    "description": "Orientamento, primo soccorso e tecniche di emergenza",
+    "language": "it"
+  },
+  {
+    "id": "cp_guida",
+    "label": "Guida veicoli",
+    "parent_id": "competenze_pratiche",
+    "description": "Patente, codice della strada e guida sicura",
+    "language": "it"
+  },
+  {
+    "id": "cp_organizzazione",
+    "label": "Organizzazione personale",
+    "parent_id": "competenze_pratiche",
+    "description": "Archiviazione, pianificazione e gestione documenti",
+    "language": "it"
+  },
+  {
+    "id": "cp_cura_animali",
+    "label": "Cura degli animali domestici",
+    "parent_id": "competenze_pratiche",
+    "description": "Alimentazione, igiene e benessere di cani e gatti",
+    "language": "it"
+  },
+  {
+    "id": "cp_riciclo",
+    "label": "Riciclo e riuso",
+    "parent_id": "competenze_pratiche",
+    "description": "Upcycling, compostaggio e riduzione rifiuti",
+    "language": "it"
+  },
+  {
+    "id": "cp_finanze",
+    "label": "Gestione pratica delle finanze",
+    "parent_id": "competenze_pratiche",
+    "description": "Bollette, risparmio e contratti",
+    "language": "it"
+  },
+  {
+    "id": "cd_literacy",
+    "label": "Alfabetizzazione digitale",
+    "parent_id": "cultura_digitale",
+    "description": "Uso base di computer, smartphone e Internet",
+    "language": "it"
+  },
+  {
+    "id": "cd_sicurezza",
+    "label": "Sicurezza digitale personale",
+    "parent_id": "cultura_digitale",
+    "description": "Password, phishing e protezione dati",
+    "language": "it"
+  },
+  {
+    "id": "cd_privacy",
+    "label": "Privacy online",
+    "parent_id": "cultura_digitale",
+    "description": "Dati personali, GDPR e tracce digitali",
+    "language": "it"
+  },
+  {
+    "id": "cd_social",
+    "label": "Uso consapevole dei social",
+    "parent_id": "cultura_digitale",
+    "description": "Netiquette, disinformazione e benessere digitale",
+    "language": "it"
+  },
+  {
+    "id": "cd_ecommerce",
+    "label": "Commercio elettronico",
+    "parent_id": "cultura_digitale",
+    "description": "Acquisti online, pagamenti digitali e truffe",
+    "language": "it"
+  },
+  {
+    "id": "cd_open_data",
+    "label": "Open data e trasparenza",
+    "parent_id": "cultura_digitale",
+    "description": "Dati pubblici, accesso all'informazione e civic tech",
+    "language": "it"
+  },
+  {
+    "id": "cd_gaming",
+    "label": "Videogiochi e gaming",
+    "parent_id": "cultura_digitale",
+    "description": "Generi, cultura e impatto sociale dei videogiochi",
+    "language": "it"
+  },
+  {
+    "id": "cd_streaming",
+    "label": "Streaming e piattaforme",
+    "parent_id": "cultura_digitale",
+    "description": "Musica, video e contenuti on demand",
+    "language": "it"
+  },
+  {
+    "id": "cd_intelligenza",
+    "label": "Comprensione dell'IA",
+    "parent_id": "cultura_digitale",
+    "description": "Funzionamento di base e impatto quotidiano",
+    "language": "it"
+  },
+  {
+    "id": "cd_future",
+    "label": "Futuro digitale",
+    "parent_id": "cultura_digitale",
+    "description": "Metaverso, Web3 e tendenze tecnologiche emergenti",
+    "language": "it"
+  },
+  {
+    "id": "sic_cyber",
+    "label": "Sicurezza informatica",
+    "parent_id": "sicurezza",
+    "description": "Protezione di sistemi, reti e dati",
+    "language": "it"
+  },
+  {
+    "id": "sic_fisica",
+    "label": "Sicurezza fisica",
+    "parent_id": "sicurezza",
+    "description": "Protezione di persone, edifici e infrastrutture",
+    "language": "it"
+  },
+  {
+    "id": "sic_sanitaria",
+    "label": "Sicurezza sanitaria",
+    "parent_id": "sicurezza",
+    "description": "Prevenzione epidemie, igiene e salute pubblica",
+    "language": "it"
+  },
+  {
+    "id": "sic_alimentare",
+    "label": "Sicurezza alimentare",
+    "parent_id": "sicurezza",
+    "description": "Contaminazioni, etichette e tracciabilità",
+    "language": "it"
+  },
+  {
+    "id": "sic_lavoro",
+    "label": "Sicurezza sul lavoro",
+    "parent_id": "sicurezza",
+    "description": "Prevenzione infortuni e malattie professionali",
+    "language": "it"
+  },
+  {
+    "id": "sic_stradale",
+    "label": "Sicurezza stradale",
+    "parent_id": "sicurezza",
+    "description": "Incidenti, norme e comportamenti",
+    "language": "it"
+  },
+  {
+    "id": "sic_domestica",
+    "label": "Sicurezza domestica",
+    "parent_id": "sicurezza",
+    "description": "Prevenzione incendi, gas e rischi in casa",
+    "language": "it"
+  },
+  {
+    "id": "sic_emergenza",
+    "label": "Gestione delle emergenze",
+    "parent_id": "sicurezza",
+    "description": "Protezione civile, piani di evacuazione e soccorso",
+    "language": "it"
+  },
+  {
+    "id": "sic_finanziaria",
+    "label": "Sicurezza finanziaria",
+    "parent_id": "sicurezza",
+    "description": "Truffe, riciclaggio e stabilità del sistema",
+    "language": "it"
+  },
+  {
+    "id": "sic_nazionale",
+    "label": "Sicurezza nazionale",
+    "parent_id": "sicurezza",
+    "description": "Difesa, intelligence e terrorismo",
+    "language": "it"
+  },
+  {
+    "id": "cit_costituzione",
+    "label": "Costituzione italiana",
+    "parent_id": "cittadinanza",
+    "description": "Principi fondamentali, diritti e doveri",
+    "language": "it"
+  },
+  {
+    "id": "cit_diritti",
+    "label": "Diritti umani",
+    "parent_id": "cittadinanza",
+    "description": "Dichiarazioni universali e tutela internazionale",
+    "language": "it"
+  },
+  {
+    "id": "cit_partecipazione",
+    "label": "Partecipazione democratica",
+    "parent_id": "cittadinanza",
+    "description": "Voto, referendum e attivismo civico",
+    "language": "it"
+  },
+  {
+    "id": "cit_europea",
+    "label": "Cittadinanza europea",
+    "parent_id": "cittadinanza",
+    "description": "Diritti, libera circolazione e istituzioni UE",
+    "language": "it"
+  },
+  {
+    "id": "cit_digitale",
+    "label": "Cittadinanza digitale",
+    "parent_id": "cittadinanza",
+    "description": "Diritti e doveri nell'ambiente digitale",
+    "language": "it"
+  },
+  {
+    "id": "cit_sostenibile",
+    "label": "Cittadinanza sostenibile",
+    "parent_id": "cittadinanza",
+    "description": "Responsabilità ambientale e consumo critico",
+    "language": "it"
+  },
+  {
+    "id": "cit_interculturale",
+    "label": "Cittadinanza interculturale",
+    "parent_id": "cittadinanza",
+    "description": "Integrazione, pluralismo e dialogo",
+    "language": "it"
+  },
+  {
+    "id": "cit_giovani",
+    "label": "Cittadinanza attiva dei giovani",
+    "parent_id": "cittadinanza",
+    "description": "Volontariato, progetti e impegno sociale",
+    "language": "it"
+  },
+  {
+    "id": "cit_globale",
+    "label": "Cittadinanza globale",
+    "parent_id": "cittadinanza",
+    "description": "Solidarietà internazionale e diritti globali",
+    "language": "it"
+  },
+  {
+    "id": "cit_storia",
+    "label": "Storia della cittadinanza",
+    "parent_id": "cittadinanza",
+    "description": "Evoluzione del concetto dal mondo antico a oggi",
+    "language": "it"
+  },
+  {
+    "id": "att_media",
+    "label": "Media e informazione",
+    "parent_id": "attualita_societa",
+    "description": "Giornali, televisione, fake news e pluralismo",
+    "language": "it"
+  },
+  {
+    "id": "att_migration",
+    "label": "Migrazioni",
+    "parent_id": "attualita_societa",
+    "description": "Flussi, integrazione e politiche migratorie",
+    "language": "it"
+  },
+  {
+    "id": "att_giustizia_sociale",
+    "label": "Giustizia sociale",
+    "parent_id": "attualita_societa",
+    "description": "Disuguaglianze, inclusione e diritti civili",
+    "language": "it"
+  },
+  {
+    "id": "att_ambiente",
+    "label": "Crisi ambientale",
+    "parent_id": "attualita_societa",
+    "description": "Cambiamento climatico, eventi estremi e adattamento",
+    "language": "it"
+  },
+  {
+    "id": "att_tecnologia",
+    "label": "Tecnologia e società",
+    "parent_id": "attualita_societa",
+    "description": "Impatti dell'innovazione sulla vita quotidiana",
+    "language": "it"
+  },
+  {
+    "id": "att_salute_pubblica",
+    "label": "Salute pubblica",
+    "parent_id": "attualita_societa",
+    "description": "Pandemie, sanità e accesso alle cure",
+    "language": "it"
+  },
+  {
+    "id": "att_economia_soc",
+    "label": "Economia e società",
+    "parent_id": "attualita_societa",
+    "description": "Crisi, inflazione e welfare",
+    "language": "it"
+  },
+  {
+    "id": "att_cultura",
+    "label": "Cultura contemporanea",
+    "parent_id": "attualita_societa",
+    "description": "Tendenze, movimenti e dibattiti culturali",
+    "language": "it"
+  },
+  {
+    "id": "att_generazioni",
+    "label": "Conflitto generazionale",
+    "parent_id": "attualita_societa",
+    "description": "Giovani, anziani e trasmissione dei valori",
+    "language": "it"
+  },
+  {
+    "id": "att_geopolitica",
+    "label": "Geopolitica attuale",
+    "parent_id": "attualita_societa",
+    "description": "Equilibri di potere, guerre e diplomazia",
+    "language": "it"
+  }
+]

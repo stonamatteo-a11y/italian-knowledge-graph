@@ -1,0 +1,4972 @@
+[
+  {
+    "id": "li_st_origini",
+    "label": "Origini e volgare",
+    "parent_id": "li_storia",
+    "description": "Dal latino alle prime attestazioni volgari",
+    "language": "it"
+  },
+  {
+    "id": "li_st_dante",
+    "label": "Dante e la lingua letteraria",
+    "parent_id": "li_storia",
+    "description": "La lingua di Dante e la sua influenza",
+    "language": "it"
+  },
+  {
+    "id": "li_st_cinquecento",
+    "label": "Cinquecento e questione della lingua",
+    "parent_id": "li_storia",
+    "description": "Bembo, Machiavelli e le proposte linguistiche",
+    "language": "it"
+  },
+  {
+    "id": "li_st_ottocento",
+    "label": "Ottocento e unificazione",
+    "parent_id": "li_storia",
+    "description": "Manzoni, l'unità d'Italia e la lingua nazionale",
+    "language": "it"
+  },
+  {
+    "id": "li_st_novecento",
+    "label": "Novecento e neostandard",
+    "parent_id": "li_storia",
+    "description": "Evoluzione della lingua nel Novecento",
+    "language": "it"
+  },
+  {
+    "id": "li_st_contemporanea",
+    "label": "Italiano contemporaneo",
+    "parent_id": "li_storia",
+    "description": "Lingua dei media, degli immigrati e del web",
+    "language": "it"
+  },
+  {
+    "id": "li_no_accademia",
+    "label": "Accademia della Crusca",
+    "parent_id": "li_normativa",
+    "description": "Storia, vocabolario e normativa purista",
+    "language": "it"
+  },
+  {
+    "id": "li_no_treccani",
+    "label": "Enciclopedia Treccani",
+    "parent_id": "li_normativa",
+    "description": "Lessicografia e normativa istituzionale",
+    "language": "it"
+  },
+  {
+    "id": "li_no_regioni",
+    "label": "Normativa regionale",
+    "parent_id": "li_normativa",
+    "description": "Statuti linguistici e bilinguismo",
+    "language": "it"
+  },
+  {
+    "id": "li_no_ue",
+    "label": "Italiano nelle istituzioni UE",
+    "parent_id": "li_normativa",
+    "description": "Ufficiale, traduzioni e terminologia comunitaria",
+    "language": "it"
+  },
+  {
+    "id": "li_le_neologismi",
+    "label": "Neologismi",
+    "parent_id": "li_lessico",
+    "description": "Nuove parole e formazioni recenti",
+    "language": "it"
+  },
+  {
+    "id": "li_le_stranierismi",
+    "label": "Stranierismi",
+    "parent_id": "li_lessico",
+    "description": "Prestiti, calchi e interferenze linguistiche",
+    "language": "it"
+  },
+  {
+    "id": "li_le_regionalismi",
+    "label": "Regionalismi",
+    "parent_id": "li_lessico",
+    "description": "Lessico tipico delle diverse aree italiane",
+    "language": "it"
+  },
+  {
+    "id": "li_le_tecnicismi",
+    "label": "Tecnicismi",
+    "parent_id": "li_lessico",
+    "description": "Terminologia settoriale e specialistica",
+    "language": "it"
+  },
+  {
+    "id": "li_le_dialettismi",
+    "label": "Dialettalismi",
+    "parent_id": "li_lessico",
+    "description": "Voci dialettali entrate nell'italiano comune",
+    "language": "it"
+  },
+  {
+    "id": "li_va_dialetti",
+    "label": "Dialetti italiani",
+    "parent_id": "li_varieta",
+    "description": "Classificazione e caratteristiche dei dialetti",
+    "language": "it"
+  },
+  {
+    "id": "li_va_registri",
+    "label": "Registri comunicativi",
+    "parent_id": "li_varieta",
+    "description": "Lingua formale, informale, tecnica e poetica",
+    "language": "it"
+  },
+  {
+    "id": "li_va_giovanile",
+    "label": "Lingua giovanile",
+    "parent_id": "li_varieta",
+    "description": "Gergo, slang e innovazione lessicale giovanile",
+    "language": "it"
+  },
+  {
+    "id": "li_va_digitale",
+    "label": "Italiano digitale",
+    "parent_id": "li_varieta",
+    "description": "Linguaggio dei social, meme e abbreviazioni",
+    "language": "it"
+  },
+  {
+    "id": "li_or_accento",
+    "label": "Accento e accento grafico",
+    "parent_id": "li_ortografia",
+    "description": "Uso dell'accento e sue regole",
+    "language": "it"
+  },
+  {
+    "id": "li_or_maiuscole",
+    "label": "Uso delle maiuscole",
+    "parent_id": "li_ortografia",
+    "description": "Regole di capitalizzazione",
+    "language": "it"
+  },
+  {
+    "id": "li_or_punteggiatura",
+    "label": "Punteggiatura",
+    "parent_id": "li_ortografia",
+    "description": "Uso di virgole, punti, due punti e trattini",
+    "language": "it"
+  },
+  {
+    "id": "li_or_fonetica",
+    "label": "Fonetica italiana",
+    "parent_id": "li_ortografia",
+    "description": "Fonemi, allofoni e trascrizione fonetica",
+    "language": "it"
+  },
+  {
+    "id": "li_us_media",
+    "label": "Lingua dei media",
+    "parent_id": "li_uso",
+    "description": "Giornali, televisione e linguaggio giornalistico",
+    "language": "it"
+  },
+  {
+    "id": "li_us_pubblica",
+    "label": "Lingua della pubblica amministrazione",
+    "parent_id": "li_uso",
+    "description": "Burocratese e linguaggio amministrativo",
+    "language": "it"
+  },
+  {
+    "id": "li_us_giuridica",
+    "label": "Lingua giuridica",
+    "parent_id": "li_uso",
+    "description": "Terminologia e stile del diritto",
+    "language": "it"
+  },
+  {
+    "id": "li_us_economica",
+    "label": "Lingua economica",
+    "parent_id": "li_uso",
+    "description": "Lessico della finanza e dell'impresa",
+    "language": "it"
+  },
+  {
+    "id": "li_l2_metodologie",
+    "label": "Metodologie didattiche",
+    "parent_id": "li_italiano_l2",
+    "description": "Approcci comunicativi e glottodidattica",
+    "language": "it"
+  },
+  {
+    "id": "li_l2_certificazioni",
+    "label": "Certificazioni di italiano",
+    "parent_id": "li_italiano_l2",
+    "description": "PLIDA, CILS, CELI e livelli QCER",
+    "language": "it"
+  },
+  {
+    "id": "li_l2_errori",
+    "label": "Errori tipici",
+    "parent_id": "li_italiano_l2",
+    "description": "Interferenze e difficoltà per specifiche L1",
+    "language": "it"
+  },
+  {
+    "id": "li_ts_generi",
+    "label": "Generi testuali",
+    "parent_id": "li_tecniche_scrittura",
+    "description": "Saggio, articolo, recensione e racconto",
+    "language": "it"
+  },
+  {
+    "id": "li_ts_stile",
+    "label": "Stile e registro",
+    "parent_id": "li_tecniche_scrittura",
+    "description": "Chiarezza, coesione e coerenza testuale",
+    "language": "it"
+  },
+  {
+    "id": "li_ts_revisione",
+    "label": "Revisione e correzione",
+    "parent_id": "li_tecniche_scrittura",
+    "description": "Tecniche di editing e proofreading",
+    "language": "it"
+  },
+  {
+    "id": "gl_fo_fonemi",
+    "label": "Fonemi italiani",
+    "parent_id": "gl_fonologia",
+    "description": "Inventario fonemico e distribuzione",
+    "language": "it"
+  },
+  {
+    "id": "gl_fo_sillaba",
+    "label": "Sillabazione",
+    "parent_id": "gl_fonologia",
+    "description": "Struttura della sillaba e dittonghi",
+    "language": "it"
+  },
+  {
+    "id": "gl_fo_prosodia",
+    "label": "Prosodia",
+    "parent_id": "gl_fonologia",
+    "description": "Accento, intonazione e ritmo",
+    "language": "it"
+  },
+  {
+    "id": "gl_fo_mutamento",
+    "label": "Mutamento fonetico",
+    "parent_id": "gl_fonologia",
+    "description": "Evoluzione storica dei suoni",
+    "language": "it"
+  },
+  {
+    "id": "gl_mo_flessione",
+    "label": "Flessione nominale e verbale",
+    "parent_id": "gl_morfologia",
+    "description": "Desinenze, coniugazioni e declinazioni",
+    "language": "it"
+  },
+  {
+    "id": "gl_mo_derivazione",
+    "label": "Formazione delle parole",
+    "parent_id": "gl_morfologia",
+    "description": "Prefissi, suffissi e composizione",
+    "language": "it"
+  },
+  {
+    "id": "gl_mo_avverbi",
+    "label": "Avverbi e preposizioni",
+    "parent_id": "gl_morfologia",
+    "description": "Classificazione e uso",
+    "language": "it"
+  },
+  {
+    "id": "gl_mo_pronomi",
+    "label": "Pronomi",
+    "parent_id": "gl_morfologia",
+    "description": "Personali, dimostrativi, relativi e riflessivi",
+    "language": "it"
+  },
+  {
+    "id": "gl_mo_aggettivi",
+    "label": "Aggettivi e articoli",
+    "parent_id": "gl_morfologia",
+    "description": "Determinativi, indeterminativi e gradi",
+    "language": "it"
+  },
+  {
+    "id": "gl_si_frase",
+    "label": "Struttura della frase",
+    "parent_id": "gl_sintassi",
+    "description": "Soggetto, predicato e complementi",
+    "language": "it"
+  },
+  {
+    "id": "gl_si_subordinate",
+    "label": "Proposizioni subordinate",
+    "parent_id": "gl_sintassi",
+    "description": "Relative, temporali, causali e finali",
+    "language": "it"
+  },
+  {
+    "id": "gl_si_periodo",
+    "label": "Periodo ipotetico",
+    "parent_id": "gl_sintassi",
+    "description": "Reale, potenziale e irrealizzabile",
+    "language": "it"
+  },
+  {
+    "id": "gl_si_concordia",
+    "label": "Concordia grammaticale",
+    "parent_id": "gl_sintassi",
+    "description": "Accordo tra soggetto, verbo e attributo",
+    "language": "it"
+  },
+  {
+    "id": "gl_si_passiva",
+    "label": "Costruzione passiva",
+    "parent_id": "gl_sintassi",
+    "description": "Uso, vincoli e alternativi",
+    "language": "it"
+  },
+  {
+    "id": "gl_se_significato",
+    "label": "Significato lessicale",
+    "parent_id": "gl_semantica",
+    "description": "Denotazione, connotazione e polisemia",
+    "language": "it"
+  },
+  {
+    "id": "gl_se_atto",
+    "label": "Atti linguistici",
+    "parent_id": "gl_semantica",
+    "description": "Locuzioni, illocuzioni e perlocuzioni",
+    "language": "it"
+  },
+  {
+    "id": "gl_se_pragmatica",
+    "label": "Pragmatica linguistica",
+    "parent_id": "gl_semantica",
+    "description": "Contesto, implicature e presupposizioni",
+    "language": "it"
+  },
+  {
+    "id": "gl_se_deissi",
+    "label": "Deissi",
+    "parent_id": "gl_semantica",
+    "description": "Riferimento spaziale, temporale e personale",
+    "language": "it"
+  },
+  {
+    "id": "gl_ti_romanze",
+    "label": "Lingue romanze",
+    "parent_id": "gl_tipologia",
+    "description": "Confronto tra italiano, francese, spagnolo, portoghese",
+    "language": "it"
+  },
+  {
+    "id": "gl_ti_germaniche",
+    "label": "Lingue germaniche",
+    "parent_id": "gl_tipologia",
+    "description": "Inglese, tedesco e caratteristiche comuni",
+    "language": "it"
+  },
+  {
+    "id": "gl_ti_slave",
+    "label": "Lingue slave",
+    "parent_id": "gl_tipologia",
+    "description": "Russo, polacco e strutture tipologiche",
+    "language": "it"
+  },
+  {
+    "id": "gl_ti_classiche",
+    "label": "Lingue classiche",
+    "parent_id": "gl_tipologia",
+    "description": "Latino, greco e loro eredità",
+    "language": "it"
+  },
+  {
+    "id": "gl_so_variazione",
+    "label": "Variazione diatopica",
+    "parent_id": "gl_sociolinguistica",
+    "description": "Dialetti e aree linguistiche",
+    "language": "it"
+  },
+  {
+    "id": "gl_so_diastratica",
+    "label": "Variazione diastratica",
+    "parent_id": "gl_sociolinguistica",
+    "description": "Livelli sociali e stratificazione",
+    "language": "it"
+  },
+  {
+    "id": "gl_so_diamesica",
+    "label": "Variazione diamesica",
+    "parent_id": "gl_sociolinguistica",
+    "description": "Scritto, parlato e digitale",
+    "language": "it"
+  },
+  {
+    "id": "gl_so_pianificazione",
+    "label": "Pianificazione linguistica",
+    "parent_id": "gl_sociolinguistica",
+    "description": "Politiche linguistiche e standard",
+    "language": "it"
+  },
+  {
+    "id": "gl_ps_acquisizione",
+    "label": "Acquisizione del linguaggio",
+    "parent_id": "gl_psicolinguistica",
+    "description": "Fasi dello sviluppo linguistico",
+    "language": "it"
+  },
+  {
+    "id": "gl_ps_bilinguismo",
+    "label": "Bilinguismo",
+    "parent_id": "gl_psicolinguistica",
+    "description": "Apprendimento e uso di due lingue",
+    "language": "it"
+  },
+  {
+    "id": "gl_ps_comprensione",
+    "label": "Comprensione del linguaggio",
+    "parent_id": "gl_psicolinguistica",
+    "description": "Processi di parsing e interpretazione",
+    "language": "it"
+  },
+  {
+    "id": "gl_ps_produzione",
+    "label": "Produzione del linguaggio",
+    "parent_id": "gl_psicolinguistica",
+    "description": "Pianificazione e articolazione del parlato",
+    "language": "it"
+  },
+  {
+    "id": "gl_ne_afasia",
+    "label": "Afasie",
+    "parent_id": "gl_neurolinguistica",
+    "description": "Tipologie, cause e riabilitazione",
+    "language": "it"
+  },
+  {
+    "id": "gl_ne_cervello",
+    "label": "Aree cerebrali del linguaggio",
+    "parent_id": "gl_neurolinguistica",
+    "description": "Broca, Wernicke e vie neurali",
+    "language": "it"
+  },
+  {
+    "id": "gl_ne_dislessia",
+    "label": "Dislessia e DSA",
+    "parent_id": "gl_neurolinguistica",
+    "description": "Basi neurali e interventi",
+    "language": "it"
+  },
+  {
+    "id": "gl_lc_nlp",
+    "label": "Elaborazione del linguaggio naturale",
+    "parent_id": "gl_linguistica_computazionale",
+    "description": "Tokenizzazione, parsing e annotazione",
+    "language": "it"
+  },
+  {
+    "id": "gl_lc_corpora",
+    "label": "Corpus linguistici",
+    "parent_id": "gl_linguistica_computazionale",
+    "description": "Raccolte testuali e loro analisi",
+    "language": "it"
+  },
+  {
+    "id": "gl_lc_tagger",
+    "label": "POS tagging e parsing",
+    "parent_id": "gl_linguistica_computazionale",
+    "description": "Etichettatura morfosintattica automatica",
+    "language": "it"
+  },
+  {
+    "id": "gl_lc_sentiment",
+    "label": "Analisi del sentiment",
+    "parent_id": "gl_linguistica_computazionale",
+    "description": "Opinion mining e classificazione emotiva",
+    "language": "it"
+  },
+  {
+    "id": "gl_st_figure",
+    "label": "Figure retoriche",
+    "parent_id": "gl_stilistica",
+    "description": "Schemi e tropi della tradizione classica",
+    "language": "it"
+  },
+  {
+    "id": "gl_st_registro",
+    "label": "Analisi del registro",
+    "parent_id": "gl_stilistica",
+    "description": "Livelli di formalità e scelta lessicale",
+    "language": "it"
+  },
+  {
+    "id": "gl_st_testo",
+    "label": "Analisi del testo",
+    "parent_id": "gl_stilistica",
+    "description": "Coesione, coerenza e struttura informativa",
+    "language": "it"
+  },
+  {
+    "id": "let_it_duecento",
+    "label": "Letteratura duecentesca",
+    "parent_id": "let_italiana",
+    "description": "Scuola siciliana, dolce stil novo e comico",
+    "language": "it"
+  },
+  {
+    "id": "let_it_trecento",
+    "label": "Letteratura trecentesca",
+    "parent_id": "let_italiana",
+    "description": "Dante, Petrarca, Boccaccio",
+    "language": "it"
+  },
+  {
+    "id": "let_it_rinascimento",
+    "label": "Rinascimento",
+    "parent_id": "let_italiana",
+    "description": "Umanesimo, Machiavelli, Ariosto e Tasso",
+    "language": "it"
+  },
+  {
+    "id": "let_it_barocco",
+    "label": "Barocco",
+    "parent_id": "let_italiana",
+    "description": "Marino, scientismo e letteratura barocca",
+    "language": "it"
+  },
+  {
+    "id": "let_it_illuminismo",
+    "label": "Illuminismo",
+    "parent_id": "let_italiana",
+    "description": "Beccaria, Parini, Goldoni",
+    "language": "it"
+  },
+  {
+    "id": "let_it_romanticismo",
+    "label": "Romanticismo",
+    "parent_id": "let_italiana",
+    "description": "Foscolo, Manzoni, Leopardi",
+    "language": "it"
+  },
+  {
+    "id": "let_it_verismo",
+    "label": "Verismo e Decadentismo",
+    "parent_id": "let_italiana",
+    "description": "Verga, Pascoli, D'Annunzio",
+    "language": "it"
+  },
+  {
+    "id": "let_it_novecento",
+    "label": "Novecento",
+    "parent_id": "let_italiana",
+    "description": "Croce, Svevo, Pirandello, Montale",
+    "language": "it"
+  },
+  {
+    "id": "let_it_contemporanea",
+    "label": "Contemporanea",
+    "parent_id": "let_italiana",
+    "description": "Calvino, Eco, Ferrante e nuove voci",
+    "language": "it"
+  },
+  {
+    "id": "let_eu_francese",
+    "label": "Letteratura francese",
+    "parent_id": "let_europea",
+    "description": "Dalla Chanson de geste al Nouveau Roman",
+    "language": "it"
+  },
+  {
+    "id": "let_eu_inglese",
+    "label": "Letteratura inglese",
+    "parent_id": "let_europea",
+    "description": "Shakespeare, romanzo vittoriano e modernismo",
+    "language": "it"
+  },
+  {
+    "id": "let_eu_tedesca",
+    "label": "Letteratura tedesca",
+    "parent_id": "let_europea",
+    "description": "Goethe, Romanticismo e letteratura contemporanea",
+    "language": "it"
+  },
+  {
+    "id": "let_eu_russa",
+    "label": "Letteratura russa",
+    "parent_id": "let_europea",
+    "description": "Dostoevskij, Tolstoj, Čechov e moderni",
+    "language": "it"
+  },
+  {
+    "id": "let_eu_spagnola",
+    "label": "Letteratura spagnola",
+    "parent_id": "let_europea",
+    "description": "Cervantes, Generación del '98 e oltre",
+    "language": "it"
+  },
+  {
+    "id": "let_mo_americana",
+    "label": "Letteratura americana",
+    "parent_id": "let_mondiale",
+    "description": "Dalla letteratura coloniale al postmoderno",
+    "language": "it"
+  },
+  {
+    "id": "let_mo_latinoamericana",
+    "label": "Letteratura latinoamericana",
+    "parent_id": "let_mondiale",
+    "description": "Boom, realismo magico e contemporanei",
+    "language": "it"
+  },
+  {
+    "id": "let_mo_asiatica",
+    "label": "Letterature asiatiche",
+    "parent_id": "let_mondiale",
+    "description": "Cina, Giappone, India e tradizioni",
+    "language": "it"
+  },
+  {
+    "id": "let_mo_africana",
+    "label": "Letterature africane",
+    "parent_id": "let_mondiale",
+    "description": "Oralità, postcoloniale e diaspora",
+    "language": "it"
+  },
+  {
+    "id": "let_mo_araba",
+    "label": "Letteratura araba",
+    "parent_id": "let_mondiale",
+    "description": "Classica e contemporanea",
+    "language": "it"
+  },
+  {
+    "id": "let_po_metrica",
+    "label": "Metrica italiana",
+    "parent_id": "let_poesia",
+    "description": "Endecasillabo, settenario e versi liberi",
+    "language": "it"
+  },
+  {
+    "id": "let_po_lyrica",
+    "label": "Lirica",
+    "parent_id": "let_poesia",
+    "description": "Ode, sonetto, canzone, elegia",
+    "language": "it"
+  },
+  {
+    "id": "let_po_epica",
+    "label": "Poesia epica",
+    "parent_id": "let_poesia",
+    "description": "Omero, Dante, epica moderna",
+    "language": "it"
+  },
+  {
+    "id": "let_po_contemporanea",
+    "label": "Poesia contemporanea",
+    "parent_id": "let_poesia",
+    "description": "Avanguardie, ermetismo e poesia civile",
+    "language": "it"
+  },
+  {
+    "id": "let_na_romanzo",
+    "label": "Romanzo",
+    "parent_id": "let_narrativa",
+    "description": "Storia, tipologie e tecniche narrative",
+    "language": "it"
+  },
+  {
+    "id": "let_na_racconto",
+    "label": "Racconto e novella",
+    "parent_id": "let_narrativa",
+    "description": "Breve, racconto lungo e forma breve",
+    "language": "it"
+  },
+  {
+    "id": "let_na_fantascienza",
+    "label": "Fantascienza e fantasy",
+    "parent_id": "let_narrativa",
+    "description": "Generi speculativi e mondi immaginari",
+    "language": "it"
+  },
+  {
+    "id": "let_na_giallo",
+    "label": "Giallo e noir",
+    "parent_id": "let_narrativa",
+    "description": "Detective story, thriller e hardboiled",
+    "language": "it"
+  },
+  {
+    "id": "let_te_greco",
+    "label": "Teatro greco",
+    "parent_id": "let_teatro",
+    "description": "Tragedia, commedia e satira",
+    "language": "it"
+  },
+  {
+    "id": "let_te_latino",
+    "label": "Teatro latino",
+    "parent_id": "let_teatro",
+    "description": "Plauto, Terenzio, Seneca",
+    "language": "it"
+  },
+  {
+    "id": "let_te_italiano",
+    "label": "Teatro italiano",
+    "parent_id": "let_teatro",
+    "description": "Commedia dell'arte, Goldoni, Pirandello",
+    "language": "it"
+  },
+  {
+    "id": "let_te_contemporaneo",
+    "label": "Teatro contemporaneo",
+    "parent_id": "let_teatro",
+    "description": "Drammaturgia e regia novecentesca e oltre",
+    "language": "it"
+  },
+  {
+    "id": "let_sa_critica",
+    "label": "Critica letteraria",
+    "parent_id": "let_saggistica",
+    "description": "Metodi, scuole e interpretazioni",
+    "language": "it"
+  },
+  {
+    "id": "let_sa_letteraria",
+    "label": "Saggistica letteraria",
+    "parent_id": "let_saggistica",
+    "description": "Saggio d'arte, cultura e civiltà",
+    "language": "it"
+  },
+  {
+    "id": "let_sa_filologica",
+    "label": "Filologia",
+    "parent_id": "let_saggistica",
+    "description": "Ecdotica, stemmatica e critica del testo",
+    "language": "it"
+  },
+  {
+    "id": "let_ge_epica",
+    "label": "Epica",
+    "parent_id": "let_generi",
+    "description": "Caratteristiche e tradizioni eroiche",
+    "language": "it"
+  },
+  {
+    "id": "let_ge_lirica",
+    "label": "Lirica",
+    "parent_id": "let_generi",
+    "description": "Espressione soggettiva e forme poetiche",
+    "language": "it"
+  },
+  {
+    "id": "let_ge_drammatico",
+    "label": "Drammatico",
+    "parent_id": "let_generi",
+    "description": "Teatro e rappresentazione scenica",
+    "language": "it"
+  },
+  {
+    "id": "let_ge_narrativo",
+    "label": "Narrativo",
+    "parent_id": "let_generi",
+    "description": "Prosa, racconto e romanzo",
+    "language": "it"
+  },
+  {
+    "id": "let_or_fiaba",
+    "label": "Fiaba",
+    "parent_id": "let_orale",
+    "description": "Struttura, motivi e classificazione",
+    "language": "it"
+  },
+  {
+    "id": "let_or_leggenda",
+    "label": "Leggenda e mito",
+    "parent_id": "let_orale",
+    "description": "Tradizioni popolari e fondative",
+    "language": "it"
+  },
+  {
+    "id": "let_or_fabula",
+    "label": "Fabula e apologo",
+    "parent_id": "let_orale",
+    "description": "Racconti brevi con morale",
+    "language": "it"
+  },
+  {
+    "id": "let_co_postmoderno",
+    "label": "Postmoderno italiano",
+    "parent_id": "let_contemporanea",
+    "description": "Calvino, Eco, narrativa ludica",
+    "language": "it"
+  },
+  {
+    "id": "let_co_migranti",
+    "label": "Letteratura migrante",
+    "parent_id": "let_contemporanea",
+    "description": "Scrittori di origine straniera in Italia",
+    "language": "it"
+  },
+  {
+    "id": "let_co_giovani",
+    "label": "Nuove generazioni",
+    "parent_id": "let_contemporanea",
+    "description": "Autori emergenti e tendenze",
+    "language": "it"
+  },
+  {
+    "id": "st_an_egitto",
+    "label": "Antico Egitto",
+    "parent_id": "st_antica",
+    "description": "Civiltà, religioni e faraoni",
+    "language": "it"
+  },
+  {
+    "id": "st_an_mesopotamia",
+    "label": "Mesopotamia",
+    "parent_id": "st_antica",
+    "description": "Sumeri, Babilonesi e Assiri",
+    "language": "it"
+  },
+  {
+    "id": "st_an_grecia",
+    "label": "Grecia antica",
+    "parent_id": "st_antica",
+    "description": "Poleis, democrazia, filosofia e guerre persiane",
+    "language": "it"
+  },
+  {
+    "id": "st_an_roma",
+    "label": "Roma antica",
+    "parent_id": "st_antica",
+    "description": "Repubblica, impero, diritto e cristianesimo",
+    "language": "it"
+  },
+  {
+    "id": "st_an_oriente",
+    "label": "Antico Oriente",
+    "parent_id": "st_antica",
+    "description": "Persia, Fenici, Ebrei e civiltà preclassiche",
+    "language": "it"
+  },
+  {
+    "id": "st_me_alto",
+    "label": "Alto Medioevo",
+    "parent_id": "st_medioevo",
+    "description": "Tardoantico, barbari, regni romano-germanici",
+    "language": "it"
+  },
+  {
+    "id": "st_me_basso",
+    "label": "Basso Medioevo",
+    "parent_id": "st_medioevo",
+    "description": "Comuni, signorie, università e crociate",
+    "language": "it"
+  },
+  {
+    "id": "st_me_bizantino",
+    "label": "Impero bizantino",
+    "parent_id": "st_medioevo",
+    "description": "Costantinopoli, giustizianeo e caduta",
+    "language": "it"
+  },
+  {
+    "id": "st_me_islamico",
+    "label": "Mondo islamico medievale",
+    "parent_id": "st_medioevo",
+    "description": "Espansione, califfati e cultura",
+    "language": "it"
+  },
+  {
+    "id": "st_mo_rinascimento",
+    "label": "Rinascimento",
+    "parent_id": "st_moderna",
+    "description": "Umanesimo, Riforma, scoperte geografiche",
+    "language": "it"
+  },
+  {
+    "id": "st_mo_assolutismo",
+    "label": "Assolutismo",
+    "parent_id": "st_moderna",
+    "description": "Sovranità assoluta e Stato moderno",
+    "language": "it"
+  },
+  {
+    "id": "st_mo_rivoluzioni",
+    "label": "Rivoluzioni del Seicento-Settecento",
+    "parent_id": "st_moderna",
+    "description": "Inglese, americana, francese",
+    "language": "it"
+  },
+  {
+    "id": "st_mo_illuminismo",
+    "label": "Illuminismo",
+    "parent_id": "st_moderna",
+    "description": "Ragione, progresso e riforme",
+    "language": "it"
+  },
+  {
+    "id": "st_co_ottocento",
+    "label": "Ottocento",
+    "parent_id": "st_contemporanea",
+    "description": "Napoleone, Risorgimento, unità nazionali",
+    "language": "it"
+  },
+  {
+    "id": "st_co_novecento",
+    "label": "Novecento",
+    "parent_id": "st_contemporanea",
+    "description": "Guerre mondiali, totalitarismi, guerra fredda",
+    "language": "it"
+  },
+  {
+    "id": "st_co_post45",
+    "label": "Dopoguerra",
+    "parent_id": "st_contemporanea",
+    "description": "Ricostruzione, decolonizzazione, globalizzazione",
+    "language": "it"
+  },
+  {
+    "id": "st_co_89",
+    "label": "Fine Novecento",
+    "parent_id": "st_contemporanea",
+    "description": "Caduta muri, nuovi equilibri, globalizzazione",
+    "language": "it"
+  },
+  {
+    "id": "st_it_antica",
+    "label": "Italia antica",
+    "parent_id": "st_italia",
+    "description": "Etruschi, Magna Grecia, Roma",
+    "language": "it"
+  },
+  {
+    "id": "st_it_medioevo",
+    "label": "Italia medievale",
+    "parent_id": "st_italia",
+    "description": "Comuni, signorie, Stato della Chiesa",
+    "language": "it"
+  },
+  {
+    "id": "st_it_rinascimento",
+    "label": "Italia rinascimentale",
+    "parent_id": "st_italia",
+    "description": "Principati, arte, cultura",
+    "language": "it"
+  },
+  {
+    "id": "st_it_risorgimento",
+    "label": "Risorgimento",
+    "parent_id": "st_italia",
+    "description": "Unità d'Italia, patrioti e monarchia",
+    "language": "it"
+  },
+  {
+    "id": "st_it_novecento",
+    "label": "Italia nel Novecento",
+    "parent_id": "st_italia",
+    "description": "Fascismo, guerra, repubblica, boom economico",
+    "language": "it"
+  },
+  {
+    "id": "st_it_contemporanea",
+    "label": "Italia contemporanea",
+    "parent_id": "st_italia",
+    "description": "Dagli anni Ottanta a oggi",
+    "language": "it"
+  },
+  {
+    "id": "st_me_fonti",
+    "label": "Fonti storiche",
+    "parent_id": "st_metodologia",
+    "description": "Tipologie, critica e interpretazione",
+    "language": "it"
+  },
+  {
+    "id": "st_me_storiografia",
+    "label": "Storiografia",
+    "parent_id": "st_metodologia",
+    "description": "Scuole, metodi e storici fondamentali",
+    "language": "it"
+  },
+  {
+    "id": "st_me_orale",
+    "label": "Storia orale",
+    "parent_id": "st_metodologia",
+    "description": "Testimonianze, memoria e metodologia",
+    "language": "it"
+  },
+  {
+    "id": "st_ec_capitalismo",
+    "label": "Storia del capitalismo",
+    "parent_id": "st_economica",
+    "description": "Dalle origini alla globalizzazione",
+    "language": "it"
+  },
+  {
+    "id": "st_ec_industriale",
+    "label": "Rivoluzione industriale",
+    "parent_id": "st_economica",
+    "description": "Meccanizzazione, urbanizzazione, nuove classi",
+    "language": "it"
+  },
+  {
+    "id": "st_ec_commercio",
+    "label": "Storia del commercio",
+    "parent_id": "st_economica",
+    "description": "Rotte, mercanti e mercati globali",
+    "language": "it"
+  },
+  {
+    "id": "st_so_classi",
+    "label": "Classi sociali",
+    "parent_id": "st_sociale",
+    "description": "Nobiltà, borghesia, proletariato, ceti medi",
+    "language": "it"
+  },
+  {
+    "id": "st_so_famiglia",
+    "label": "Storia della famiglia",
+    "parent_id": "st_sociale",
+    "description": "Strutture, ruoli e trasformazioni",
+    "language": "it"
+  },
+  {
+    "id": "st_so_genere",
+    "label": "Storia di genere",
+    "parent_id": "st_sociale",
+    "description": "Donne, mascolinità e studi gender",
+    "language": "it"
+  },
+  {
+    "id": "st_cu_mentalita",
+    "label": "Storia delle mentalità",
+    "parent_id": "st_culturale",
+    "description": "Credenze, paure e rappresentazioni",
+    "language": "it"
+  },
+  {
+    "id": "st_cu_libro",
+    "label": "Storia del libro",
+    "parent_id": "st_culturale",
+    "description": "Manoscritti, stampa, editoria",
+    "language": "it"
+  },
+  {
+    "id": "st_cu_scuola",
+    "label": "Storia della scuola",
+    "parent_id": "st_culturale",
+    "description": "Istruzione, alfabetizzazione e università",
+    "language": "it"
+  },
+  {
+    "id": "st_mi_tattica",
+    "label": "Storia militare antica",
+    "parent_id": "st_militare",
+    "description": "Falange, legione, cavalleria",
+    "language": "it"
+  },
+  {
+    "id": "st_mi_moderna",
+    "label": "Guerre moderne",
+    "parent_id": "st_militare",
+    "description": "Eserciti permanenti, guerre napoleoniche",
+    "language": "it"
+  },
+  {
+    "id": "st_mi_contemporanea",
+    "label": "Guerre contemporanee",
+    "parent_id": "st_militare",
+    "description": "Guerra totale, nucleare, asimmetrica",
+    "language": "it"
+  },
+  {
+    "id": "geo_fi_rilievi",
+    "label": "Rilievi",
+    "parent_id": "geo_fisica",
+    "description": "Montagne, pianure, altopiani e loro formazione",
+    "language": "it"
+  },
+  {
+    "id": "geo_fi_climi",
+    "label": "Climi",
+    "parent_id": "geo_fisica",
+    "description": "Classificazione, fattori e zone climatiche",
+    "language": "it"
+  },
+  {
+    "id": "geo_fi_idrografia",
+    "label": "Idrografia",
+    "parent_id": "geo_fisica",
+    "description": "Fiumi, laghi, ghiacciai e acque sotterranee",
+    "language": "it"
+  },
+  {
+    "id": "geo_fi_vulcani",
+    "label": "Vulcani e terremoti",
+    "parent_id": "geo_fisica",
+    "description": "Attività endogena e rischi",
+    "language": "it"
+  },
+  {
+    "id": "geo_fi_suoli",
+    "label": "Suoli",
+    "parent_id": "geo_fisica",
+    "description": "Formazione, tipologie e degradazione",
+    "language": "it"
+  },
+  {
+    "id": "geo_u_popolazione",
+    "label": "Popolazione",
+    "parent_id": "geo_umana",
+    "description": "Distribuzione, densità, dinamiche demografiche",
+    "language": "it"
+  },
+  {
+    "id": "geo_u_migrazioni",
+    "label": "Migrazioni",
+    "parent_id": "geo_umana",
+    "description": "Cause, flussi e impatti",
+    "language": "it"
+  },
+  {
+    "id": "geo_u_insediamenti",
+    "label": "Insediamenti",
+    "parent_id": "geo_umana",
+    "description": "Urbano, rurale, suburbano e metropolitano",
+    "language": "it"
+  },
+  {
+    "id": "geo_u_attivita",
+    "label": "Attività economiche",
+    "parent_id": "geo_umana",
+    "description": "Primario, secondario, terziario, quaternario",
+    "language": "it"
+  },
+  {
+    "id": "geo_p_stati",
+    "label": "Stati e nazioni",
+    "parent_id": "geo_politica",
+    "description": "Sovranità, confini e forme di governo",
+    "language": "it"
+  },
+  {
+    "id": "geo_p_union",
+    "label": "Unioni sovranazionali",
+    "parent_id": "geo_politica",
+    "description": "UE, ONU, NATO e organizzazioni",
+    "language": "it"
+  },
+  {
+    "id": "geo_p_conflitti",
+    "label": "Conflitti territoriali",
+    "parent_id": "geo_politica",
+    "description": "Dispute di confine e geopolitica",
+    "language": "it"
+  },
+  {
+    "id": "geo_p_regionalismo",
+    "label": "Regionalismo",
+    "parent_id": "geo_politica",
+    "description": "Autonomie, federalismi e decentralizzazione",
+    "language": "it"
+  },
+  {
+    "id": "geo_e_risorse",
+    "label": "Risorse naturali",
+    "parent_id": "geo_economica",
+    "description": "Energetiche, minerarie, idriche e agricole",
+    "language": "it"
+  },
+  {
+    "id": "geo_e_settori",
+    "label": "Settori produttivi",
+    "parent_id": "geo_economica",
+    "description": "Industria, agricoltura, servizi e turismo",
+    "language": "it"
+  },
+  {
+    "id": "geo_e_commercio",
+    "label": "Commercio internazionale",
+    "parent_id": "geo_economica",
+    "description": "Rotte, accordi e flussi commerciali",
+    "language": "it"
+  },
+  {
+    "id": "geo_e_sviluppo",
+    "label": "Sviluppo economico",
+    "parent_id": "geo_economica",
+    "description": "Indicatori, divari Nord-Sud e globalizzazione",
+    "language": "it"
+  },
+  {
+    "id": "geo_r_europa",
+    "label": "Europa",
+    "parent_id": "geo_regionale",
+    "description": "Caratteristiche fisiche, umane e politiche",
+    "language": "it"
+  },
+  {
+    "id": "geo_r_america",
+    "label": "Americhe",
+    "parent_id": "geo_regionale",
+    "description": "Nord, Centro e Sud America",
+    "language": "it"
+  },
+  {
+    "id": "geo_r_asia",
+    "label": "Asia",
+    "parent_id": "geo_regionale",
+    "description": "Estremo Oriente, Medio Oriente, Asia centrale e meridionale",
+    "language": "it"
+  },
+  {
+    "id": "geo_r_africa",
+    "label": "Africa",
+    "parent_id": "geo_regionale",
+    "description": "Regioni, sfide e potenzialità",
+    "language": "it"
+  },
+  {
+    "id": "geo_r_oceania",
+    "label": "Oceania",
+    "parent_id": "geo_regionale",
+    "description": "Australia, Nuova Zelanda e isole del Pacifico",
+    "language": "it"
+  },
+  {
+    "id": "geo_i_nord",
+    "label": "Italia settentrionale",
+    "parent_id": "geo_italia",
+    "description": "Pianura Padana, Alpi, città del Nord",
+    "language": "it"
+  },
+  {
+    "id": "geo_i_centro",
+    "label": "Italia centrale",
+    "parent_id": "geo_italia",
+    "description": "Appennino, Toscana, Lazio, Umbria, Marche",
+    "language": "it"
+  },
+  {
+    "id": "geo_i_sud",
+    "label": "Italia meridionale",
+    "parent_id": "geo_italia",
+    "description": "Mezzogiorno, isole, problemi e risorse",
+    "language": "it"
+  },
+  {
+    "id": "geo_i_isole",
+    "label": "Isole italiane",
+    "parent_id": "geo_italia",
+    "description": "Sicilia, Sardegna e arcipelaghi minori",
+    "language": "it"
+  },
+  {
+    "id": "geo_i_regioni",
+    "label": "Regioni italiane",
+    "parent_id": "geo_italia",
+    "description": "Caratteristiche specifiche delle 20 regioni",
+    "language": "it"
+  },
+  {
+    "id": "geo_eu_occidentale",
+    "label": "Europa occidentale",
+    "parent_id": "geo_europa",
+    "description": "Francia, Germania, Benelux, Regno Unito",
+    "language": "it"
+  },
+  {
+    "id": "geo_eu_mediterranea",
+    "label": "Europa mediterranea",
+    "parent_id": "geo_europa",
+    "description": "Italia, Spagna, Portogallo, Grecia",
+    "language": "it"
+  },
+  {
+    "id": "geo_eu_orientale",
+    "label": "Europa orientale",
+    "parent_id": "geo_europa",
+    "description": "Balcani, Slavi, ex URSS europea",
+    "language": "it"
+  },
+  {
+    "id": "geo_eu_settentrionale",
+    "label": "Europa settentrionale",
+    "parent_id": "geo_europa",
+    "description": "Scandinavia, Baltico, Islanda",
+    "language": "it"
+  },
+  {
+    "id": "geo_c_tecniche",
+    "label": "Tecniche cartografiche",
+    "parent_id": "geo_cartografia",
+    "description": "Proiezioni, scale, simboli",
+    "language": "it"
+  },
+  {
+    "id": "geo_c_gis",
+    "label": "Sistemi informativi geografici",
+    "parent_id": "geo_cartografia",
+    "description": "GIS, telerilevamento e dati spaziali",
+    "language": "it"
+  },
+  {
+    "id": "geo_c_moderna",
+    "label": "Cartografia moderna",
+    "parent_id": "geo_cartografia",
+    "description": "Mappe digitali, GPS e openstreetmap",
+    "language": "it"
+  },
+  {
+    "id": "geo_a_cambiamento",
+    "label": "Cambiamento climatico",
+    "parent_id": "geo_ambientale",
+    "description": "Cause, effetti e adattamento",
+    "language": "it"
+  },
+  {
+    "id": "geo_a_biodiversita",
+    "label": "Biodiversità e habitat",
+    "parent_id": "geo_ambientale",
+    "description": "Ecosistemi, corridee e aree protette",
+    "language": "it"
+  },
+  {
+    "id": "geo_a_rischi",
+    "label": "Rischi ambientali",
+    "parent_id": "geo_ambientale",
+    "description": "Alluvioni, siccità, incendi e frane",
+    "language": "it"
+  },
+  {
+    "id": "geo_u_citta",
+    "label": "Città e urbanizzazione",
+    "parent_id": "geo_urbana",
+    "description": "Metropoli, megalopoli e smart city",
+    "language": "it"
+  },
+  {
+    "id": "geo_u_pianificazione",
+    "label": "Pianificazione urbana",
+    "parent_id": "geo_urbana",
+    "description": "Zonizzazione, trasporti e verde urbano",
+    "language": "it"
+  },
+  {
+    "id": "geo_u_problemi",
+    "label": "Problemi urbani",
+    "parent_id": "geo_urbana",
+    "description": "Inquinamento, degrado, periferie e gentrification",
+    "language": "it"
+  },
+  {
+    "id": "mat_ar_numeri",
+    "label": "Numeri",
+    "parent_id": "mat_aritmetica",
+    "description": "Naturali, interi, razionali, reali, complessi",
+    "language": "it"
+  },
+  {
+    "id": "mat_ar_operazioni",
+    "label": "Operazioni",
+    "parent_id": "mat_aritmetica",
+    "description": "Addizione, sottrazione, moltiplicazione, divisione, potenze",
+    "language": "it"
+  },
+  {
+    "id": "mat_ar_divisibilita",
+    "label": "Divisibilità",
+    "parent_id": "mat_aritmetica",
+    "description": "MCD, mcm, numeri primi, criteri",
+    "language": "it"
+  },
+  {
+    "id": "mat_ar_frazioni",
+    "label": "Frazioni e percentuali",
+    "parent_id": "mat_aritmetica",
+    "description": "Operazioni, proporzioni, calcolo percentuale",
+    "language": "it"
+  },
+  {
+    "id": "mat_al_equazioni",
+    "label": "Equazioni",
+    "parent_id": "mat_algebra",
+    "description": "Lineari, quadratiche, sistemi",
+    "language": "it"
+  },
+  {
+    "id": "mat_al_polinomi",
+    "label": "Polinomi",
+    "parent_id": "mat_algebra",
+    "description": "Operazioni, scomposizione, Ruffini",
+    "language": "it"
+  },
+  {
+    "id": "mat_al_strutture",
+    "label": "Strutture algebriche",
+    "parent_id": "mat_algebra",
+    "description": "Gruppi, anelli, campi, spazi vettoriali",
+    "language": "it"
+  },
+  {
+    "id": "mat_al_matrici",
+    "label": "Matrici",
+    "parent_id": "mat_algebra",
+    "description": "Operazioni, determinante, rango, sistemi lineari",
+    "language": "it"
+  },
+  {
+    "id": "mat_al_numeri_complessi",
+    "label": "Numeri complessi",
+    "parent_id": "mat_algebra",
+    "description": "Forma algebrica, trigonometrica, operazioni",
+    "language": "it"
+  },
+  {
+    "id": "mat_ge_euclidea",
+    "label": "Geometria euclidea",
+    "parent_id": "mat_geometria",
+    "description": "Piano, spazio, figure, dimostrazioni",
+    "language": "it"
+  },
+  {
+    "id": "mat_ge_analitica",
+    "label": "Geometria analitica",
+    "parent_id": "mat_geometria",
+    "description": "Rette, circonferenze, coniche, coordinate",
+    "language": "it"
+  },
+  {
+    "id": "mat_ge_trasformazioni",
+    "label": "Trasformazioni geometriche",
+    "parent_id": "mat_geometria",
+    "description": "Traslazioni, rotazioni, omotetie",
+    "language": "it"
+  },
+  {
+    "id": "mat_ge_solidi",
+    "label": "Solidi geometrici",
+    "parent_id": "mat_geometria",
+    "description": "Poliedri, corpi rotondi, volume e area",
+    "language": "it"
+  },
+  {
+    "id": "mat_ge_non_euclidea",
+    "label": "Geometrie non euclidee",
+    "parent_id": "mat_geometria",
+    "description": "Iperbolica, ellittica, curvature",
+    "language": "it"
+  },
+  {
+    "id": "mat_an_limiti",
+    "label": "Limiti",
+    "parent_id": "mat_analisi",
+    "description": "Definizione, teoremi, forme indeterminate",
+    "language": "it"
+  },
+  {
+    "id": "mat_an_derivate",
+    "label": "Derivate",
+    "parent_id": "mat_analisi",
+    "description": "Definizione, regole, applicazioni",
+    "language": "it"
+  },
+  {
+    "id": "mat_an_integrali",
+    "label": "Integrali",
+    "parent_id": "mat_analisi",
+    "description": "Definiti, indefiniti, tecniche di integrazione",
+    "language": "it"
+  },
+  {
+    "id": "mat_an_serie",
+    "label": "Serie numeriche",
+    "parent_id": "mat_analisi",
+    "description": "Convergenza, criteri, serie note",
+    "language": "it"
+  },
+  {
+    "id": "mat_an_funzioni",
+    "label": "Funzioni",
+    "parent_id": "mat_analisi",
+    "description": "Dominio, segno, studio di funzione",
+    "language": "it"
+  },
+  {
+    "id": "mat_pr_assiomi",
+    "label": "Assiomi della probabilità",
+    "parent_id": "mat_probabilita",
+    "description": "Kolmogorov, spazi campionari, eventi",
+    "language": "it"
+  },
+  {
+    "id": "mat_pr_variabili",
+    "label": "Variabili casuali",
+    "parent_id": "mat_probabilita",
+    "description": "Discrete, continue, valore atteso, varianza",
+    "language": "it"
+  },
+  {
+    "id": "mat_pr_distribuzioni",
+    "label": "Distribuzioni",
+    "parent_id": "mat_probabilita",
+    "description": "Binomiale, normale, di Poisson, esponenziale",
+    "language": "it"
+  },
+  {
+    "id": "mat_pr_condizionata",
+    "label": "Probabilità condizionata",
+    "parent_id": "mat_probabilita",
+    "description": "Indipendenza, Bayes, formula delle probabilità totali",
+    "language": "it"
+  },
+  {
+    "id": "mat_st_stima",
+    "label": "Stima puntuale",
+    "parent_id": "mat_statistica_matematica",
+    "description": "Metodi, proprietà degli stimatori",
+    "language": "it"
+  },
+  {
+    "id": "mat_st_intervalli",
+    "label": "Intervalli di confidenza",
+    "parent_id": "mat_statistica_matematica",
+    "description": "Costruzione e interpretazione",
+    "language": "it"
+  },
+  {
+    "id": "mat_st_test",
+    "label": "Test d'ipotesi",
+    "parent_id": "mat_statistica_matematica",
+    "description": "Errori, potenza, p-value",
+    "language": "it"
+  },
+  {
+    "id": "mat_st_regressione",
+    "label": "Regressione",
+    "parent_id": "mat_statistica_matematica",
+    "description": "Lineare semplice e multipla",
+    "language": "it"
+  },
+  {
+    "id": "mat_lo_proposizionale",
+    "label": "Logica proposizionale",
+    "parent_id": "mat_logica_matematica",
+    "description": "Connettivi, tavole di verità, tautologie",
+    "language": "it"
+  },
+  {
+    "id": "mat_lo_predicativa",
+    "label": "Logica predicativa",
+    "parent_id": "mat_logica_matematica",
+    "description": "Quantificatori, modelli, validità",
+    "language": "it"
+  },
+  {
+    "id": "mat_lo_insiemi",
+    "label": "Teoria degli insiemi",
+    "parent_id": "mat_logica_matematica",
+    "description": "Operazioni, cardinalità, assiomi di ZFC",
+    "language": "it"
+  },
+  {
+    "id": "mat_hi_antica",
+    "label": "Matematica antica",
+    "parent_id": "mat_storia",
+    "description": "Babilonesi, egizi, greci",
+    "language": "it"
+  },
+  {
+    "id": "mat_hi_medioevo",
+    "label": "Matematica medievale",
+    "parent_id": "mat_storia",
+    "description": "Arabi, scolastica, al-Khwarizmi",
+    "language": "it"
+  },
+  {
+    "id": "mat_hi_moderna",
+    "label": "Matematica moderna",
+    "parent_id": "mat_storia",
+    "description": "Cartesio, Newton, Leibniz, Euler",
+    "language": "it"
+  },
+  {
+    "id": "mat_hi_contemporanea",
+    "label": "Matematica contemporanea",
+    "parent_id": "mat_storia",
+    "description": "Hilbert, Gödel, Bourbaki",
+    "language": "it"
+  },
+  {
+    "id": "mat_ap_modelli",
+    "label": "Modellizzazione",
+    "parent_id": "mat_matematica_applicata",
+    "description": "Equazioni differenziali, sistemi dinamici",
+    "language": "it"
+  },
+  {
+    "id": "mat_ap_ottimizzazione",
+    "label": "Ottimizzazione",
+    "parent_id": "mat_matematica_applicata",
+    "description": "Ricerca operativa, programmazione lineare",
+    "language": "it"
+  },
+  {
+    "id": "mat_ap_crittografia",
+    "label": "Crittografia",
+    "parent_id": "mat_matematica_applicata",
+    "description": "Teoria dei numeri, RSA, curve ellittiche",
+    "language": "it"
+  },
+  {
+    "id": "mat_tn_primi",
+    "label": "Numeri primi",
+    "parent_id": "mat_teoria_numeri",
+    "description": "Teorema fondamentale, distribuzione, congetture",
+    "language": "it"
+  },
+  {
+    "id": "mat_tn_congruenze",
+    "label": "Congruenze",
+    "parent_id": "mat_teoria_numeri",
+    "description": "Modulare, teorema cinese del resto",
+    "language": "it"
+  },
+  {
+    "id": "mat_tn_diofantee",
+    "label": "Equazioni diofantee",
+    "parent_id": "mat_teoria_numeri",
+    "description": "Metodi e teoremi classici",
+    "language": "it"
+  },
+  {
+    "id": "log_fo_sintassi",
+    "label": "Sintassi",
+    "parent_id": "log_formale",
+    "description": "Alfabeti, formule ben formate, grammatiche",
+    "language": "it"
+  },
+  {
+    "id": "log_fo_semantica",
+    "label": "Semantica",
+    "parent_id": "log_formale",
+    "description": "Interpretazioni, soddisfacibilità, validità",
+    "language": "it"
+  },
+  {
+    "id": "log_fo_deduzione",
+    "label": "Sistemi deduttivi",
+    "parent_id": "log_formale",
+    "description": "Assiomi, regole, teoremi",
+    "language": "it"
+  },
+  {
+    "id": "log_fo_completeness",
+    "label": "Completezza e compattezza",
+    "parent_id": "log_formale",
+    "description": "Teoremi di completezza, lemma di compattezza",
+    "language": "it"
+  },
+  {
+    "id": "log_pr_tavole",
+    "label": "Tavole di verità",
+    "parent_id": "log_proposizionale",
+    "description": "Costruzione e verifica",
+    "language": "it"
+  },
+  {
+    "id": "log_pr_forme",
+    "label": "Forme normali",
+    "parent_id": "log_proposizionale",
+    "description": "CNF, DNF, clausole di Horn",
+    "language": "it"
+  },
+  {
+    "id": "log_pr_soddisfacibilita",
+    "label": "Soddisfacibilità",
+    "parent_id": "log_proposizionale",
+    "description": "SAT, algoritmi DPLL",
+    "language": "it"
+  },
+  {
+    "id": "log_pe_quantificatori",
+    "label": "Quantificatori",
+    "parent_id": "log_predicativa",
+    "description": "Universale, esistenziale, unicità",
+    "language": "it"
+  },
+  {
+    "id": "log_pe_modelli",
+    "label": "Modelli e strutture",
+    "parent_id": "log_predicativa",
+    "description": "Dominio, interpretazione, isomorfismo",
+    "language": "it"
+  },
+  {
+    "id": "log_pe_inferenza",
+    "label": "Inferenza",
+    "parent_id": "log_predicativa",
+    "description": "Regole di deduzione naturale",
+    "language": "it"
+  },
+  {
+    "id": "log_mo_necessita",
+    "label": "Necessità e possibilità",
+    "parent_id": "log_modale",
+    "description": "Operatori modali, semantica di Kripke",
+    "language": "it"
+  },
+  {
+    "id": "log_mo_sistemi",
+    "label": "Sistemi modali",
+    "parent_id": "log_modale",
+    "description": "K, T, S4, S5 e loro proprietà",
+    "language": "it"
+  },
+  {
+    "id": "log_mo_temporale",
+    "label": "Logica temporale",
+    "parent_id": "log_modale",
+    "description": "Futuro, passato, sempre, prima o poi",
+    "language": "it"
+  },
+  {
+    "id": "log_fi_paradossi",
+    "label": "Paradossi",
+    "parent_id": "log_filosofica",
+    "description": "Russell, mentitore, insiemistici",
+    "language": "it"
+  },
+  {
+    "id": "log_fi_verita",
+    "label": "Teorie della verità",
+    "parent_id": "log_filosofica",
+    "description": "Corrispondenza, coerenza, pragmatica",
+    "language": "it"
+  },
+  {
+    "id": "log_fi_riferimento",
+    "label": "Teorie del riferimento",
+    "parent_id": "log_filosofica",
+    "description": "Frege, Russell, Kripke",
+    "language": "it"
+  },
+  {
+    "id": "log_in_programmazione",
+    "label": "Programmazione logica",
+    "parent_id": "log_informatica",
+    "description": "Prolog, unificazione, risoluzione",
+    "language": "it"
+  },
+  {
+    "id": "log_in_verifica",
+    "label": "Verifica formale",
+    "parent_id": "log_informatica",
+    "description": "Model checking, dimostrazione automatica",
+    "language": "it"
+  },
+  {
+    "id": "log_in_tipi",
+    "label": "Teoria dei tipi",
+    "parent_id": "log_informatica",
+    "description": "Lambda calcolo tipato, Curry-Howard",
+    "language": "it"
+  },
+  {
+    "id": "log_ar_schemi",
+    "label": "Schemi inferenziali",
+    "parent_id": "log_argomentazione",
+    "description": "Sillogismi, entimemi, analogie",
+    "language": "it"
+  },
+  {
+    "id": "log_ar_fallacie",
+    "label": "Fallacie",
+    "parent_id": "log_argomentazione",
+    "description": "Formali, informali, retoriche",
+    "language": "it"
+  },
+  {
+    "id": "log_ar_dialettica",
+    "label": "Dialettica",
+    "parent_id": "log_argomentazione",
+    "description": "Dialogo, confutazione, argomentazione persuasiva",
+    "language": "it"
+  },
+  {
+    "id": "log_de_utilita",
+    "label": "Teoria dell'utilità",
+    "parent_id": "log_decisione",
+    "description": "Funzioni di utilità, preferenze",
+    "language": "it"
+  },
+  {
+    "id": "log_de_giochi",
+    "label": "Teoria dei giochi",
+    "parent_id": "log_decisione",
+    "description": "Strategie, equilibri di Nash, dilemmi",
+    "language": "it"
+  },
+  {
+    "id": "log_de_rischio",
+    "label": "Gestione del rischio",
+    "parent_id": "log_decisione",
+    "description": "Aversione al rischio, assicurazione",
+    "language": "it"
+  },
+  {
+    "id": "sp_de_indici",
+    "label": "Indici di posizione",
+    "parent_id": "sp_descrittiva",
+    "description": "Media, mediana, moda, quantili",
+    "language": "it"
+  },
+  {
+    "id": "sp_de_variabilita",
+    "label": "Indici di variabilità",
+    "parent_id": "sp_descrittiva",
+    "description": "Varianza, deviazione standard, CV",
+    "language": "it"
+  },
+  {
+    "id": "sp_de_forma",
+    "label": "Indici di forma",
+    "parent_id": "sp_descrittiva",
+    "description": "Asimmetria, curtosi",
+    "language": "it"
+  },
+  {
+    "id": "sp_de_grafici",
+    "label": "Rappresentazioni grafiche",
+    "parent_id": "sp_descrittiva",
+    "description": "Istogrammi, boxplot, diagrammi",
+    "language": "it"
+  },
+  {
+    "id": "sp_in_stima",
+    "label": "Stima",
+    "parent_id": "sp_inferenziale",
+    "description": "Puntuale, per intervallo, proprietà",
+    "language": "it"
+  },
+  {
+    "id": "sp_in_test",
+    "label": "Test d'ipotesi",
+    "parent_id": "sp_inferenziale",
+    "description": "Z-test, t-test, chi-quadro, ANOVA",
+    "language": "it"
+  },
+  {
+    "id": "sp_in_campioni",
+    "label": "Dimensione campionaria",
+    "parent_id": "sp_inferenziale",
+    "description": "Calcolo, potenza, errore",
+    "language": "it"
+  },
+  {
+    "id": "sp_pr_assiomi",
+    "label": "Assiomi",
+    "parent_id": "sp_probabilita",
+    "description": "Kolmogorov, probabilità condizionata",
+    "language": "it"
+  },
+  {
+    "id": "sp_pr_variabili",
+    "label": "Variabili casuali",
+    "parent_id": "sp_probabilita",
+    "description": "Discrete, continue, trasformazioni",
+    "language": "it"
+  },
+  {
+    "id": "sp_pr_convergenza",
+    "label": "Convergenza",
+    "parent_id": "sp_probabilita",
+    "description": "Legge dei grandi numeri, teorema del limite centrale",
+    "language": "it"
+  },
+  {
+    "id": "sp_mo_regressione",
+    "label": "Regressione lineare",
+    "parent_id": "sp_modelli",
+    "description": "Semplice, multipla, ipotesi",
+    "language": "it"
+  },
+  {
+    "id": "sp_mo_anova",
+    "label": "ANOVA",
+    "parent_id": "sp_modelli",
+    "description": "A un fattore, a due fattori, interazione",
+    "language": "it"
+  },
+  {
+    "id": "sp_mo_logistica",
+    "label": "Regressione logistica",
+    "parent_id": "sp_modelli",
+    "description": "Classificazione binaria, odds ratio",
+    "language": "it"
+  },
+  {
+    "id": "sp_ca_semplice",
+    "label": "Campionamento casuale semplice",
+    "parent_id": "sp_campionamento",
+    "description": "Sorteggio, rappresentatività",
+    "language": "it"
+  },
+  {
+    "id": "sp_ca_stratificato",
+    "label": "Campionamento stratificato",
+    "parent_id": "sp_campionamento",
+    "description": "Strati, allocazione",
+    "language": "it"
+  },
+  {
+    "id": "sp_ca_cluster",
+    "label": "Campionamento a grappolo",
+    "parent_id": "sp_campionamento",
+    "description": "Cluster, stadio, vantaggi",
+    "language": "it"
+  },
+  {
+    "id": "sp_da_pulizia",
+    "label": "Pulizia dati",
+    "parent_id": "sp_dati",
+    "description": "Outlier, missing values, standardizzazione",
+    "language": "it"
+  },
+  {
+    "id": "sp_da_esplorativa",
+    "label": "Analisi esplorativa",
+    "parent_id": "sp_dati",
+    "description": "EDA, correlazioni, pattern",
+    "language": "it"
+  },
+  {
+    "id": "sp_da_preparazione",
+    "label": "Preparazione",
+    "parent_id": "sp_dati",
+    "description": "Feature engineering, encoding, scaling",
+    "language": "it"
+  },
+  {
+    "id": "sp_ba_teorema",
+    "label": "Teorema di Bayes",
+    "parent_id": "sp_bayesiana",
+    "description": "Formula, interpretazione, esempi",
+    "language": "it"
+  },
+  {
+    "id": "sp_ba_priori",
+    "label": "Distribuzioni a priori",
+    "parent_id": "sp_bayesiana",
+    "description": "Coniugate, non informative",
+    "language": "it"
+  },
+  {
+    "id": "sp_ba_mc",
+    "label": "Metodi MCMC",
+    "parent_id": "sp_bayesiana",
+    "description": "Gibbs, Metropolis-Hastings",
+    "language": "it"
+  },
+  {
+    "id": "sp_se_design",
+    "label": "Design sperimentale",
+    "parent_id": "sp_sperimentali",
+    "description": "Fattori, livelli, randomizzazione",
+    "language": "it"
+  },
+  {
+    "id": "sp_se_controllo",
+    "label": "Gruppi di controllo",
+    "parent_id": "sp_sperimentali",
+    "description": "Placebo, doppio cieco",
+    "language": "it"
+  },
+  {
+    "id": "sp_se_validita",
+    "label": "Validità interna ed esterna",
+    "parent_id": "sp_sperimentali",
+    "description": "Bias, generalizzabilità",
+    "language": "it"
+  },
+  {
+    "id": "sp_ap_sondaggi",
+    "label": "Sondaggi d'opinione",
+    "parent_id": "sp_applicazioni",
+    "description": "Metodologia, campione, errore",
+    "language": "it"
+  },
+  {
+    "id": "sp_ap_demografia",
+    "label": "Demografia",
+    "parent_id": "sp_applicazioni",
+    "description": "Natalità, mortalità, migrazioni",
+    "language": "it"
+  },
+  {
+    "id": "sp_ap_mercato",
+    "label": "Ricerca di mercato",
+    "parent_id": "sp_applicazioni",
+    "description": "Segmentazione, posizionamento",
+    "language": "it"
+  },
+  {
+    "id": "fis_me_cinematica",
+    "label": "Cinematica",
+    "parent_id": "fis_meccanica",
+    "description": "Moto rettilineo, circolare, armonico",
+    "language": "it"
+  },
+  {
+    "id": "fis_me_dinamica",
+    "label": "Dinamica",
+    "parent_id": "fis_meccanica",
+    "description": "Leggi di Newton, forze, attrito",
+    "language": "it"
+  },
+  {
+    "id": "fis_me_statica",
+    "label": "Statica",
+    "parent_id": "fis_meccanica",
+    "description": "Equilibrio, momenti, baricentro",
+    "language": "it"
+  },
+  {
+    "id": "fis_me_energia",
+    "label": "Energia e lavoro",
+    "parent_id": "fis_meccanica",
+    "description": "Cinetica, potenziale, conservazione",
+    "language": "it"
+  },
+  {
+    "id": "fis_me_fluidi",
+    "label": "Fluidodinamica",
+    "parent_id": "fis_meccanica",
+    "description": "Pressione, principio di Archimede, Bernoulli",
+    "language": "it"
+  },
+  {
+    "id": "fis_te_leggi",
+    "label": "Leggi della termodinamica",
+    "parent_id": "fis_termodinamica",
+    "description": "Zero, primo, secondo, terzo principio",
+    "language": "it"
+  },
+  {
+    "id": "fis_te_gas",
+    "label": "Teoria cinetica dei gas",
+    "parent_id": "fis_termodinamica",
+    "description": "Equazione di stato, Maxwell-Boltzmann",
+    "language": "it"
+  },
+  {
+    "id": "fis_te_macchine",
+    "label": "Macchine termiche",
+    "parent_id": "fis_termodinamica",
+    "description": "Cicli di Carnot, Otto, Diesel",
+    "language": "it"
+  },
+  {
+    "id": "fis_te_entropia",
+    "label": "Entropia",
+    "parent_id": "fis_termodinamica",
+    "description": "Definizione, irreversibilità, disordine",
+    "language": "it"
+  },
+  {
+    "id": "fis_el_elettrostatica",
+    "label": "Elettrostatica",
+    "parent_id": "fis_elettromagnetismo",
+    "description": "Carica, campo, potenziale, condensatori",
+    "language": "it"
+  },
+  {
+    "id": "fis_el_magnetismo",
+    "label": "Magnetismo",
+    "parent_id": "fis_elettromagnetismo",
+    "description": "Campo magnetico, forza di Lorentz, induzione",
+    "language": "it"
+  },
+  {
+    "id": "fis_el_corrente",
+    "label": "Corrente elettrica",
+    "parent_id": "fis_elettromagnetismo",
+    "description": "Ohm, circuiti, Kirchhoff",
+    "language": "it"
+  },
+  {
+    "id": "fis_el_ondem",
+    "label": "Onde elettromagnetiche",
+    "parent_id": "fis_elettromagnetismo",
+    "description": "Spettro, propagazione, applicazioni",
+    "language": "it"
+  },
+  {
+    "id": "fis_ot_riflessione",
+    "label": "Riflessione e rifrazione",
+    "parent_id": "fis_ottica",
+    "description": "Leggi, specchi, lenti",
+    "language": "it"
+  },
+  {
+    "id": "fis_ot_interferenza",
+    "label": "Interferenza e diffrazione",
+    "parent_id": "fis_ottica",
+    "description": "Fenditure, reticoli, spettroscopia",
+    "language": "it"
+  },
+  {
+    "id": "fis_ot_polarizzazione",
+    "label": "Polarizzazione",
+    "parent_id": "fis_ottica",
+    "description": "Luce polarizzata, filtri, birifrangenza",
+    "language": "it"
+  },
+  {
+    "id": "fis_re_ristretta",
+    "label": "Relatività ristretta",
+    "parent_id": "fis_relativita",
+    "description": "Simultaneità, dilatazione, contrazione",
+    "language": "it"
+  },
+  {
+    "id": "fis_re_generale",
+    "label": "Relatività generale",
+    "parent_id": "fis_relativita",
+    "description": "Spaziotempo, curvature, buchi neri",
+    "language": "it"
+  },
+  {
+    "id": "fis_re_esperimenti",
+    "label": "Esperimenti classici",
+    "parent_id": "fis_relativita",
+    "description": "Michelson-Morley, deflessione luce",
+    "language": "it"
+  },
+  {
+    "id": "fis_qu_principi",
+    "label": "Principi fondamentali",
+    "parent_id": "fis_quantistica",
+    "description": "Sovrapposizione, entanglement, misura",
+    "language": "it"
+  },
+  {
+    "id": "fis_qu_equazione",
+    "label": "Equazione di Schrödinger",
+    "parent_id": "fis_quantistica",
+    "description": "Forma, interpretazione, soluzioni",
+    "language": "it"
+  },
+  {
+    "id": "fis_qu_atomica",
+    "label": "Struttura atomica",
+    "parent_id": "fis_quantistica",
+    "description": "Orbitali, numeri quantici, tavola periodica",
+    "language": "it"
+  },
+  {
+    "id": "fis_qu_applicazioni",
+    "label": "Applicazioni",
+    "parent_id": "fis_quantistica",
+    "description": "Laser, transistor, imaging",
+    "language": "it"
+  },
+  {
+    "id": "fis_nu_radioattivita",
+    "label": "Radioattività",
+    "parent_id": "fis_nucleare",
+    "description": "Alfa, beta, gamma, decadimento",
+    "language": "it"
+  },
+  {
+    "id": "fis_nu_reazioni",
+    "label": "Reazioni nucleari",
+    "parent_id": "fis_nucleare",
+    "description": "Fissione, fusione, catena",
+    "language": "it"
+  },
+  {
+    "id": "fis_nu_applicazioni",
+    "label": "Applicazioni",
+    "parent_id": "fis_nucleare",
+    "description": "Reattori, armi, medicina nucleare",
+    "language": "it"
+  },
+  {
+    "id": "fis_pa_standard",
+    "label": "Modello standard",
+    "parent_id": "fis_particelle",
+    "description": "Quark, leptoni, bosoni, interazioni",
+    "language": "it"
+  },
+  {
+    "id": "fis_pa_acceleratori",
+    "label": "Acceleratori",
+    "parent_id": "fis_particelle",
+    "description": "LHC, rivelatori, scoperte",
+    "language": "it"
+  },
+  {
+    "id": "fis_pa_beyond",
+    "label": "Oltre il modello standard",
+    "parent_id": "fis_particelle",
+    "description": "Supersimmetria, stringhe, dark matter",
+    "language": "it"
+  },
+  {
+    "id": "fis_as_stelle",
+    "label": "Fisica stellare",
+    "parent_id": "fis_astrofisica",
+    "description": "Struttura, evoluzione, nucleosintesi",
+    "language": "it"
+  },
+  {
+    "id": "fis_as_buchi_neri",
+    "label": "Buchi neri",
+    "parent_id": "fis_astrofisica",
+    "description": "Formazione, orizzonte degli eventi, radiazione Hawking",
+    "language": "it"
+  },
+  {
+    "id": "fis_as_cosmologia",
+    "label": "Cosmologia fisica",
+    "parent_id": "fis_astrofisica",
+    "description": "Big Bang, espansione, materia oscura",
+    "language": "it"
+  },
+  {
+    "id": "fis_hi_antica",
+    "label": "Fisica antica",
+    "parent_id": "fis_storia",
+    "description": "Aristotele, Archimede, meccanica antica",
+    "language": "it"
+  },
+  {
+    "id": "fis_hi_classica",
+    "label": "Rivoluzione scientifica",
+    "parent_id": "fis_storia",
+    "description": "Galileo, Newton, meccanica classica",
+    "language": "it"
+  },
+  {
+    "id": "fis_hi_moderna",
+    "label": "Fisica moderna",
+    "parent_id": "fis_storia",
+    "description": "Einstein, Bohr, Heisenberg, rivoluzione quantistica",
+    "language": "it"
+  },
+  {
+    "id": "ch_ge_struttura",
+    "label": "Struttura atomica",
+    "parent_id": "chim_generale",
+    "description": "Atomo, numeri quantici, orbitali",
+    "language": "it"
+  },
+  {
+    "id": "ch_ge_legami",
+    "label": "Legami chimici",
+    "parent_id": "chim_generale",
+    "description": "Ionico, covalente, metallico, legame a idrogeno",
+    "language": "it"
+  },
+  {
+    "id": "ch_ge_stechiometria",
+    "label": "Stechiometria",
+    "parent_id": "chim_generale",
+    "description": "Moli, reazioni, bilanciamento",
+    "language": "it"
+  },
+  {
+    "id": "ch_ge_stati",
+    "label": "Stati della materia",
+    "parent_id": "chim_generale",
+    "description": "Solido, liquido, gas, plasma",
+    "language": "it"
+  },
+  {
+    "id": "ch_ge_soluzioni",
+    "label": "Soluzioni",
+    "parent_id": "chim_generale",
+    "description": "Concentrazione, proprietà colligative",
+    "language": "it"
+  },
+  {
+    "id": "ch_or_idrocarburi",
+    "label": "Idrocarburi",
+    "parent_id": "chim_organica",
+    "description": "Alcani, alcheni, alchini, aromatici",
+    "language": "it"
+  },
+  {
+    "id": "ch_or_funzionali",
+    "label": "Gruppi funzionali",
+    "parent_id": "chim_organica",
+    "description": "Alcoli, aldeidi, chetoni, acidi, ammine",
+    "language": "it"
+  },
+  {
+    "id": "ch_or_isomeria",
+    "label": "Isomeria",
+    "parent_id": "chim_organica",
+    "description": "Strutturale, stereoisomeria, chirale",
+    "language": "it"
+  },
+  {
+    "id": "ch_or_reazioni",
+    "label": "Reazioni organiche",
+    "parent_id": "chim_organica",
+    "description": "Sostituzione, addizione, eliminazione",
+    "language": "it"
+  },
+  {
+    "id": "ch_or_biochimica",
+    "label": "Biochimica organica",
+    "parent_id": "chim_organica",
+    "description": "Carboidrati, lipidi, proteine, acidi nucleici",
+    "language": "it"
+  },
+  {
+    "id": "ch_in_metalli",
+    "label": "Metalli",
+    "parent_id": "chim_inorganica",
+    "description": "Proprietà, reattività, leghe",
+    "language": "it"
+  },
+  {
+    "id": "ch_in_non_metalli",
+    "label": "Non metalli",
+    "parent_id": "chim_inorganica",
+    "description": "Gas nobili, alogeni, ossigeno, azoto",
+    "language": "it"
+  },
+  {
+    "id": "ch_in_composti",
+    "label": "Composti inorganici",
+    "parent_id": "chim_inorganica",
+    "description": "Ossidi, idrossidi, sali",
+    "language": "it"
+  },
+  {
+    "id": "ch_in_coordinazione",
+    "label": "Chimica di coordinazione",
+    "parent_id": "chim_inorganica",
+    "description": "Complessi, ligandi, isomeria",
+    "language": "it"
+  },
+  {
+    "id": "ch_an_qualitativa",
+    "label": "Analisi qualitativa",
+    "parent_id": "chim_analitica",
+    "description": "Identificazione di ioni e gruppi",
+    "language": "it"
+  },
+  {
+    "id": "ch_an_quantitativa",
+    "label": "Analisi quantitativa",
+    "parent_id": "chim_analitica",
+    "description": "Titrimetria, gravimetria",
+    "language": "it"
+  },
+  {
+    "id": "ch_an_strumentale",
+    "label": "Analisi strumentale",
+    "parent_id": "chim_analitica",
+    "description": "Spettroscopia, cromatografia, elettrochimica",
+    "language": "it"
+  },
+  {
+    "id": "ch_fi_termochimica",
+    "label": "Termochimica",
+    "parent_id": "chim_fisica",
+    "description": "Entalpia, entropia, energia libera",
+    "language": "it"
+  },
+  {
+    "id": "ch_fi_cinetica",
+    "label": "Cinetica chimica",
+    "parent_id": "chim_fisica",
+    "description": "Velocità, catalisi, meccanismi",
+    "language": "it"
+  },
+  {
+    "id": "ch_fi_equilibrio",
+    "label": "Equilibrio chimico",
+    "parent_id": "chim_fisica",
+    "description": "Costante, principio di Le Chatelier",
+    "language": "it"
+  },
+  {
+    "id": "ch_fi_elettrochimica",
+    "label": "Elettrochimica",
+    "parent_id": "chim_fisica",
+    "description": "Pile, elettrolisi, potenziali",
+    "language": "it"
+  },
+  {
+    "id": "ch_bi_enzimi",
+    "label": "Enzimi",
+    "parent_id": "chim_biochimica",
+    "description": "Catalisi, cinetica, regolazione",
+    "language": "it"
+  },
+  {
+    "id": "ch_bi_metabolismo",
+    "label": "Metabolismo",
+    "parent_id": "chim_biochimica",
+    "description": "Glicolisi, ciclo di Krebs, fosforilazione ossidativa",
+    "language": "it"
+  },
+  {
+    "id": "ch_bi_dna",
+    "label": "DNA e replicazione",
+    "parent_id": "chim_biochimica",
+    "description": "Struttura, polimerasi, mutazioni",
+    "language": "it"
+  },
+  {
+    "id": "ch_bi_proteine",
+    "label": "Proteine",
+    "parent_id": "chim_biochimica",
+    "description": "Struttura, sintesi, folding",
+    "language": "it"
+  },
+  {
+    "id": "ch_am_inquinanti",
+    "label": "Inquinanti chimici",
+    "parent_id": "chim_ambientale",
+    "description": "CO2, NOx, PM, PFAS",
+    "language": "it"
+  },
+  {
+    "id": "ch_am_cicli",
+    "label": "Cicli biogeochimici",
+    "parent_id": "chim_ambientale",
+    "description": "Carbonio, azoto, fosforo, zolfo",
+    "language": "it"
+  },
+  {
+    "id": "ch_am_green",
+    "label": "Chimica verde",
+    "parent_id": "chim_ambientale",
+    "description": "Principi, solventi, catalisi sostenibile",
+    "language": "it"
+  },
+  {
+    "id": "ch_ma_polimeri",
+    "label": "Polimeri",
+    "parent_id": "chim_materiali",
+    "description": "Sintesi, proprietà, riciclaggio",
+    "language": "it"
+  },
+  {
+    "id": "ch_ma_nanomateriali",
+    "label": "Nanomateriali",
+    "parent_id": "chim_materiali",
+    "description": "Fullereni, nanotubi, proprietà",
+    "language": "it"
+  },
+  {
+    "id": "ch_ma_ceramici",
+    "label": "Materiali ceramici",
+    "parent_id": "chim_materiali",
+    "description": "Produzione, proprietà, applicazioni",
+    "language": "it"
+  },
+  {
+    "id": "ch_in_processi",
+    "label": "Processi industriali",
+    "parent_id": "chim_industriale",
+    "description": "Haber-Bosch, contatto, cracking",
+    "language": "it"
+  },
+  {
+    "id": "ch_in_petrolchimica",
+    "label": "Petrolchimica",
+    "parent_id": "chim_industriale",
+    "description": "Raffinazione, prodotti, impatto",
+    "language": "it"
+  },
+  {
+    "id": "ch_in_farmaceutica",
+    "label": "Chimica farmaceutica",
+    "parent_id": "chim_industriale",
+    "description": "Sintesi, formulazione, qualità",
+    "language": "it"
+  },
+  {
+    "id": "ch_hi_alchimia",
+    "label": "Alchimia",
+    "parent_id": "chim_storia",
+    "description": "Origini, simbolismo, trasmutazione",
+    "language": "it"
+  },
+  {
+    "id": "ch_hi_moderna",
+    "label": "Chimica moderna",
+    "parent_id": "chim_storia",
+    "description": "Lavoisier, Dalton, Mendeleev",
+    "language": "it"
+  },
+  {
+    "id": "ch_hi_contemporanea",
+    "label": "Chimica contemporanea",
+    "parent_id": "chim_storia",
+    "description": "Polimeri, farmaci, nanotecnologie",
+    "language": "it"
+  },
+  {
+    "id": "bio_bo_morfologia",
+    "label": "Morfologia vegetale",
+    "parent_id": "bio_botanica",
+    "description": "Radici, fusti, foglie, fiori",
+    "language": "it"
+  },
+  {
+    "id": "bio_bo_fisiologia",
+    "label": "Fisiologia vegetale",
+    "parent_id": "bio_botanica",
+    "description": "Fotosintesi, traspirazione, nutrizione",
+    "language": "it"
+  },
+  {
+    "id": "bio_bo_tassonomia",
+    "label": "Tassonomia vegetale",
+    "parent_id": "bio_botanica",
+    "description": "Classificazione, famiglie, chiavi",
+    "language": "it"
+  },
+  {
+    "id": "bio_bo_ecologia",
+    "label": "Ecologia vegetale",
+    "parent_id": "bio_botanica",
+    "description": "Fitosociologia, successioni",
+    "language": "it"
+  },
+  {
+    "id": "bio_zo_invertebrati",
+    "label": "Invertebrati",
+    "parent_id": "bio_zoologia",
+    "description": "Poriferi, cnidari, molluschi, artropodi",
+    "language": "it"
+  },
+  {
+    "id": "bio_zo_vertebrati",
+    "label": "Vertebrati",
+    "parent_id": "bio_zoologia",
+    "description": "Pesci, anfibi, rettili, uccelli, mammiferi",
+    "language": "it"
+  },
+  {
+    "id": "bio_zo_comportamento",
+    "label": "Etologia",
+    "parent_id": "bio_zoologia",
+    "description": "Comportamento istintivo, appreso, sociale",
+    "language": "it"
+  },
+  {
+    "id": "bio_zo_tassonomia",
+    "label": "Tassonomia animale",
+    "parent_id": "bio_zoologia",
+    "description": "Classificazione, filogenesi",
+    "language": "it"
+  },
+  {
+    "id": "bio_ge_mendel",
+    "label": "Genetica classica",
+    "parent_id": "bio_genetica",
+    "description": "Leggi di Mendel, ereditarietà",
+    "language": "it"
+  },
+  {
+    "id": "bio_ge_molecolare",
+    "label": "Genetica molecolare",
+    "parent_id": "bio_genetica",
+    "description": "DNA, RNA, trascrizione, traduzione",
+    "language": "it"
+  },
+  {
+    "id": "bio_ge_umana",
+    "label": "Genetica umana",
+    "parent_id": "bio_genetica",
+    "description": "Cromosomi, malattie ereditarie, test genetici",
+    "language": "it"
+  },
+  {
+    "id": "bio_ge_ingegneria",
+    "label": "Ingegneria genetica",
+    "parent_id": "bio_genetica",
+    "description": "CRISPR, OGM, terapia genica",
+    "language": "it"
+  },
+  {
+    "id": "bio_mi_batteri",
+    "label": "Batteriologia",
+    "parent_id": "bio_microbiologia",
+    "description": "Struttura, metabolismo, patogenicità",
+    "language": "it"
+  },
+  {
+    "id": "bio_mi_virologia",
+    "label": "Virologia",
+    "parent_id": "bio_microbiologia",
+    "description": "Struttura, replicazione, vaccini",
+    "language": "it"
+  },
+  {
+    "id": "bio_mi_micologia",
+    "label": "Micologia",
+    "parent_id": "bio_microbiologia",
+    "description": "Funghi, lieviti, muffe",
+    "language": "it"
+  },
+  {
+    "id": "bio_mi_parassitologia",
+    "label": "Parassitologia",
+    "parent_id": "bio_microbiologia",
+    "description": "Protozoi, elminti, vettori",
+    "language": "it"
+  },
+  {
+    "id": "bio_ec_popolazioni",
+    "label": "Ecologia delle popolazioni",
+    "parent_id": "bio_ecologia",
+    "description": "Dinamiche, crescita, regolazione",
+    "language": "it"
+  },
+  {
+    "id": "bio_ec_comunita",
+    "label": "Ecologia delle comunità",
+    "parent_id": "bio_ecologia",
+    "description": "Competizione, predazione, simbiosi",
+    "language": "it"
+  },
+  {
+    "id": "bio_ec_ecosistemi",
+    "label": "Ecologia degli ecosistemi",
+    "parent_id": "bio_ecologia",
+    "description": "Flussi di energia, cicli della materia",
+    "language": "it"
+  },
+  {
+    "id": "bio_ec_conservazione",
+    "label": "Biologia della conservazione",
+    "parent_id": "bio_ecologia",
+    "description": "Specie a rischio, habitat, ripristino",
+    "language": "it"
+  },
+  {
+    "id": "bio_ev_darwin",
+    "label": "Teoria darwiniana",
+    "parent_id": "bio_evolution",
+    "description": "Selezione naturale, adattamento",
+    "language": "it"
+  },
+  {
+    "id": "bio_ev_speciazione",
+    "label": "Speciazione",
+    "parent_id": "bio_evolution",
+    "description": "Modelli, isolamento, ibridazione",
+    "language": "it"
+  },
+  {
+    "id": "bio_ev_filogenesi",
+    "label": "Filogenesi",
+    "parent_id": "bio_evolution",
+    "description": "Alberi filogenetici, omologia, convergenza",
+    "language": "it"
+  },
+  {
+    "id": "bio_ev_molecolare",
+    "label": "Evoluzione molecolare",
+    "parent_id": "bio_evolution",
+    "description": "Orologi molecolari, genomi",
+    "language": "it"
+  },
+  {
+    "id": "bio_ce_struttura",
+    "label": "Struttura cellulare",
+    "parent_id": "bio_cellulare",
+    "description": "Membrana, organelli, citoscheletro",
+    "language": "it"
+  },
+  {
+    "id": "bio_ce_divisione",
+    "label": "Divisione cellulare",
+    "parent_id": "bio_cellulare",
+    "description": "Mitosi, meiosi, ciclo cellulare",
+    "language": "it"
+  },
+  {
+    "id": "bio_ce_segnali",
+    "label": "Segnalazione cellulare",
+    "parent_id": "bio_cellulare",
+    "description": "Recettori, vie di trasduzione",
+    "language": "it"
+  },
+  {
+    "id": "bio_mo_dna",
+    "label": "Struttura e funzione del DNA",
+    "parent_id": "bio_molecolare",
+    "description": "Doppia elica, replicazione",
+    "language": "it"
+  },
+  {
+    "id": "bio_mo_rna",
+    "label": "RNA",
+    "parent_id": "bio_molecolare",
+    "description": "Tipi, funzioni, splicing",
+    "language": "it"
+  },
+  {
+    "id": "bio_mo_proteine",
+    "label": "Sintesi proteica",
+    "parent_id": "bio_molecolare",
+    "description": "Ribosomi, codice genetico, modificazioni",
+    "language": "it"
+  },
+  {
+    "id": "bio_fi_apparati",
+    "label": "Apparati e sistemi",
+    "parent_id": "bio_fisiologia",
+    "description": "Circolatorio, respiratorio, nervoso",
+    "language": "it"
+  },
+  {
+    "id": "bio_fi_ormoni",
+    "label": "Sistema endocrino",
+    "parent_id": "bio_fisiologia",
+    "description": "Ormoni, ghiandole, feedback",
+    "language": "it"
+  },
+  {
+    "id": "bio_fi_immunitario",
+    "label": "Sistema immunitario",
+    "parent_id": "bio_fisiologia",
+    "description": "Innata, adattativa, vaccini",
+    "language": "it"
+  },
+  {
+    "id": "bio_an_ominidi",
+    "label": "Evoluzione degli ominidi",
+    "parent_id": "bio_antropologia",
+    "description": "Australopitechi, Homo, Neanderthal",
+    "language": "it"
+  },
+  {
+    "id": "bio_an_biodiversita",
+    "label": "Biodiversità umana",
+    "parent_id": "bio_antropologia",
+    "description": "Variazione genetica, adattamenti",
+    "language": "it"
+  },
+  {
+    "id": "bio_an_forense",
+    "label": "Antropologia forense",
+    "parent_id": "bio_antropologia",
+    "description": "Identificazione, osteologia",
+    "language": "it"
+  },
+  {
+    "id": "med_an_apparato",
+    "label": "Apparato scheletrico",
+    "parent_id": "med_anatomia",
+    "description": "Ossa, articolazioni, muscoli",
+    "language": "it"
+  },
+  {
+    "id": "med_an_nervoso",
+    "label": "Sistema nervoso",
+    "parent_id": "med_anatomia",
+    "description": "Encefalo, midollo, nervi periferici",
+    "language": "it"
+  },
+  {
+    "id": "med_an_cardiovascolare",
+    "label": "Sistema cardiovascolare",
+    "parent_id": "med_anatomia",
+    "description": "Cuore, vasi, circolazione",
+    "language": "it"
+  },
+  {
+    "id": "med_an_respiratorio",
+    "label": "Sistema respiratorio",
+    "parent_id": "med_anatomia",
+    "description": "Vie aeree, polmoni, meccanica",
+    "language": "it"
+  },
+  {
+    "id": "med_an_digerente",
+    "label": "Sistema digerente",
+    "parent_id": "med_anatomia",
+    "description": "Tratto gastrointestinale, fegato, pancreas",
+    "language": "it"
+  },
+  {
+    "id": "med_fi_cardio",
+    "label": "Fisiologia cardiovascolare",
+    "parent_id": "med_fisiologia",
+    "description": "Elettrocardiogramma, pressione, flusso",
+    "language": "it"
+  },
+  {
+    "id": "med_fi_respiratoria",
+    "label": "Fisiologia respiratoria",
+    "parent_id": "med_fisiologia",
+    "description": "Ventilazione, scambi gassosi",
+    "language": "it"
+  },
+  {
+    "id": "med_fi_renale",
+    "label": "Fisiologia renale",
+    "parent_id": "med_fisiologia",
+    "description": "Filtrazione, riassorbimento, equilibrio acido-base",
+    "language": "it"
+  },
+  {
+    "id": "med_fi_neuro",
+    "label": "Neurofisiologia",
+    "parent_id": "med_fisiologia",
+    "description": "Potenziali d'azione, sinapsi, plasticità",
+    "language": "it"
+  },
+  {
+    "id": "med_pa_generale",
+    "label": "Patologia generale",
+    "parent_id": "med_patologia",
+    "description": "Infiammazione, necrosi, iperplasia",
+    "language": "it"
+  },
+  {
+    "id": "med_pa_oncologia",
+    "label": "Oncologia",
+    "parent_id": "med_patologia",
+    "description": "Carcinogenesi, tipi di tumore, terapie",
+    "language": "it"
+  },
+  {
+    "id": "med_pa_cardiovascolari",
+    "label": "Malattie cardiovascolari",
+    "parent_id": "med_patologia",
+    "description": "Ictus, infarto, ipertensione",
+    "language": "it"
+  },
+  {
+    "id": "med_pa_infettive",
+    "label": "Malattie infettive",
+    "parent_id": "med_patologia",
+    "description": "Batteriche, virali, fungine, parassitarie",
+    "language": "it"
+  },
+  {
+    "id": "med_fa_farmacocinetica",
+    "label": "Farmacocinetica",
+    "parent_id": "med_farmacologia",
+    "description": "Assorbimento, distribuzione, metabolismo, eliminazione",
+    "language": "it"
+  },
+  {
+    "id": "med_fa_farmacodinamica",
+    "label": "Farmacodinamica",
+    "parent_id": "med_farmacologia",
+    "description": "Recettori, agonisti, antagonisti",
+    "language": "it"
+  },
+  {
+    "id": "med_fa_classi",
+    "label": "Classi farmacologiche",
+    "parent_id": "med_farmacologia",
+    "description": "Antibiotici, antinfiammatori, anticoagulanti",
+    "language": "it"
+  },
+  {
+    "id": "med_fa_sviluppo",
+    "label": "Sviluppo farmaceutico",
+    "parent_id": "med_farmacologia",
+    "description": "Fasi cliniche, registrazione, farmacovigilanza",
+    "language": "it"
+  },
+  {
+    "id": "med_ch_generale",
+    "label": "Chirurgia generale",
+    "parent_id": "med_chirurgia",
+    "description": "Principi, asepsi, tecniche base",
+    "language": "it"
+  },
+  {
+    "id": "med_ch_specialita",
+    "label": "Specialità chirurgiche",
+    "parent_id": "med_chirurgia",
+    "description": "Cardiochirurgia, neurochirurgia, ortopedia",
+    "language": "it"
+  },
+  {
+    "id": "med_ch_mininvasiva",
+    "label": "Chirurgia mininvasiva",
+    "parent_id": "med_chirurgia",
+    "description": "Laparoscopia, robotica, endoscopia",
+    "language": "it"
+  },
+  {
+    "id": "med_ps_disturbi",
+    "label": "Disturbi psichiatrici",
+    "parent_id": "med_psichiatria",
+    "description": "Depressione, ansia, psicosi, bipolarismo",
+    "language": "it"
+  },
+  {
+    "id": "med_ps_terapie",
+    "label": "Psicoterapie",
+    "parent_id": "med_psichiatria",
+    "description": "CBT, psicoanalisi, sistemica",
+    "language": "it"
+  },
+  {
+    "id": "med_ps_farmacologiche",
+    "label": "Terapie farmacologiche",
+    "parent_id": "med_psichiatria",
+    "description": "Antidepressivi, antipsicotici, stabilizzatori",
+    "language": "it"
+  },
+  {
+    "id": "med_pe_sviluppo",
+    "label": "Sviluppo infantile",
+    "parent_id": "med_pediatria",
+    "description": "Crescita, sviluppo psicomotorio",
+    "language": "it"
+  },
+  {
+    "id": "med_pe_vaccini",
+    "label": "Vaccinazioni pediatriche",
+    "parent_id": "med_pediatria",
+    "description": "Calendario, sicurezza, immunità",
+    "language": "it"
+  },
+  {
+    "id": "med_pe_patologie",
+    "label": "Patologie pediatriche",
+    "parent_id": "med_pediatria",
+    "description": "Malattie comuni, rare, croniche",
+    "language": "it"
+  },
+  {
+    "id": "med_pr_igiene",
+    "label": "Igiene e sanità pubblica",
+    "parent_id": "med_prevenzione",
+    "description": "Epidemiologia, controllo delle malattie",
+    "language": "it"
+  },
+  {
+    "id": "med_pr_vaccini",
+    "label": "Vaccinologia",
+    "parent_id": "med_prevenzione",
+    "description": "Tipi, efficacia, coperture",
+    "language": "it"
+  },
+  {
+    "id": "med_pr_stili",
+    "label": "Stili di vita",
+    "parent_id": "med_prevenzione",
+    "description": "Alimentazione, attività fisica, sonno",
+    "language": "it"
+  },
+  {
+    "id": "med_nu_macro",
+    "label": "Macronutrienti",
+    "parent_id": "med_nutrizione",
+    "description": "Carboidrati, proteine, lipidi",
+    "language": "it"
+  },
+  {
+    "id": "med_nu_micro",
+    "label": "Micronutrienti",
+    "parent_id": "med_nutrizione",
+    "description": "Vitamine, minerali, oligoelementi",
+    "language": "it"
+  },
+  {
+    "id": "med_nu_patologie",
+    "label": "Patologie nutrizionali",
+    "parent_id": "med_nutrizione",
+    "description": "Obesità, malnutrizione, disturbi alimentari",
+    "language": "it"
+  },
+  {
+    "id": "med_em_triage",
+    "label": "Triage",
+    "parent_id": "med_emergenza",
+    "description": "Classificazione, priorità, codici",
+    "language": "it"
+  },
+  {
+    "id": "med_em_rianimazione",
+    "label": "Rianimazione",
+    "parent_id": "med_emergenza",
+    "description": "BLS, ACLS, defibrillazione",
+    "language": "it"
+  },
+  {
+    "id": "med_em_trauma",
+    "label": "Traumatologia d'emergenza",
+    "parent_id": "med_emergenza",
+    "description": "Politraumi, emorragie, shock",
+    "language": "it"
+  },
+  {
+    "id": "ast_so_pianeti",
+    "label": "Pianeti",
+    "parent_id": "astro_sistema_solare",
+    "description": "Terrestri, giganti gassosi, ghiacciati",
+    "language": "it"
+  },
+  {
+    "id": "ast_so_sole",
+    "label": "Sole",
+    "parent_id": "astro_sistema_solare",
+    "description": "Struttura, attività, cicli",
+    "language": "it"
+  },
+  {
+    "id": "ast_so_luna",
+    "label": "Luna",
+    "parent_id": "astro_sistema_solare",
+    "description": "Fasi, maree, esplorazione",
+    "language": "it"
+  },
+  {
+    "id": "ast_so_piccoli",
+    "label": "Corpi minori",
+    "parent_id": "astro_sistema_solare",
+    "description": "Asteroidi, comete, meteoriti",
+    "language": "it"
+  },
+  {
+    "id": "ast_st_nascita",
+    "label": "Nascita stellare",
+    "parent_id": "astro_stelle",
+    "description": "Nebulose, protostelle, disco protoplanetario",
+    "language": "it"
+  },
+  {
+    "id": "ast_st_vita",
+    "label": "Vita delle stelle",
+    "parent_id": "astro_stelle",
+    "description": "Sequenza principale, fusione, equilibrio",
+    "language": "it"
+  },
+  {
+    "id": "ast_st_morte",
+    "label": "Morte stellare",
+    "parent_id": "astro_stelle",
+    "description": "Giganti rosse, supernove, nane bianche",
+    "language": "it"
+  },
+  {
+    "id": "ast_st_classificazione",
+    "label": "Classificazione stellare",
+    "parent_id": "astro_stelle",
+    "description": "Diagramma HR, spettri, luminosità",
+    "language": "it"
+  },
+  {
+    "id": "ast_ga_tipi",
+    "label": "Tipi di galassie",
+    "parent_id": "astro_galassie",
+    "description": "Ellittiche, spirali, irregolari",
+    "language": "it"
+  },
+  {
+    "id": "ast_ga_struttura",
+    "label": "Struttura galattica",
+    "parent_id": "astro_galassie",
+    "description": "Nucleo, bracci, alone, materia oscura",
+    "language": "it"
+  },
+  {
+    "id": "ast_ga_cosmologia",
+    "label": "Cosmologia osservativa",
+    "parent_id": "astro_galassie",
+    "description": "Espansione, fondo cosmico, big bang",
+    "language": "it"
+  },
+  {
+    "id": "ast_os_telescopi",
+    "label": "Telescopi",
+    "parent_id": "astro_osservazione",
+    "description": "Rifrazione, riflessione, radio, spazio",
+    "language": "it"
+  },
+  {
+    "id": "ast_os_fotometria",
+    "label": "Fotometria e spettroscopia",
+    "parent_id": "astro_osservazione",
+    "description": "Luce, spettri, redshift",
+    "language": "it"
+  },
+  {
+    "id": "ast_os_cataloghi",
+    "label": "Cataloghi celesti",
+    "parent_id": "astro_osservazione",
+    "description": "Messier, NGC, SAO, coordinate",
+    "language": "it"
+  },
+  {
+    "id": "ast_es_metodi",
+    "label": "Metodi di rivelazione",
+    "parent_id": "astro_esopianeti",
+    "description": "Transito, velocità radiale, microlensing",
+    "language": "it"
+  },
+  {
+    "id": "ast_es_abitabilita",
+    "label": "Zona abitabile",
+    "parent_id": "astro_esopianeti",
+    "description": "Definizione, criteri, esopianeti confermati",
+    "language": "it"
+  },
+  {
+    "id": "ast_es_biosign",
+    "label": "Biosignatures",
+    "parent_id": "astro_esopianeti",
+    "description": "Atmosfere, molecole, ricerca di vita",
+    "language": "it"
+  },
+  {
+    "id": "ast_as_propulsione",
+    "label": "Propulsione spaziale",
+    "parent_id": "astro_astronautica",
+    "description": "Razzi, motori ionici, vele solari",
+    "language": "it"
+  },
+  {
+    "id": "ast_as_orbitali",
+    "label": "Meccanica orbitale",
+    "parent_id": "astro_astronautica",
+    "description": "Orbite, manovre, lagrangiani",
+    "language": "it"
+  },
+  {
+    "id": "ast_as_esplorazione",
+    "label": "Esplorazione umana",
+    "parent_id": "astro_astronautica",
+    "description": "Apollo, ISS, Marte, colonizzazione",
+    "language": "it"
+  },
+  {
+    "id": "st_ge_rocce",
+    "label": "Rocce",
+    "parent_id": "st_geologia",
+    "description": "Ignee, sedimentarie, metamorfiche",
+    "language": "it"
+  },
+  {
+    "id": "st_ge_minerali",
+    "label": "Minerali",
+    "parent_id": "st_geologia",
+    "description": "Classificazione, proprietà, cristallografia",
+    "language": "it"
+  },
+  {
+    "id": "st_ge_tettonica",
+    "label": "Tettonica delle placche",
+    "parent_id": "st_geologia",
+    "description": "Placche, margini, deriva",
+    "language": "it"
+  },
+  {
+    "id": "st_ge_stratigrafia",
+    "label": "Stratigrafia",
+    "parent_id": "st_geologia",
+    "description": "Principi, scale geologiche, datazione",
+    "language": "it"
+  },
+  {
+    "id": "st_vu_tipologie",
+    "label": "Tipi di vulcani",
+    "parent_id": "st_vulcanologia",
+    "description": "A scudo, a cono, caldere, sottomarini",
+    "language": "it"
+  },
+  {
+    "id": "st_vu_eruzioni",
+    "label": "Eruzioni",
+    "parent_id": "st_vulcanologia",
+    "description": "Esplosività, colate, cenere",
+    "language": "it"
+  },
+  {
+    "id": "st_vu_monitoraggio",
+    "label": "Monitoraggio",
+    "parent_id": "st_vulcanologia",
+    "description": "Sismografi, gas, deformazioni",
+    "language": "it"
+  },
+  {
+    "id": "st_si_terremoti",
+    "label": "Terremoti",
+    "parent_id": "st_sismologia",
+    "description": "Faglie, magnitudo, intensità",
+    "language": "it"
+  },
+  {
+    "id": "st_si_ondes",
+    "label": "Onde sismiche",
+    "parent_id": "st_sismologia",
+    "description": "P, S, superficiali, tomografia",
+    "language": "it"
+  },
+  {
+    "id": "st_si_rischio",
+    "label": "Rischio sismico",
+    "parent_id": "st_sismologia",
+    "description": "Pericolosità, vulnerabilità, esposizione",
+    "language": "it"
+  },
+  {
+    "id": "st_pa_fossili",
+    "label": "Fossili",
+    "parent_id": "st_paleontologia",
+    "description": "Formazione, tafonomia, classificazione",
+    "language": "it"
+  },
+  {
+    "id": "st_pa_dinosauri",
+    "label": "Dinosauri",
+    "parent_id": "st_paleontologia",
+    "description": "Evoluzione, estinzione, scoperte",
+    "language": "it"
+  },
+  {
+    "id": "st_pa_uomo",
+    "label": "Evoluzione umana",
+    "parent_id": "st_paleontologia",
+    "description": "Australopitechi, Homo, utensili",
+    "language": "it"
+  },
+  {
+    "id": "st_oc_correnti",
+    "label": "Correnti oceaniche",
+    "parent_id": "st_oceanografia",
+    "description": "Termoaline, superficiali, upwelling",
+    "language": "it"
+  },
+  {
+    "id": "st_oc_maree",
+    "label": "Maree",
+    "parent_id": "st_oceanografia",
+    "description": "Forze, tipi, effetti costieri",
+    "language": "it"
+  },
+  {
+    "id": "st_oc_fondali",
+    "label": "Fondali marini",
+    "parent_id": "st_oceanografia",
+    "description": "Dorsali, fossa, sedimenti",
+    "language": "it"
+  },
+  {
+    "id": "st_cl_fattori",
+    "label": "Fattori climatici",
+    "parent_id": "st_climatologia",
+    "description": "Latitudine, altitudine, correnti",
+    "language": "it"
+  },
+  {
+    "id": "st_cl_zone",
+    "label": "Zone climatiche",
+    "parent_id": "st_climatologia",
+    "description": "Köppen, biomi, distribuzione",
+    "language": "it"
+  },
+  {
+    "id": "st_cl_paleoclima",
+    "label": "Paleoclimatologia",
+    "parent_id": "st_climatologia",
+    "description": "Ere glaciali, proxy, modelli",
+    "language": "it"
+  },
+  {
+    "id": "am_ec_forestali",
+    "label": "Ecosistemi forestali",
+    "parent_id": "amb_ecosistemi",
+    "description": "Boschi, foreste pluviali, taiga",
+    "language": "it"
+  },
+  {
+    "id": "am_ec_acquatici",
+    "label": "Ecosistemi acquatici",
+    "parent_id": "amb_ecosistemi",
+    "description": "Dolci, salmastri, marini",
+    "language": "it"
+  },
+  {
+    "id": "am_ec_agricoli",
+    "label": "Ecosistemi agricoli",
+    "parent_id": "amb_ecosistemi",
+    "description": "Colture, pascoli, agroecosistemi",
+    "language": "it"
+  },
+  {
+    "id": "am_ec_urbane",
+    "label": "Ecosistemi urbani",
+    "parent_id": "amb_ecosistemi",
+    "description": "Città, infrastrutture verdi",
+    "language": "it"
+  },
+  {
+    "id": "am_bi_genetica",
+    "label": "Diversità genetica",
+    "parent_id": "amb_biodiversita",
+    "description": "Variazione all'interno delle specie",
+    "language": "it"
+  },
+  {
+    "id": "am_bi_specie",
+    "label": "Diversità specifica",
+    "parent_id": "amb_biodiversita",
+    "description": "Ricchezza di specie, indici",
+    "language": "it"
+  },
+  {
+    "id": "am_bi_ecosistemi",
+    "label": "Diversità ecosistemica",
+    "parent_id": "amb_biodiversita",
+    "description": "Biomi, habitat, paesaggi",
+    "language": "it"
+  },
+  {
+    "id": "am_bi_estinzione",
+    "label": "Estinzione",
+    "parent_id": "amb_biodiversita",
+    "description": "Cause, tassi, specie a rischio",
+    "language": "it"
+  },
+  {
+    "id": "am_cc_gas",
+    "label": "Gas serra",
+    "parent_id": "amb_cambiamento_climatico",
+    "description": "CO2, metano, N2O, effetto serra",
+    "language": "it"
+  },
+  {
+    "id": "am_cc_impatti",
+    "label": "Impatti",
+    "parent_id": "amb_cambiamento_climatico",
+    "description": "Temperature, eventi estremi, innalzamento mari",
+    "language": "it"
+  },
+  {
+    "id": "am_cc_mitigazione",
+    "label": "Mitigazione",
+    "parent_id": "amb_cambiamento_climatico",
+    "description": "Riduzione emissioni, carbon capture",
+    "language": "it"
+  },
+  {
+    "id": "am_cc_adattamento",
+    "label": "Adattamento",
+    "parent_id": "amb_cambiamento_climatico",
+    "description": "Infrastrutture, agricoltura, pianificazione",
+    "language": "it"
+  },
+  {
+    "id": "am_in_aria",
+    "label": "Inquinamento atmosferico",
+    "parent_id": "amb_inquinamento",
+    "description": "PM, NOx, SO2, ozono",
+    "language": "it"
+  },
+  {
+    "id": "am_in_acqua",
+    "label": "Inquinamento idrico",
+    "parent_id": "amb_inquinamento",
+    "description": "Sostanze chimiche, plastiche, eutrofizzazione",
+    "language": "it"
+  },
+  {
+    "id": "am_in_suolo",
+    "label": "Inquinamento del suolo",
+    "parent_id": "amb_inquinamento",
+    "description": "Metalli pesanti, pesticidi, bonifiche",
+    "language": "it"
+  },
+  {
+    "id": "am_in_rumore",
+    "label": "Inquinamento acustico",
+    "parent_id": "amb_inquinamento",
+    "description": "Fonti, effetti, normative",
+    "language": "it"
+  },
+  {
+    "id": "am_so_agenda",
+    "label": "Agenda 2030",
+    "parent_id": "amb_sostenibilita",
+    "description": "SDGs, indicatori, progressi",
+    "language": "it"
+  },
+  {
+    "id": "am_so_economia",
+    "label": "Economia circolare",
+    "parent_id": "amb_sostenibilita",
+    "description": "Riuso, riciclo, upcycling",
+    "language": "it"
+  },
+  {
+    "id": "am_so_edilizia",
+    "label": "Edilizia sostenibile",
+    "parent_id": "amb_sostenibilita",
+    "description": "Bioedilizia, certificazioni, efficienza",
+    "language": "it"
+  },
+  {
+    "id": "am_en_solare",
+    "label": "Solare",
+    "parent_id": "amb_energie_rinnovabili",
+    "description": "Fotovoltaico, termico, concentrazione",
+    "language": "it"
+  },
+  {
+    "id": "am_en_eolico",
+    "label": "Eolico",
+    "parent_id": "amb_energie_rinnovabili",
+    "description": "Onshore, offshore, mini-eolico",
+    "language": "it"
+  },
+  {
+    "id": "am_en_idro",
+    "label": "Idroelettrico",
+    "parent_id": "amb_energie_rinnovabili",
+    "description": "Grandi dighe, mini-idro, pompaggio",
+    "language": "it"
+  },
+  {
+    "id": "am_en_geotermia",
+    "label": "Geotermia",
+    "parent_id": "amb_energie_rinnovabili",
+    "description": "Alta, media, bassa entalpia",
+    "language": "it"
+  },
+  {
+    "id": "in_al_complessita",
+    "label": "Complessità computazionale",
+    "parent_id": "info_algoritmi",
+    "description": "O grande, classi P, NP",
+    "language": "it"
+  },
+  {
+    "id": "in_al_ordinamento",
+    "label": "Algoritmi di ordinamento",
+    "parent_id": "info_algoritmi",
+    "description": "QuickSort, MergeSort, HeapSort",
+    "language": "it"
+  },
+  {
+    "id": "in_al_grafi",
+    "label": "Algoritmi su grafi",
+    "parent_id": "info_algoritmi",
+    "description": "BFS, DFS, Dijkstra, A*",
+    "language": "it"
+  },
+  {
+    "id": "in_al_ricerca",
+    "label": "Algoritmi di ricerca",
+    "parent_id": "info_algoritmi",
+    "description": "Binaria, hash, indicizzazione",
+    "language": "it"
+  },
+  {
+    "id": "in_pr_paradigmi",
+    "label": "Paradigmi",
+    "parent_id": "info_programmazione",
+    "description": "Imperativo, funzionale, OOP, logico",
+    "language": "it"
+  },
+  {
+    "id": "in_pr_linguaggi",
+    "label": "Linguaggi",
+    "parent_id": "info_programmazione",
+    "description": "Python, C, Java, JavaScript, Rust",
+    "language": "it"
+  },
+  {
+    "id": "in_pr_strutture",
+    "label": "Strutture dati",
+    "parent_id": "info_programmazione",
+    "description": "Array, liste, alberi, grafi, hash map",
+    "language": "it"
+  },
+  {
+    "id": "in_pr_debugging",
+    "label": "Debugging",
+    "parent_id": "info_programmazione",
+    "description": "Testing, profiling, refactoring",
+    "language": "it"
+  },
+  {
+    "id": "in_sw_ciclo",
+    "label": "Ciclo di vita",
+    "parent_id": "info_software",
+    "description": "Waterfall, agile, DevOps",
+    "language": "it"
+  },
+  {
+    "id": "in_sw_design",
+    "label": "Design pattern",
+    "parent_id": "info_software",
+    "description": "MVC, singleton, factory, observer",
+    "language": "it"
+  },
+  {
+    "id": "in_sw_qualita",
+    "label": "Qualità del software",
+    "parent_id": "info_software",
+    "description": "Metriche, review, standard",
+    "language": "it"
+  },
+  {
+    "id": "in_ar_cpu",
+    "label": "Processori",
+    "parent_id": "info_architetture",
+    "description": "Architettura, pipeline, cache, multicore",
+    "language": "it"
+  },
+  {
+    "id": "in_ar_memoria",
+    "label": "Memoria",
+    "parent_id": "info_architetture",
+    "description": "RAM, ROM, SSD, gerarchie",
+    "language": "it"
+  },
+  {
+    "id": "in_ar_bus",
+    "label": "Bus e interconnessioni",
+    "parent_id": "info_architetture",
+    "description": "PCIe, USB, Thunderbolt",
+    "language": "it"
+  },
+  {
+    "id": "in_so_processi",
+    "label": "Gestione processi",
+    "parent_id": "info_sistemi_operativi",
+    "description": "Scheduling, concorrenza, deadlock",
+    "language": "it"
+  },
+  {
+    "id": "in_so_memoria",
+    "label": "Gestione memoria",
+    "parent_id": "info_sistemi_operativi",
+    "description": "Paging, segmentazione, virtual memory",
+    "language": "it"
+  },
+  {
+    "id": "in_so_filesystem",
+    "label": "File system",
+    "parent_id": "info_sistemi_operativi",
+    "description": "NTFS, ext4, APFS, permessi",
+    "language": "it"
+  },
+  {
+    "id": "in_re_tcpip",
+    "label": "Stack TCP/IP",
+    "parent_id": "info_reti",
+    "description": "HTTP, DNS, DHCP, routing",
+    "language": "it"
+  },
+  {
+    "id": "in_re_sicurezza",
+    "label": "Sicurezza di rete",
+    "parent_id": "info_reti",
+    "description": "Firewall, VPN, IDS",
+    "language": "it"
+  },
+  {
+    "id": "in_re_wireless",
+    "label": "Reti wireless",
+    "parent_id": "info_reti",
+    "description": "WiFi, 5G, Bluetooth, LoRa",
+    "language": "it"
+  },
+  {
+    "id": "in_si_crittografia",
+    "label": "Crittografia",
+    "parent_id": "info_sicurezza_informatica",
+    "description": "Simmetrica, asimmetrica, hash, TLS",
+    "language": "it"
+  },
+  {
+    "id": "in_si_malware",
+    "label": "Malware",
+    "parent_id": "info_sicurezza_informatica",
+    "description": "Virus, worm, ransomware, trojan",
+    "language": "it"
+  },
+  {
+    "id": "in_si_pentest",
+    "label": "Penetration testing",
+    "parent_id": "info_sicurezza_informatica",
+    "description": "Vulnerability assessment, ethical hacking",
+    "language": "it"
+  },
+  {
+    "id": "in_bd_relazionali",
+    "label": "Database relazionali",
+    "parent_id": "info_basi_dati",
+    "description": "SQL, normalizzazione, ACID",
+    "language": "it"
+  },
+  {
+    "id": "in_bd_nosql",
+    "label": "NoSQL",
+    "parent_id": "info_basi_dati",
+    "description": "Documentali, key-value, graph, column",
+    "language": "it"
+  },
+  {
+    "id": "in_bd_ottimizzazione",
+    "label": "Ottimizzazione",
+    "parent_id": "info_basi_dati",
+    "description": "Indici, query plan, sharding",
+    "language": "it"
+  },
+  {
+    "id": "in_gr_rendering",
+    "label": "Rendering",
+    "parent_id": "info_grafica",
+    "description": "Ray tracing, rasterizzazione, shaders",
+    "language": "it"
+  },
+  {
+    "id": "in_gr_vr",
+    "label": "Realtà virtuale e aumentata",
+    "parent_id": "info_grafica",
+    "description": "Headset, tracking, interazione",
+    "language": "it"
+  },
+  {
+    "id": "in_gr_animazione",
+    "label": "Animazione",
+    "parent_id": "info_grafica",
+    "description": "Rigging, keyframe, motion capture",
+    "language": "it"
+  },
+  {
+    "id": "in_hi_generazioni",
+    "label": "Generazioni di computer",
+    "parent_id": "info_storia",
+    "description": "Valvole, transistor, circuiti integrati",
+    "language": "it"
+  },
+  {
+    "id": "in_hi_internet",
+    "label": "Storia di Internet",
+    "parent_id": "info_storia",
+    "description": "ARPANET, WWW, social media",
+    "language": "it"
+  },
+  {
+    "id": "in_hi_pionieri",
+    "label": "Pionieri",
+    "parent_id": "info_storia",
+    "description": "Turing, von Neumann, Hopper",
+    "language": "it"
+  },
+  {
+    "id": "ia_ap_supervisionato",
+    "label": "Apprendimento supervisionato",
+    "parent_id": "ia_apprendimento",
+    "description": "Classificazione, regressione",
+    "language": "it"
+  },
+  {
+    "id": "ia_ap_non_supervisionato",
+    "label": "Apprendimento non supervisionato",
+    "parent_id": "ia_apprendimento",
+    "description": "Clustering, riduzione dimensionalità",
+    "language": "it"
+  },
+  {
+    "id": "ia_ap_rinforzo",
+    "label": "Apprendimento per rinforzo",
+    "parent_id": "ia_apprendimento",
+    "description": "Agenti, reward, policy",
+    "language": "it"
+  },
+  {
+    "id": "ia_ap_valutazione",
+    "label": "Valutazione modelli",
+    "parent_id": "ia_apprendimento",
+    "description": "Accuracy, precision, recall, F1, cross-validation",
+    "language": "it"
+  },
+  {
+    "id": "ia_dl_reti",
+    "label": "Reti neurali",
+    "parent_id": "ia_deep_learning",
+    "description": "Perceptron, MLP, backpropagation",
+    "language": "it"
+  },
+  {
+    "id": "ia_dl_cnn",
+    "label": "CNN",
+    "parent_id": "ia_deep_learning",
+    "description": "Convoluzioni, pooling, transfer learning",
+    "language": "it"
+  },
+  {
+    "id": "ia_dl_rnn",
+    "label": "RNN e LSTM",
+    "parent_id": "ia_deep_learning",
+    "description": "Sequenze, memoria a lungo termine",
+    "language": "it"
+  },
+  {
+    "id": "ia_dl_transformer",
+    "label": "Transformer",
+    "parent_id": "ia_deep_learning",
+    "description": "Attention, BERT, GPT",
+    "language": "it"
+  },
+  {
+    "id": "ia_nl_token",
+    "label": "Tokenizzazione e parsing",
+    "parent_id": "ia_nlp",
+    "description": "POS, dipendenze, NER",
+    "language": "it"
+  },
+  {
+    "id": "ia_nl_semantica",
+    "label": "Semantica computazionale",
+    "parent_id": "ia_nlp",
+    "description": "Word embeddings, sentiment, topic modeling",
+    "language": "it"
+  },
+  {
+    "id": "ia_nl_generazione",
+    "label": "Generazione di testo",
+    "parent_id": "ia_nlp",
+    "description": "Language models, prompting, fine-tuning",
+    "language": "it"
+  },
+  {
+    "id": "ia_nl_traduzione",
+    "label": "Traduzione automatica",
+    "parent_id": "ia_nlp",
+    "description": "MT, NMT, qualità",
+    "language": "it"
+  },
+  {
+    "id": "ia_vi_riconoscimento",
+    "label": "Riconoscimento oggetti",
+    "parent_id": "ia_visione",
+    "description": "YOLO, R-CNN, segmentazione",
+    "language": "it"
+  },
+  {
+    "id": "ia_vi_face",
+    "label": "Face recognition",
+    "parent_id": "ia_visione",
+    "description": "Detezione, embeddings, privacy",
+    "language": "it"
+  },
+  {
+    "id": "ia_vi_medica",
+    "label": "Visione artificiale medica",
+    "parent_id": "ia_visione",
+    "description": "Diagnostica, imaging, radiologia",
+    "language": "it"
+  },
+  {
+    "id": "ia_ra_esperti",
+    "label": "Sistemi esperti",
+    "parent_id": "ia_ragionamento",
+    "description": "Knowledge base, inference engine",
+    "language": "it"
+  },
+  {
+    "id": "ia_ra_pianificazione",
+    "label": "Pianificazione",
+    "parent_id": "ia_ragionamento",
+    "description": "STRIPS, PDDL, robotica",
+    "language": "it"
+  },
+  {
+    "id": "ia_ra_kr",
+    "label": "Rappresentazione della conoscenza",
+    "parent_id": "ia_ragionamento",
+    "description": "Ontologie, grafi, logica",
+    "language": "it"
+  },
+  {
+    "id": "ia_ro_percezione",
+    "label": "Percezione robotica",
+    "parent_id": "ia_robotica",
+    "description": "Sensori, LIDAR, visione",
+    "language": "it"
+  },
+  {
+    "id": "ia_ro_controllo",
+    "label": "Controllo",
+    "parent_id": "ia_robotica",
+    "description": "Cinematica, dinamica, PID",
+    "language": "it"
+  },
+  {
+    "id": "ia_ro_uomo",
+    "label": "Interazione uomo-robot",
+    "parent_id": "ia_robotica",
+    "description": "Collaborativi, sicurezza, etica",
+    "language": "it"
+  },
+  {
+    "id": "ia_et_bias",
+    "label": "Bias algoritmici",
+    "parent_id": "ia_etica_ia",
+    "description": "Dati, modelli, discriminazione",
+    "language": "it"
+  },
+  {
+    "id": "ia_et_trasparenza",
+    "label": "Trasparenza",
+    "parent_id": "ia_etica_ia",
+    "description": "Explainability, interpretability",
+    "language": "it"
+  },
+  {
+    "id": "ia_et_privacy",
+    "label": "Privacy nell'IA",
+    "parent_id": "ia_etica_ia",
+    "description": "Differenziale, federated learning",
+    "language": "it"
+  },
+  {
+    "id": "ia_ge_testo",
+    "label": "Generazione testo",
+    "parent_id": "ia_generativa",
+    "description": "LLM, chatbot, creative writing",
+    "language": "it"
+  },
+  {
+    "id": "ia_ge_immagini",
+    "label": "Generazione immagini",
+    "parent_id": "ia_generativa",
+    "description": "GAN, diffusion models, DALL-E",
+    "language": "it"
+  },
+  {
+    "id": "ia_ge_audio",
+    "label": "Generazione audio",
+    "parent_id": "ia_generativa",
+    "description": "TTS, music generation, voice cloning",
+    "language": "it"
+  },
+  {
+    "id": "ia_mu_fusione",
+    "label": "Fusione multimodale",
+    "parent_id": "ia_multimodale",
+    "description": "Early, late, joint fusion",
+    "language": "it"
+  },
+  {
+    "id": "ia_mu_applicazioni",
+    "label": "Applicazioni",
+    "parent_id": "ia_multimodale",
+    "description": "Captioning, VQA, retrieval",
+    "language": "it"
+  },
+  {
+    "id": "ia_hi_simbolica",
+    "label": "IA simbolica",
+    "parent_id": "ia_storia",
+    "description": "Logic-based, expert systems, GOFAI",
+    "language": "it"
+  },
+  {
+    "id": "ia_hi_connessionista",
+    "label": "Connessionismo",
+    "parent_id": "ia_storia",
+    "description": "Perceptron, reti neurali, deep learning",
+    "language": "it"
+  },
+  {
+    "id": "ia_hi_fondazionali",
+    "label": "Modelli fondazionali",
+    "parent_id": "ia_storia",
+    "description": "GPT, LLaMA, multimodali",
+    "language": "it"
+  },
+  {
+    "id": "ing_ci_strutture",
+    "label": "Strutture",
+    "parent_id": "ing_civile",
+    "description": "Calcolo, cemento armato, acciaio",
+    "language": "it"
+  },
+  {
+    "id": "ing_ci_geotecnica",
+    "label": "Geotecnica",
+    "parent_id": "ing_civile",
+    "description": "Terreni, fondazioni, sottosuolo",
+    "language": "it"
+  },
+  {
+    "id": "ing_ci_idraulica",
+    "label": "Idraulica",
+    "parent_id": "ing_civile",
+    "description": "Acque, fognature, difese idrauliche",
+    "language": "it"
+  },
+  {
+    "id": "ing_me_termomeccanica",
+    "label": "Termomeccanica",
+    "parent_id": "ing_meccanica",
+    "description": "Cicli termici, motori, turbomacchine",
+    "language": "it"
+  },
+  {
+    "id": "ing_me_disegno",
+    "label": "Disegno meccanico",
+    "parent_id": "ing_meccanica",
+    "description": "CAD, CAM, tolleranze",
+    "language": "it"
+  },
+  {
+    "id": "ing_me_materiali",
+    "label": "Tecnologia meccanica",
+    "parent_id": "ing_meccanica",
+    "description": "Lavorazioni, materiali, affaticamento",
+    "language": "it"
+  },
+  {
+    "id": "ing_el_macchine",
+    "label": "Macchine elettriche",
+    "parent_id": "ing_elettrica",
+    "description": "Trasformatori, motori, generatori",
+    "language": "it"
+  },
+  {
+    "id": "ing_el_trasmissione",
+    "label": "Trasmissione",
+    "parent_id": "ing_elettrica",
+    "description": "Linee, cabine, smart grid",
+    "language": "it"
+  },
+  {
+    "id": "ing_el_elettronica",
+    "label": "Elettronica di potenza",
+    "parent_id": "ing_elettrica",
+    "description": "Convertitori, inverter, PWM",
+    "language": "it"
+  },
+  {
+    "id": "ing_et_analogica",
+    "label": "Elettronica analogica",
+    "parent_id": "ing_elettronica",
+    "description": "Amplificatori, filtri, oscillatori",
+    "language": "it"
+  },
+  {
+    "id": "ing_et_digitale",
+    "label": "Elettronica digitale",
+    "parent_id": "ing_elettronica",
+    "description": "Porte logiche, FPGA, microcontrollori",
+    "language": "it"
+  },
+  {
+    "id": "ing_et_comunicazioni",
+    "label": "Elettronica delle comunicazioni",
+    "parent_id": "ing_elettronica",
+    "description": "Modulazione, demodulazione, antenne",
+    "language": "it"
+  },
+  {
+    "id": "ing_in_embedded",
+    "label": "Sistemi embedded",
+    "parent_id": "ing_informatica",
+    "description": "RTOS, firmware, IoT",
+    "language": "it"
+  },
+  {
+    "id": "ing_in_reti",
+    "label": "Reti di calcolatori",
+    "parent_id": "ing_informatica",
+    "description": "Progettazione, sicurezza, prestazioni",
+    "language": "it"
+  },
+  {
+    "id": "ing_in_software",
+    "label": "Ingegneria del software",
+    "parent_id": "ing_informatica",
+    "description": "Requisiti, architettura, testing",
+    "language": "it"
+  },
+  {
+    "id": "ing_ch_reattori",
+    "label": "Reattori chimici",
+    "parent_id": "ing_chimica",
+    "description": "Progettazione, cinetica, sicurezza",
+    "language": "it"
+  },
+  {
+    "id": "ing_ch_separazione",
+    "label": "Operazioni di separazione",
+    "parent_id": "ing_chimica",
+    "description": "Distillazione, estrazione, cristallizzazione",
+    "language": "it"
+  },
+  {
+    "id": "ing_ch_processi",
+    "label": "Controllo di processo",
+    "parent_id": "ing_chimica",
+    "description": "Automazione, PLC, SCADA",
+    "language": "it"
+  },
+  {
+    "id": "ing_ae_aerodinamica",
+    "label": "Aerodinamica",
+    "parent_id": "ing_aerospaziale",
+    "description": "Flusso, resistenza, portanza",
+    "language": "it"
+  },
+  {
+    "id": "ing_ae_propulsione",
+    "label": "Propulsione",
+    "parent_id": "ing_aerospaziale",
+    "description": "Turboreattori, propellenti, ioni",
+    "language": "it"
+  },
+  {
+    "id": "ing_ae_strutture",
+    "label": "Strutture aerospaziali",
+    "parent_id": "ing_aerospaziale",
+    "description": "Materiali compositi, progettazione",
+    "language": "it"
+  },
+  {
+    "id": "ing_bi_dispositivi",
+    "label": "Dispositivi medici",
+    "parent_id": "ing_biomedica",
+    "description": "Progettazione, normativa, qualità",
+    "language": "it"
+  },
+  {
+    "id": "ing_bi_segnali",
+    "label": "Elaborazione segnali biomedici",
+    "parent_id": "ing_biomedica",
+    "description": "ECG, EEG, imaging",
+    "language": "it"
+  },
+  {
+    "id": "ing_bi_biomeccanica",
+    "label": "Biomeccanica",
+    "parent_id": "ing_biomedica",
+    "description": "Protesi, ortesi, movimento umano",
+    "language": "it"
+  },
+  {
+    "id": "ing_am_trattamento",
+    "label": "Trattamento rifiuti",
+    "parent_id": "ing_ambientale",
+    "description": "Riciclo, compostaggio, termovalorizzazione",
+    "language": "it"
+  },
+  {
+    "id": "ing_am_acque",
+    "label": "Gestione acque",
+    "parent_id": "ing_ambientale",
+    "description": "Potabilizzazione, depurazione, reti",
+    "language": "it"
+  },
+  {
+    "id": "ing_am_monitoraggio",
+    "label": "Monitoraggio ambientale",
+    "parent_id": "ing_ambientale",
+    "description": "Sensori, modelli, reporting",
+    "language": "it"
+  },
+  {
+    "id": "ing_ge_logistica",
+    "label": "Logistica",
+    "parent_id": "ing_gestionale",
+    "description": "Supply chain, magazzino, trasporti",
+    "language": "it"
+  },
+  {
+    "id": "ing_ge_ottimizzazione",
+    "label": "Ottimizzazione",
+    "parent_id": "ing_gestionale",
+    "description": "Ricerca operativa, simulazione",
+    "language": "it"
+  },
+  {
+    "id": "ing_ge_progetti",
+    "label": "Gestione progetti",
+    "parent_id": "ing_gestionale",
+    "description": "PMI, PMBOK, agile",
+    "language": "it"
+  },
+  {
+    "id": "te_te_5g",
+    "label": "Reti 5G",
+    "parent_id": "tec_telecomunicazioni",
+    "description": "Architettura, frequenze, applicazioni",
+    "language": "it"
+  },
+  {
+    "id": "te_te_fibra",
+    "label": "Fibra ottica",
+    "parent_id": "tec_telecomunicazioni",
+    "description": "FTTH, FTTC, tecnologie",
+    "language": "it"
+  },
+  {
+    "id": "te_te_satellitare",
+    "label": "Comunicazioni satellitari",
+    "parent_id": "tec_telecomunicazioni",
+    "description": "LEO, GEO, banda larga",
+    "language": "it"
+  },
+  {
+    "id": "te_na_materiali",
+    "label": "Nanomateriali",
+    "parent_id": "tec_nanotecnologie",
+    "description": "Grafene, nanotubi, quantum dots",
+    "language": "it"
+  },
+  {
+    "id": "te_na_medicina",
+    "label": "Nanomedicina",
+    "parent_id": "tec_nanotecnologie",
+    "description": "Drug delivery, imaging, terapia",
+    "language": "it"
+  },
+  {
+    "id": "te_na_elettronica",
+    "label": "Nanoelettronica",
+    "parent_id": "tec_nanotecnologie",
+    "description": "Transistor molecolari, memristori",
+    "language": "it"
+  },
+  {
+    "id": "te_bi_farmaceutica",
+    "label": "Biotecnologie farmaceutiche",
+    "parent_id": "tec_biotecnologie",
+    "description": "Proteine ricombinanti, vaccini",
+    "language": "it"
+  },
+  {
+    "id": "te_bi_agricole",
+    "label": "Biotecnologie agricole",
+    "parent_id": "tec_biotecnologie",
+    "description": "OGM, marker assistiti, colture",
+    "language": "it"
+  },
+  {
+    "id": "te_bi_industriali",
+    "label": "Biotecnologie industriali",
+    "parent_id": "tec_biotecnologie",
+    "description": "Biocatalisi, bioplastica",
+    "language": "it"
+  },
+  {
+    "id": "te_ma_compositi",
+    "label": "Materiali compositi",
+    "parent_id": "tec_materiali_avanzati",
+    "description": "Fibra di carbonio, ceramici",
+    "language": "it"
+  },
+  {
+    "id": "te_ma_memoria",
+    "label": "Materiali a memoria di forma",
+    "parent_id": "tec_materiali_avanzati",
+    "description": "Nitinol, applicazioni",
+    "language": "it"
+  },
+  {
+    "id": "te_ma_superconduttori",
+    "label": "Superconduttori",
+    "parent_id": "tec_materiali_avanzati",
+    "description": "Alte temperature, applicazioni",
+    "language": "it"
+  },
+  {
+    "id": "te_3d_tecniche",
+    "label": "Tecniche",
+    "parent_id": "tec_stampa_3d",
+    "description": "FDM, SLA, SLS, DMLS",
+    "language": "it"
+  },
+  {
+    "id": "te_3d_materiali",
+    "label": "Materiali",
+    "parent_id": "tec_stampa_3d",
+    "description": "PLA, ABS, resine, metalli",
+    "language": "it"
+  },
+  {
+    "id": "te_3d_applicazioni",
+    "label": "Applicazioni",
+    "parent_id": "tec_stampa_3d",
+    "description": "Prototipazione, medicina, edilizia",
+    "language": "it"
+  },
+  {
+    "id": "te_qu_computer",
+    "label": "Computer quantistici",
+    "parent_id": "tec_quantistica",
+    "description": "Qubit, porte, algoritmi",
+    "language": "it"
+  },
+  {
+    "id": "te_qu_comunicazione",
+    "label": "Comunicazione quantistica",
+    "parent_id": "tec_quantistica",
+    "description": "Teletrasporto, crittografia",
+    "language": "it"
+  },
+  {
+    "id": "te_qu_sensori",
+    "label": "Sensori quantistici",
+    "parent_id": "tec_quantistica",
+    "description": "Metrologia, imaging, navigazione",
+    "language": "it"
+  },
+  {
+    "id": "te_i4_iot",
+    "label": "Internet delle cose industriale",
+    "parent_id": "tec_industria_4",
+    "description": "Sensori, connettività, edge",
+    "language": "it"
+  },
+  {
+    "id": "te_i4_digital_twin",
+    "label": "Digital twin",
+    "parent_id": "tec_industria_4",
+    "description": "Gemelli digitali, simulazione",
+    "language": "it"
+  },
+  {
+    "id": "te_i4_manutenzione",
+    "label": "Manutenzione predittiva",
+    "parent_id": "tec_industria_4",
+    "description": "AI, sensori, prognostica",
+    "language": "it"
+  },
+  {
+    "id": "te_we_salute",
+    "label": "Wearable per la salute",
+    "parent_id": "tec_wearable",
+    "description": "Smartwatch, ECG continuo, glucosio",
+    "language": "it"
+  },
+  {
+    "id": "te_we_sport",
+    "label": "Wearable sportivi",
+    "parent_id": "tec_wearable",
+    "description": "GPS, accelerometri, analisi performance",
+    "language": "it"
+  },
+  {
+    "id": "te_we_ar",
+    "label": "Realtà aumentata indossabile",
+    "parent_id": "tec_wearable",
+    "description": "Smart glasses, HUD, applicazioni",
+    "language": "it"
+  },
+  {
+    "id": "te_dr_tipi",
+    "label": "Tipi di droni",
+    "parent_id": "tec_droni",
+    "description": "Multirotore, fixed-wing, ibridi",
+    "language": "it"
+  },
+  {
+    "id": "te_dr_applicazioni",
+    "label": "Applicazioni",
+    "parent_id": "tec_droni",
+    "description": "Agricoltura, ispezione, consegne",
+    "language": "it"
+  },
+  {
+    "id": "te_dr_normativa",
+    "label": "Normativa",
+    "parent_id": "tec_droni",
+    "description": "ENAC, regole di volo, privacy",
+    "language": "it"
+  },
+  {
+    "id": "te_bl_bitcoin",
+    "label": "Bitcoin",
+    "parent_id": "tec_blocchi",
+    "description": "Protocollo, mining, wallet",
+    "language": "it"
+  },
+  {
+    "id": "te_bl_ethereum",
+    "label": "Ethereum",
+    "parent_id": "tec_blocchi",
+    "description": "Smart contract, DeFi, NFT",
+    "language": "it"
+  },
+  {
+    "id": "te_bl_applicazioni",
+    "label": "Applicazioni blockchain",
+    "parent_id": "tec_blocchi",
+    "description": "Supply chain, identità, voting",
+    "language": "it"
+  },
+  {
+    "id": "ec_mi_domanda",
+    "label": "Domanda e offerta",
+    "parent_id": "eco_micro",
+    "description": "Curve, equilibrio, elasticità",
+    "language": "it"
+  },
+  {
+    "id": "ec_mi_consumatore",
+    "label": "Teoria del consumatore",
+    "parent_id": "eco_micro",
+    "description": "Utilità, preferenze, vincolo di bilancio",
+    "language": "it"
+  },
+  {
+    "id": "ec_mi_impresa",
+    "label": "Teoria dell'impresa",
+    "parent_id": "eco_micro",
+    "description": "Costi, ricavi, profitto, mercati",
+    "language": "it"
+  },
+  {
+    "id": "ec_mi_concorrenza",
+    "label": "Concorrenza",
+    "parent_id": "eco_micro",
+    "description": "Perfetta, monopolistica, oligopolio, monopolio",
+    "language": "it"
+  },
+  {
+    "id": "ec_ma_pil",
+    "label": "PIL e contabilità nazionale",
+    "parent_id": "eco_macro",
+    "description": "Definizione, metodi, limiti",
+    "language": "it"
+  },
+  {
+    "id": "ec_ma_inflazione",
+    "label": "Inflazione",
+    "parent_id": "eco_macro",
+    "description": "Cause, misurazione, effetti",
+    "language": "it"
+  },
+  {
+    "id": "ec_ma_disoccupazione",
+    "label": "Disoccupazione",
+    "parent_id": "eco_macro",
+    "description": "Tipi, cause, politiche",
+    "language": "it"
+  },
+  {
+    "id": "ec_ma_politiche",
+    "label": "Politiche macroeconomiche",
+    "parent_id": "eco_macro",
+    "description": "Fiscale, monetaria, cambio",
+    "language": "it"
+  },
+  {
+    "id": "ec_hi_mercantilismo",
+    "label": "Mercantilismo",
+    "parent_id": "eco_storia",
+    "description": "Accumulazione, colonie, bilancia commerciale",
+    "language": "it"
+  },
+  {
+    "id": "ec_hi_industriale",
+    "label": "Rivoluzione industriale",
+    "parent_id": "eco_storia",
+    "description": "Capitalismo, fabbrica, proletariato",
+    "language": "it"
+  },
+  {
+    "id": "ec_hi_contemporanea",
+    "label": "Economia contemporanea",
+    "parent_id": "eco_storia",
+    "description": "Globalizzazione, crisi, digital economy",
+    "language": "it"
+  },
+  {
+    "id": "ec_sv_poverta",
+    "label": "Povertà",
+    "parent_id": "eco_sviluppo",
+    "description": "Misure, cause, riduzione",
+    "language": "it"
+  },
+  {
+    "id": "ec_sv_disuguaglianza",
+    "label": "Disuguaglianza",
+    "parent_id": "eco_sviluppo",
+    "description": "Gini, Palma, Kuznets",
+    "language": "it"
+  },
+  {
+    "id": "ec_sv_sostenibile",
+    "label": "Sviluppo sostenibile",
+    "parent_id": "eco_sviluppo",
+    "description": "Pilastro economico, sociale, ambientale",
+    "language": "it"
+  },
+  {
+    "id": "ec_in_commercio",
+    "label": "Commercio internazionale",
+    "parent_id": "eco_internazionale",
+    "description": "Vantaggi comparati, barriere, WTO",
+    "language": "it"
+  },
+  {
+    "id": "ec_in_cambi",
+    "label": "Tassi di cambio",
+    "parent_id": "eco_internazionale",
+    "description": "Fissi, fluttuanti, parità",
+    "language": "it"
+  },
+  {
+    "id": "ec_in_bilancia",
+    "label": "Bilancia dei pagamenti",
+    "parent_id": "eco_internazionale",
+    "description": "Conto corrente, capitale, riserve",
+    "language": "it"
+  },
+  {
+    "id": "ec_la_mercato",
+    "label": "Mercato del lavoro",
+    "parent_id": "eco_lavoro",
+    "description": "Domanda, offerta, salario",
+    "language": "it"
+  },
+  {
+    "id": "ec_la_disoccupazione",
+    "label": "Disoccupazione",
+    "parent_id": "eco_lavoro",
+    "description": "Frizionale, strutturale, ciclica",
+    "language": "it"
+  },
+  {
+    "id": "ec_la_politiche",
+    "label": "Politiche attive",
+    "parent_id": "eco_lavoro",
+    "description": "Formazione, sussidi, incentivi",
+    "language": "it"
+  },
+  {
+    "id": "ec_pu_spesa",
+    "label": "Spesa pubblica",
+    "parent_id": "eco_pubblica",
+    "description": "Tipi, efficienza, debito",
+    "language": "it"
+  },
+  {
+    "id": "ec_pu_tasse",
+    "label": "Tassazione",
+    "parent_id": "eco_pubblica",
+    "description": "Dirette, indirette, progressività",
+    "language": "it"
+  },
+  {
+    "id": "ec_pu_beni",
+    "label": "Beni pubblici",
+    "parent_id": "eco_pubblica",
+    "description": "Definizione, free rider, provision",
+    "language": "it"
+  },
+  {
+    "id": "ec_am_esternalita",
+    "label": "Esternalità",
+    "parent_id": "eco_ambientale",
+    "description": "Negative, positive, internalizzazione",
+    "language": "it"
+  },
+  {
+    "id": "ec_am_valutazione",
+    "label": "Valutazione ambientale",
+    "parent_id": "eco_ambientale",
+    "description": "Costi, benefici, contingent valuation",
+    "language": "it"
+  },
+  {
+    "id": "ec_am_mercati",
+    "label": "Mercati delle emissioni",
+    "parent_id": "eco_ambientale",
+    "description": "Cap and trade, carbon tax",
+    "language": "it"
+  },
+  {
+    "id": "ec_co_bias",
+    "label": "Bias cognitivi",
+    "parent_id": "eco_comportamentale",
+    "description": "Ancoraggio, conferma, iperbolico",
+    "language": "it"
+  },
+  {
+    "id": "ec_co_prospect",
+    "label": "Prospect theory",
+    "parent_id": "eco_comportamentale",
+    "description": "Perdite, guadagni, aversione",
+    "language": "it"
+  },
+  {
+    "id": "ec_co_nudge",
+    "label": "Nudge",
+    "parent_id": "eco_comportamentale",
+    "description": "Scelte architetturali, default",
+    "language": "it"
+  },
+  {
+    "id": "ec_mo_banche",
+    "label": "Banche centrali",
+    "parent_id": "eco_monetaria",
+    "description": "Mandato, strumenti, indipendenza",
+    "language": "it"
+  },
+  {
+    "id": "ec_mo_politiche",
+    "label": "Politiche monetarie",
+    "parent_id": "eco_monetaria",
+    "description": "Tassi, QE, forward guidance",
+    "language": "it"
+  },
+  {
+    "id": "ec_mo_crises",
+    "label": "Crisi finanziarie",
+    "parent_id": "eco_monetaria",
+    "description": "Bolle, panico, contagio",
+    "language": "it"
+  },
+  {
+    "id": "fi_me_azionari",
+    "label": "Mercati azionari",
+    "parent_id": "fin_mercati",
+    "description": "Borse, indici, quotazioni",
+    "language": "it"
+  },
+  {
+    "id": "fi_me_obbligazionari",
+    "label": "Mercati obbligazionari",
+    "parent_id": "fin_mercati",
+    "description": "Titoli di Stato, corporate bond",
+    "language": "it"
+  },
+  {
+    "id": "fi_me_derivati",
+    "label": "Derivati",
+    "parent_id": "fin_mercati",
+    "description": "Future, option, swap",
+    "language": "it"
+  },
+  {
+    "id": "fi_me_fondi",
+    "label": "Fondi comuni",
+    "parent_id": "fin_mercati",
+    "description": "Azionari, obbligazionari, bilanciati",
+    "language": "it"
+  },
+  {
+    "id": "fi_ba_intermediazione",
+    "label": "Intermediazione",
+    "parent_id": "fin_banche",
+    "description": "Raccolta, erogazione, spread",
+    "language": "it"
+  },
+  {
+    "id": "fi_ba_regolamentazione",
+    "label": "Regolamentazione",
+    "parent_id": "fin_banche",
+    "description": "Basilea, vigilanza, stress test",
+    "language": "it"
+  },
+  {
+    "id": "fi_ba_digitale",
+    "label": "Banca digitale",
+    "parent_id": "fin_banche",
+    "description": "Fintech, open banking, neobanche",
+    "language": "it"
+  },
+  {
+    "id": "fi_in_portafogli",
+    "label": "Teoria dei portafogli",
+    "parent_id": "fin_investimenti",
+    "description": "Diversificazione, frontiera efficiente",
+    "language": "it"
+  },
+  {
+    "id": "fi_in_valutazione",
+    "label": "Valutazione titoli",
+    "parent_id": "fin_investimenti",
+    "description": "DCF, multipli, analisi fondamentale",
+    "language": "it"
+  },
+  {
+    "id": "fi_in_tecniche",
+    "label": "Analisi tecnica",
+    "parent_id": "fin_investimenti",
+    "description": "Trend, supporti, indicatori",
+    "language": "it"
+  },
+  {
+    "id": "fi_co_valutazione",
+    "label": "Valutazione aziendale",
+    "parent_id": "fin_corporate",
+    "description": "DCF, multipli, asset-based",
+    "language": "it"
+  },
+  {
+    "id": "fi_co_struttura",
+    "label": "Struttura del capitale",
+    "parent_id": "fin_corporate",
+    "description": "Debito, equity, WACC",
+    "language": "it"
+  },
+  {
+    "id": "fi_co_ma",
+    "label": "M&A",
+    "parent_id": "fin_corporate",
+    "description": "Fusioni, acquisizioni, sinergie",
+    "language": "it"
+  },
+  {
+    "id": "fi_as_rischio",
+    "label": "Gestione del rischio",
+    "parent_id": "fin_assicurazioni",
+    "description": "Identificazione, quantificazione, transfer",
+    "language": "it"
+  },
+  {
+    "id": "fi_as_prodotti",
+    "label": "Prodotti assicurativi",
+    "parent_id": "fin_assicurazioni",
+    "description": "Vita, danni, RC, salute",
+    "language": "it"
+  },
+  {
+    "id": "fi_as_attuariale",
+    "label": "Matematica attuariale",
+    "parent_id": "fin_assicurazioni",
+    "description": "Premi, riserve, mortalità",
+    "language": "it"
+  },
+  {
+    "id": "fi_ft_pagamenti",
+    "label": "Pagamenti digitali",
+    "parent_id": "fin_fintech",
+    "description": "Wallet, P2P, contactless",
+    "language": "it"
+  },
+  {
+    "id": "fi_ft_robo",
+    "label": "Robo-advisory",
+    "parent_id": "fin_fintech",
+    "description": "Algoritmi, allocazione, costi",
+    "language": "it"
+  },
+  {
+    "id": "fi_ft_crowdfunding",
+    "label": "Crowdfunding",
+    "parent_id": "fin_fintech",
+    "description": "Equity, lending, reward",
+    "language": "it"
+  },
+  {
+    "id": "fi_co_principi",
+    "label": "Principi contabili",
+    "parent_id": "fin_contabilita",
+    "description": "IFRS, OIC, bilancio",
+    "language": "it"
+  },
+  {
+    "id": "fi_co_analisi",
+    "label": "Analisi di bilancio",
+    "parent_id": "fin_contabilita",
+    "description": "Indici, flussi, reporting",
+    "language": "it"
+  },
+  {
+    "id": "fi_co_revisione",
+    "label": "Revisione contabile",
+    "parent_id": "fin_contabilita",
+    "description": "Audit, risk, compliance",
+    "language": "it"
+  },
+  {
+    "id": "fi_ta_dirette",
+    "label": "Imposte dirette",
+    "parent_id": "fin_tassazione",
+    "description": "IRPEF, IRES, patrimoniali",
+    "language": "it"
+  },
+  {
+    "id": "fi_ta_indirette",
+    "label": "Imposte indirette",
+    "parent_id": "fin_tassazione",
+    "description": "IVA, accise, bollo",
+    "language": "it"
+  },
+  {
+    "id": "fi_ta_pianificazione",
+    "label": "Pianificazione fiscale",
+    "parent_id": "fin_tassazione",
+    "description": "Risparmio, elusione, evasione",
+    "language": "it"
+  },
+  {
+    "id": "fi_cr_bitcoin",
+    "label": "Bitcoin",
+    "parent_id": "fin_cripto",
+    "description": "Protocollo, halving, store of value",
+    "language": "it"
+  },
+  {
+    "id": "fi_cr_ethereum",
+    "label": "Ethereum",
+    "parent_id": "fin_cripto",
+    "description": "Smart contract, gas, DeFi",
+    "language": "it"
+  },
+  {
+    "id": "fi_cr_regolamentazione",
+    "label": "Regolamentazione crypto",
+    "parent_id": "fin_cripto",
+    "description": "MiCA, exchange, stablecoin",
+    "language": "it"
+  },
+  {
+    "id": "fi_ma_debito",
+    "label": "Debito pubblico",
+    "parent_id": "fin_macro",
+    "description": "Sostenibilità, spread, rating",
+    "language": "it"
+  },
+  {
+    "id": "fi_ma_bce",
+    "label": "Politiche BCE",
+    "parent_id": "fin_macro",
+    "description": "Tassi, QE, TLTRO",
+    "language": "it"
+  },
+  {
+    "id": "fi_ma_fiscal",
+    "label": "Politica fiscale",
+    "parent_id": "fin_macro",
+    "description": "Deficit, surplus, multiplicatore",
+    "language": "it"
+  },
+  {
+    "id": "di_co_principi",
+    "label": "Principi costituzionali",
+    "parent_id": "dir_costituzionale",
+    "description": "Sovranità, libertà, uguaglianza",
+    "language": "it"
+  },
+  {
+    "id": "di_co_istituzioni",
+    "label": "Istituzioni",
+    "parent_id": "dir_costituzionale",
+    "description": "Parlamento, governo, presidente",
+    "language": "it"
+  },
+  {
+    "id": "di_co_diritti",
+    "label": "Diritti fondamentali",
+    "parent_id": "dir_costituzionale",
+    "description": "Civili, politici, sociali",
+    "language": "it"
+  },
+  {
+    "id": "di_pr_persone",
+    "label": "Persone e famiglia",
+    "parent_id": "dir_privato",
+    "description": "Stato civile, matrimonio, filiazione",
+    "language": "it"
+  },
+  {
+    "id": "di_pr_proprieta",
+    "label": "Proprietà e diritti reali",
+    "parent_id": "dir_privato",
+    "description": "Possesso, usufrutto, servitù",
+    "language": "it"
+  },
+  {
+    "id": "di_pr_contratti",
+    "label": "Contratti",
+    "parent_id": "dir_privato",
+    "description": "Obbligazioni, responsabilità, tipologie",
+    "language": "it"
+  },
+  {
+    "id": "di_pe_reati",
+    "label": "Teoria del reato",
+    "parent_id": "dir_penale",
+    "description": "Fatto, antigiuridicità, colpevolezza",
+    "language": "it"
+  },
+  {
+    "id": "di_pe_sanzioni",
+    "label": "Sanzioni penali",
+    "parent_id": "dir_penale",
+    "description": "Pena, misure di sicurezza, alternative",
+    "language": "it"
+  },
+  {
+    "id": "di_pe_procedura",
+    "label": "Procedura penale",
+    "parent_id": "dir_penale",
+    "description": "Indagini, processo, esecuzione",
+    "language": "it"
+  },
+  {
+    "id": "di_am_atti",
+    "label": "Atti amministrativi",
+    "parent_id": "dir_amministrativo",
+    "description": "Tipi, invalidità, ricorsi",
+    "language": "it"
+  },
+  {
+    "id": "di_am_beni",
+    "label": "Beni pubblici",
+    "parent_id": "dir_amministrativo",
+    "description": "Demanio, patrimonio, disponibilità",
+    "language": "it"
+  },
+  {
+    "id": "di_am_servizi",
+    "label": "Servizi pubblici",
+    "parent_id": "dir_amministrativo",
+    "description": "Appalti, concessioni, PPP",
+    "language": "it"
+  },
+  {
+    "id": "di_la_contratto",
+    "label": "Contratto di lavoro",
+    "parent_id": "dir_lavoro",
+    "description": "Tipi, clausole, risoluzione",
+    "language": "it"
+  },
+  {
+    "id": "di_la_sicurezza",
+    "label": "Sicurezza sul lavoro",
+    "parent_id": "dir_lavoro",
+    "description": "D.Lgs. 81/08, responsabilità",
+    "language": "it"
+  },
+  {
+    "id": "di_la_sindacale",
+    "label": "Diritto sindacale",
+    "parent_id": "dir_lavoro",
+    "description": "Rappresentanza, contrattazione, sciopero",
+    "language": "it"
+  },
+  {
+    "id": "di_co_imprese",
+    "label": "Diritto delle imprese",
+    "parent_id": "dir_commerciale",
+    "description": "Società, fallimento, concordato",
+    "language": "it"
+  },
+  {
+    "id": "di_co_concorrenza",
+    "label": "Concorrenza",
+    "parent_id": "dir_commerciale",
+    "description": "Antitrust, abuso, merger",
+    "language": "it"
+  },
+  {
+    "id": "di_co_bancario",
+    "label": "Diritto bancario",
+    "parent_id": "dir_commerciale",
+    "description": "Contratti, trasparenza, usura",
+    "language": "it"
+  },
+  {
+    "id": "di_in_fonti",
+    "label": "Fonti",
+    "parent_id": "dir_internazionale",
+    "description": "Trattati, consuetudine, principi generali",
+    "language": "it"
+  },
+  {
+    "id": "di_in_soggetti",
+    "label": "Soggetti",
+    "parent_id": "dir_internazionale",
+    "description": "Stati, organizzazioni, individui",
+    "language": "it"
+  },
+  {
+    "id": "di_in_diritti",
+    "label": "Diritti umani",
+    "parent_id": "dir_internazionale",
+    "description": "Dichiarazioni, convenzioni, corti",
+    "language": "it"
+  },
+  {
+    "id": "di_ue_istituzioni",
+    "label": "Istituzioni UE",
+    "parent_id": "dir_ue",
+    "description": "Parlamento, Commissione, Consiglio, Corte",
+    "language": "it"
+  },
+  {
+    "id": "di_ue_fonti",
+    "label": "Fonti del diritto UE",
+    "parent_id": "dir_ue",
+    "description": "Regolamenti, direttive, decisioni",
+    "language": "it"
+  },
+  {
+    "id": "di_ue_mercato",
+    "label": "Mercato interno",
+    "parent_id": "dir_ue",
+    "description": "Libera circolazione, concorrenza, stato di diritto",
+    "language": "it"
+  },
+  {
+    "id": "di_am_norme",
+    "label": "Normativa ambientale",
+    "parent_id": "dir_ambientale",
+    "description": "Direttive, decreti, regolamenti",
+    "language": "it"
+  },
+  {
+    "id": "di_am_valutazione",
+    "label": "Valutazione di impatto",
+    "parent_id": "dir_ambientale",
+    "description": "VIA, VAS, AIA",
+    "language": "it"
+  },
+  {
+    "id": "di_am_responsabilita",
+    "label": "Responsabilità ambientale",
+    "parent_id": "dir_ambientale",
+    "description": "Danno, risarcimento, ripristino",
+    "language": "it"
+  },
+  {
+    "id": "di_tr_imposte",
+    "label": "Imposte",
+    "parent_id": "dir_tributario",
+    "description": "Dirette, indirette, tasse, contributi",
+    "language": "it"
+  },
+  {
+    "id": "di_tr_accertamento",
+    "label": "Accertamento",
+    "parent_id": "dir_tributario",
+    "description": "Verifica, rettifica, accertamento",
+    "language": "it"
+  },
+  {
+    "id": "di_tr_contenzioso",
+    "label": "Contenzioso tributario",
+    "parent_id": "dir_tributario",
+    "description": "Ricorso, giudice, riscossione",
+    "language": "it"
+  }
+]

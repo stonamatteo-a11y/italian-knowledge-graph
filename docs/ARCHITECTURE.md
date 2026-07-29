@@ -32,6 +32,26 @@ The `Concetto` level is planned and not yet populated.
 4. Every parent reference must resolve to an existing node.
 5. Generated files belong in `datasets/` and should be reproducible.
 
-## Migration plan
+## Ontology source
 
-The complete imported seed is currently preserved in `ontology/seed_compressed.py`. It will be progressively split into readable domain modules without changing IDs or meaning.
+The canonical ontology is stored as ordered, human-readable records in:
+
+- `ontology/macroareas.json`
+- `ontology/areas.json`
+- `ontology/subareas.json`
+
+`ontology/legacy_ontology_source.py` is the recovered original source retained
+for migration provenance. It is not a runtime or canonical data source.
+
+`ontology/seed_compressed.py` is a generated compatibility artifact consumed by
+the existing graph builder and domain modules. Regenerate it after an approved
+canonical ontology change:
+
+```bash
+python scripts/generate_seed.py
+```
+
+Never edit the compressed seed directly. CI regenerates it and rejects any
+difference from the committed artifact. Ontology changes must update the
+canonical JSON, preserve stable identifiers, pass review, and pass the
+authoritative deterministic Validator.
