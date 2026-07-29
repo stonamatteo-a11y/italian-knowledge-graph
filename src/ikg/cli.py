@@ -10,6 +10,7 @@ from pathlib import Path
 from . import __version__
 from .dataset import CsvExporter, DatasetGenerator, JsonlExporter
 from .graph import load_graph
+from .reviewer import AIReviewer
 from .validator import ValidationEngine
 from .validator.builtin import core_rules
 
@@ -34,6 +35,9 @@ def build_parser() -> argparse.ArgumentParser:
     dataset.add_argument("--input", required=True, type=Path, help="Canonical JSON graph")
     dataset.add_argument("--format", required=True, choices=("jsonl", "csv"), help="Output format")
     dataset.add_argument("--output", required=True, type=Path, help="Dataset output path")
+
+    review = commands.add_parser("review", help="Produce advisory graph suggestions")
+    review.add_argument("input", type=Path, help="Path to the canonical JSON graph")
     return parser
 
 
@@ -66,6 +70,24 @@ def main(argv: Sequence[str] | None = None) -> int:
             return 1
         exporter = JsonlExporter() if args.format == "jsonl" else CsvExporter()
         exporter.export(DatasetGenerator(graph).generate(), args.output)
+        return 0
+
+    if args.command == "review":
+        validation_report = ValidationEngine(core_rules()).validate(graph)
+        if not validation_report.is_valid:
+            for finding in validation_report.findings:
+                location = f" [{finding.location}]" if finding.location else ""
+                print(f"{finding.rule_id} {finding.severity.value}{location}: {finding.message}")
+            return 1
+
+        review_report = AIReviewer().review(graph)
+        print("INFO")
+        print(f"Review suggestions: {len(review_report.suggestions)}")
+        for suggestion in review_report.suggestions:
+            print()
+            print(suggestion.severity.value)
+            print(f"Entity {suggestion.entity_id}")
+            print(suggestion.title)
         return 0
 
     if args.command == "doctor":
