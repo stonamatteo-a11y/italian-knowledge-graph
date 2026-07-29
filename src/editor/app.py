@@ -5,7 +5,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
@@ -34,8 +34,15 @@ def create_app(ontology_dir: Path = ONTOLOGY_DIR) -> FastAPI:
         return FileResponse(STATIC_DIR / "index.html")
 
     @app.get("/api/tree")
-    def tree() -> list[dict[str, Any]]:
-        return store.tree()
+    def tree(q: str = Query(default="")) -> list[dict[str, Any]]:
+        return store.tree(q)
+
+    @app.get("/api/suggest-id")
+    def suggest_id(label: str, parent_id: str | None = None) -> dict[str, Any]:
+        try:
+            return store.suggest_id(parent_id, label)
+        except EditorError as exc:
+            raise HTTPException(status_code=422, detail=str(exc)) from exc
 
     @app.get("/api/node/{node_id}")
     def get_node(node_id: str) -> dict[str, Any]:

@@ -10,10 +10,13 @@
     <header class="app-header">
       <h1>Ontology Editor</h1>
       <div class="header-actions">
-        <button id="new-node" type="button">New node</button>
+        <span id="save-status" class="save-status saved">Saved</span>
+        <span id="validation-status" class="status-neutral">NOT VALIDATED</span>
+        <button id="add-child" type="button">Add macroarea</button>
         <button id="delete-node" class="danger" type="button" disabled>Delete</button>
       </div>
     </header>
+    <p id="concept-notice" class="concept-notice" hidden>Concept support coming next</p>
 
     <main class="workspace">
       <section class="tree-panel" aria-label="Ontology tree">
@@ -23,6 +26,7 @@
       </section>
 
       <section class="editor-panel" aria-label="Node editor">
+        <nav id="breadcrumb" class="breadcrumb" aria-label="Node path"></nav>
         <form id="node-form">
           <div class="field-row">
             <label for="node-id">ID</label>
@@ -73,11 +77,13 @@
       </section>
     </main>
 
-    <section id="validation" class="validation-panel neutral" aria-live="polite">
-      <h2>Validation</h2>
-      <p id="validation-summary">Not run</p>
+    <details id="validation" class="validation-panel neutral" open>
+      <summary>
+        <span>Validation</span>
+        <strong id="validation-summary" aria-live="polite">Not run</strong>
+      </summary>
       <ul id="validation-errors"></ul>
-    </section>
+    </details>
 
     <script src="/static/app.js"></script>
   </body>

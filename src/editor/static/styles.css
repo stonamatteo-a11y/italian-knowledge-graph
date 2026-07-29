@@ -70,7 +70,40 @@ button.danger {
 .header-actions,
 .form-actions {
   display: flex;
+  align-items: center;
   gap: 8px;
+}
+
+.save-status,
+#validation-status {
+  padding: 5px 8px;
+  border: 1px solid #728089;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.save-status.dirty {
+  color: #fff1c9;
+  border-color: #d0a13a;
+}
+
+#validation-status.status-valid {
+  color: #c9f4d8;
+  border-color: #52a873;
+}
+
+#validation-status.status-invalid {
+  color: #ffd1d4;
+  border-color: #d66b72;
+}
+
+.concept-notice {
+  margin: 0;
+  padding: 8px 18px;
+  color: #654d08;
+  border-bottom: 1px solid #d7bd65;
+  background: #fff6d6;
 }
 
 .workspace {
@@ -129,6 +162,32 @@ button.danger {
   background: transparent;
 }
 
+.tree-node::before {
+  display: inline-block;
+  width: 18px;
+  font-weight: 700;
+}
+
+.tree-node.type-macroarea::before {
+  content: "◆";
+  color: #315d78;
+}
+
+.tree-node.type-area::before {
+  content: "■";
+  color: #4c7557;
+}
+
+.tree-node.type-sottoarea::before {
+  content: "●";
+  color: #8a6531;
+}
+
+.tree-node.type-concetto::before {
+  content: "○";
+  color: #6d5b7b;
+}
+
 .tree-node.selected {
   color: #fff;
   background: #315d78;
@@ -138,18 +197,28 @@ button.danger {
   margin-left: 30px;
 }
 
-.search-results {
-  display: grid;
-  gap: 4px;
+.tree-node mark {
+  color: inherit;
+  background: #ffe483;
 }
 
-.search-results .tree-node {
-  width: 100%;
+.breadcrumb {
+  min-height: 34px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #c9d0d5;
 }
 
-.search-results small {
-  display: block;
-  color: #62717a;
+.breadcrumb button {
+  min-height: 28px;
+  padding: 3px 5px;
+  border: 0;
+  color: #315d78;
+  background: transparent;
+}
+
+.breadcrumb span {
+  color: #77838b;
 }
 
 #node-form {
@@ -214,20 +283,30 @@ button.danger {
   background: #f7f8f9;
 }
 
-.validation-panel h2 {
-  margin: 0 0 8px;
+.validation-panel > summary {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
   font-size: 16px;
 }
 
-.validation-panel p {
-  margin: 0 0 8px;
-  font-weight: 700;
+.validation-panel > summary strong {
+  font-size: 14px;
 }
 
 .validation-panel ul {
-  margin: 0;
+  margin: 12px 0 0;
   padding-left: 22px;
   white-space: pre-wrap;
+}
+
+.validation-panel .validation-link {
+  min-height: 28px;
+  padding: 2px 4px;
+  border: 0;
+  color: #8a1820;
+  text-align: left;
+  background: transparent;
 }
 
 .validation-panel.valid {

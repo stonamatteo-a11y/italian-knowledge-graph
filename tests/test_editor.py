@@ -37,6 +37,10 @@ def _flatten_tree(nodes: list[dict[str, object]]) -> list[dict[str, object]]:
     return flattened
 
 
+def _tree_ids(nodes: list[dict[str, object]]) -> set[str]:
+    return {str(node["id"]) for node in _flatten_tree(nodes)}
+
+
 def test_tree_loading(tmp_path: Path) -> None:
     client, _ = _editor_client(tmp_path)
 
@@ -60,7 +64,59 @@ def test_node_api_exposes_editor_metadata(tmp_path: Path) -> None:
     assert node["type"] == "area"
     assert node["parent_id"] == "matematica"
     assert node["children_count"] > 0
+    assert node["descendants_count"] == node["children_count"]
+    assert node["child_type"] == "sottoarea"
+    assert node["child_creation_supported"] is True
     assert [item["id"] for item in node["path"]] == ["matematica", "mat_algebra"]
+
+
+def test_context_aware_child_types(tmp_path: Path) -> None:
+    client, _ = _editor_client(tmp_path)
+
+    macroarea = client.get("/api/node/matematica").json()
+    area = client.get("/api/node/mat_algebra").json()
+    subarea = client.get("/api/node/mat_al_equazioni").json()
+
+    assert (macroarea["child_type"], macroarea["child_creation_supported"]) == ("area", True)
+    assert (area["child_type"], area["child_creation_supported"]) == ("sottoarea", True)
+    assert (subarea["child_type"], subarea["child_creation_supported"]) == (
+        "concetto",
+        False,
+    )
+
+
+def test_id_suggestion_normalization_and_collision(tmp_path: Path) -> None:
+    client, _ = _editor_client(tmp_path)
+
+    normalized = client.get(
+        "/api/suggest-id",
+        params={
+            "parent_id": "mat_algebra",
+            "label": "Équazioni -- differenziali!",
+        },
+    )
+    collision = client.get("/api/suggest-id", params={"label": "Matematica"})
+
+    assert normalized.json() == {
+        "id": "mat_algebra_equazioni_differenziali",
+        "collision": False,
+    }
+    assert collision.json() == {"id": "matematica_2", "collision": True}
+
+
+def test_tree_search_preserves_ancestors_and_ignores_accents(tmp_path: Path) -> None:
+    client, _ = _editor_client(tmp_path)
+
+    response = client.get("/api/tree", params={"q": "li_st_origini"})
+    accent_response = client.get("/api/tree", params={"q": "attualita"})
+
+    assert response.status_code == 200
+    assert _tree_ids(response.json()) == {
+        "lingua_italiana",
+        "li_storia",
+        "li_st_origini",
+    }
+    assert "attualita_societa" in _tree_ids(accent_response.json())
 
 
 def test_api_can_create_update_and_delete_a_node(tmp_path: Path) -> None:
@@ -76,15 +132,37 @@ def test_api_can_create_update_and_delete_a_node(tmp_path: Path) -> None:
 
     created = client.post("/api/node", json=payload)
     assert created.status_code == 201
+    assert client.post("/api/node", json=payload).status_code == 409
 
     payload["label"] = "Test aggiornato"
     updated = client.put("/api/node/test_macroarea", json=payload)
     assert updated.status_code == 200
     assert updated.json()["label"] == "Test aggiornato"
+    assert "test_macroarea" in _tree_ids(client.get("/api/tree").json())
 
     deleted = client.delete("/api/node/test_macroarea")
     assert deleted.status_code == 204
     assert client.get("/api/node/test_macroarea").status_code == 404
+
+
+def test_delete_protection_reports_descendants(tmp_path: Path) -> None:
+    client, _ = _editor_client(tmp_path)
+    node = client.get("/api/node/matematica").json()
+
+    response = client.delete("/api/node/matematica")
+
+    assert node["descendants_count"] > 0
+    assert response.status_code == 409
+    assert response.json()["detail"] == "Cannot delete a node that has children"
+
+
+def test_validation_status_api_reports_valid_working_copy(tmp_path: Path) -> None:
+    client, _ = _editor_client(tmp_path)
+
+    response = client.post("/api/validate")
+
+    assert response.status_code == 200
+    assert response.json() == {"valid": True, "errors": []}
 
 
 def test_save_writes_valid_canonical_data_and_generated_seed(tmp_path: Path) -> None:

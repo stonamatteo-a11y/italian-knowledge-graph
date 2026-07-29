@@ -68,6 +68,19 @@ The editor works directly with the canonical JSON files, stages changes in
 memory, and validates the complete ontology before saving. Invalid changes are
 never written. A successful save also regenerates `ontology/seed_compressed.py`.
 
+The selected node remains highlighted after refreshes and saves. Use **Add
+child** to create the correct child type for the current selection; concept
+creation is shown but remains disabled. The editor suggests deterministic IDs
+from the parent and label while preserving manual overrides.
+
+Search matches IDs, labels, and descriptions without requiring matching accents.
+Matching branches expand automatically while their ancestors remain visible.
+The collapsible validation panel reports the authoritative Validator messages,
+and its node references can be used for navigation.
+
+Edited forms are marked **Unsaved changes**. Discard restores committed data,
+and the editor warns before navigation or page closure when changes are pending.
+
 Use the editor instead of modifying ontology JSON manually. The UI is an editing
 interface; the deterministic Validator remains the authoritative source of
 truth.

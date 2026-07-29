@@ -5,7 +5,9 @@ from __future__ import annotations
 import copy
 import json
 import os
+import re
 import tempfile
+import unicodedata
 from dataclasses import dataclass
 from pathlib import Path
 from threading import RLock
@@ -29,6 +31,11 @@ LEVELS = (
 TYPE_TO_SECTION = {node_type: section for section, node_type, _ in LEVELS}
 SECTION_TO_TYPE = {section: node_type for section, node_type, _ in LEVELS}
 SECTION_TO_FILE = {section: filename for section, _, filename in LEVELS}
+CHILD_TYPES = {
+    "macroarea": "area",
+    "area": "sottoarea",
+    "sottoarea": "concetto",
+}
 
 
 class EditorError(ValueError):
@@ -88,11 +95,31 @@ class OntologyStore:
                 raise KeyError(node_id)
             node = nodes[node_id]
             children = [item for item in nodes.values() if item.get("parent_id") == node_id]
+            descendant_ids = self._descendant_ids(node_id, nodes)
+            child_type = CHILD_TYPES[node["type"]]
             return {
                 **node,
                 "children_count": len(children),
+                "descendants_count": len(descendant_ids),
+                "child_type": child_type,
+                "child_creation_supported": child_type in TYPE_TO_SECTION,
                 "path": self._path(node_id, nodes),
             }
+
+    @staticmethod
+    def _descendant_ids(node_id: str, nodes: dict[str, dict[str, Any]]) -> set[str]:
+        descendants: set[str] = set()
+        pending = [node_id]
+        while pending:
+            parent_id = pending.pop()
+            children = [
+                node["id"]
+                for node in nodes.values()
+                if node.get("parent_id") == parent_id and node["id"] not in descendants
+            ]
+            descendants.update(children)
+            pending.extend(children)
+        return descendants
 
     def _path(self, node_id: str, nodes: dict[str, dict[str, Any]]) -> list[dict[str, str]]:
         path: list[dict[str, str]] = []
@@ -105,23 +132,70 @@ class OntologyStore:
         path.reverse()
         return path
 
-    def tree(self) -> list[dict[str, Any]]:
+    @staticmethod
+    def _search_value(value: str) -> str:
+        decomposed = unicodedata.normalize("NFKD", value)
+        return "".join(
+            character for character in decomposed if not unicodedata.combining(character)
+        ).casefold()
+
+    def tree(self, query: str = "") -> list[dict[str, Any]]:
         with self._lock:
             nodes = self._all_nodes()
             children: dict[str | None, list[dict[str, Any]]] = {}
             for node in nodes:
                 children.setdefault(node.get("parent_id"), []).append(node)
+            normalized_query = self._search_value(query.strip())
 
-            def branch(node: dict[str, Any]) -> dict[str, Any]:
+            def branch(node: dict[str, Any]) -> dict[str, Any] | None:
+                child_branches = [
+                    child_branch
+                    for child in children.get(node["id"], [])
+                    if (child_branch := branch(child)) is not None
+                ]
+                matches = not normalized_query or any(
+                    normalized_query in self._search_value(str(node[field]))
+                    for field in ("id", "label", "description")
+                )
+                if normalized_query and not matches and not child_branches:
+                    return None
                 return {
                     "id": node["id"],
                     "type": node["type"],
                     "label": node["label"],
                     "description": node["description"],
-                    "children": [branch(child) for child in children.get(node["id"], [])],
+                    "match": matches,
+                    "children": child_branches,
                 }
 
-            return [branch(node) for node in children.get(None, [])]
+            return [root for node in children.get(None, []) if (root := branch(node)) is not None]
+
+    @staticmethod
+    def _identifier_part(value: str) -> str:
+        normalized = OntologyStore._search_value(value)
+        return re.sub(r"_+", "_", re.sub(r"[^a-z0-9]+", "_", normalized)).strip("_")
+
+    def suggest_id(self, parent_id: str | None, label: str) -> dict[str, Any]:
+        with self._lock:
+            parts = [
+                part
+                for part in (
+                    self._identifier_part(parent_id or ""),
+                    self._identifier_part(label),
+                )
+                if part
+            ]
+            suggestion = "_".join(parts)
+            if not suggestion:
+                raise EditorError("Cannot suggest an ID from an empty label")
+            identifiers = set(self._node_index())
+            collision = suggestion in identifiers
+            if collision:
+                suffix = 2
+                while f"{suggestion}_{suffix}" in identifiers:
+                    suffix += 1
+                suggestion = f"{suggestion}_{suffix}"
+            return {"id": suggestion, "collision": collision}
 
     @staticmethod
     def _canonical_record(node: dict[str, Any]) -> dict[str, Any]:
