@@ -203,6 +203,7 @@ def create_app(ontology_dir: Path = ONTOLOGY_DIR) -> FastAPI:
                     payload.subarea_id,
                     payload.node_id,
                     payload.fields,
+                    payload.node_limit,
                 )
             )
         except GuidedContributionError as exc:
@@ -218,6 +219,7 @@ def create_app(ontology_dir: Path = ONTOLOGY_DIR) -> FastAPI:
                     payload.subarea_id,
                     payload.node_id,
                     payload.fields,
+                    payload.node_limit,
                 ),
                 payload.filename,
             )

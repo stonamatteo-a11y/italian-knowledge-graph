@@ -64,6 +64,7 @@ const elements = {
   guidedArea: document.querySelector("#guided-area"),
   guidedSubarea: document.querySelector("#guided-subarea"),
   guidedNode: document.querySelector("#guided-node"),
+  guidedNodeLimit: document.querySelector("#guided-node-limit"),
   guidedFields: document.querySelector("#guided-fields"),
   guidedSummary: document.querySelector("#guided-summary"),
   guidedResult: document.querySelector("#guided-result"),
@@ -636,6 +637,7 @@ function guidedPayload() {
     fields: [...elements.guidedFields.querySelectorAll("input:checked")].map(
       (input) => input.value,
     ),
+    node_limit: elements.guidedNodeLimit.value,
     filename: elements.guidedFilename.value.trim(),
   };
 }
@@ -647,9 +649,12 @@ function showGuidedSummary(summary) {
     ["Area", summary.area || "-"],
     ["Sottoarea", summary.subarea || "-"],
     ["Nodo", summary.node || "-"],
-    ["Nodi coinvolti", summary.nodes],
+    ["Nodi disponibili", summary.total_nodes],
+    ["Nodi inclusi", summary.included_nodes],
+    ["Nodi esclusi", summary.excluded_nodes],
     ["Campi da completare", summary.fields],
     ["Tempo stimato", `${summary.estimated_minutes} minuti`],
+    ["Pacchetto", elements.guidedFilename.value.trim()],
   ]) {
     const row = document.createElement("div");
     const term = document.createElement("dt");
@@ -989,6 +994,9 @@ elements.guidedSubarea.addEventListener("change", () => updateGuidedHierarchy("s
 elements.guidedNode.addEventListener("change", () => {
   elements.generateGuidedContribution.disabled = true;
 });
+elements.guidedNodeLimit.addEventListener("change", () => {
+  elements.generateGuidedContribution.disabled = true;
+});
 elements.guidedFields.addEventListener("change", () => {
   elements.generateGuidedContribution.disabled = true;
 });
@@ -1012,7 +1020,8 @@ elements.generateGuidedContribution.addEventListener("click", async () => {
     });
     elements.guidedResult.hidden = false;
     elements.guidedResultMessage.textContent =
-      `Pacchetto creato con successo\nPercorso: ${result.path}`;
+      `Pacchetto creato con successo\nPercorso: ${result.path}\n` +
+      `Nodi inclusi: ${result.included_nodes}`;
     elements.guidedResult.dataset.filename = result.filename;
   } catch (error) {
     showError(error);

@@ -41,4 +41,5 @@ class GuidedContributionInput(BaseModel):
     subarea_id: str | None = None
     node_id: str | None = None
     fields: tuple[str, ...] = ()
+    node_limit: Literal["selected", "10", "25", "50", "all"] = "10"
     filename: str = "ikg-guided-contribution.zip"

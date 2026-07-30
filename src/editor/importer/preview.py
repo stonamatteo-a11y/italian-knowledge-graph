@@ -27,7 +27,7 @@ class PreviewBuilder:
             nodes_found,
             relationships_found,
             validation.nodes_to_add,
-            conversion.modifications,
+            tuple(sorted({*conversion.modifications, *validation.updates})),
             validation.collisions,
             validation.duplicates,
             warnings,

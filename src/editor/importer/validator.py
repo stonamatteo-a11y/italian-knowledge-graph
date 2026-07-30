@@ -22,6 +22,7 @@ class ImportValidation:
     relationships_to_add: int
     collisions: tuple[str, ...]
     duplicates: tuple[str, ...]
+    updates: tuple[str, ...]
     errors: tuple[str, ...]
 
 
@@ -42,6 +43,7 @@ class ImportValidator:
         duplicates: list[str] = []
         errors: list[str] = []
         additions: list[CanonicalNode] = []
+        updates: list[str] = []
 
         for node in nodes:
             if node.identifier in seen:
@@ -61,6 +63,10 @@ class ImportValidator:
                     and record["language"] == node.language
                 ):
                     records[section][records[section].index(record)] = node.as_record()
+                    if record["description"] != node.description:
+                        updates.append(
+                            f"{node.identifier}: proposed description: {node.description}"
+                        )
                 else:
                     collisions.append(node.identifier)
                     errors.append(f"{node.identifier}: conflicts with an existing canonical node")
@@ -96,5 +102,6 @@ class ImportValidator:
             sum(node.parent is not None for node in additions),
             tuple(sorted(set(collisions))),
             tuple(sorted(set(duplicates))),
+            tuple(sorted(set(updates))),
             unique_errors,
         )

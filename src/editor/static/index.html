@@ -143,6 +143,16 @@
           <label>Area<select id="guided-area"></select></label>
           <label>Sottoarea<select id="guided-subarea"></select></label>
           <label>Nodo specifico (opzionale)<select id="guided-node"></select></label>
+          <label>
+            Numero di elementi
+            <select id="guided-node-limit">
+              <option value="selected">Solo il nodo selezionato</option>
+              <option value="10" selected>Massimo 10 nodi</option>
+              <option value="25">Massimo 25 nodi</option>
+              <option value="50">Massimo 50 nodi</option>
+              <option value="all">Tutto il ramo</option>
+            </select>
+          </label>
         </section>
         <fieldset id="guided-fields">
           <legend>Tipo di contributo</legend>
@@ -166,7 +176,7 @@
         <label>Pacchetto<input id="guided-filename" value="ikg-guided-contribution.zip"></label>
         <button id="preview-guided-contribution" type="button">Riepilogo</button>
         <button id="generate-guided-contribution" class="primary" type="button" disabled>
-          Crea pacchetto
+          📦 Crea pacchetto di contributo
         </button>
       </footer>
     </dialog>

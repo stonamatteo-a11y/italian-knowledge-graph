@@ -6,6 +6,7 @@ import ast
 import io
 import json
 import re
+import unicodedata
 import zipfile
 from typing import Any, ClassVar, Protocol
 from xml.etree import ElementTree
@@ -242,6 +243,7 @@ class DocxOntologyParser:
         except ElementTree.ParseError as exc:
             raise ImportParseError("Malformed DOCX XML") from exc
         tables = root.findall(".//w:tbl", self._namespace)
+        document_nodes: list[SourceNode] = []
         document_records: list[dict[str, Any]] = []
         for table in tables:
             rows = []
@@ -251,14 +253,19 @@ class DocxOntologyParser:
                     for cell in row.findall("./w:tc", self._namespace)
                 ]
                 rows.append(cells)
+            card = self._card_node(rows)
+            if card is not None:
+                document_nodes.append(card)
+                continue
             records = self._records(rows)
             if records:
                 document_records.extend(records)
-        if document_records:
+        document_nodes.extend(_source_node(record) for record in document_records)
+        if document_nodes:
             return ParsedOntology(
                 "docx",
                 self.name,
-                tuple(_source_node(record) for record in document_records),
+                tuple(document_nodes),
             )
         paragraphs = [
             "".join(paragraph.itertext()) for paragraph in root.findall(".//w:p", self._namespace)
@@ -278,6 +285,99 @@ class DocxOntologyParser:
             for row in rows[1:]
             if row and row[0].strip()
         ]
+
+    @staticmethod
+    def _generated_identifier(parent: str, label: str) -> str:
+        normalized = unicodedata.normalize("NFKD", f"{parent}_{label}")
+        ascii_value = "".join(
+            character for character in normalized if not unicodedata.combining(character)
+        )
+        return re.sub(r"_+", "_", re.sub(r"[^a-z0-9_]+", "_", ascii_value.casefold())).strip("_")
+
+    @classmethod
+    def _card_node(cls, rows: list[list[str]]) -> SourceNode | None:
+        if not rows or not rows[0]:
+            return None
+        marker_text = rows[0][0].strip()
+        marker = next(
+            (
+                candidate
+                for candidate in ("IKG_NODE_CARD_V2", "IKG_NEW_NODE_CARD_V2")
+                if marker_text.startswith(candidate)
+            ),
+            None,
+        )
+        if marker is None:
+            return None
+        values: dict[str, str] = {}
+        for row in rows[1:]:
+            if len(row) < 2 or not row[0].strip():
+                continue
+            key = row[0].strip().casefold()
+            for suffix in ("da compilare", "protetto"):
+                if key.endswith(suffix):
+                    key = key[: -len(suffix)].strip()
+            values[key] = row[1].strip()
+        if marker == "IKG_NODE_CARD_V2":
+            description = (
+                values.get("nuova descrizione o proposta di correzione")
+                or values.get("proposed description")
+                or values.get("descrizione esistente")
+                or values.get("existing description")
+            )
+            canonical = {
+                "id": values.get("id"),
+                "type": values.get("tipo") or values.get("type"),
+                "parent": values.get("parent"),
+                "label": values.get("label"),
+                "description": description,
+                "language": values.get("lingua") or values.get("language") or "it",
+            }
+        else:
+            proposed_values = {
+                "id": values.get("id proposto") or values.get("proposed id", ""),
+                "type": values.get("tipo proposto") or values.get("proposed type", ""),
+                "parent": values.get("parent proposto") or values.get("proposed parent", ""),
+                "label": values.get("label") or values.get("proposed label", ""),
+                "description": values.get("descrizione") or values.get("proposed description", ""),
+                "language": "it",
+            }
+            if not any(
+                proposed_values[field] for field in ("id", "type", "parent", "label", "description")
+            ):
+                return None
+            if not proposed_values["id"] and proposed_values["parent"] and proposed_values["label"]:
+                proposed_values["id"] = cls._generated_identifier(
+                    proposed_values["parent"], proposed_values["label"]
+                )
+            canonical = proposed_values
+        parent = canonical["parent"]
+        if isinstance(parent, str) and parent.casefold() in {"", "none", "null", "-"}:
+            parent = None
+        metadata_labels = {
+            ("fonte", "source"): "Fonte",
+            ("sinonimi", "synonyms"): "Sinonimi",
+            ("note e osservazioni", "note", "notes"): "Note",
+            (
+                "nuove relazioni proposte",
+                "relazioni proposte",
+                "proposed relationships",
+            ): "Relazioni proposte",
+        }
+        metadata = []
+        for keys, display in metadata_labels.items():
+            value = next((values[key] for key in keys if values.get(key)), None)
+            if value:
+                metadata.append(f"{display}: {value}")
+        return SourceNode(
+            identifier=canonical["id"],
+            node_type=canonical["type"],
+            label=canonical["label"],
+            description=canonical["description"],
+            parent=parent,
+            language=canonical["language"],
+            extra_fields=tuple(metadata),
+        )
 
 
 def _literal(node: ast.AST, context: str) -> Any:

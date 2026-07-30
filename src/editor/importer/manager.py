@@ -114,7 +114,7 @@ class ImportManager:
                 errors=(str(exc),),
             )
         validation = (
-            ImportValidation(None, 0, 0, (), (), ())
+            ImportValidation(None, 0, 0, (), (), (), ())
             if converted.unmapped_types
             else self.validator.validate(store.snapshot(), converted.nodes)
         )
