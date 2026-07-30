@@ -10,6 +10,10 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "Apache-2.0"}
 authors = [{name = "Italian Knowledge Graph contributors"}]
+dependencies = [
+  "fastapi>=0.110,<1.0",
+  "uvicorn>=0.29,<1.0",
+]
 keywords = ["knowledge-graph", "ontology", "italian", "nlp", "rag", "llm"]
 classifiers = [
   "Development Status :: 2 - Pre-Alpha",
@@ -28,6 +32,9 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+editor = ["static/*"]
 
 [tool.pytest.ini_options]
 addopts = "-q"

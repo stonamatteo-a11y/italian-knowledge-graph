@@ -80,8 +80,10 @@ def _validate_record(
     return node_id
 
 
-def validate_canonical(records: dict[str, list[dict[str, Any]]]) -> None:
-    """Validate canonical records and their hierarchy."""
+def validate_canonical_schema(
+    records: dict[str, list[dict[str, Any]]],
+) -> dict[str, set[str]]:
+    """Validate canonical record shape and identifier uniqueness."""
     if set(records) != set(SOURCE_FILES):
         raise SeedGenerationError("Canonical data must contain macroareas, areas, and subareas")
 
@@ -92,6 +94,13 @@ def validate_canonical(records: dict[str, list[dict[str, Any]]]) -> None:
         for index, record in enumerate(records[section]):
             section_ids.add(_validate_record(section, index, record, seen_ids))
         ids_by_section[section] = section_ids
+    return ids_by_section
+
+
+def validate_canonical(records: dict[str, list[dict[str, Any]]]) -> None:
+    """Validate canonical records and their hierarchy."""
+    ids_by_section = validate_canonical_schema(records)
+    seen_ids = set().union(*ids_by_section.values())
 
     parent_sections = {
         "areas": "macroareas",

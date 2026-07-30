@@ -3,45 +3,54 @@
 from __future__ import annotations
 
 from collections import Counter
+from typing import Any
 
 from ontology import build_graph
 
 
-def validate() -> list[str]:
+def validate_graph(
+    nodes: dict[str, dict[str, Any]],
+    edges: list[dict[str, str]],
+) -> list[str]:
+    """Validate an in-memory ontology graph."""
     errors: list[str] = []
-    nodes, edges = build_graph()
     expected_parent_type = {"area": "macroarea", "sottoarea": "area"}
 
     for node in nodes.values():
         parent_id = node["parent_id"]
         if parent_id is None:
             if node["type"] != "macroarea":
-                errors.append(f'{node["id"]}: only macroareas may have no parent')
+                errors.append(f"{node['id']}: only macroareas may have no parent")
             continue
 
         parent = nodes.get(parent_id)
         if parent is None:
-            errors.append(f'{node["id"]}: missing parent {parent_id}')
+            errors.append(f"{node['id']}: missing parent {parent_id}")
             continue
 
         required = expected_parent_type.get(node["type"])
         if required and parent["type"] != required:
-            errors.append(
-                f'{node["id"]}: expected parent type {required}, got {parent["type"]}'
-            )
+            errors.append(f"{node['id']}: expected parent type {required}, got {parent['type']}")
 
     edge_pairs = {(edge["source"], edge["target"]) for edge in edges}
     for node in nodes.values():
         if node["parent_id"] is not None:
             pair = (node["parent_id"], node["id"])
             if pair not in edge_pairs:
-                errors.append(f'{node["id"]}: missing CONTAINS edge')
+                errors.append(f"{node['id']}: missing CONTAINS edge")
 
+    return errors
+
+
+def validate() -> list[str]:
+    """Validate the committed runtime ontology."""
+    nodes, edges = build_graph()
+    errors = validate_graph(nodes, edges)
     counts = Counter(node["type"] for node in nodes.values())
     print(
-        f'Validated {len(nodes)} nodes and {len(edges)} edges '
-        f'({counts["macroarea"]} macroareas, {counts["area"]} areas, '
-        f'{counts["sottoarea"]} subareas).'
+        f"Validated {len(nodes)} nodes and {len(edges)} edges "
+        f"({counts['macroarea']} macroareas, {counts['area']} areas, "
+        f"{counts['sottoarea']} subareas)."
     )
     return errors
 
