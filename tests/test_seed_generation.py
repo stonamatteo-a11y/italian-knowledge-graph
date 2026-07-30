@@ -89,6 +89,27 @@ def test_generated_payload_decodes(tmp_path: Path) -> None:
     assert sum(len(children) for _, children in generated["SUBAREAS"]) == 710
 
 
+def test_generated_seed_ids_match_canonical_sections(tmp_path: Path) -> None:
+    output = tmp_path / "seed.py"
+    records = load_canonical()
+    generate_seed(ONTOLOGY_DIR, output)
+    generated = runpy.run_path(str(output))
+
+    canonical_ids = {
+        section: {record["id"] for record in section_records}
+        for section, section_records in records.items()
+    }
+    seed_ids = {
+        "macroareas": {node_id for node_id, _, _ in generated["MACROAREAS"]},
+        "areas": {node_id for _, children in generated["AREAS"] for node_id, _, _ in children},
+        "subareas": {
+            node_id for _, children in generated["SUBAREAS"] for node_id, _, _ in children
+        },
+    }
+
+    assert seed_ids == canonical_ids
+
+
 def test_runtime_matches_recovered_legacy_source() -> None:
     with contextlib.redirect_stdout(io.StringIO()):
         recovered = runpy.run_path(str(ONTOLOGY_DIR / "legacy_ontology_source.py"))

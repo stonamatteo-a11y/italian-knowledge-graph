@@ -24,3 +24,10 @@ class ImportConfirmInput(BaseModel):
     token: str = Field(min_length=1)
     accepted_warnings: tuple[str, ...] = ()
     mode: Literal["assisted", "automatic"] = "assisted"
+
+
+class ContributionActionInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    accepted_warning_ids: tuple[str, ...] = ()
+    filename: str | None = None

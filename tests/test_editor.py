@@ -45,6 +45,22 @@ def _tree_ids(nodes: list[dict[str, object]]) -> set[str]:
     return {str(node["id"]) for node in _flatten_tree(nodes)}
 
 
+def _node_payload(
+    identifier: str,
+    label: str,
+    node_type: str = "macroarea",
+    parent_id: str | None = None,
+) -> dict[str, object]:
+    return {
+        "id": identifier,
+        "type": node_type,
+        "label": label,
+        "description": f"Descrizione di {label}",
+        "parent_id": parent_id,
+        "language": "it",
+    }
+
+
 def _import_preview(
     client: TestClient,
     filename: str,
@@ -78,7 +94,7 @@ def test_tree_loading(tmp_path: Path) -> None:
     tree = response.json()
     assert len(tree) == 48
     assert len(_flatten_tree(tree)) == 1229
-    assert tree[0]["id"] == "lingua_italiana"
+    assert tree[0]["id"] == "agricoltura"
     assert tree[0]["children"]
 
 
@@ -145,6 +161,69 @@ def test_tree_search_preserves_ancestors_and_ignores_accents(tmp_path: Path) -> 
         "li_st_origini",
     }
     assert "attualita_societa" in _tree_ids(accent_response.json())
+
+
+def test_tree_orders_siblings_by_italian_label_and_preserves_hierarchy(
+    tmp_path: Path,
+) -> None:
+    client, _ = _editor_client(tmp_path)
+    for payload in (
+        _node_payload("sort_z", "Zeta"),
+        _node_payload("sort_a", "albero"),
+        _node_payload("sort_accent", "Ètica"),
+        _node_payload("sort_e", "etica"),
+        _node_payload("sort_parent", "Famiglia"),
+        _node_payload("sort_child_z", "Zaino", "area", "sort_parent"),
+        _node_payload("sort_child_a", "Àlgebra", "area", "sort_parent"),
+    ):
+        assert client.post("/api/node", json=payload).status_code == 201
+
+    tree = client.get("/api/tree").json()
+    root_ids = [node["id"] for node in tree if node["id"].startswith("sort_")]
+    parent = next(node for node in tree if node["id"] == "sort_parent")
+
+    assert root_ids == ["sort_a", "sort_accent", "sort_e", "sort_parent", "sort_z"]
+    assert [child["id"] for child in parent["children"]] == [
+        "sort_child_a",
+        "sort_child_z",
+    ]
+    assert all(child["id"] not in root_ids for child in parent["children"])
+
+
+def test_tree_uses_type_and_id_for_duplicate_labels_and_reorders_after_update(
+    tmp_path: Path,
+) -> None:
+    client, _ = _editor_client(tmp_path)
+    for payload in (
+        _node_payload("sort_duplicate_b", "Uguale"),
+        _node_payload("sort_duplicate_a", "Uguale"),
+        _node_payload("sort_update", "Zuzzurellone"),
+    ):
+        assert client.post("/api/node", json=payload).status_code == 201
+
+    initial = client.get("/api/tree").json()
+    duplicates = [node["id"] for node in initial if node["label"] == "Uguale"]
+    assert duplicates == ["sort_duplicate_a", "sort_duplicate_b"]
+
+    payload = _node_payload("sort_update", "Abaco")
+    assert client.put("/api/node/sort_update", json=payload).status_code == 200
+    updated = client.get("/api/tree").json()
+    labels = [node["label"] for node in updated]
+    assert labels.index("Abaco") < labels.index("Uguale")
+
+
+def test_editor_applies_italian_label_sorting_to_all_ui_collections(
+    tmp_path: Path,
+) -> None:
+    client, _ = _editor_client(tmp_path)
+
+    app_js = client.get("/static/app.js").text
+
+    assert 'new Intl.Collator("it"' in app_js
+    assert 'sensitivity: "base"' in app_js
+    assert "compareByVisibleLabel(left.value, right.value)" in app_js
+    assert "sortTreeForDisplay(tree)" in app_js
+    assert "stableLabelSort(state.nodes)" in app_js
 
 
 def test_api_can_create_update_and_delete_a_node(tmp_path: Path) -> None:
@@ -596,6 +675,23 @@ def test_quality_center_is_served_as_an_independent_window(tmp_path: Path) -> No
     assert "window.setInterval(loadReport, 2000)" in quality_js.text
     assert "ikg:navigate-node" in quality_js.text
     assert ".score-layout" in quality_css.text
+    assert 'id="prepare-contribution"' in editor_html
+    assert 'id="contribution-dialog"' in editor_html
+    assert 'request("/api/contribution/preview")' in client.get("/static/app.js").text
+
+
+def test_editor_layout_uses_independent_25_75_scrolling_panels(tmp_path: Path) -> None:
+    client, _ = _editor_client(tmp_path)
+
+    styles = client.get("/static/styles.css").text
+
+    assert "grid-template-columns: minmax(240px, 25%) minmax(0, 75%);" in styles
+    assert ".editor-panel {" in styles
+    assert "overflow-y: auto;" in styles
+    assert "body {" in styles
+    assert "overflow: hidden;" in styles
+    assert ".form-actions {" in styles
+    assert "position: sticky;" in styles
 
 
 def test_quality_center_reports_integrity_error_and_session_activity(tmp_path: Path) -> None:

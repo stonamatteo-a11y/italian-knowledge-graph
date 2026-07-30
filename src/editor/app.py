@@ -12,8 +12,9 @@ from fastapi.staticfiles import StaticFiles
 
 from scripts.generate_seed import ONTOLOGY_DIR
 
+from .contribution import ContributionError, ContributionService
 from .importer import ImportManager
-from .models import ImportConfirmInput, NodeInput
+from .models import ContributionActionInput, ImportConfirmInput, NodeInput
 from .quality import KnowledgeQualityCenter
 from .store import EditorError, OntologyStore
 
@@ -30,9 +31,11 @@ def create_app(ontology_dir: Path = ONTOLOGY_DIR) -> FastAPI:
     store = OntologyStore(ontology_dir)
     import_manager = ImportManager(ontology_dir / "import_mappings.json")
     quality_center = KnowledgeQualityCenter()
+    contribution_service = ContributionService(store, quality_center, ontology_dir.parent)
     app.state.store = store
     app.state.import_manager = import_manager
     app.state.quality_center = quality_center
+    app.state.contribution_service = contribution_service
 
     app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
@@ -152,5 +155,30 @@ def create_app(ontology_dir: Path = ONTOLOGY_DIR) -> FastAPI:
     @app.get("/api/quality/report")
     def quality_report() -> dict[str, object]:
         return quality_center.evaluate(store.snapshot(), store.activity()).as_dict()
+
+    @app.get("/api/contribution/status")
+    def contribution_status() -> dict[str, bool]:
+        return {"changed": contribution_service.changes().changed}
+
+    @app.get("/api/contribution/preview")
+    def contribution_preview() -> dict[str, object]:
+        return contribution_service.preview().as_dict()
+
+    @app.post("/api/contribution/package")
+    def contribution_package(payload: ContributionActionInput) -> dict[str, object]:
+        try:
+            return contribution_service.export_package(
+                payload.filename or "ikg-contribution.zip",
+                payload.accepted_warning_ids,
+            )
+        except ContributionError as exc:
+            raise HTTPException(status_code=409, detail=str(exc)) from exc
+
+    @app.post("/api/contribution/git")
+    def contribution_git(payload: ContributionActionInput) -> dict[str, object]:
+        try:
+            return contribution_service.prepare_git(payload.accepted_warning_ids)
+        except ContributionError as exc:
+            raise HTTPException(status_code=409, detail=str(exc)) from exc
 
     return app

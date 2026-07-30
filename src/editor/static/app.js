@@ -50,6 +50,13 @@ const elements = {
   importMode: document.querySelector("#import-mode"),
   importSections: document.querySelector("#import-sections"),
   openQuality: document.querySelector("#open-quality"),
+  prepareContribution: document.querySelector("#prepare-contribution"),
+  contributionDialog: document.querySelector("#contribution-dialog"),
+  closeContribution: document.querySelector("#close-contribution"),
+  contributionContent: document.querySelector("#contribution-content"),
+  contributionFilename: document.querySelector("#contribution-filename"),
+  exportContribution: document.querySelector("#export-contribution"),
+  prepareContributionGit: document.querySelector("#prepare-contribution-git"),
 };
 
 const parentTypes = {
@@ -57,6 +64,36 @@ const parentTypes = {
   area: "macroarea",
   sottoarea: "area",
 };
+
+const italianLabelCollator = new Intl.Collator("it", {
+  sensitivity: "base",
+  usage: "sort",
+});
+
+function compareByVisibleLabel(left, right) {
+  return (
+    italianLabelCollator.compare(left.label || "", right.label || "") ||
+    italianLabelCollator.compare(left.type || "", right.type || "") ||
+    italianLabelCollator.compare(left.id || "", right.id || "")
+  );
+}
+
+function stableLabelSort(values) {
+  return values
+    .map((value, index) => ({ value, index }))
+    .sort(
+      (left, right) =>
+        compareByVisibleLabel(left.value, right.value) || left.index - right.index,
+    )
+    .map(({ value }) => value);
+}
+
+function sortTreeForDisplay(nodes) {
+  return stableLabelSort(nodes).map((node) => ({
+    ...node,
+    children: sortTreeForDisplay(node.children || []),
+  }));
+}
 
 async function request(path, options = {}) {
   const response = await fetch(path, {
@@ -168,7 +205,7 @@ function renderParentOptions() {
   none.value = "";
   none.textContent = "None";
   elements.parent.append(none);
-  for (const node of state.nodes) {
+  for (const node of stableLabelSort(state.nodes)) {
     if (
       node.type !== requiredType ||
       (!state.isNew && node.id === state.selectedId)
@@ -242,9 +279,9 @@ async function loadTree(query = elements.search.value.trim()) {
   if (requestId !== state.searchRequest) {
     return;
   }
-  state.tree = tree;
+  state.tree = sortTreeForDisplay(tree);
   if (!query) {
-    state.nodes = flatten(tree);
+    state.nodes = flatten(state.tree);
   }
   renderTree();
 }
@@ -378,6 +415,160 @@ function openQualityCenter() {
     "popup=yes,resizable=yes,scrollbars=yes,width=1180,height=820",
   );
   qualityWindow?.focus();
+}
+
+function contributionList(title, values) {
+  const section = document.createElement("section");
+  const heading = document.createElement("h3");
+  heading.textContent = `${title} (${values.length})`;
+  section.append(heading);
+  if (values.length) {
+    const list = document.createElement("ul");
+    for (const value of values) {
+      const item = document.createElement("li");
+      item.textContent = typeof value === "string" ? value : JSON.stringify(value);
+      list.append(item);
+    }
+    section.append(list);
+  }
+  return section;
+}
+
+function acceptedContributionWarnings() {
+  return [
+    ...elements.contributionContent.querySelectorAll(
+      ".contribution-warning input:checked",
+    ),
+  ].map((checkbox) => checkbox.value);
+}
+
+function updateContributionActions(preview) {
+  const warnings = [
+    ...elements.contributionContent.querySelectorAll(".contribution-warning input"),
+  ];
+  const warningsAccepted = warnings.every((checkbox) => checkbox.checked);
+  elements.exportContribution.disabled = !preview.preparable || !warningsAccepted;
+  elements.prepareContributionGit.hidden = !preview.git.available;
+  elements.prepareContributionGit.disabled =
+    !preview.preparable ||
+    !warningsAccepted ||
+    preview.git.blockers.length > 0;
+}
+
+function renderContributionPreview(preview) {
+  elements.contributionContent.replaceChildren();
+  const nodes = preview.changes.nodes;
+  const relationships = preview.changes.relationships;
+  const summary = document.createElement("dl");
+  summary.className = "contribution-summary";
+  for (const [label, value] of Object.entries({
+    "Nodi aggiunti": nodes.added.length,
+    "Nodi modificati": nodes.modified.length,
+    "Nodi rimossi": nodes.removed.length,
+    "Relazioni aggiunte": relationships.added.length,
+    "Relazioni modificate": relationships.modified.length,
+    "Relazioni rimosse": relationships.removed.length,
+    "Qualità iniziale": preview.quality.before,
+    "Qualità finale": preview.quality.after,
+  })) {
+    const item = document.createElement("div");
+    const term = document.createElement("dt");
+    term.textContent = label;
+    const detail = document.createElement("dd");
+    detail.textContent = String(value);
+    item.append(term, detail);
+    summary.append(item);
+  }
+  elements.contributionContent.append(
+    summary,
+    contributionList("File canonici", preview.files),
+    contributionList("Errori bloccanti", preview.errors),
+    contributionList("Contenuti esclusi", preview.excluded),
+  );
+
+  const warningSection = document.createElement("section");
+  const warningHeading = document.createElement("h3");
+  warningHeading.textContent = `Warning (${preview.warnings.length})`;
+  warningSection.append(warningHeading);
+  if (preview.warnings.length) {
+    const acceptAll = document.createElement("label");
+    acceptAll.className = "contribution-accept-all";
+    const allCheckbox = document.createElement("input");
+    allCheckbox.type = "checkbox";
+    acceptAll.append(allCheckbox, document.createTextNode("Accetta tutti i warning"));
+    warningSection.append(acceptAll);
+    for (const warning of preview.warnings) {
+      const label = document.createElement("label");
+      label.className = "contribution-warning";
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.value = warning.id;
+      checkbox.addEventListener("change", () => updateContributionActions(preview));
+      label.append(
+        checkbox,
+        document.createTextNode(
+          `${warning.node_id || "ontologia"} · ${warning.title}: ${warning.detail}`,
+        ),
+      );
+      warningSection.append(label);
+    }
+    allCheckbox.addEventListener("change", () => {
+      for (const checkbox of warningSection.querySelectorAll(
+        ".contribution-warning input",
+      )) {
+        checkbox.checked = allCheckbox.checked;
+      }
+      updateContributionActions(preview);
+    });
+  }
+  elements.contributionContent.append(warningSection);
+
+  if (preview.git.blockers.length) {
+    elements.contributionContent.append(
+      contributionList("Modifiche Git preesistenti", preview.git.blockers),
+    );
+  }
+  const title = document.createElement("section");
+  title.innerHTML = "<h3>Titolo commit suggerito</h3>";
+  const titleValue = document.createElement("code");
+  titleValue.textContent = preview.commit_title;
+  title.append(titleValue);
+  const body = document.createElement("section");
+  body.innerHTML = "<h3>Descrizione Pull Request</h3>";
+  const bodyValue = document.createElement("pre");
+  bodyValue.textContent = preview.pull_request_body;
+  body.append(bodyValue);
+  const diff = document.createElement("section");
+  diff.innerHTML = "<h3>Diff canonico</h3>";
+  const diffValue = document.createElement("pre");
+  diffValue.className = "contribution-diff";
+  diffValue.textContent = preview.diff || "Nessuna differenza";
+  diff.append(diffValue);
+  elements.contributionContent.append(title, body, diff);
+  elements.contributionDialog.dataset.preview = JSON.stringify(preview);
+  updateContributionActions(preview);
+}
+
+async function openContribution() {
+  const preview = await request("/api/contribution/preview");
+  renderContributionPreview(preview);
+  elements.contributionDialog.showModal();
+}
+
+function renderContributionResult(result) {
+  elements.contributionContent.replaceChildren();
+  const heading = document.createElement("h3");
+  heading.textContent = "Contributo preparato";
+  const report = document.createElement("pre");
+  report.textContent = JSON.stringify(result, null, 2);
+  elements.contributionContent.append(heading, report);
+  elements.exportContribution.disabled = true;
+  elements.prepareContributionGit.disabled = true;
+}
+
+async function refreshContributionAvailability() {
+  const status = await request("/api/contribution/status");
+  elements.prepareContribution.disabled = !status.changed;
 }
 
 function renderImportList(title, values, className = "") {
@@ -648,6 +839,39 @@ elements.importOntology.addEventListener("click", async () => {
 elements.openQuality.addEventListener("click", () => {
   openQualityCenter();
 });
+elements.prepareContribution.addEventListener("click", () => {
+  openContribution().catch(showError);
+});
+elements.closeContribution.addEventListener("click", () => {
+  elements.contributionDialog.close();
+});
+elements.exportContribution.addEventListener("click", async () => {
+  try {
+    const result = await request("/api/contribution/package", {
+      method: "POST",
+      body: JSON.stringify({
+        filename: elements.contributionFilename.value.trim(),
+        accepted_warning_ids: acceptedContributionWarnings(),
+      }),
+    });
+    renderContributionResult(result);
+  } catch (error) {
+    showError(error);
+  }
+});
+elements.prepareContributionGit.addEventListener("click", async () => {
+  try {
+    const result = await request("/api/contribution/git", {
+      method: "POST",
+      body: JSON.stringify({
+        accepted_warning_ids: acceptedContributionWarnings(),
+      }),
+    });
+    renderContributionResult(result);
+  } catch (error) {
+    showError(error);
+  }
+});
 elements.importFile.addEventListener("change", () => {
   const file = elements.importFile.files[0];
   if (file) {
@@ -741,3 +965,7 @@ loadTree("")
     await runValidation();
   })
   .catch(showError);
+refreshContributionAvailability().catch(showError);
+window.setInterval(() => {
+  refreshContributionAvailability().catch(showError);
+}, 2000);

@@ -131,6 +131,26 @@ controlli possono quindi essere aggiunti senza modificare l'aggregatore.
 Lo score è uno strumento diagnostico. Il Validator deterministico rimane la
 fonte autorevole per stabilire se l'ontologia può essere salvata.
 
+### Prepara contributo
+
+Il comando **Prepara contributo** si abilita quando la sessione contiene
+modifiche rispetto all'ontologia caricata all'avvio. Il flusso confronta nodi e
+relazioni, riesegue Validator, controlli d'integrità e Quality Report, verifica
+la generazione deterministica e presenta file interessati, diff, esclusioni,
+warning e variazione del Quality Score.
+
+**Esporta pacchetto** genera in `contributions/` uno ZIP riproducibile contenente
+solo JSON canonici modificati e report revisionabili. Non include seed Python,
+script, credenziali, percorsi assoluti o file esterni all'ontologia. I warning
+devono essere accettati esplicitamente.
+
+Quando il repository Git è disponibile e privo di modifiche preesistenti,
+**Prepara modifiche Git** salva atomicamente i file canonici autorizzati,
+rigenera il seed e produce titolo commit e descrizione Pull Request. Non esegue
+commit, push, merge, cambio branch, reset o apertura automatica di Pull Request.
+Questa funzione prepara un contributo al repository e non è un exporter di
+dataset.
+
 ## Community review
 
 This is an early, non-authoritative ontology seed. Feedback is especially useful on:

@@ -60,6 +60,7 @@ class OntologyStore:
         )
         self._lock = RLock()
         self._records = load_canonical(ontology_dir)
+        self._initial_records = copy.deepcopy(self._records)
         self._activity: list[dict[str, Any]] = []
         self._activity_sequence = 0
 
@@ -159,12 +160,22 @@ class OntologyStore:
             character for character in decomposed if not unicodedata.combining(character)
         ).casefold()
 
+    @staticmethod
+    def _ui_sort_key(node: dict[str, Any]) -> tuple[str, str, str]:
+        return (
+            OntologyStore._search_value(str(node["label"])),
+            OntologyStore._search_value(str(node["type"])),
+            OntologyStore._search_value(str(node["id"])),
+        )
+
     def tree(self, query: str = "") -> list[dict[str, Any]]:
         with self._lock:
             nodes = self._all_nodes()
             children: dict[str | None, list[dict[str, Any]]] = {}
             for node in nodes:
                 children.setdefault(node.get("parent_id"), []).append(node)
+            for siblings in children.values():
+                siblings.sort(key=self._ui_sort_key)
             normalized_query = self._search_value(query.strip())
 
             def branch(node: dict[str, Any]) -> dict[str, Any] | None:
@@ -353,6 +364,10 @@ class OntologyStore:
     def snapshot(self) -> dict[str, list[dict[str, Any]]]:
         with self._lock:
             return copy.deepcopy(self._records)
+
+    def initial_snapshot(self) -> dict[str, list[dict[str, Any]]]:
+        with self._lock:
+            return copy.deepcopy(self._initial_records)
 
     def activity(self) -> tuple[dict[str, Any], ...]:
         with self._lock:

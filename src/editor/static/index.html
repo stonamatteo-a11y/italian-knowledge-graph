@@ -13,6 +13,7 @@
         <span id="save-status" class="save-status saved">Saved</span>
         <span id="validation-status" class="status-neutral">NOT VALIDATED</span>
         <button id="open-quality" type="button">Knowledge Quality Center</button>
+        <button id="prepare-contribution" type="button" disabled>Prepara contributo</button>
         <button id="import-ontology" type="button">Importa Ontologia</button>
         <input id="import-file" type="file" accept=".py,.json,.yaml,.yml,.md,.docx" hidden>
         <button id="add-child" type="button">Add macroarea</button>
@@ -109,6 +110,24 @@
       <footer>
         <button id="cancel-import" type="button">Annulla</button>
         <button id="confirm-import" class="primary" type="button" disabled>Conferma importazione</button>
+      </footer>
+    </dialog>
+
+    <dialog id="contribution-dialog" class="contribution-dialog">
+      <header>
+        <h2>Prepara contributo</h2>
+        <button id="close-contribution" type="button" aria-label="Chiudi">×</button>
+      </header>
+      <div id="contribution-content"></div>
+      <footer>
+        <label for="contribution-filename">
+          Pacchetto
+          <input id="contribution-filename" value="ikg-contribution.zip">
+        </label>
+        <button id="export-contribution" type="button">Esporta pacchetto</button>
+        <button id="prepare-contribution-git" class="primary" type="button">
+          Prepara modifiche Git
+        </button>
       </footer>
     </dialog>
 
