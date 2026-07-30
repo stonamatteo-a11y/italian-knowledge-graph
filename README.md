@@ -1,5 +1,7 @@
 # Italian Knowledge Graph
 
+[English](./README.md) | [Italiano](./docs/it/README.md)
+
 <p align="center">
   <img src="assets/logo.svg" alt="Italian Knowledge Graph logo" width="620">
 </p>
@@ -17,6 +19,13 @@ IKG is more than an ontology editor. It connects human-readable knowledge
 sources, deterministic rules, quality analysis, reproducible exports, and
 reviewable community contributions in one environment for developers and domain
 experts.
+
+## Documentazione
+
+La documentazione è disponibile in:
+
+- [English](./README.md)
+- [Italiano](./docs/it/README.md)
 
 ## Why IKG
 

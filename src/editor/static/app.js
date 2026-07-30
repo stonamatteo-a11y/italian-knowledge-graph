@@ -220,7 +220,7 @@ function renderParentOptions() {
   elements.parent.replaceChildren();
   const none = document.createElement("option");
   none.value = "";
-  none.textContent = "None";
+  none.textContent = t("field.none");
   elements.parent.append(none);
   for (const node of stableLabelSort(state.nodes)) {
     if (
@@ -259,14 +259,18 @@ function renderAddAction() {
   const childType = node?.child_type || "macroarea";
   const supported = node ? node.child_creation_supported : true;
   elements.addChild.textContent =
-    childType === "concetto" ? "Add concept" : node ? "Add child" : "Add macroarea";
+    childType === "concetto"
+      ? t("action.add_concept")
+      : node
+        ? t("action.add_child")
+        : t("action.add_macroarea");
   elements.addChild.disabled = !supported || state.isNew;
   elements.conceptNotice.hidden = childType !== "concetto";
 }
 
 function setDirty(dirty) {
   state.dirty = dirty;
-  elements.saveStatus.textContent = dirty ? "Unsaved changes" : "Saved";
+  elements.saveStatus.textContent = dirty ? t("status.unsaved") : t("status.saved");
   elements.saveStatus.className = `save-status ${dirty ? "dirty" : "saved"}`;
 }
 
@@ -315,7 +319,7 @@ async function confirmDiscard() {
   if (!state.dirty) {
     return true;
   }
-  if (!window.confirm("Discard unsaved changes?")) {
+  if (!window.confirm(t("confirm.discard"))) {
     return false;
   }
   await discardWorkingCopy();
@@ -387,12 +391,12 @@ function showValidation(result, saved = false) {
   elements.validation.className = `validation-panel ${result.valid ? "valid" : "invalid"}`;
   elements.validationSummary.textContent = result.valid
     ? saved
-      ? "✔ Validation passed · Saved"
-      : "✔ Validation passed"
-    : "❌ Validation failed";
+      ? t("validation.passed_saved")
+      : t("validation.passed")
+    : t("validation.failed");
   elements.validationStatus.textContent = result.valid
-    ? "VALID"
-    : `INVALID (${result.errors.length})`;
+    ? t("validation.valid")
+    : t("validation.invalid", { count: result.errors.length });
   elements.validationStatus.className = result.valid ? "status-valid" : "status-invalid";
   elements.validationErrors.replaceChildren();
   for (const error of result.errors) {
@@ -479,14 +483,14 @@ function renderContributionPreview(preview) {
   const summary = document.createElement("dl");
   summary.className = "contribution-summary";
   for (const [label, value] of Object.entries({
-    "Nodi aggiunti": nodes.added.length,
-    "Nodi modificati": nodes.modified.length,
-    "Nodi rimossi": nodes.removed.length,
-    "Relazioni aggiunte": relationships.added.length,
-    "Relazioni modificate": relationships.modified.length,
-    "Relazioni rimosse": relationships.removed.length,
-    "Qualità iniziale": preview.quality.before,
-    "Qualità finale": preview.quality.after,
+    [t("contribution.nodes_added")]: nodes.added.length,
+    [t("contribution.nodes_modified")]: nodes.modified.length,
+    [t("contribution.nodes_removed")]: nodes.removed.length,
+    [t("contribution.relationships_added")]: relationships.added.length,
+    [t("contribution.relationships_modified")]: relationships.modified.length,
+    [t("contribution.relationships_removed")]: relationships.removed.length,
+    [t("contribution.quality_before")]: preview.quality.before,
+    [t("contribution.quality_after")]: preview.quality.after,
   })) {
     const item = document.createElement("div");
     const term = document.createElement("dt");
@@ -498,21 +502,23 @@ function renderContributionPreview(preview) {
   }
   elements.contributionContent.append(
     summary,
-    contributionList("File canonici", preview.files),
-    contributionList("Errori bloccanti", preview.errors),
-    contributionList("Contenuti esclusi", preview.excluded),
+    contributionList(t("contribution.canonical_files"), preview.files),
+    contributionList(t("contribution.blocking_errors"), preview.errors),
+    contributionList(t("contribution.excluded"), preview.excluded),
   );
 
   const warningSection = document.createElement("section");
   const warningHeading = document.createElement("h3");
-  warningHeading.textContent = `Warning (${preview.warnings.length})`;
+  warningHeading.textContent = t("contribution.warning_count", {
+    count: preview.warnings.length,
+  });
   warningSection.append(warningHeading);
   if (preview.warnings.length) {
     const acceptAll = document.createElement("label");
     acceptAll.className = "contribution-accept-all";
     const allCheckbox = document.createElement("input");
     allCheckbox.type = "checkbox";
-    acceptAll.append(allCheckbox, document.createTextNode("Accetta tutti i warning"));
+    acceptAll.append(allCheckbox, document.createTextNode(t("contribution.accept_all")));
     warningSection.append(acceptAll);
     for (const warning of preview.warnings) {
       const label = document.createElement("label");
@@ -524,7 +530,7 @@ function renderContributionPreview(preview) {
       label.append(
         checkbox,
         document.createTextNode(
-          `${warning.node_id || "ontologia"} · ${warning.title}: ${warning.detail}`,
+          `${warning.node_id || t("ontology.name")} · ${warning.title}: ${warning.detail}`,
         ),
       );
       warningSection.append(label);
@@ -542,24 +548,24 @@ function renderContributionPreview(preview) {
 
   if (preview.git.blockers.length) {
     elements.contributionContent.append(
-      contributionList("Modifiche Git preesistenti", preview.git.blockers),
+      contributionList(t("contribution.git_blockers"), preview.git.blockers),
     );
   }
   const title = document.createElement("section");
-  title.innerHTML = "<h3>Titolo commit suggerito</h3>";
+  title.innerHTML = `<h3>${t("contribution.commit_title")}</h3>`;
   const titleValue = document.createElement("code");
   titleValue.textContent = preview.commit_title;
   title.append(titleValue);
   const body = document.createElement("section");
-  body.innerHTML = "<h3>Descrizione Pull Request</h3>";
+  body.innerHTML = `<h3>${t("contribution.pr_description")}</h3>`;
   const bodyValue = document.createElement("pre");
   bodyValue.textContent = preview.pull_request_body;
   body.append(bodyValue);
   const diff = document.createElement("section");
-  diff.innerHTML = "<h3>Diff canonico</h3>";
+  diff.innerHTML = `<h3>${t("contribution.canonical_diff")}</h3>`;
   const diffValue = document.createElement("pre");
   diffValue.className = "contribution-diff";
-  diffValue.textContent = preview.diff || "Nessuna differenza";
+  diffValue.textContent = preview.diff || t("contribution.no_diff");
   diff.append(diffValue);
   elements.contributionContent.append(title, body, diff);
   elements.contributionDialog.dataset.preview = JSON.stringify(preview);
@@ -575,7 +581,7 @@ async function openContribution() {
 function renderContributionResult(result) {
   elements.contributionContent.replaceChildren();
   const heading = document.createElement("h3");
-  heading.textContent = "Contributo preparato";
+  heading.textContent = t("contribution.prepared");
   const report = document.createElement("pre");
   report.textContent = JSON.stringify(result, null, 2);
   elements.contributionContent.append(heading, report);
@@ -597,7 +603,7 @@ function fillGuidedSelect(select, nodes, optional = false) {
   if (optional) {
     const empty = document.createElement("option");
     empty.value = "";
-    empty.textContent = "Tutti";
+    empty.textContent = t("field.all");
     select.append(empty);
   }
   for (const node of stableLabelSort(nodes)) {
@@ -645,16 +651,16 @@ function guidedPayload() {
 function showGuidedSummary(summary) {
   const list = document.createElement("dl");
   for (const [label, value] of [
-    ["Dominio", summary.domain],
-    ["Area", summary.area || "-"],
-    ["Sottoarea", summary.subarea || "-"],
-    ["Nodo", summary.node || "-"],
-    ["Nodi disponibili", summary.total_nodes],
-    ["Nodi inclusi", summary.included_nodes],
-    ["Nodi esclusi", summary.excluded_nodes],
-    ["Campi da completare", summary.fields],
-    ["Tempo stimato", `${summary.estimated_minutes} minuti`],
-    ["Pacchetto", elements.guidedFilename.value.trim()],
+    [t("guided.domain"), summary.domain],
+    [t("guided.area"), summary.area || "-"],
+    [t("guided.subarea"), summary.subarea || "-"],
+    [t("guided.node"), summary.node || "-"],
+    [t("guided.available_nodes"), summary.total_nodes],
+    [t("guided.included_nodes"), summary.included_nodes],
+    [t("guided.excluded_nodes"), summary.excluded_nodes],
+    [t("guided.fields"), summary.fields],
+    [t("guided.estimated_time"), t("guided.minutes", { count: summary.estimated_minutes })],
+    [t("contribution.package"), elements.guidedFilename.value.trim()],
   ]) {
     const row = document.createElement("div");
     const term = document.createElement("dt");
@@ -706,16 +712,16 @@ function showImportPreview(preview) {
   elements.importFound.textContent = String(preview.nodes_found);
   elements.importRelationships.textContent = String(preview.relationships_found);
   elements.importSections.replaceChildren();
-  renderImportList("Informazioni", [
+  renderImportList(t("import.information"), [
     ...preview.information,
-    `Nodes to add: ${preview.nodes_to_add}`,
+    t("import.nodes_to_add", { count: preview.nodes_to_add }),
   ]);
-  renderImportList("Modifiche automatiche", preview.modifications);
-  renderImportList("Collisioni", preview.collisions, "import-error");
-  renderImportList("Duplicati", preview.duplicates);
+  renderImportList(t("import.modifications"), preview.modifications);
+  renderImportList(t("import.collisions"), preview.collisions, "import-error");
+  renderImportList(t("import.duplicates"), preview.duplicates);
   renderMappingOptions(preview.unmapped_types);
   renderWarningOptions(preview.warning_options);
-  renderImportList("Errori bloccanti", preview.errors, "import-error");
+  renderImportList(t("import.blocking_errors"), preview.errors, "import-error");
   updateImportConfirmation();
   if (!elements.importDialog.open) {
     elements.importDialog.showModal();
@@ -736,7 +742,7 @@ function renderMappingOptions(types) {
   const section = document.createElement("section");
   section.className = "mapping-options";
   const heading = document.createElement("h3");
-  heading.textContent = `Mapping richiesti (${types.length})`;
+  heading.textContent = t("import.required_mappings", { count: types.length });
   section.append(heading);
   for (const externalType of types) {
     const row = document.createElement("label");
@@ -754,7 +760,7 @@ function renderMappingOptions(types) {
   }
   const apply = document.createElement("button");
   apply.type = "button";
-  apply.textContent = "Salva mapping e ricalcola";
+  apply.textContent = t("import.save_mapping");
   apply.addEventListener("click", async () => {
     if (!state.importFile) {
       return;
@@ -782,7 +788,7 @@ function renderWarningOptions(warnings) {
   const section = document.createElement("section");
   section.className = "import-warning";
   const heading = document.createElement("h3");
-  heading.textContent = `Warning (${warnings.length})`;
+  heading.textContent = t("import.warning_count", { count: warnings.length });
   section.append(heading);
   for (const warning of warnings) {
     const label = document.createElement("label");
@@ -792,7 +798,10 @@ function renderWarningOptions(warnings) {
     checkbox.value = warning.id;
     checkbox.checked = false;
     checkbox.addEventListener("change", updateImportConfirmation);
-    label.append(checkbox, document.createTextNode(`Applica correzione: ${warning.message}`));
+    label.append(
+      checkbox,
+      document.createTextNode(t("import.apply_fix", { message: warning.message })),
+    );
     section.append(label);
   }
   elements.importSections.append(section);
@@ -910,11 +919,11 @@ elements.deleteNode.addEventListener("click", async () => {
     return;
   }
   const node = state.selectedNode;
-  const confirmation = [
-    `Delete "${node.label}"?`,
-    `ID: ${node.id}`,
-    `Descendants: ${node.descendants_count}`,
-  ].join("\n");
+  const confirmation = t("confirm.delete", {
+    label: node.label,
+    id: node.id,
+    count: node.descendants_count,
+  });
   if (!window.confirm(confirmation)) {
     return;
   }
@@ -1019,9 +1028,10 @@ elements.generateGuidedContribution.addEventListener("click", async () => {
       body: JSON.stringify(guidedPayload()),
     });
     elements.guidedResult.hidden = false;
-    elements.guidedResultMessage.textContent =
-      `Pacchetto creato con successo\nPercorso: ${result.path}\n` +
-      `Nodi inclusi: ${result.included_nodes}`;
+    elements.guidedResultMessage.textContent = t("guided.success", {
+      path: result.path,
+      count: result.included_nodes,
+    });
     elements.guidedResult.dataset.filename = result.filename;
   } catch (error) {
     showError(error);
@@ -1076,14 +1086,15 @@ elements.confirmImport.addEventListener("click", async () => {
     }
     showValidation({ valid: true, errors: [] }, true);
     const report = result.report;
-    elements.validationSummary.textContent =
-      `✔ Import completed · ${report.summary.nodes_added} nodes added`;
+    elements.validationSummary.textContent = t("import.completed", {
+      count: report.summary.nodes_added,
+    });
     elements.validationErrors.replaceChildren();
     for (const [label, value] of [
-      ["File", report.file],
-      ["Format", report.format],
-      ["Parser", report.parser],
-      ["Files modified", report.files_modified.join(", ")],
+      [t("report.file"), report.file],
+      [t("report.format"), report.format],
+      [t("report.parser"), report.parser],
+      [t("report.files_modified"), report.files_modified.join(", ")],
     ]) {
       const item = document.createElement("li");
       item.textContent = `${label}: ${value}`;
@@ -1128,15 +1139,17 @@ window.addEventListener("message", (event) => {
   }
 });
 
-loadTree("")
-  .then(async () => {
-    if (state.tree[0]) {
-      await selectNode(state.tree[0].id, true);
-    }
-    await runValidation();
-  })
-  .catch(showError);
-refreshContributionAvailability().catch(showError);
-window.setInterval(() => {
+initializeI18n().then(() => {
+  loadTree("")
+    .then(async () => {
+      if (state.tree[0]) {
+        await selectNode(state.tree[0].id, true);
+      }
+      await runValidation();
+    })
+    .catch(showError);
   refreshContributionAvailability().catch(showError);
-}, 2000);
+  window.setInterval(() => {
+    refreshContributionAvailability().catch(showError);
+  }, 2000);
+});

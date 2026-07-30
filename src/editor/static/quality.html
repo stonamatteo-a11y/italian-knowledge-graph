@@ -3,29 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Knowledge Quality Center</title>
+    <title data-i18n="quality.title"></title>
     <link rel="stylesheet" href="/static/quality.css">
   </head>
   <body>
     <header class="quality-header">
       <div>
-        <h1>Knowledge Quality Center</h1>
-        <span id="refresh-status" aria-live="polite">Caricamento</span>
+        <h1 data-i18n="quality.title"></h1>
+        <span id="refresh-status" aria-live="polite" data-i18n="quality.loading"></span>
       </div>
-      <button id="refresh-quality" type="button">Aggiorna</button>
+      <button id="refresh-quality" type="button" data-i18n="action.refresh"></button>
     </header>
 
-    <nav id="quality-tabs" aria-label="Sezioni qualità">
-      <button class="active" type="button" data-view="dashboard">Dashboard</button>
-      <button type="button" data-view="errors">Errori</button>
-      <button type="button" data-view="warnings">Warning</button>
-      <button type="button" data-view="coverage">Copertura</button>
-      <button type="button" data-view="statistics">Statistiche</button>
-      <button type="button" data-view="activity">Attività</button>
-      <button type="button" data-view="checklist">Checklist</button>
+    <nav id="quality-tabs" data-i18n-aria-label="quality.sections">
+      <button class="active" type="button" data-view="dashboard" data-i18n="quality.dashboard"></button>
+      <button type="button" data-view="errors" data-i18n="quality.errors"></button>
+      <button type="button" data-view="warnings" data-i18n="quality.warnings"></button>
+      <button type="button" data-view="coverage" data-i18n="quality.coverage"></button>
+      <button type="button" data-view="statistics" data-i18n="quality.statistics"></button>
+      <button type="button" data-view="activity" data-i18n="quality.activity"></button>
+      <button type="button" data-view="checklist" data-i18n="quality.checklist"></button>
     </nav>
 
     <main id="quality-content" tabindex="-1"></main>
+    <script src="/static/i18n.js"></script>
     <script src="/static/quality.js"></script>
   </body>
 </html>

@@ -3,80 +3,80 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>IKG Ontology Editor</title>
+    <title data-i18n="app.title"></title>
     <link rel="stylesheet" href="/static/styles.css">
   </head>
   <body>
     <header class="app-header">
-      <h1>Ontology Editor</h1>
+      <h1 data-i18n="editor.title"></h1>
       <div class="header-actions">
-        <span id="save-status" class="save-status saved">Saved</span>
-        <span id="validation-status" class="status-neutral">NOT VALIDATED</span>
-        <button id="open-quality" type="button">Knowledge Quality Center</button>
-        <button id="create-guided-contribution" type="button">📦 Crea pacchetto di contributo</button>
-        <button id="prepare-contribution" type="button" disabled>Prepara contributo</button>
-        <button id="import-ontology" type="button">Importa Ontologia</button>
+        <span id="save-status" class="save-status saved" data-i18n="status.saved"></span>
+        <span id="validation-status" class="status-neutral" data-i18n="status.not_validated"></span>
+        <button id="open-quality" type="button" data-i18n="quality.title"></button>
+        <button id="create-guided-contribution" type="button" data-i18n="action.create_guided"></button>
+        <button id="prepare-contribution" type="button" data-i18n="action.prepare_contribution" disabled></button>
+        <button id="import-ontology" type="button" data-i18n="action.import_ontology"></button>
         <input id="import-file" type="file" accept=".py,.json,.yaml,.yml,.md,.docx" hidden>
-        <button id="add-child" type="button">Add macroarea</button>
-        <button id="delete-node" class="danger" type="button" disabled>Delete</button>
+        <button id="add-child" type="button" data-i18n="action.add_macroarea"></button>
+        <button id="delete-node" class="danger" type="button" data-i18n="action.delete" disabled></button>
       </div>
     </header>
-    <p id="concept-notice" class="concept-notice" hidden>Concept support coming next</p>
+    <p id="concept-notice" class="concept-notice" data-i18n="concept.notice" hidden></p>
 
     <main class="workspace">
-      <section class="tree-panel" aria-label="Ontology tree">
-        <label for="search">Search</label>
+      <section class="tree-panel" data-i18n-aria-label="tree.label">
+        <label for="search" data-i18n="tree.search"></label>
         <input id="search" type="search" autocomplete="off">
         <div id="tree" class="tree" role="tree"></div>
       </section>
 
-      <section class="editor-panel" aria-label="Node editor">
-        <nav id="breadcrumb" class="breadcrumb" aria-label="Node path"></nav>
+      <section class="editor-panel" data-i18n-aria-label="editor.node">
+        <nav id="breadcrumb" class="breadcrumb" data-i18n-aria-label="editor.path"></nav>
         <form id="node-form">
           <div class="field-row">
-            <label for="node-id">ID</label>
+            <label for="node-id" data-i18n="field.id"></label>
             <input id="node-id" name="id" required>
           </div>
           <div class="field-row">
-            <label for="node-label">Label</label>
+            <label for="node-label" data-i18n="field.label"></label>
             <input id="node-label" name="label" required>
           </div>
           <div class="field-row">
-            <label for="node-description">Description</label>
+            <label for="node-description" data-i18n="field.description"></label>
             <textarea id="node-description" name="description" rows="7" required></textarea>
           </div>
           <div class="field-row">
-            <label for="node-parent">Parent</label>
+            <label for="node-parent" data-i18n="field.parent"></label>
             <select id="node-parent" name="parent_id"></select>
           </div>
           <div class="field-row">
-            <label for="node-language">Language</label>
+            <label for="node-language" data-i18n="field.language"></label>
             <input id="node-language" name="language" value="it" required>
           </div>
           <div class="field-row">
-            <label for="node-type">Type</label>
+            <label for="node-type" data-i18n="field.type"></label>
             <select id="node-type" name="type">
-              <option value="macroarea">macroarea</option>
-              <option value="area">area</option>
-              <option value="sottoarea">sottoarea</option>
+              <option value="macroarea" data-i18n="type.macroarea"></option>
+              <option value="area" data-i18n="type.area"></option>
+              <option value="sottoarea" data-i18n="type.sottoarea"></option>
             </select>
           </div>
 
           <dl class="node-info">
             <div>
-              <dt>Children</dt>
+              <dt data-i18n="field.children"></dt>
               <dd id="children-count">0</dd>
             </div>
             <div>
-              <dt>Path</dt>
+              <dt data-i18n="field.path"></dt>
               <dd id="node-path">-</dd>
             </div>
           </dl>
 
           <div class="form-actions">
-            <button id="save-node" class="primary" type="submit">Save</button>
-            <button id="validate-node" type="button">Validate</button>
-            <button id="discard-node" type="button">Discard</button>
+            <button id="save-node" class="primary" type="submit" data-i18n="action.save"></button>
+            <button id="validate-node" type="button" data-i18n="action.validate"></button>
+            <button id="discard-node" type="button" data-i18n="action.discard"></button>
           </div>
         </form>
       </section>
@@ -84,103 +84,100 @@
 
     <details id="validation" class="validation-panel neutral" open>
       <summary>
-        <span>Validation</span>
-        <strong id="validation-summary" aria-live="polite">Not run</strong>
+        <span data-i18n="validation.title"></span>
+        <strong id="validation-summary" aria-live="polite" data-i18n="validation.not_run"></strong>
       </summary>
       <ul id="validation-errors"></ul>
     </details>
 
     <dialog id="import-dialog" class="import-dialog">
       <header>
-        <h2>Anteprima importazione</h2>
-        <button id="close-import" type="button" aria-label="Chiudi">×</button>
+        <h2 data-i18n="import.preview"></h2>
+        <button id="close-import" type="button" data-i18n-aria-label="action.close">×</button>
       </header>
       <dl class="import-summary">
-        <div><dt>Formato</dt><dd id="import-format">-</dd></div>
-        <div><dt>Nodi trovati</dt><dd id="import-found">0</dd></div>
-        <div><dt>Relazioni</dt><dd id="import-relationships">0</dd></div>
+        <div><dt data-i18n="import.format"></dt><dd id="import-format">-</dd></div>
+        <div><dt data-i18n="import.nodes_found"></dt><dd id="import-found">0</dd></div>
+        <div><dt data-i18n="import.relationships"></dt><dd id="import-relationships">0</dd></div>
       </dl>
       <label class="import-mode" for="import-mode">
-        Modalità
+        <span data-i18n="import.mode"></span>
         <select id="import-mode">
-          <option value="assisted">Assistita</option>
-          <option value="automatic">Automatica</option>
+          <option value="assisted" data-i18n="import.assisted"></option>
+          <option value="automatic" data-i18n="import.automatic"></option>
         </select>
       </label>
       <div id="import-sections"></div>
       <footer>
-        <button id="cancel-import" type="button">Annulla</button>
-        <button id="confirm-import" class="primary" type="button" disabled>Conferma importazione</button>
+        <button id="cancel-import" type="button" data-i18n="action.cancel"></button>
+        <button id="confirm-import" class="primary" type="button" data-i18n="action.confirm_import" disabled></button>
       </footer>
     </dialog>
 
     <dialog id="contribution-dialog" class="contribution-dialog">
       <header>
-        <h2>Prepara contributo</h2>
-        <button id="close-contribution" type="button" aria-label="Chiudi">×</button>
+        <h2 data-i18n="action.prepare_contribution"></h2>
+        <button id="close-contribution" type="button" data-i18n-aria-label="action.close">×</button>
       </header>
       <div id="contribution-content"></div>
       <footer>
         <label for="contribution-filename">
-          Pacchetto
+          <span data-i18n="contribution.package"></span>
           <input id="contribution-filename" value="ikg-contribution.zip">
         </label>
-        <button id="export-contribution" type="button">Esporta pacchetto</button>
-        <button id="prepare-contribution-git" class="primary" type="button">
-          Prepara modifiche Git
-        </button>
+        <button id="export-contribution" type="button" data-i18n="action.export_package"></button>
+        <button id="prepare-contribution-git" class="primary" type="button" data-i18n="action.prepare_git"></button>
       </footer>
     </dialog>
 
     <dialog id="guided-contribution-dialog" class="guided-contribution-dialog">
       <header>
-        <h2>Crea pacchetto di contributo</h2>
-        <button id="close-guided-contribution" type="button" aria-label="Chiudi">×</button>
+        <h2 data-i18n="action.create_guided"></h2>
+        <button id="close-guided-contribution" type="button" data-i18n-aria-label="action.close">×</button>
       </header>
       <div class="guided-content">
         <section class="guided-selection">
-          <label>Dominio<select id="guided-domain"></select></label>
-          <label>Area<select id="guided-area"></select></label>
-          <label>Sottoarea<select id="guided-subarea"></select></label>
-          <label>Nodo specifico (opzionale)<select id="guided-node"></select></label>
+          <label><span data-i18n="guided.domain"></span><select id="guided-domain"></select></label>
+          <label><span data-i18n="guided.area"></span><select id="guided-area"></select></label>
+          <label><span data-i18n="guided.subarea"></span><select id="guided-subarea"></select></label>
+          <label><span data-i18n="guided.optional_node"></span><select id="guided-node"></select></label>
           <label>
-            Numero di elementi
+            <span data-i18n="guided.item_count"></span>
             <select id="guided-node-limit">
-              <option value="selected">Solo il nodo selezionato</option>
-              <option value="10" selected>Massimo 10 nodi</option>
-              <option value="25">Massimo 25 nodi</option>
-              <option value="50">Massimo 50 nodi</option>
-              <option value="all">Tutto il ramo</option>
+              <option value="selected" data-i18n="guided.selected_only"></option>
+              <option value="10" data-i18n="guided.max_10" selected></option>
+              <option value="25" data-i18n="guided.max_25"></option>
+              <option value="50" data-i18n="guided.max_50"></option>
+              <option value="all" data-i18n="guided.whole_branch"></option>
             </select>
           </label>
         </section>
         <fieldset id="guided-fields">
-          <legend>Tipo di contributo</legend>
-          <label><input type="checkbox" value="description"> Descrizioni mancanti</label>
-          <label><input type="checkbox" value="source"> Fonti mancanti</label>
-          <label><input type="checkbox" value="synonyms"> Sinonimi mancanti</label>
-          <label><input type="checkbox" value="notes"> Note mancanti</label>
-          <label><input type="checkbox" value="relationships"> Relazioni mancanti</label>
-          <label><input type="checkbox" value="new_concepts"> Nuovi concetti</label>
-          <label><input type="checkbox" value="complete_review"> Revisione completa</label>
-          <label><input type="checkbox" value="custom"> Personalizzato</label>
+          <legend data-i18n="guided.contribution_type"></legend>
+          <label><input type="checkbox" value="description"> <span data-i18n="guided.missing_descriptions"></span></label>
+          <label><input type="checkbox" value="source"> <span data-i18n="guided.missing_sources"></span></label>
+          <label><input type="checkbox" value="synonyms"> <span data-i18n="guided.missing_synonyms"></span></label>
+          <label><input type="checkbox" value="notes"> <span data-i18n="guided.missing_notes"></span></label>
+          <label><input type="checkbox" value="relationships"> <span data-i18n="guided.missing_relationships"></span></label>
+          <label><input type="checkbox" value="new_concepts"> <span data-i18n="guided.new_concepts"></span></label>
+          <label><input type="checkbox" value="complete_review"> <span data-i18n="guided.complete_review"></span></label>
+          <label><input type="checkbox" value="custom"> <span data-i18n="guided.custom"></span></label>
         </fieldset>
         <div id="guided-summary" class="guided-summary"></div>
         <div id="guided-result" class="guided-result" hidden>
           <p id="guided-result-message"></p>
-          <button id="open-guided-folder" type="button">Apri cartella</button>
-          <button id="open-guided-document" type="button">Apri documento</button>
+          <button id="open-guided-folder" type="button" data-i18n="action.open_folder"></button>
+          <button id="open-guided-document" type="button" data-i18n="action.open_document"></button>
         </div>
       </div>
       <footer>
-        <label>Pacchetto<input id="guided-filename" value="ikg-guided-contribution.zip"></label>
-        <button id="preview-guided-contribution" type="button">Riepilogo</button>
-        <button id="generate-guided-contribution" class="primary" type="button" disabled>
-          📦 Crea pacchetto di contributo
-        </button>
+        <label><span data-i18n="contribution.package"></span><input id="guided-filename" value="ikg-guided-contribution.zip"></label>
+        <button id="preview-guided-contribution" type="button" data-i18n="action.summary"></button>
+        <button id="generate-guided-contribution" class="primary" type="button" data-i18n="action.create_guided" disabled></button>
       </footer>
     </dialog>
 
+    <script src="/static/i18n.js"></script>
     <script src="/static/app.js"></script>
   </body>
 </html>

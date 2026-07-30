@@ -20,7 +20,7 @@ async function loadReport(force = false) {
   try {
     const response = await fetch("/api/quality/report", { cache: "no-store" });
     if (!response.ok) {
-      throw new Error(`HTTP ${response.status}`);
+      throw new Error(t("http.error", { status: response.status }));
     }
     const report = await response.json();
     const serialized = JSON.stringify(report);
@@ -28,10 +28,10 @@ async function loadReport(force = false) {
       state.report = report;
       state.serialized = serialized;
       renderActiveView();
-      elements.status.textContent = "Aggiornato automaticamente";
+      elements.status.textContent = t("quality.updated");
     }
   } catch (error) {
-    elements.status.textContent = `Errore: ${error.message}`;
+    elements.status.textContent = t("quality.error", { message: error.message });
   } finally {
     state.loading = false;
   }
@@ -52,7 +52,7 @@ function nodeButton(nodeId) {
   const button = document.createElement("button");
   button.type = "button";
   button.className = "node-action";
-  button.textContent = "Vai al nodo";
+  button.textContent = t("action.go_to_node");
   button.addEventListener("click", (event) => {
     event.stopPropagation();
     goToNode(nodeId);
@@ -83,7 +83,7 @@ function renderDashboard() {
   const score = document.createElement("strong");
   score.textContent = String(state.report.score);
   const label = document.createElement("span");
-  label.textContent = "Knowledge Quality Score / 100";
+  label.textContent = t("quality.score");
   const progress = document.createElement("progress");
   progress.max = 100;
   progress.value = state.report.score;
@@ -126,8 +126,11 @@ function renderIssueTable(issues, emptyText) {
   }
   const table = document.createElement("table");
   table.className = "quality-table";
-  table.innerHTML =
-    "<thead><tr><th>Livello</th><th>Categoria</th><th>Nodo</th><th>Controllo</th><th>Dettaglio</th><th></th></tr></thead>";
+  table.innerHTML = `<thead><tr><th>${t("quality.column.level")}</th><th>${t(
+    "quality.column.category",
+  )}</th><th>${t("quality.column.node")}</th><th>${t(
+    "quality.column.check",
+  )}</th><th>${t("quality.column.detail")}</th><th></th></tr></thead>`;
   const body = document.createElement("tbody");
   for (const issue of issues) {
     const row = document.createElement("tr");
@@ -166,7 +169,7 @@ function renderActivity() {
     title: event.action,
     detail: event.detail,
   }));
-  renderIssueTable(rows, "Nessuna attività nella sessione");
+  renderIssueTable(rows, t("quality.no_activity"));
 }
 
 function renderChecklist() {
@@ -177,7 +180,7 @@ function renderChecklist() {
     item.className = check.passed ? "passed" : "failed";
     const status = document.createElement("span");
     status.className = "check-status";
-    status.textContent = check.passed ? "PASS" : "FAIL";
+    status.textContent = check.passed ? t("quality.pass") : t("quality.fail");
     const label = document.createElement("strong");
     label.textContent = check.label;
     item.append(status, label);
@@ -203,14 +206,14 @@ function renderActiveView() {
   if (state.activeView === "dashboard") {
     renderDashboard();
   } else if (state.activeView === "errors") {
-    renderIssueTable(state.report.errors, "Nessun errore");
+    renderIssueTable(state.report.errors, t("quality.no_errors"));
   } else if (state.activeView === "warnings") {
-    renderIssueTable(state.report.warnings, "Nessun warning");
+    renderIssueTable(state.report.warnings, t("quality.no_warnings"));
   } else if (state.activeView === "coverage") {
     elements.content.append(metricGrid(state.report.coverage));
     renderIssueTable(
       state.report.warnings.filter((issue) => issue.category === "copertura"),
-      "Copertura completa",
+      t("quality.complete_coverage"),
     );
   } else if (state.activeView === "statistics") {
     elements.content.append(metricGrid(state.report.statistics));
@@ -238,5 +241,7 @@ document.addEventListener("visibilitychange", () => {
   }
 });
 
-loadReport(true);
-window.setInterval(loadReport, 2000);
+initializeI18n().then(() => {
+  loadReport(true);
+  window.setInterval(loadReport, 2000);
+});

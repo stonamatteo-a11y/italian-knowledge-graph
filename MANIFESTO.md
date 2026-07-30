@@ -1,5 +1,7 @@
 # Italian Knowledge Graph Manifesto
 
+[English](./MANIFESTO.md) | [Italiano](./docs/it/MANIFESTO.md)
+
 ## Why
 
 Knowledge is one of humanity's most valuable assets.
