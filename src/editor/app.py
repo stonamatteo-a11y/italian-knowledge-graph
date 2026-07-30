@@ -12,9 +12,15 @@ from fastapi.staticfiles import StaticFiles
 
 from scripts.generate_seed import ONTOLOGY_DIR
 
-from .contribution import ContributionError, ContributionService
+from .contribution import (
+    ContributionError,
+    ContributionService,
+    GuidedContributionError,
+    GuidedContributionService,
+    GuidedSelection,
+)
 from .importer import ImportManager
-from .models import ContributionActionInput, ImportConfirmInput, NodeInput
+from .models import ContributionActionInput, GuidedContributionInput, ImportConfirmInput, NodeInput
 from .quality import KnowledgeQualityCenter
 from .store import EditorError, OntologyStore
 
@@ -32,10 +38,12 @@ def create_app(ontology_dir: Path = ONTOLOGY_DIR) -> FastAPI:
     import_manager = ImportManager(ontology_dir / "import_mappings.json")
     quality_center = KnowledgeQualityCenter()
     contribution_service = ContributionService(store, quality_center, ontology_dir.parent)
+    guided_contribution_service = GuidedContributionService(store, ontology_dir.parent)
     app.state.store = store
     app.state.import_manager = import_manager
     app.state.quality_center = quality_center
     app.state.contribution_service = contribution_service
+    app.state.guided_contribution_service = guided_contribution_service
 
     app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
@@ -180,5 +188,51 @@ def create_app(ontology_dir: Path = ONTOLOGY_DIR) -> FastAPI:
             return contribution_service.prepare_git(payload.accepted_warning_ids)
         except ContributionError as exc:
             raise HTTPException(status_code=409, detail=str(exc)) from exc
+
+    @app.get("/api/contribution/guided/options")
+    def guided_contribution_options() -> dict[str, object]:
+        return guided_contribution_service.options()
+
+    @app.post("/api/contribution/guided/preview")
+    def guided_contribution_preview(payload: GuidedContributionInput) -> dict[str, object]:
+        try:
+            return guided_contribution_service.preview(
+                GuidedSelection(
+                    payload.domain_id,
+                    payload.area_id,
+                    payload.subarea_id,
+                    payload.node_id,
+                    payload.fields,
+                )
+            )
+        except GuidedContributionError as exc:
+            raise HTTPException(status_code=422, detail=str(exc)) from exc
+
+    @app.post("/api/contribution/guided/package")
+    def guided_contribution_package(payload: GuidedContributionInput) -> dict[str, object]:
+        try:
+            return guided_contribution_service.create(
+                GuidedSelection(
+                    payload.domain_id,
+                    payload.area_id,
+                    payload.subarea_id,
+                    payload.node_id,
+                    payload.fields,
+                ),
+                payload.filename,
+            )
+        except GuidedContributionError as exc:
+            raise HTTPException(status_code=422, detail=str(exc)) from exc
+
+    @app.post("/api/contribution/guided/open")
+    def open_guided_contribution(
+        filename: str = Query(min_length=1),
+        target: str = Query(pattern="^(folder|document)$"),
+    ) -> dict[str, bool]:
+        try:
+            guided_contribution_service.open_generated(filename, target)
+        except GuidedContributionError as exc:
+            raise HTTPException(status_code=422, detail=str(exc)) from exc
+        return {"opened": True}
 
     return app

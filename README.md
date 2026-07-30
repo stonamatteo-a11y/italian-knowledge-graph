@@ -117,6 +117,20 @@ L'utente può associarlo a un tipo canonico, salvare la regola e ricalcolare
 l'anteprima sullo stesso file. Soltanto la struttura risultante che non può
 rispettare la gerarchia canonica viene riportata come errore bloccante.
 
+### Crea pacchetto di contributo
+
+Il comando **📦 Crea pacchetto di contributo** prepara offline un modello
+guidato per collaboratori che usano Microsoft Word o software DOCX compatibile.
+Si selezionano dominio, area, sottoarea o nodo e i campi sui quali contribuire.
+La preview mostra numero di nodi, campi e tempo stimato.
+
+Lo ZIP riproducibile viene scritto in `contributions/` e contiene
+`contribution.docx`, `README.txt` e `metadata.json`. Il DOCX compilato si
+reimporta tramite **Importa Ontologia**. ID, tipo, parent, label e lingua dei
+nodi esistenti restano protetti; il modello corrente acquisisce descrizioni e
+nuovi nodi. Fonte, sinonimi e note sono segnalati come metadati non canonici
+finché non saranno introdotti da un RFC.
+
 ### Knowledge Quality Center
 
 La finestra **Knowledge Quality** è indipendente dal modulo di editing e contiene

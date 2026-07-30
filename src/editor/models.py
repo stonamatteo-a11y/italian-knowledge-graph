@@ -31,3 +31,14 @@ class ContributionActionInput(BaseModel):
 
     accepted_warning_ids: tuple[str, ...] = ()
     filename: str | None = None
+
+
+class GuidedContributionInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    domain_id: str = Field(min_length=1)
+    area_id: str | None = None
+    subarea_id: str | None = None
+    node_id: str | None = None
+    fields: tuple[str, ...] = ()
+    filename: str = "ikg-guided-contribution.zip"

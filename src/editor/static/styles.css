@@ -514,6 +514,70 @@ button.danger {
   border-radius: 4px;
 }
 
+.guided-contribution-dialog {
+  width: min(900px, calc(100vw - 32px));
+  max-height: calc(100vh - 32px);
+  padding: 0;
+  border: 1px solid #aab3bd;
+}
+
+.guided-contribution-dialog > header,
+.guided-contribution-dialog > footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: #fff;
+}
+
+.guided-contribution-dialog > header {
+  justify-content: space-between;
+  border-bottom: 1px solid #d8dde3;
+}
+
+.guided-contribution-dialog > footer {
+  justify-content: flex-end;
+  border-top: 1px solid #d8dde3;
+}
+
+.guided-content {
+  max-height: calc(100vh - 190px);
+  padding: 18px;
+  overflow-y: auto;
+}
+
+.guided-selection,
+#guided-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.guided-selection label,
+#guided-fields label {
+  display: grid;
+  gap: 5px;
+}
+
+.guided-summary dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.guided-summary dl div {
+  padding: 8px;
+  border: 1px solid #d8dde3;
+}
+
+.guided-result {
+  margin-top: 12px;
+  padding: 12px;
+  color: #14532d;
+  white-space: pre-wrap;
+  background: #ecfdf3;
+}
+
 .contribution-dialog > header,
 .contribution-dialog > footer {
   display: flex;

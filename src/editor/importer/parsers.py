@@ -242,6 +242,7 @@ class DocxOntologyParser:
         except ElementTree.ParseError as exc:
             raise ImportParseError("Malformed DOCX XML") from exc
         tables = root.findall(".//w:tbl", self._namespace)
+        document_records: list[dict[str, Any]] = []
         for table in tables:
             rows = []
             for row in table.findall("./w:tr", self._namespace):
@@ -252,9 +253,13 @@ class DocxOntologyParser:
                 rows.append(cells)
             records = self._records(rows)
             if records:
-                return ParsedOntology(
-                    "docx", self.name, tuple(_source_node(record) for record in records)
-                )
+                document_records.extend(records)
+        if document_records:
+            return ParsedOntology(
+                "docx",
+                self.name,
+                tuple(_source_node(record) for record in document_records),
+            )
         paragraphs = [
             "".join(paragraph.itertext()) for paragraph in root.findall(".//w:p", self._namespace)
         ]
@@ -271,6 +276,7 @@ class DocxOntologyParser:
         return [
             {header: _yaml_scalar(value) for header, value in zip(headers, row, strict=False)}
             for row in rows[1:]
+            if row and row[0].strip()
         ]
 
 

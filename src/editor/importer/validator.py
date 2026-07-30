@@ -53,6 +53,14 @@ class ImportValidator:
                 section, record = match
                 if section == TYPE_TO_SECTION[node.node_type] and record == node.as_record():
                     duplicates.append(node.identifier)
+                elif (
+                    section == TYPE_TO_SECTION[node.node_type]
+                    and record["id"] == node.identifier
+                    and record["label"] == node.label
+                    and record.get("parent_id") == node.parent
+                    and record["language"] == node.language
+                ):
+                    records[section][records[section].index(record)] = node.as_record()
                 else:
                     collisions.append(node.identifier)
                     errors.append(f"{node.identifier}: conflicts with an existing canonical node")

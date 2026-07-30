@@ -13,6 +13,7 @@
         <span id="save-status" class="save-status saved">Saved</span>
         <span id="validation-status" class="status-neutral">NOT VALIDATED</span>
         <button id="open-quality" type="button">Knowledge Quality Center</button>
+        <button id="create-guided-contribution" type="button">📦 Crea pacchetto di contributo</button>
         <button id="prepare-contribution" type="button" disabled>Prepara contributo</button>
         <button id="import-ontology" type="button">Importa Ontologia</button>
         <input id="import-file" type="file" accept=".py,.json,.yaml,.yml,.md,.docx" hidden>
@@ -127,6 +128,45 @@
         <button id="export-contribution" type="button">Esporta pacchetto</button>
         <button id="prepare-contribution-git" class="primary" type="button">
           Prepara modifiche Git
+        </button>
+      </footer>
+    </dialog>
+
+    <dialog id="guided-contribution-dialog" class="guided-contribution-dialog">
+      <header>
+        <h2>Crea pacchetto di contributo</h2>
+        <button id="close-guided-contribution" type="button" aria-label="Chiudi">×</button>
+      </header>
+      <div class="guided-content">
+        <section class="guided-selection">
+          <label>Dominio<select id="guided-domain"></select></label>
+          <label>Area<select id="guided-area"></select></label>
+          <label>Sottoarea<select id="guided-subarea"></select></label>
+          <label>Nodo specifico (opzionale)<select id="guided-node"></select></label>
+        </section>
+        <fieldset id="guided-fields">
+          <legend>Tipo di contributo</legend>
+          <label><input type="checkbox" value="description"> Descrizioni mancanti</label>
+          <label><input type="checkbox" value="source"> Fonti mancanti</label>
+          <label><input type="checkbox" value="synonyms"> Sinonimi mancanti</label>
+          <label><input type="checkbox" value="notes"> Note mancanti</label>
+          <label><input type="checkbox" value="relationships"> Relazioni mancanti</label>
+          <label><input type="checkbox" value="new_concepts"> Nuovi concetti</label>
+          <label><input type="checkbox" value="complete_review"> Revisione completa</label>
+          <label><input type="checkbox" value="custom"> Personalizzato</label>
+        </fieldset>
+        <div id="guided-summary" class="guided-summary"></div>
+        <div id="guided-result" class="guided-result" hidden>
+          <p id="guided-result-message"></p>
+          <button id="open-guided-folder" type="button">Apri cartella</button>
+          <button id="open-guided-document" type="button">Apri documento</button>
+        </div>
+      </div>
+      <footer>
+        <label>Pacchetto<input id="guided-filename" value="ikg-guided-contribution.zip"></label>
+        <button id="preview-guided-contribution" type="button">Riepilogo</button>
+        <button id="generate-guided-contribution" class="primary" type="button" disabled>
+          Crea pacchetto
         </button>
       </footer>
     </dialog>

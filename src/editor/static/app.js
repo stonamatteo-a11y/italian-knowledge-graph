@@ -57,6 +57,22 @@ const elements = {
   contributionFilename: document.querySelector("#contribution-filename"),
   exportContribution: document.querySelector("#export-contribution"),
   prepareContributionGit: document.querySelector("#prepare-contribution-git"),
+  createGuidedContribution: document.querySelector("#create-guided-contribution"),
+  guidedDialog: document.querySelector("#guided-contribution-dialog"),
+  closeGuidedContribution: document.querySelector("#close-guided-contribution"),
+  guidedDomain: document.querySelector("#guided-domain"),
+  guidedArea: document.querySelector("#guided-area"),
+  guidedSubarea: document.querySelector("#guided-subarea"),
+  guidedNode: document.querySelector("#guided-node"),
+  guidedFields: document.querySelector("#guided-fields"),
+  guidedSummary: document.querySelector("#guided-summary"),
+  guidedResult: document.querySelector("#guided-result"),
+  guidedResultMessage: document.querySelector("#guided-result-message"),
+  openGuidedFolder: document.querySelector("#open-guided-folder"),
+  openGuidedDocument: document.querySelector("#open-guided-document"),
+  guidedFilename: document.querySelector("#guided-filename"),
+  previewGuidedContribution: document.querySelector("#preview-guided-contribution"),
+  generateGuidedContribution: document.querySelector("#generate-guided-contribution"),
 };
 
 const parentTypes = {
@@ -571,6 +587,95 @@ async function refreshContributionAvailability() {
   elements.prepareContribution.disabled = !status.changed;
 }
 
+function guidedChildren(parentId) {
+  return state.nodes.filter((node) => node.parent_id === parentId);
+}
+
+function fillGuidedSelect(select, nodes, optional = false) {
+  select.replaceChildren();
+  if (optional) {
+    const empty = document.createElement("option");
+    empty.value = "";
+    empty.textContent = "Tutti";
+    select.append(empty);
+  }
+  for (const node of stableLabelSort(nodes)) {
+    const option = document.createElement("option");
+    option.value = node.id;
+    option.textContent = node.label;
+    select.append(option);
+  }
+  select.disabled = nodes.length === 0;
+}
+
+function updateGuidedHierarchy(level = "domain") {
+  if (level === "domain") {
+    fillGuidedSelect(elements.guidedArea, guidedChildren(elements.guidedDomain.value), true);
+  }
+  if (level === "domain" || level === "area") {
+    fillGuidedSelect(
+      elements.guidedSubarea,
+      guidedChildren(elements.guidedArea.value),
+      true,
+    );
+  }
+  fillGuidedSelect(
+    elements.guidedNode,
+    guidedChildren(elements.guidedSubarea.value || elements.guidedArea.value),
+    true,
+  );
+  elements.generateGuidedContribution.disabled = true;
+}
+
+function guidedPayload() {
+  return {
+    domain_id: elements.guidedDomain.value,
+    area_id: elements.guidedArea.value || null,
+    subarea_id: elements.guidedSubarea.value || null,
+    node_id: elements.guidedNode.value || null,
+    fields: [...elements.guidedFields.querySelectorAll("input:checked")].map(
+      (input) => input.value,
+    ),
+    filename: elements.guidedFilename.value.trim(),
+  };
+}
+
+function showGuidedSummary(summary) {
+  const list = document.createElement("dl");
+  for (const [label, value] of [
+    ["Dominio", summary.domain],
+    ["Area", summary.area || "-"],
+    ["Sottoarea", summary.subarea || "-"],
+    ["Nodo", summary.node || "-"],
+    ["Nodi coinvolti", summary.nodes],
+    ["Campi da completare", summary.fields],
+    ["Tempo stimato", `${summary.estimated_minutes} minuti`],
+  ]) {
+    const row = document.createElement("div");
+    const term = document.createElement("dt");
+    const detail = document.createElement("dd");
+    term.textContent = label;
+    detail.textContent = String(value);
+    row.append(term, detail);
+    list.append(row);
+  }
+  elements.guidedSummary.replaceChildren(list);
+  elements.generateGuidedContribution.disabled = false;
+}
+
+async function openGuidedContribution() {
+  if (!state.nodes.length) {
+    await loadTree("");
+  }
+  fillGuidedSelect(
+    elements.guidedDomain,
+    state.nodes.filter((node) => node.type === "macroarea"),
+  );
+  updateGuidedHierarchy();
+  elements.guidedResult.hidden = true;
+  elements.guidedDialog.showModal();
+}
+
 function renderImportList(title, values, className = "") {
   if (!values.length) {
     return;
@@ -872,6 +977,63 @@ elements.prepareContributionGit.addEventListener("click", async () => {
     showError(error);
   }
 });
+elements.createGuidedContribution.addEventListener("click", () => {
+  openGuidedContribution().catch(showError);
+});
+elements.closeGuidedContribution.addEventListener("click", () => {
+  elements.guidedDialog.close();
+});
+elements.guidedDomain.addEventListener("change", () => updateGuidedHierarchy("domain"));
+elements.guidedArea.addEventListener("change", () => updateGuidedHierarchy("area"));
+elements.guidedSubarea.addEventListener("change", () => updateGuidedHierarchy("subarea"));
+elements.guidedNode.addEventListener("change", () => {
+  elements.generateGuidedContribution.disabled = true;
+});
+elements.guidedFields.addEventListener("change", () => {
+  elements.generateGuidedContribution.disabled = true;
+});
+elements.previewGuidedContribution.addEventListener("click", async () => {
+  try {
+    showGuidedSummary(
+      await request("/api/contribution/guided/preview", {
+        method: "POST",
+        body: JSON.stringify(guidedPayload()),
+      }),
+    );
+  } catch (error) {
+    showError(error);
+  }
+});
+elements.generateGuidedContribution.addEventListener("click", async () => {
+  try {
+    const result = await request("/api/contribution/guided/package", {
+      method: "POST",
+      body: JSON.stringify(guidedPayload()),
+    });
+    elements.guidedResult.hidden = false;
+    elements.guidedResultMessage.textContent =
+      `Pacchetto creato con successo\nPercorso: ${result.path}`;
+    elements.guidedResult.dataset.filename = result.filename;
+  } catch (error) {
+    showError(error);
+  }
+});
+for (const [button, target] of [
+  [elements.openGuidedFolder, "folder"],
+  [elements.openGuidedDocument, "document"],
+]) {
+  button.addEventListener("click", async () => {
+    try {
+      const parameters = new URLSearchParams({
+        filename: elements.guidedResult.dataset.filename,
+        target,
+      });
+      await request(`/api/contribution/guided/open?${parameters}`, { method: "POST" });
+    } catch (error) {
+      showError(error);
+    }
+  });
+}
 elements.importFile.addEventListener("change", () => {
   const file = elements.importFile.files[0];
   if (file) {
