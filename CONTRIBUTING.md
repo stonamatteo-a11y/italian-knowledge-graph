@@ -1,5 +1,7 @@
 # Contributing
 
+[English](./CONTRIBUTING.md) | [Italiano](./docs/it/CONTRIBUTING.md)
+
 Thank you for your interest in the Italian Knowledge Graph.
 
 The project is currently under active development. Contributions should improve the ontology while preserving consistency, traceability, and stable identifiers.

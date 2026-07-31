@@ -1,5 +1,7 @@
 # Italian Knowledge Graph
 
+[English](./README.md) | [Italiano](./docs/it/README.md)
+
 <p align="center">
   <img src="assets/logo.svg" alt="Italian Knowledge Graph logo" width="620">
 </p>
@@ -17,6 +19,13 @@ IKG is more than an ontology editor. It connects human-readable knowledge
 sources, deterministic rules, quality analysis, reproducible exports, and
 reviewable community contributions in one environment for developers and domain
 experts.
+
+## Documentazione
+
+La documentazione è disponibile in:
+
+- [English](./README.md)
+- [Italiano](./docs/it/README.md)
 
 ## Why IKG
 
@@ -457,6 +466,7 @@ Project references:
 - Knowledge Quality Center
 - Reviewable repository contribution workflow
 - Guided DOCX contribution packages
+- Canonical aliases, structured sources, notes, and metadata-preserving exports
 
 ### In progress
 
@@ -468,7 +478,6 @@ Project references:
 
 - Populate the existing logical `Concetto` level in canonical ontology data
 - Complete editor and importer persistence workflows for concept records
-- Canonical fields or models for sources, synonyms, and notes
 - Non-hierarchical semantic relationships in the maintained ontology
 - Additional deterministic exporters
 - Optional reviewer providers, subject to advisory-only boundaries
@@ -502,8 +511,10 @@ IKG is in active early development.
 - `Concetto` is supported by the logical model and tooling, but the current
   canonical ontology contains no concept records and the editor does not yet
   provide their complete persistence workflow.
-- Sources, synonyms, and notes shown by guided contribution documents are not
-  yet persistent canonical fields; the importer reports them before integration.
+- Aliases, structured sources, and notes are optional canonical metadata. The
+  current ontology has not been mass-populated with invented metadata.
+- Semantic relationship proposals remain blocked until governed relationship
+  types beyond `CONTAINS` are accepted.
 - The maintained ontology currently contains hierarchical `CONTAINS`
   relationships only.
 - The Knowledge Quality Score is diagnostic.

@@ -275,6 +275,49 @@ button.danger {
   border-bottom: 1px solid #c9d0d5;
 }
 
+.metadata-section {
+  border-top: 1px solid #c4cbd0;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+}
+
+.metadata-section > summary {
+  cursor: pointer;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.metadata-list {
+  margin: 1rem 0;
+}
+
+.metadata-list > header,
+.metadata-row {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.metadata-list > header {
+  justify-content: space-between;
+}
+
+.metadata-row {
+  align-items: end;
+  border-bottom: 1px solid #c4cbd0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) auto;
+  padding: 0.5rem 0;
+}
+
+.metadata-row label {
+  min-width: 0;
+}
+
+.metadata-row input {
+  width: 100%;
+}
+
 .node-info div {
   display: grid;
   grid-template-columns: 120px minmax(0, 1fr);

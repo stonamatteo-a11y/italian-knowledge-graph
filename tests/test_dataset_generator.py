@@ -31,6 +31,9 @@ def test_jsonl_export(tmp_path) -> None:
         "entity_type",
         "label",
         "parent",
+        "aliases",
+        "sources",
+        "notes",
         "relationships",
     )
 
@@ -66,8 +69,32 @@ def test_empty_graph_exports_deterministically(tmp_path) -> None:
 
     assert jsonl.read_bytes() == b""
     assert csv_output.read_text(encoding="utf-8") == (
-        "entity_id,entity_type,label,parent,relationships\n"
+        "entity_id,entity_type,label,parent,aliases,sources,notes,relationships\n"
     )
+
+
+def test_metadata_is_preserved_in_exports(tmp_path) -> None:
+    graph = KnowledgeGraph(
+        entities=(
+            Entity(
+                "m1",
+                "Macroarea",
+                "Scienze",
+                aliases=["Scienza"],
+                sources=[{"url": "https://example.test/source", "title": "Fonte"}],
+                notes=["Nota"],
+                relations=[],
+            ),
+        )
+    )
+    output = tmp_path / "metadata.jsonl"
+
+    JsonlExporter().export(DatasetGenerator(graph).generate(), output)
+
+    record = json.loads(output.read_text(encoding="utf-8"))
+    assert record["aliases"] == ["Scienza"]
+    assert record["sources"] == [{"title": "Fonte", "url": "https://example.test/source"}]
+    assert record["notes"] == ["Nota"]
 
 
 def test_repeated_exports_are_identical(tmp_path) -> None:

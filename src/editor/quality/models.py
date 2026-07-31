@@ -66,7 +66,7 @@ class QualityReport:
     dimensions: tuple[tuple[str, float], ...]
     issues: tuple[QualityIssue, ...]
     coverage: tuple[tuple[str, float | int], ...]
-    statistics: tuple[tuple[str, int], ...]
+    statistics: tuple[tuple[str, float | int], ...]
     activity: tuple[dict[str, Any], ...]
     checklist: tuple[ChecklistItem, ...]
 

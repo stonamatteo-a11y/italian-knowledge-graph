@@ -5,6 +5,8 @@ from __future__ import annotations
 import re
 import unicodedata
 
+from ikg.metadata import MetadataError, canonical_metadata
+
 from .mapping import MappingEngine
 from .models import CanonicalNode, ConversionResult, ParsedOntology
 
@@ -77,6 +79,19 @@ class CanonicalConverter:
                 warnings.append(
                     f"{location}: ignored non-canonical fields: {', '.join(node.extra_fields)}"
                 )
+            metadata_input = {
+                "id": identifier_map[node.identifier],
+                "label": node.label,
+                "aliases": node.aliases,
+                "sources": node.sources,
+                "notes": node.notes,
+                "relations": node.relations,
+            }
+            try:
+                metadata = canonical_metadata(metadata_input)
+            except MetadataError as exc:
+                errors.append(f"{location}: {exc}")
+                continue
             converted_nodes.append(
                 CanonicalNode(
                     identifier_map[node.identifier],
@@ -85,6 +100,10 @@ class CanonicalConverter:
                     node.description,
                     parent,
                     node.language,
+                    tuple(metadata["aliases"]),
+                    tuple(metadata["sources"]),
+                    tuple(metadata["notes"]),
+                    tuple(metadata["relations"]),
                 )
             )
         return ConversionResult(

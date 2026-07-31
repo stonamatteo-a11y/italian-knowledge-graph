@@ -28,6 +28,14 @@ class KnowledgeQualityCenter:
                 nodes.append({**record, "type": node_type, "parent_id": parent})
                 if parent is not None:
                     edges.append({"source": parent, "target": record["id"], "relation": "CONTAINS"})
+                for relation in record.get("relations", []):
+                    edges.append(
+                        {
+                            "source": record["id"],
+                            "target": relation["target_id"],
+                            "relation": relation["predicate"],
+                        }
+                    )
         context = QualityContext(tuple(nodes), tuple(edges))
         results = self.registry.evaluate(context)
         dimensions = tuple(sorted((result.dimension, result.score) for result in results))
@@ -69,6 +77,22 @@ class KnowledgeQualityCenter:
             ("subareas", type_counts["sottoarea"]),
             ("errors", sum(issue.severity == "error" for issue in issues)),
             ("warnings", sum(issue.severity == "warning" for issue in issues)),
+            ("nodes_with_sources", sum(bool(node.get("sources")) for node in nodes)),
+            ("nodes_without_sources", sum(not node.get("sources") for node in nodes)),
+            (
+                "source_coverage_percentage",
+                round(100 * sum(bool(node.get("sources")) for node in nodes) / len(nodes), 1)
+                if nodes
+                else 100.0,
+            ),
+            ("aliases", sum(len(node.get("aliases", [])) for node in nodes)),
+            ("nodes_with_duplicate_aliases", 0),
+            (
+                "semantic_relations",
+                sum(len(node.get("relations", [])) for node in nodes),
+            ),
+            ("invalid_relations", 0),
+            ("nodes_with_notes", sum(bool(node.get("notes")) for node in nodes)),
         )
         return QualityReport(
             score,

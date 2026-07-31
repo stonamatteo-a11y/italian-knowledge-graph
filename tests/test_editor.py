@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import io
 import json
+import re
 import runpy
 import shutil
 import zipfile
@@ -16,12 +17,39 @@ from editor.quality.models import ChecklistItem, CheckResult, QualityContext
 from scripts.generate_seed import ONTOLOGY_DIR
 
 CANONICAL_FILES = ("macroareas.json", "areas.json", "subareas.json")
+STATIC_DIR = Path(__file__).parents[1] / "src" / "editor" / "static"
 
 
 def test_editor_port_defaults_and_override() -> None:
     assert DEFAULT_PORT == 7777
     assert parse_args([]).port == 7777
     assert parse_args(["--port", "8888"]).port == 8888
+
+
+def test_ui_uses_complete_default_italian_catalog() -> None:
+    catalog = json.loads((STATIC_DIR / "i18n" / "it.json").read_text(encoding="utf-8"))
+    sources = [
+        (STATIC_DIR / name).read_text(encoding="utf-8")
+        for name in ("index.html", "quality.html", "app.js", "quality.js")
+    ]
+    referenced = set()
+    for source in sources:
+        referenced.update(re.findall(r'data-i18n(?:-aria-label|-placeholder)?="([^"]+)"', source))
+        referenced.update(re.findall(r'\bt\("([^"]+)"', source))
+
+    assert referenced
+    assert referenced <= catalog.keys()
+    assert all(isinstance(value, str) and value for value in catalog.values())
+    assert '<html lang="it">' in sources[0]
+
+
+def test_ui_serves_default_italian_catalog(tmp_path: Path) -> None:
+    client, _ = _editor_client(tmp_path)
+
+    response = client.get("/static/i18n/it.json")
+
+    assert response.status_code == 200
+    assert response.json()["action.save"] == "Salva"
 
 
 def _editor_client(tmp_path: Path) -> tuple[TestClient, Path]:
@@ -670,7 +698,7 @@ def test_quality_center_is_served_as_an_independent_window(tmp_path: Path) -> No
     assert quality_js.status_code == 200
     assert quality_css.status_code == 200
     assert 'id="quality-dialog"' not in editor_html
-    assert "Knowledge Quality Center" in quality_html.text
+    assert 'data-i18n="quality.title"' in quality_html.text
     assert 'fetch("/api/quality/report"' in quality_js.text
     assert "window.setInterval(loadReport, 2000)" in quality_js.text
     assert "ikg:navigate-node" in quality_js.text

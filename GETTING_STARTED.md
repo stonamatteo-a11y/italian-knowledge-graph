@@ -1,5 +1,7 @@
 # Getting Started
 
+[English](./GETTING_STARTED.md) | [Italiano](./docs/it/GETTING_STARTED.md)
+
 > **New here?**
 >
 > If this is your first visit, follow this guide from start to finish.

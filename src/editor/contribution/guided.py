@@ -228,6 +228,51 @@ class GuidedContributionService:
             f"{cls._paragraph('')}"
         )
 
+    @staticmethod
+    def _existing_sources(sources: object) -> str:
+        if not isinstance(sources, (list, tuple)) or not sources:
+            return "Nessuna fonte esistente"
+        labels = (
+            ("title", "Titolo"),
+            ("url", "URL"),
+            ("publisher", "Publisher"),
+            ("accessed_at", "Data di accesso"),
+            ("note", "Nota"),
+        )
+        blocks = []
+        for source in sources:
+            if not isinstance(source, dict):
+                continue
+            lines = [f"{label}: {source[field]}" for field, label in labels if source.get(field)]
+            if lines:
+                blocks.append("\n".join(lines))
+        return "\n\n".join(blocks) or "Nessuna fonte esistente"
+
+    @staticmethod
+    def _existing_lines(values: object, empty_text: str) -> str:
+        if not isinstance(values, (list, tuple)):
+            return empty_text
+        lines = [str(value) for value in values if value]
+        return "\n".join(lines) or empty_text
+
+    @staticmethod
+    def _existing_relations(relations: object) -> str:
+        if not isinstance(relations, (list, tuple)) or not relations:
+            return "Nessuna relazione esistente"
+        lines = []
+        for relation in relations:
+            if not isinstance(relation, dict):
+                continue
+            predicate = relation.get("predicate")
+            target = relation.get("target_id")
+            if not predicate or not target:
+                continue
+            line = f"{predicate} -> {target}"
+            if relation.get("note"):
+                line += f" | {relation['note']}"
+            lines.append(line)
+        return "\n".join(lines) or "Nessuna relazione esistente"
+
     @classmethod
     def _node_card(cls, node: dict[str, object], *, page_break_before: bool) -> str:
         rows = (
@@ -238,9 +283,28 @@ class GuidedContributionService:
             ("Lingua", node.get("language") or "it", True, 0),
             ("Descrizione esistente", node["description"], True, 700),
             ("Nuova descrizione o proposta di correzione", "", False, 1100),
-            ("Fonte", "", False, 650),
-            ("Sinonimi", "", False, 650),
-            ("Note e osservazioni", "", False, 1100),
+            ("Fonti esistenti", cls._existing_sources(node.get("sources")), True, 650),
+            ("Nuove fonti", "", False, 650),
+            (
+                "Sinonimi esistenti",
+                cls._existing_lines(node.get("aliases"), "Nessun sinonimo esistente"),
+                True,
+                650,
+            ),
+            ("Nuovi sinonimi", "", False, 650),
+            (
+                "Note esistenti",
+                cls._existing_lines(node.get("notes"), "Nessuna nota esistente"),
+                True,
+                650,
+            ),
+            ("Nuove note e osservazioni", "", False, 1100),
+            (
+                "Relazioni esistenti",
+                cls._existing_relations(node.get("relations")),
+                True,
+                650,
+            ),
             ("Nuove relazioni proposte", "", False, 650),
         )
         return cls._card(
@@ -289,6 +353,15 @@ class GuidedContributionService:
             "Non modificare Tipo o Parent dei nodi esistenti.",
             "Non modificare la gerarchia esistente.",
             "Compila liberamente i campi indicati come Da compilare.",
+            (
+                "Per più fonti usa un blocco per fonte, separato da una riga vuota. "
+                "Campi ammessi: URL/URI, Titolo, Editore, Data di accesso, Nota."
+            ),
+            "Inserisci sinonimi e note uno per riga.",
+            (
+                "Inserisci relazioni una per riga nel formato "
+                "PREDICATE -> target_id | nota facoltativa."
+            ),
             'Usa "Nuovi concetti o nuove voci proposte" per aggiungere contenuti.',
             "Salva il documento in formato DOCX.",
             'Reimportalo mediante "Importa Ontologia".',

@@ -7,7 +7,20 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-CANONICAL_ENTITY_PROPERTIES = frozenset({"id", "type", "label", "parent"})
+CANONICAL_ENTITY_PROPERTIES = frozenset(
+    {
+        "id",
+        "type",
+        "label",
+        "parent",
+        "description",
+        "language",
+        "aliases",
+        "sources",
+        "notes",
+        "relations",
+    }
+)
 CANONICAL_RELATIONSHIP_PROPERTIES = frozenset({"id", "type", "source", "target"})
 
 
@@ -18,6 +31,12 @@ class Entity:
     label: Any
     parent: Any = None
     unknown_properties: tuple[str, ...] = ()
+    description: Any = None
+    language: Any = "it"
+    aliases: Any = ()
+    sources: Any = ()
+    notes: Any = ()
+    relations: Any = ()
 
 
 @dataclass(frozen=True, slots=True)
@@ -57,12 +76,16 @@ def load_graph(path: str | Path) -> KnowledgeGraph:
         payload: Any = json.load(handle)
 
     if not isinstance(payload, dict) or not isinstance(payload.get("entities"), list):
-        raise ValueError("Expected a JSON object containing an 'entities' list")
+        raise ValueError(  # noqa: TRY004 - public loader contract uses ValueError
+            "Expected a JSON object containing an 'entities' list"
+        )
 
     entities: list[Entity] = []
     for index, raw in enumerate(payload["entities"]):
         if not isinstance(raw, dict):
-            raise ValueError(f"entities[{index}] must be an object")
+            raise ValueError(  # noqa: TRY004 - public loader contract uses ValueError
+                f"entities[{index}] must be an object"
+            )
         unknown = tuple(sorted(str(key) for key in raw if key not in CANONICAL_ENTITY_PROPERTIES))
         entities.append(
             Entity(
@@ -70,18 +93,28 @@ def load_graph(path: str | Path) -> KnowledgeGraph:
                 entity_type=raw.get("type"),
                 label=raw.get("label"),
                 parent=raw.get("parent"),
+                description=raw.get("description"),
+                language=raw.get("language", "it"),
+                aliases=raw.get("aliases", []),
+                sources=raw.get("sources", []),
+                notes=raw.get("notes", []),
+                relations=raw.get("relations", []),
                 unknown_properties=unknown,
             )
         )
 
     raw_relationships = payload.get("relationships", [])
     if not isinstance(raw_relationships, list):
-        raise ValueError("'relationships' must be a list")
+        raise ValueError(  # noqa: TRY004 - public loader contract uses ValueError
+            "'relationships' must be a list"
+        )
 
     relationships: list[Relationship] = []
     for index, raw in enumerate(raw_relationships):
         if not isinstance(raw, dict):
-            raise ValueError(f"relationships[{index}] must be an object")
+            raise ValueError(  # noqa: TRY004 - public loader contract uses ValueError
+                f"relationships[{index}] must be an object"
+            )
         unknown = tuple(
             sorted(str(key) for key in raw if key not in CANONICAL_RELATIONSHIP_PROPERTIES)
         )
