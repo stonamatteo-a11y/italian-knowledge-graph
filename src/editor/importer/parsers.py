@@ -436,15 +436,24 @@ class DocxOntologyParser:
         if isinstance(parent, str) and parent.casefold() in {"", "none", "null", "-"}:
             parent = None
         source_text = next(
-            (values[key] for key in ("fonte", "source") if values.get(key)),
+            (values[key] for key in ("nuove fonti", "fonte", "source") if values.get(key)),
             "",
         )
         aliases_text = next(
-            (values[key] for key in ("sinonimi", "synonyms") if values.get(key)),
+            (values[key] for key in ("nuovi sinonimi", "sinonimi", "synonyms") if values.get(key)),
             "",
         )
         notes_text = next(
-            (values[key] for key in ("note e osservazioni", "note", "notes") if values.get(key)),
+            (
+                values[key]
+                for key in (
+                    "nuove note e osservazioni",
+                    "note e osservazioni",
+                    "note",
+                    "notes",
+                )
+                if values.get(key)
+            ),
             "",
         )
         relations_text = next(
