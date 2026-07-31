@@ -66,7 +66,9 @@ function metricGrid(values) {
   for (const [label, value] of Object.entries(values)) {
     const item = document.createElement("div");
     const term = document.createElement("dt");
-    term.textContent = label;
+    const translationKey = `quality.metric.${label}`;
+    const translated = t(translationKey);
+    term.textContent = translated === translationKey ? label : translated;
     const detail = document.createElement("dd");
     detail.textContent = String(value);
     item.append(term, detail);

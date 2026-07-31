@@ -289,6 +289,15 @@ class GuidedContributionService:
             "Non modificare Tipo o Parent dei nodi esistenti.",
             "Non modificare la gerarchia esistente.",
             "Compila liberamente i campi indicati come Da compilare.",
+            (
+                "Per più fonti usa un blocco per fonte, separato da una riga vuota. "
+                "Campi ammessi: URL/URI, Titolo, Editore, Data di accesso, Nota."
+            ),
+            "Inserisci sinonimi e note uno per riga.",
+            (
+                "Inserisci relazioni una per riga nel formato "
+                "PREDICATE -> target_id | nota facoltativa."
+            ),
             'Usa "Nuovi concetti o nuove voci proposte" per aggiungere contenuti.',
             "Salva il documento in formato DOCX.",
             'Reimportalo mediante "Importa Ontologia".',

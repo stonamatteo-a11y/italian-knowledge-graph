@@ -10,7 +10,16 @@ from pathlib import Path
 from .exporter import record_mapping
 from .models import DatasetRecord
 
-CSV_FIELDS = ("entity_id", "entity_type", "label", "parent", "relationships")
+CSV_FIELDS = (
+    "entity_id",
+    "entity_type",
+    "label",
+    "parent",
+    "aliases",
+    "sources",
+    "notes",
+    "relationships",
+)
 
 
 class CsvExporter:
@@ -20,9 +29,11 @@ class CsvExporter:
             writer.writeheader()
             for record in records:
                 row = record_mapping(record)
-                row["relationships"] = json.dumps(
-                    row["relationships"],
-                    ensure_ascii=False,
-                    separators=(",", ":"),
-                )
+                for field in ("aliases", "sources", "notes", "relationships"):
+                    row[field] = json.dumps(
+                        row[field],
+                        ensure_ascii=False,
+                        sort_keys=True,
+                        separators=(",", ":"),
+                    )
                 writer.writerow(row)

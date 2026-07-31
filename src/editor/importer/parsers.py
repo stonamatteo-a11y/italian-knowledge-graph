@@ -13,7 +13,20 @@ from xml.etree import ElementTree
 
 from .models import ParsedOntology, SourceNode
 
-KNOWN_FIELDS = {"id", "type", "label", "description", "parent", "parent_id", "language"}
+KNOWN_FIELDS = {
+    "id",
+    "type",
+    "label",
+    "description",
+    "parent",
+    "parent_id",
+    "language",
+    "aliases",
+    "sources",
+    "notes",
+    "relations",
+    "synonyms",
+}
 KIMI_ARGUMENTS = (
     "id",
     "label",
@@ -52,6 +65,10 @@ def _source_node(record: dict[str, Any]) -> SourceNode:
         description=record.get("description"),
         parent=record.get("parent_id", record.get("parent")),
         language=record.get("language", "it"),
+        aliases=record.get("aliases", record.get("synonyms", ())),
+        sources=record.get("sources", ()),
+        notes=record.get("notes", ()),
+        relations=record.get("relations", ()),
         extra_fields=tuple(sorted(set(record) - KNOWN_FIELDS)),
     )
 
@@ -294,6 +311,70 @@ class DocxOntologyParser:
         )
         return re.sub(r"_+", "_", re.sub(r"[^a-z0-9_]+", "_", ascii_value.casefold())).strip("_")
 
+    @staticmethod
+    def _lines(value: str) -> tuple[str, ...]:
+        return tuple(line.strip() for line in value.splitlines() if line.strip())
+
+    @classmethod
+    def _sources(cls, value: str) -> tuple[dict[str, str], ...]:
+        if not value.strip():
+            return ()
+        labels = {
+            "url": "url",
+            "uri": "url",
+            "url/uri": "url",
+            "titolo": "title",
+            "title": "title",
+            "editore": "publisher",
+            "publisher": "publisher",
+            "data di accesso": "accessed_at",
+            "accessed_at": "accessed_at",
+            "nota": "note",
+            "note": "note",
+        }
+        blocks = re.split(r"\n\s*\n|(?:^|\n)---(?:\n|$)", value.strip())
+        sources: list[dict[str, str]] = []
+        for block in blocks:
+            source: dict[str, str] = {}
+            structured = True
+            for line in cls._lines(block):
+                if ":" not in line:
+                    structured = False
+                    break
+                label, content = line.split(":", 1)
+                field = labels.get(label.strip().casefold())
+                if field is None:
+                    structured = False
+                    break
+                if content.strip():
+                    source[field] = content.strip()
+            if structured and source:
+                sources.append(source)
+            elif block.strip():
+                sources.append({"note": block.strip()})
+        return tuple(sources)
+
+    @classmethod
+    def _relations(cls, value: str) -> tuple[dict[str, str] | str, ...]:
+        relations: list[dict[str, str] | str] = []
+        for line in cls._lines(value):
+            match = re.fullmatch(
+                r"(?P<predicate>[A-Za-z][A-Za-z0-9_]*)\s*->\s*"
+                r"(?P<target>[A-Za-z0-9._-]+)(?:\s*\|\s*(?P<note>.+))?",
+                line,
+            )
+            if match is None:
+                relations.append(line)
+                continue
+            relation = {
+                "predicate": match.group("predicate"),
+                "target_id": match.group("target"),
+            }
+            if match.group("note"):
+                relation["note"] = match.group("note").strip()
+            relations.append(relation)
+        return tuple(relations)
+
     @classmethod
     def _card_node(cls, rows: list[list[str]]) -> SourceNode | None:
         if not rows or not rows[0]:
@@ -354,21 +435,30 @@ class DocxOntologyParser:
         parent = canonical["parent"]
         if isinstance(parent, str) and parent.casefold() in {"", "none", "null", "-"}:
             parent = None
-        metadata_labels = {
-            ("fonte", "source"): "Fonte",
-            ("sinonimi", "synonyms"): "Sinonimi",
-            ("note e osservazioni", "note", "notes"): "Note",
+        source_text = next(
+            (values[key] for key in ("fonte", "source") if values.get(key)),
+            "",
+        )
+        aliases_text = next(
+            (values[key] for key in ("sinonimi", "synonyms") if values.get(key)),
+            "",
+        )
+        notes_text = next(
+            (values[key] for key in ("note e osservazioni", "note", "notes") if values.get(key)),
+            "",
+        )
+        relations_text = next(
             (
-                "nuove relazioni proposte",
-                "relazioni proposte",
-                "proposed relationships",
-            ): "Relazioni proposte",
-        }
-        metadata = []
-        for keys, display in metadata_labels.items():
-            value = next((values[key] for key in keys if values.get(key)), None)
-            if value:
-                metadata.append(f"{display}: {value}")
+                values[key]
+                for key in (
+                    "nuove relazioni proposte",
+                    "relazioni proposte",
+                    "proposed relationships",
+                )
+                if values.get(key)
+            ),
+            "",
+        )
         return SourceNode(
             identifier=canonical["id"],
             node_type=canonical["type"],
@@ -376,7 +466,10 @@ class DocxOntologyParser:
             description=canonical["description"],
             parent=parent,
             language=canonical["language"],
-            extra_fields=tuple(metadata),
+            aliases=cls._lines(aliases_text),
+            sources=cls._sources(source_text),
+            notes=cls._lines(notes_text),
+            relations=cls._relations(relations_text),
         )
 
 

@@ -470,6 +470,7 @@ Riferimenti del progetto:
 - Knowledge Quality Center
 - Workflow revisionabile dei contributi al repository
 - Pacchetti di contributo guidato DOCX
+- Alias canonici, fonti strutturate, note ed export che preservano i metadati
 
 ### In corso
 
@@ -481,7 +482,6 @@ Riferimenti del progetto:
 
 - Popolare il livello logico `Concetto` esistente nei dati canonici
 - Completare la persistenza di concetti in editor e importer
-- Campi o modelli canonici per fonti, sinonimi e note
 - Relazioni semantiche non gerarchiche nell'ontologia mantenuta
 - Ulteriori exporter deterministici
 - Provider facoltativi per il reviewer, nel rispetto del ruolo solo consultivo
@@ -515,8 +515,10 @@ IKG è in una fase iniziale di sviluppo attivo.
 - `Concetto` è supportato dal modello logico e dagli strumenti, ma l'attuale
   ontologia canonica non contiene record di concetti e l'editor non offre ancora
   il workflow completo per la loro persistenza.
-- Fonti, sinonimi e note mostrati nei documenti di contributo guidato non sono
-  ancora campi canonici persistenti; l'importer li segnala prima dell'integrazione.
+- Alias, fonti strutturate e note sono metadati canonici opzionali. L'ontologia
+  attuale non è stata popolata in massa con metadati inventati.
+- Le proposte di relazioni semantiche restano bloccate finché non vengono
+  accettati tipi di relazione governati oltre a `CONTAINS`.
 - L'ontologia mantenuta contiene attualmente soltanto relazioni gerarchiche `CONTAINS`.
 - Il Knowledge Quality Score è diagnostico.
 - L'AI Reviewer usa attualmente euristiche deterministiche ed è consultivo.

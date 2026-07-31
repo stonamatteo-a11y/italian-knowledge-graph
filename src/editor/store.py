@@ -13,6 +13,7 @@ from pathlib import Path
 from threading import RLock
 from typing import Any
 
+from ikg.metadata import METADATA_FIELDS, MetadataError, canonical_metadata
 from scripts.generate_seed import (
     OUTPUT_PATH,
     SeedGenerationError,
@@ -93,6 +94,9 @@ class OntologyStore:
                 nodes.append(
                     {
                         **record,
+                        **{
+                            field: copy.deepcopy(record.get(field, [])) for field in METADATA_FIELDS
+                        },
                         "parent_id": record.get("parent_id"),
                         "type": node_type,
                     }
@@ -228,23 +232,29 @@ class OntologyStore:
                 suggestion = f"{suggestion}_{suffix}"
             return {"id": suggestion, "collision": collision}
 
-    @staticmethod
-    def _canonical_record(node: dict[str, Any]) -> dict[str, Any]:
+    def _canonical_record(self, node: dict[str, Any]) -> dict[str, Any]:
+        try:
+            metadata = canonical_metadata(node, set(self._node_index()) | {node["id"]})
+        except MetadataError as exc:
+            raise EditorError(str(exc)) from exc
         record = {
             "id": node["id"],
             "label": node["label"],
             "description": node["description"],
             "language": node["language"],
         }
+        record.update({field: value for field, value in metadata.items() if value})
         if node["type"] != "macroarea":
             record["parent_id"] = node["parent_id"]
-            return {
+            ordered = {
                 "id": record["id"],
                 "label": record["label"],
                 "parent_id": record["parent_id"],
                 "description": record["description"],
                 "language": record["language"],
             }
+            ordered.update({field: record[field] for field in METADATA_FIELDS if field in record})
+            return ordered
         return record
 
     def create(self, node: dict[str, Any]) -> dict[str, Any]:
@@ -291,7 +301,13 @@ class OntologyStore:
             self._record_activity("delete", node_id)
 
     def _runtime_graph(self) -> tuple[dict[str, dict[str, Any]], list[dict[str, str]]]:
-        validate_canonical_schema(self._records)
+        ids_by_section = validate_canonical_schema(self._records)
+        known_ids = set().union(*ids_by_section.values())
+        for node in self._all_nodes():
+            try:
+                canonical_metadata(node, known_ids)
+            except MetadataError as exc:
+                raise SeedGenerationError(f"{node['id']}: {exc}") from exc
         nodes: dict[str, dict[str, Any]] = {}
         edges: list[dict[str, str]] = []
         for node in self._all_nodes():
@@ -299,6 +315,14 @@ class OntologyStore:
             parent_id = node.get("parent_id")
             if parent_id is not None:
                 edges.append({"source": parent_id, "target": node["id"], "relation": "CONTAINS"})
+            for relation in node.get("relations", []):
+                edges.append(
+                    {
+                        "source": node["id"],
+                        "target": relation["target_id"],
+                        "relation": relation["predicate"],
+                    }
+                )
         return nodes, edges
 
     def validate(self) -> ValidationResult:
@@ -307,8 +331,23 @@ class OntologyStore:
                 nodes, edges = self._runtime_graph()
             except SeedGenerationError as exc:
                 return ValidationResult(False, (str(exc),))
-            errors = tuple(validate_graph(nodes, edges))
-            return ValidationResult(not errors, errors)
+            errors = list(validate_graph(nodes, edges))
+            for node in nodes.values():
+                for relation in node.get("relations", []):
+                    target = nodes[relation["target_id"]]
+                    if relation["predicate"] == "CONTAINS":
+                        if target.get("parent_id") == node["id"]:
+                            errors.append(
+                                f"{node['id']}: duplicate canonical CONTAINS relation "
+                                f"to {target['id']}"
+                            )
+                        else:
+                            errors.append(
+                                f"{node['id']}: CONTAINS relation to {target['id']} "
+                                "would create a second primary parent"
+                            )
+            ordered_errors = tuple(sorted(set(errors)))
+            return ValidationResult(not ordered_errors, ordered_errors)
 
     @staticmethod
     def _write_temp(path: Path, content: str) -> Path:

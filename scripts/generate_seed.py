@@ -11,6 +11,8 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
+from ikg.metadata import METADATA_FIELDS, MetadataError, canonical_metadata
+
 ROOT = Path(__file__).resolve().parents[1]
 ONTOLOGY_DIR = ROOT / "ontology"
 OUTPUT_PATH = ONTOLOGY_DIR / "seed_compressed.py"
@@ -58,9 +60,10 @@ def _validate_record(
 
     expected = set(REQUIRED_FIELDS[section])
     actual = set(record)
-    if actual != expected:
+    allowed = expected | set(METADATA_FIELDS)
+    if not expected <= actual or not actual <= allowed:
         missing = sorted(expected - actual)
-        unknown = sorted(actual - expected)
+        unknown = sorted(actual - allowed)
         raise SeedGenerationError(
             f"{location} has invalid fields; missing={missing}, unknown={unknown}"
         )
@@ -72,6 +75,10 @@ def _validate_record(
 
     if record["language"] != "it":
         raise SeedGenerationError(f"{location} field 'language' must be 'it'")
+    try:
+        canonical_metadata(record)
+    except MetadataError as exc:
+        raise SeedGenerationError(f"{location}: {exc}") from exc
 
     node_id = record["id"]
     if node_id in seen_ids:
@@ -101,6 +108,12 @@ def validate_canonical(records: dict[str, list[dict[str, Any]]]) -> None:
     """Validate canonical records and their hierarchy."""
     ids_by_section = validate_canonical_schema(records)
     seen_ids = set().union(*ids_by_section.values())
+    for section, filename in SOURCE_FILES.items():
+        for index, record in enumerate(records[section]):
+            try:
+                canonical_metadata(record, seen_ids)
+            except MetadataError as exc:
+                raise SeedGenerationError(f"{filename} record {index}: {exc}") from exc
 
     parent_sections = {
         "areas": "macroareas",
@@ -120,6 +133,21 @@ def validate_canonical(records: dict[str, list[dict[str, Any]]]) -> None:
                     f"{SOURCE_FILES[section]} record {index} has invalid hierarchy: "
                     f"{parent_id!r} is not a {parent_section[:-1]}"
                 )
+    types = {
+        record["id"]: section.removesuffix("s")
+        for section in SOURCE_FILES
+        for record in records[section]
+    }
+    allowed_contains = {("macroarea", "area"), ("area", "subarea")}
+    for section, filename in SOURCE_FILES.items():
+        for index, record in enumerate(records[section]):
+            for relation in record.get("relations", []):
+                direction = (types[record["id"]], types[relation["target_id"]])
+                if relation["predicate"] == "CONTAINS" and direction not in allowed_contains:
+                    raise SeedGenerationError(
+                        f"{filename} record {index} has invalid relation "
+                        f"direction: {direction[0]} -> {direction[1]}"
+                    )
 
 
 def _group_children(

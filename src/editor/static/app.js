@@ -25,6 +25,13 @@ const elements = {
   parent: document.querySelector("#node-parent"),
   language: document.querySelector("#node-language"),
   type: document.querySelector("#node-type"),
+  aliases: document.querySelector("#node-aliases"),
+  sources: document.querySelector("#node-sources"),
+  noSources: document.querySelector("#no-sources"),
+  addSource: document.querySelector("#add-source"),
+  notes: document.querySelector("#node-notes"),
+  relations: document.querySelector("#node-relations"),
+  addRelation: document.querySelector("#add-relation"),
   children: document.querySelector("#children-count"),
   path: document.querySelector("#node-path"),
   breadcrumb: document.querySelector("#breadcrumb"),
@@ -274,6 +281,108 @@ function setDirty(dirty) {
   elements.saveStatus.className = `save-status ${dirty ? "dirty" : "saved"}`;
 }
 
+function metadataInput(labelKey, field, value = "", type = "text") {
+  const label = document.createElement("label");
+  const caption = document.createElement("span");
+  caption.textContent = t(labelKey);
+  const input = document.createElement("input");
+  input.type = type;
+  input.dataset.field = field;
+  input.value = value;
+  label.append(caption, input);
+  return label;
+}
+
+function removeButton(row) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.textContent = t("action.remove");
+  button.addEventListener("click", () => {
+    row.remove();
+    elements.noSources.hidden = elements.sources.children.length > 0;
+    setDirty(true);
+  });
+  return button;
+}
+
+function addSourceRow(source = {}) {
+  const row = document.createElement("div");
+  row.className = "metadata-row source-row";
+  row.append(
+    metadataInput("metadata.source_url", "url", source.url),
+    metadataInput("metadata.source_title", "title", source.title),
+    metadataInput("metadata.source_publisher", "publisher", source.publisher),
+    metadataInput("metadata.source_accessed", "accessed_at", source.accessed_at, "date"),
+    metadataInput("metadata.source_note", "note", source.note),
+    removeButton(row),
+  );
+  elements.sources.append(row);
+  elements.noSources.hidden = true;
+}
+
+function addRelationRow(relation = {}) {
+  const row = document.createElement("div");
+  row.className = "metadata-row relation-row";
+  const predicate = document.createElement("label");
+  const predicateLabel = document.createElement("span");
+  predicateLabel.textContent = t("metadata.predicate");
+  const predicateSelect = document.createElement("select");
+  predicateSelect.dataset.field = "predicate";
+  const option = document.createElement("option");
+  option.value = "CONTAINS";
+  option.textContent = "CONTAINS";
+  predicateSelect.append(option);
+  predicateSelect.value = relation.predicate || "CONTAINS";
+  predicate.append(predicateLabel, predicateSelect);
+  const target = document.createElement("label");
+  const targetLabel = document.createElement("span");
+  targetLabel.textContent = t("metadata.target");
+  const targetSelect = document.createElement("select");
+  targetSelect.dataset.field = "target_id";
+  for (const node of stableLabelSort(state.nodes)) {
+    if (node.id === (state.selectedId || elements.id.value)) {
+      continue;
+    }
+    const targetOption = document.createElement("option");
+    targetOption.value = node.id;
+    targetOption.textContent = `${node.label} (${node.id})`;
+    targetSelect.append(targetOption);
+  }
+  targetSelect.value = relation.target_id || "";
+  target.append(targetLabel, targetSelect);
+  row.append(
+    predicate,
+    target,
+    metadataInput("metadata.relation_note", "note", relation.note),
+    removeButton(row),
+  );
+  elements.relations.append(row);
+}
+
+function metadataRows(container) {
+  return [...container.querySelectorAll(".metadata-row")].map((row) =>
+    Object.fromEntries(
+      [...row.querySelectorAll("[data-field]")]
+        .map((input) => [input.dataset.field, input.value.trim()])
+        .filter(([, value]) => value),
+    ),
+  );
+}
+
+function populateMetadata(node) {
+  elements.aliases.value = (node.aliases || []).join("\n");
+  elements.notes.value = (node.notes || []).join("\n");
+  elements.sources.replaceChildren();
+  for (const source of node.sources || []) {
+    addSourceRow(source);
+  }
+  elements.noSources.hidden = elements.sources.children.length > 0;
+  elements.relations.replaceChildren();
+  for (const relation of node.relations || []) {
+    addRelationRow(relation);
+  }
+}
+
 function populateForm(node, preserveDirty = false) {
   state.populating = true;
   elements.id.value = node.id || "";
@@ -285,6 +394,7 @@ function populateForm(node, preserveDirty = false) {
   elements.parent.value = node.parent_id || "";
   elements.children.textContent = String(node.children_count || 0);
   elements.path.textContent = node.path?.map((part) => part.label).join(" / ") || "-";
+  populateMetadata(node);
   renderBreadcrumb(node.path || []);
   elements.deleteNode.disabled = state.isNew || !state.selectedId;
   state.populating = false;
@@ -360,6 +470,10 @@ function formPayload() {
     description: elements.description.value.trim(),
     parent_id: elements.parent.value || null,
     language: elements.language.value.trim(),
+    aliases: elements.aliases.value.split(/\r?\n/).filter((value) => value.trim()),
+    sources: metadataRows(elements.sources),
+    notes: elements.notes.value.split(/\r?\n/).filter((value) => value.trim()),
+    relations: metadataRows(elements.relations),
   };
 }
 
@@ -1122,6 +1236,14 @@ elements.form.addEventListener("change", () => {
   if (!state.populating) {
     setDirty(true);
   }
+});
+elements.addSource.addEventListener("click", () => {
+  addSourceRow();
+  setDirty(true);
+});
+elements.addRelation.addEventListener("click", () => {
+  addRelationRow();
+  setDirty(true);
 });
 window.addEventListener("beforeunload", (event) => {
   if (state.dirty) {

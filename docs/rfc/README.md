@@ -38,6 +38,7 @@ A Draft or Review RFC may be edited. Once Accepted, its decision text is frozen.
 | [RFC-0005](RFC-0005-relationship-model.md) | Relationship Model | Draft |
 | [RFC-0006](RFC-0006-serialization-model.md) | Serialization Model | Draft |
 | [RFC-0007](RFC-0007-validator-implementation.md) | Validator Implementation | Draft |
+| [RFC-0010](RFC-0010-canonical-entity-metadata.md) | Canonical Entity Metadata | Draft |
 
 ## Architecture sequence
 

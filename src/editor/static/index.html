@@ -73,6 +73,33 @@
             </div>
           </dl>
 
+          <details class="metadata-section" open>
+            <summary data-i18n="metadata.title"></summary>
+            <div class="field-row">
+              <label for="node-aliases" data-i18n="metadata.aliases"></label>
+              <textarea id="node-aliases" rows="3" data-i18n-placeholder="metadata.aliases_help"></textarea>
+            </div>
+            <section class="metadata-list">
+              <header>
+                <h3 data-i18n="metadata.sources"></h3>
+                <button id="add-source" type="button" data-i18n="metadata.add_source"></button>
+              </header>
+              <p id="no-sources" data-i18n="metadata.no_sources"></p>
+              <div id="node-sources"></div>
+            </section>
+            <div class="field-row">
+              <label for="node-notes" data-i18n="metadata.notes"></label>
+              <textarea id="node-notes" rows="4" data-i18n-placeholder="metadata.notes_help"></textarea>
+            </div>
+            <section class="metadata-list">
+              <header>
+                <h3 data-i18n="metadata.relations"></h3>
+                <button id="add-relation" type="button" data-i18n="metadata.add_relation"></button>
+              </header>
+              <div id="node-relations"></div>
+            </section>
+          </details>
+
           <div class="form-actions">
             <button id="save-node" class="primary" type="submit" data-i18n="action.save"></button>
             <button id="validate-node" type="button" data-i18n="action.validate"></button>

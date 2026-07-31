@@ -7,6 +7,7 @@ from dataclasses import dataclass, field
 from typing import Any
 
 from ikg.graph import KnowledgeGraph
+from ikg.metadata import MetadataError, canonical_metadata
 
 from .models import Finding, Severity
 
@@ -160,6 +161,50 @@ class UnknownPropertyRule:
             for name in relationship.unknown_properties
         )
         return entity_findings + relationship_findings
+
+
+@dataclass(frozen=True, slots=True)
+class InvalidEntityMetadataRule:
+    rule_id: str = "IKG306"
+
+    def validate(self, graph: KnowledgeGraph) -> tuple[Finding, ...]:
+        findings: list[Finding] = []
+        identifiers = {
+            entity.identifier for entity in graph.entities if _non_empty_string(entity.identifier)
+        }
+        for index, entity in enumerate(graph.entities):
+            location = _location(index, entity.identifier)
+            raw = {
+                "id": entity.identifier,
+                "label": entity.label,
+                "aliases": entity.aliases,
+                "sources": entity.sources,
+                "notes": entity.notes,
+                "relations": entity.relations,
+            }
+            try:
+                canonical_metadata(raw, identifiers)
+            except MetadataError as exc:
+                findings.append(
+                    Finding(
+                        self.rule_id, Severity.ERROR, f"Invalid Entity metadata: {exc}", location
+                    )
+                )
+                continue
+            for metadata_field in ("aliases", "sources", "notes", "relations"):
+                values = raw[metadata_field]
+                if isinstance(values, (list, tuple)) and len(values) != len(
+                    canonical_metadata(raw, identifiers)[metadata_field]
+                ):
+                    findings.append(
+                        Finding(
+                            self.rule_id,
+                            Severity.ERROR,
+                            f"Duplicate values in Entity metadata: {metadata_field}",
+                            location,
+                        )
+                    )
+        return tuple(findings)
 
 
 @dataclass(frozen=True, slots=True)
@@ -580,6 +625,7 @@ def core_rules() -> tuple[object, ...]:
         MissingRequiredPropertyRule(),
         InvalidPropertyTypeRule(),
         UnknownPropertyRule(),
+        InvalidEntityMetadataRule(),
         InvalidEntityTypeRule(),
         DuplicateIdentifierRule(),
         InvalidIdentifierFormatRule(),

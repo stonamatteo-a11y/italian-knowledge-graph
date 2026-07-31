@@ -215,8 +215,8 @@ def test_docx_import_applies_proposed_description(tmp_path: Path) -> None:
     )
 
 
-def test_docx_import_reports_noncanonical_metadata_without_silent_loss(tmp_path: Path) -> None:
-    client, _ = _client(tmp_path)
+def test_docx_import_preserves_canonical_metadata(tmp_path: Path) -> None:
+    client, ontology_dir = _client(tmp_path)
     created = client.post("/api/contribution/guided/package", json=_request()).json()
     docx = _edit_card(
         _package_docx(Path(created["path"])),
@@ -225,18 +225,75 @@ def test_docx_import_reports_noncanonical_metadata_without_silent_loss(tmp_path:
             "Fonte": "Enciclopedia di riferimento",
             "Sinonimi": "algebra simbolica",
             "Note e osservazioni": "Verificare la terminologia",
-            "Nuove relazioni proposte": "RELATED_TO mat_geometria",
         },
     )
 
     preview = _import_preview(client, docx)
 
     assert preview["importable"] is True
-    warning = "\n".join(preview["warnings"])
-    assert "Fonte: Enciclopedia di riferimento" in warning
-    assert "Sinonimi: algebra simbolica" in warning
-    assert "Note: Verificare la terminologia" in warning
-    assert "Relazioni proposte: RELATED_TO mat_geometria" in warning
+    confirmed = client.post(
+        "/api/import/confirm",
+        json={"token": preview["token"], "accepted_warnings": []},
+    )
+    assert confirmed.status_code == 200
+    node = client.get("/api/node/mat_algebra").json()
+    assert node["aliases"] == ["algebra simbolica"]
+    assert node["sources"] == [{"note": "Enciclopedia di riferimento"}]
+    assert node["notes"] == ["Verificare la terminologia"]
+    persisted = json.loads((ontology_dir / "areas.json").read_text(encoding="utf-8"))
+    assert next(item for item in persisted if item["id"] == "mat_algebra")["sources"] == [
+        {"note": "Enciclopedia di riferimento"}
+    ]
+
+
+def test_docx_import_blocks_ambiguous_relationship_proposal(tmp_path: Path) -> None:
+    client, _ = _client(tmp_path)
+    created = client.post("/api/contribution/guided/package", json=_request()).json()
+    docx = _edit_card(
+        _package_docx(Path(created["path"])),
+        "IKG_NODE_CARD_V2",
+        {"Nuove relazioni proposte": "RELATED_TO mat_geometria"},
+    )
+
+    preview = _import_preview(client, docx)
+
+    assert preview["importable"] is False
+    assert any("relations must contain objects" in error for error in preview["errors"])
+
+
+def test_docx_import_preserves_multiple_structured_sources(tmp_path: Path) -> None:
+    client, _ = _client(tmp_path)
+    created = client.post("/api/contribution/guided/package", json=_request()).json()
+    docx = _edit_card(
+        _package_docx(Path(created["path"])),
+        "IKG_NODE_CARD_V2",
+        {
+            "Fonte": (
+                "URL/URI: https://example.test/a\n"
+                "Titolo: Fonte A\n\n"
+                "URL/URI: urn:isbn:9780000000000\n"
+                "Editore: Editore B\n"
+                "Data di accesso: 2026-07-31"
+            )
+        },
+    )
+
+    preview = _import_preview(client, docx)
+
+    assert preview["importable"] is True
+    confirmed = client.post(
+        "/api/import/confirm",
+        json={"token": preview["token"], "accepted_warnings": []},
+    )
+    assert confirmed.status_code == 200
+    assert client.get("/api/node/mat_algebra").json()["sources"] == [
+        {
+            "url": "urn:isbn:9780000000000",
+            "publisher": "Editore B",
+            "accessed_at": "2026-07-31",
+        },
+        {"title": "Fonte A", "url": "https://example.test/a"},
+    ]
 
 
 def test_docx_import_rejects_changes_to_protected_fields(tmp_path: Path) -> None:

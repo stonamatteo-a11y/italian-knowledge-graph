@@ -7,6 +7,24 @@ from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field
 
 
+class SourceInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    url: str | None = None
+    title: str | None = None
+    publisher: str | None = None
+    accessed_at: str | None = None
+    note: str | None = None
+
+
+class RelationInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    predicate: str = Field(min_length=1)
+    target_id: str = Field(min_length=1)
+    note: str | None = None
+
+
 class NodeInput(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
@@ -16,6 +34,10 @@ class NodeInput(BaseModel):
     description: str = Field(min_length=1)
     parent_id: str | None = None
     language: str = Field(default="it", min_length=1)
+    aliases: tuple[str, ...] = ()
+    sources: tuple[SourceInput, ...] = ()
+    notes: tuple[str, ...] = ()
+    relations: tuple[RelationInput, ...] = ()
 
 
 class ImportConfirmInput(BaseModel):

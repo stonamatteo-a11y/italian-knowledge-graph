@@ -14,6 +14,10 @@ class SourceNode:
     description: Any
     parent: Any
     language: Any = "it"
+    aliases: Any = ()
+    sources: Any = ()
+    notes: Any = ()
+    relations: Any = ()
     extra_fields: tuple[str, ...] = ()
 
 
@@ -32,9 +36,13 @@ class CanonicalNode:
     description: str
     parent: str | None
     language: str
+    aliases: tuple[str, ...] = ()
+    sources: tuple[dict[str, str], ...] = ()
+    notes: tuple[str, ...] = ()
+    relations: tuple[dict[str, str], ...] = ()
 
-    def as_record(self) -> dict[str, str]:
-        record = {
+    def as_record(self) -> dict[str, object]:
+        record: dict[str, object] = {
             "id": self.identifier,
             "label": self.label,
             "description": self.description,
@@ -42,6 +50,14 @@ class CanonicalNode:
         }
         if self.parent is not None:
             record["parent_id"] = self.parent
+        for field, value in (
+            ("aliases", self.aliases),
+            ("sources", self.sources),
+            ("notes", self.notes),
+            ("relations", self.relations),
+        ):
+            if value:
+                record[field] = [dict(item) if isinstance(item, dict) else item for item in value]
         return record
 
 

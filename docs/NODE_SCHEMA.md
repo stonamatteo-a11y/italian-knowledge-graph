@@ -22,7 +22,19 @@ Allowed hierarchy types:
 - `sottoarea`: parent must be an `area`
 - `concetto`: parent must be a `sottoarea` or another concept when explicitly supported
 
-Planned optional fields include `aliases`, `tags`, `difficulty`, `importance`, `sources` and `status`.
+Supported optional fields are:
+
+- `aliases`: list of non-empty strings;
+- `sources`: list of structured source objects;
+- `notes`: list of non-empty strings;
+- `relations`: list of structured relationship references.
+
+Missing optional fields are equivalent to empty lists. Source objects and
+relationship references are defined by
+[RFC-0010](rfc/RFC-0010-canonical-entity-metadata.md).
+
+Other fields such as `tags`, `difficulty`, `importance`, and `status` remain
+planned.
 
 ## Edge
 
@@ -35,5 +47,8 @@ Planned optional fields include `aliases`, `tags`, `difficulty`, `importance`, `
 ```
 
 Current relation: `CONTAINS`.
+
+`CONTAINS` is canonically derived from `parent_id` and must not be duplicated in
+the optional `relations` property.
 
 Planned semantic relations include `RELATED_TO`, `REQUIRES`, `IS_A`, `PART_OF`, `CONTRASTS_WITH` and `APPLIES_TO`.

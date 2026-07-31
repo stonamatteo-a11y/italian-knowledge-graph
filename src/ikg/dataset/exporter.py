@@ -20,6 +20,9 @@ def record_mapping(record: DatasetRecord) -> dict[str, object]:
         "entity_type": record.entity_type,
         "label": record.label,
         "parent": record.parent,
+        "aliases": list(record.aliases),
+        "sources": [dict(source) for source in record.sources],
+        "notes": list(record.notes),
         "relationships": [
             {
                 "id": relationship.id,
